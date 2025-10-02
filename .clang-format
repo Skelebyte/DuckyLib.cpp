@@ -1,0 +1,23 @@
+BasedOnStyle: Google
+
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+
+ColumnLimit: 80
+
+BreakBeforeBraces: Attach
+
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+SpaceBeforeParens: ControlStatements
+
+SortIncludes: true
+IncludeBlocks: Preserve
+
+PointerAlignment: Left
+
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+DerivePointerAlignment: false
+AlwaysBreakTemplateDeclarations: true

@@ -1,0 +1,88 @@
+#include "../../include/math/vec2i.hpp"
+
+using namespace ducky;
+using namespace ducky::math;
+
+void Vec2I::zero() {
+  x = 0;
+  y = 0;
+}
+
+Vec2I::Vec2I() {
+  x = 0;
+  y = 0;
+}
+
+Vec2I::Vec2I(int x_, int y_) {
+  x = x_;
+  y = y_;
+}
+
+float Vec2I::length() const { return sqrt(x * x + y * y); }
+
+void Vec2I::normalize() {
+  if (length() == 0.0f) {
+    zero();
+    return;
+  }
+
+  x /= length();
+  y /= length();
+}
+
+Vec2I Vec2I::operator+(const Vec2I& other) const {
+  return Vec2I(x + other.x, y + other.y);
+}
+
+Vec2I Vec2I::operator-(const Vec2I& other) const {
+  return Vec2I(x - other.x, y - other.y);
+}
+
+void Vec2I::operator+=(const Vec2I& other) {
+  x += other.x;
+  y += other.y;
+}
+
+void Vec2I::operator-=(const Vec2I& other) {
+  x -= other.x;
+  y -= other.y;
+}
+
+bool Vec2I::operator==(const Vec2I& other) const {
+  return (x == other.x && y == other.y);
+}
+
+// float vec2_dot(Vec2 a, Vec2 b) { return a.x * b.x + a.y * b.y; }
+
+// float vec2_length(Vec2 vec) { return sqrt(vec.x * vec.x + vec.y * vec.y);
+// }
+
+// float vec2_magnitude(Vec2 vec) { return sqrt(vec.x * vec.x + vec.y *
+// vec.y);
+// }
+
+// Vec2 vec2_normalize(Vec2 vec) {
+//   if (vec2_magnitude(vec) == 0.0f)
+//     return zero();
+
+//   Vec2 b = {
+//       vec.x / vec2_magnitude(vec),
+//       vec.y / vec2_magnitude(vec),
+//   };
+
+//   return b;
+// }
+
+// bool vec2_is_equal(Vec2 a, Vec2 b) { return (a.x == b.x && a.y == b.y); }
+
+// Vec2 vec2_cross(Vec2 a, Vec2 b) {
+//   Vec2 cross = {
+//       a.y * b.x - a.x * b.y,
+//       a.y * b.x - a.x * b.y,
+//   };
+//   return cross;
+// }
+
+// float vec2_distance(Vec2 a, Vec2 b) {
+//   return sqrt(pow((b.x - a.x), 2) + pow((b.y, a.y), 2));
+// }

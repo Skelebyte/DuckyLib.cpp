@@ -1,0 +1,31 @@
+#pragma once
+
+#include <SDL3/SDL.h>
+#include <functional>
+#include <iostream>
+#include <memory>
+#include "../third_party/glad/glad.h"
+#include "math/vec2i.hpp"
+#include "runtime_err.hpp"
+
+namespace ducky {
+class Window {
+ public:
+  Window(const std::string& title, int w, int h);
+  void poll();
+  math::Vec2I get_dimensions();
+  float get_viewport_aspect() const;
+  void render();
+  bool running() const;
+  SDL_Window* get();
+
+ private:
+  SDL_GLContext sdl_glc_;
+  std::unique_ptr<SDL_Window, std::function<void(SDL_Window*)>> sdl_window_ =
+      nullptr;
+  bool running_ = false;
+  bool pillarboxed_;
+  bool letterboxed_;
+  math::Vec2I viewport_size_;
+};
+}  // namespace ducky
