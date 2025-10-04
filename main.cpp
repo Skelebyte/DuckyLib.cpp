@@ -1,5 +1,5 @@
 #include "duckylib/include/app.hpp"
-#include "duckylib/include/ecs/ecs.hpp"
+#include "duckylib/include/ecs/components/transform.hpp"
 #include "duckylib/include/graphics/built_in_shaders.hpp"
 #include "duckylib/include/graphics/ebo.hpp"
 #include "duckylib/include/graphics/renderer.hpp"
@@ -16,6 +16,7 @@
 
 using namespace ducky;
 using namespace ducky::ecs;
+using namespace ducky::ecs::components;
 using namespace ducky::graphics;
 using namespace ducky::math;
 
@@ -27,9 +28,6 @@ int main() {
 
   glViewport(0, 0, 600, 600);
   Renderer renderer = Renderer();
-
-  ECS ecs = ECS();
-
   // Vertices coordinates
   GLfloat vertices[] = {
       //     COORDINATES     /        COLORS      /   TexCoord  //
@@ -43,9 +41,12 @@ int main() {
   Shader shader =
       Shader("assets/shaders/vertex.glsl", "assets/shaders/fragment.glsl");
   VAO vao;
+  vao.init();
   vao.bind();
-  VBO vbo = VBO(vertices, sizeof(vertices));
-  EBO ebo = EBO(indices, sizeof(indices));
+  VBO vbo;
+  vbo.init(vertices, sizeof(vertices));
+  EBO ebo;
+  ebo.init(indices, sizeof(indices));
 
   vao.link_attribute(vbo, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
   vao.link_attribute(vbo, 1, 3, GL_FLOAT, 8 * sizeof(float),
@@ -62,8 +63,6 @@ int main() {
   shader.activate();
   glUniform1i(texture_uniform, 0);
 
-  ENTITY entity = ecs.new_entity();
-
   while (window.running()) {
     window.poll();
 
@@ -72,20 +71,18 @@ int main() {
     shader.activate();
 
     Mat4 model = Mat4::Transformation(
-        Vec3(0.0f, 0.0f, -5.0f), Vec3(rot, rot, rot), Vec3(1.0f, 1.0f, 1.0f));
-    Mat4 view = Mat4();
+        Vec3(0.0f, 0.0f, -5.0f), Vec3(0.0f, rot, 0.0f), Vec3(1.0f, 1.0f, 1.0f));
+    Mat4 view = Mat4::Transformation(
+        Vec3(0.0f, 0.0f, 0.0f), Vec3(0.0f, 0.0f, 0.0f), Vec3(1.0f, 1.0f, 1.0f));
     Mat4 projection = Mat4();
-    view.Translate(Vec3(0.0f, 0.0f, 0.0f));
-    view.Perspective(Mathf::to_radians(60.0f), window.get_viewport_aspect(),
-                     0.1f, 100.0f);
-
+    projection.Perspective(Mathf::to_radians(60.0f),
+                           window.get_viewport_aspect(), 0.1f, 100.0f);
     GLuint model_uniform = glGetUniformLocation(shader.id, "model");
     GLuint view_uniform = glGetUniformLocation(shader.id, "view");
     GLuint projection_uniform = glGetUniformLocation(shader.id, "projection");
     glUniformMatrix4fv(model_uniform, 1, GL_FALSE, model.data);
     glUniformMatrix4fv(view_uniform, 1, GL_FALSE, view.data);
     glUniformMatrix4fv(projection_uniform, 1, GL_FALSE, projection.data);
-
     glUniform1f(uniform_id, 0.5f);
 
     vao.bind();

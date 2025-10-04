@@ -3,6 +3,11 @@
 using namespace ducky;
 using namespace ducky::ecs;
 
-Component::Component(unsigned int& entity_id) : entity_id_(entity_id) {}
+Component::Component(std::string name) { this->name_ = name; }
 
-Component::~Component() { entity_id_ = 0; }
+void Component::destroy() {
+  std::cout << "Destroying " << this->get_id() << ", " << this->name_
+            << std::endl;
+  this->owner_ = nullptr;
+  destroy();
+}

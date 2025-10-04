@@ -9,8 +9,8 @@ namespace graphics {
 
 class VAO {
  public:
-  VAO();
   ~VAO();
+  void init();
   void link_attribute(VBO& vbo, GLuint layout, GLuint num_components,
                       GLenum type, GLsizeiptr stride, void* offset);
   void bind();

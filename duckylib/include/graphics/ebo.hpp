@@ -8,7 +8,7 @@ namespace graphics {
 
 class EBO {
  public:
-  EBO(GLuint* indices, GLsizeiptr size);
+  void init(GLuint* indices, GLsizeiptr size);
   ~EBO();
   void bind();
   void unbind();

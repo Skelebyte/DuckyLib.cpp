@@ -3,7 +3,7 @@
 using namespace ducky;
 using namespace ducky::graphics;
 
-EBO::EBO(GLuint* indices, GLsizeiptr size) {
+void EBO::init(GLuint* indices, GLsizeiptr size) {
   glGenBuffers(1, &this->id);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->id);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, indices, GL_STATIC_DRAW);

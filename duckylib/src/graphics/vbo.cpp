@@ -3,7 +3,7 @@
 using namespace ducky;
 using namespace ducky::graphics;
 
-VBO::VBO(GLfloat* vertices, GLsizeiptr size) {
+void VBO::init(GLfloat* vertices, GLsizeiptr size) {
   glGenBuffers(1, &this->id);
   glBindBuffer(GL_ARRAY_BUFFER, this->id);
   glBufferData(GL_ARRAY_BUFFER, size, vertices, GL_STATIC_DRAW);

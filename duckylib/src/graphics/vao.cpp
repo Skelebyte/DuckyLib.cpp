@@ -3,7 +3,7 @@
 using namespace ducky;
 using namespace ducky::graphics;
 
-VAO::VAO() { glGenVertexArrays(1, &this->id); }
+void VAO::init() { glGenVertexArrays(1, &this->id); }
 
 VAO::~VAO() { this->destroy(); }
 

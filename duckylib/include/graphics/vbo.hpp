@@ -8,8 +8,8 @@ namespace graphics {
 
 class VBO {
  public:
-  VBO(GLfloat* vertices, GLsizeiptr size);
   ~VBO();
+  void init(GLfloat* vertices, GLsizeiptr size);
   void bind();
   void unbind();
   void destroy();

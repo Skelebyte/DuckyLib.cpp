@@ -16,7 +16,7 @@ ifeq ($(config),debug_x64)
   TARGET = $(TARGETDIR)/libDuckyLib.a
   OBJDIR = ../obj/Debug-x64/DuckyLib
   DEFINES += -DDEBUG
-  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/ecs/components
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
@@ -43,7 +43,7 @@ ifeq ($(config),debug_x86)
   TARGET = $(TARGETDIR)/libDuckyLib.a
   OBJDIR = ../obj/Debug-x86/DuckyLib
   DEFINES += -DDEBUG
-  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/ecs/components
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -g
@@ -70,7 +70,7 @@ ifeq ($(config),release_x64)
   TARGET = $(TARGETDIR)/libDuckyLib.a
   OBJDIR = ../obj/Release-x64/DuckyLib
   DEFINES += -DNDEBUG
-  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/ecs/components
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
@@ -97,7 +97,7 @@ ifeq ($(config),release_x86)
   TARGET = $(TARGETDIR)/libDuckyLib.a
   OBJDIR = ../obj/Release-x86/DuckyLib
   DEFINES += -DNDEBUG
-  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/ecs/components
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2
@@ -122,8 +122,8 @@ OBJECTS := \
 	$(OBJDIR)/app.o \
 	$(OBJDIR)/camera.o \
 	$(OBJDIR)/component.o \
-	$(OBJDIR)/ecs.o \
 	$(OBJDIR)/entity.o \
+	$(OBJDIR)/object.o \
 	$(OBJDIR)/ebo.o \
 	$(OBJDIR)/renderer.o \
 	$(OBJDIR)/shader.o \
@@ -207,10 +207,10 @@ $(OBJDIR)/camera.o: ../duckylib/src/camera.cpp
 $(OBJDIR)/component.o: ../duckylib/src/ecs/component.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/ecs.o: ../duckylib/src/ecs/ecs.cpp
+$(OBJDIR)/entity.o: ../duckylib/src/ecs/entity.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/entity.o: ../duckylib/src/ecs/entity.cpp
+$(OBJDIR)/object.o: ../duckylib/src/ecs/object.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ebo.o: ../duckylib/src/graphics/ebo.cpp
