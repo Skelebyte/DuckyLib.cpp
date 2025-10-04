@@ -1,6 +1,9 @@
 #pragma once
 
 namespace ducky {
+
+namespace graphics {
+
 inline const char* vertex_shader_src =
     "#version 450 core\n"
     "layout(location = 0) in vec3 aPos;\n"
@@ -20,4 +23,6 @@ inline const char* fragment_shader_src =
     "{\n"
     "  FragColor = vec4(color, 1.0f);\n"
     "}\0";
+}  // namespace graphics
+
 }  // namespace ducky

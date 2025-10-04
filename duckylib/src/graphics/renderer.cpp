@@ -3,7 +3,7 @@
 using namespace ducky;
 using namespace ducky::graphics;
 
-Renderer::Renderer() {
+void Renderer::init() {
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_BLEND);
 
@@ -12,11 +12,16 @@ Renderer::Renderer() {
 
   glEnable(GL_CULL_FACE);
   glCullFace(GL_BACK);
-  glFrontFace(GL_CW);
+  glFrontFace(GL_CCW);
 
   glEnable(GL_LINE_SMOOTH);
 
   glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void Renderer::clear_frame(float r, float g, float b) {
+  glClearColor(r, g, b, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }

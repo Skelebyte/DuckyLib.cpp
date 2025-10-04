@@ -13,7 +13,10 @@ class Window {
  public:
   Window(const std::string& title, int w, int h);
   void poll();
-  math::Vec2I get_dimensions();
+  math::Vec2i get_dimensions();
+  math::Vec2i get_viewport_size() const;
+  math::Vec2i get_viewport_position() const;
+
   float get_viewport_aspect() const;
   void render();
   bool running() const;
@@ -26,6 +29,7 @@ class Window {
   bool running_ = false;
   bool pillarboxed_;
   bool letterboxed_;
-  math::Vec2I viewport_size_;
+  math::Vec2i viewport_size_;
+  math::Vec2i viewport_position_;
 };
 }  // namespace ducky

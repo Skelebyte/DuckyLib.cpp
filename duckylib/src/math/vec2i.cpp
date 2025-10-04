@@ -3,24 +3,24 @@
 using namespace ducky;
 using namespace ducky::math;
 
-void Vec2I::zero() {
+void Vec2i::zero() {
   x = 0;
   y = 0;
 }
 
-Vec2I::Vec2I() {
+Vec2i::Vec2i() {
   x = 0;
   y = 0;
 }
 
-Vec2I::Vec2I(int x_, int y_) {
+Vec2i::Vec2i(int x_, int y_) {
   x = x_;
   y = y_;
 }
 
-float Vec2I::length() const { return sqrt(x * x + y * y); }
+float Vec2i::length() const { return sqrt(x * x + y * y); }
 
-void Vec2I::normalize() {
+void Vec2i::normalize() {
   if (length() == 0.0f) {
     zero();
     return;
@@ -30,25 +30,25 @@ void Vec2I::normalize() {
   y /= length();
 }
 
-Vec2I Vec2I::operator+(const Vec2I& other) const {
-  return Vec2I(x + other.x, y + other.y);
+Vec2i Vec2i::operator+(const Vec2i& other) const {
+  return Vec2i(x + other.x, y + other.y);
 }
 
-Vec2I Vec2I::operator-(const Vec2I& other) const {
-  return Vec2I(x - other.x, y - other.y);
+Vec2i Vec2i::operator-(const Vec2i& other) const {
+  return Vec2i(x - other.x, y - other.y);
 }
 
-void Vec2I::operator+=(const Vec2I& other) {
+void Vec2i::operator+=(const Vec2i& other) {
   x += other.x;
   y += other.y;
 }
 
-void Vec2I::operator-=(const Vec2I& other) {
+void Vec2i::operator-=(const Vec2i& other) {
   x -= other.x;
   y -= other.y;
 }
 
-bool Vec2I::operator==(const Vec2I& other) const {
+bool Vec2i::operator==(const Vec2i& other) const {
   return (x == other.x && y == other.y);
 }
 

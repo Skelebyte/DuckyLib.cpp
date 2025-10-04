@@ -10,7 +10,8 @@ namespace graphics {
 
 class Renderer {
  public:
-  Renderer();
+  static void init();
+  static void clear_frame(float r = 0.1f, float g = 0.1f, float b = 0.1f);
 };
 
 }  // namespace graphics

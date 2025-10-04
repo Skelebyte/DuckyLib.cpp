@@ -24,12 +24,10 @@ MeshRenderer::MeshRenderer(Transform* transform, CameraComponent* camera,
   this->vbo_.init(vertices, vertices_size);
   this->ebo_.init(indices, indices_size);
 
-  this->vao_.link_attribute(this->vbo_, 0, 3, GL_FLOAT, 8 * sizeof(float),
+  this->vao_.link_attribute(this->vbo_, 0, 3, GL_FLOAT, 5 * sizeof(float),
                             (void*)0);
-  this->vao_.link_attribute(this->vbo_, 1, 3, GL_FLOAT, 8 * sizeof(float),
+  this->vao_.link_attribute(this->vbo_, 1, 2, GL_FLOAT, 5 * sizeof(float),
                             (void*)(3 * sizeof(float)));
-  this->vao_.link_attribute(this->vbo_, 2, 2, GL_FLOAT, 8 * sizeof(float),
-                            (void*)(6 * sizeof(float)));
 
   this->vao_.unbind();
   this->vbo_.unbind();

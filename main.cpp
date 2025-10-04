@@ -5,12 +5,14 @@
 #include "duckylib/include/ecs/components/transform.hpp"
 #include "duckylib/include/ecs/entity.hpp"
 #include "duckylib/include/graphics/built_in_shaders.hpp"
+#include "duckylib/include/graphics/built_in_shapes.hpp"
 #include "duckylib/include/graphics/ebo.hpp"
 #include "duckylib/include/graphics/renderer.hpp"
 #include "duckylib/include/graphics/shader.hpp"
 #include "duckylib/include/graphics/texture.hpp"
 #include "duckylib/include/graphics/vao.hpp"
 #include "duckylib/include/graphics/vbo.hpp"
+#include "duckylib/include/input/input.hpp"
 #include "duckylib/include/math/mat4.hpp"
 #include "duckylib/include/math/mathf.hpp"
 #include "duckylib/include/math/vec2.hpp"
@@ -23,13 +25,13 @@ using namespace ducky::ecs;
 using namespace ducky::ecs::components;
 using namespace ducky::graphics;
 using namespace ducky::math;
+using namespace ducky::input;
 
 int main() {
   App app;
   Window window = Window("Hi mum!", 600, 600);
 
-  glViewport(0, 0, 600, 600);
-  Renderer renderer = Renderer();
+  Renderer::init();
   // Vertices coordinates
   GLfloat vertices[] = {
       //     COORDINATES     /        COLORS      /   TexCoord  //
@@ -50,25 +52,37 @@ int main() {
   CameraComponent* camera =
       main_camera.add_component(new CameraComponent(camera_transform, &window));
 
-  Entity pyramid = Entity("pyramid");
-  Transform* pyramid_transform = pyramid.add_component(new Transform());
-  MeshRenderer* mesh_renderer = pyramid.add_component(
-      new MeshRenderer(pyramid_transform, camera, vertices, sizeof(vertices),
-                       indices, sizeof(indices), shader, texture));
+  Entity mesh = Entity("mesh");
+  Transform* mesh_t = mesh.add_component(new Transform());
+  MeshRenderer* mesh_mr = mesh.add_component(new MeshRenderer(
+      mesh_t, camera, pyramid_vertices, sizeof(pyramid_vertices),
+      pyramid_indices, sizeof(pyramid_indices), shader, texture));
 
-  pyramid_transform->position = Vec3(0.0f, -0.5f, -2.0f);
+  mesh_t->position = Vec3(0.0f, -0.5f, -2.0f);
+
+  InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
+  InputAxis axis_vertical = InputAxis(Keycode::W, Keycode::S);
+  Keybind esc = Keybind(Keycode::ESC);
+  bool cursor = false;
 
   while (window.running()) {
     window.poll();
 
-    glClearColor(0.1, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    pyramid_transform->rotation.y += 0.5f;
+    Renderer::clear_frame();
 
     main_camera.update();
-    pyramid.update();
+    mesh.update();
 
+    camera_transform->position.x += -Input::get_axis(axis_horizontal) * 0.05f;
+    camera_transform->position.z += Input::get_axis(axis_vertical) * 0.05f;
+
+    camera_transform->rotation.x = Input::get_mouse_position(window).y * 100;
+    camera_transform->rotation.y = -Input::get_mouse_position(window).x * 100;
+
+    if (Input::get_key(esc, true)) {
+      cursor = !cursor;
+    }
+    Input::cursor(window, cursor, false);
     window.render();
   }
 

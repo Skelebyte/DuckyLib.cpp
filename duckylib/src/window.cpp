@@ -40,21 +40,23 @@ void Window::poll() {
   }
 }
 
-Vec2I Window::get_dimensions() {
-  Vec2I d;
+Vec2i Window::get_dimensions() {
+  Vec2i d;
   SDL_GetWindowSize(this->sdl_window_.get(), &d.x, &d.y);
 
   return d;
 }
+
+Vec2i Window::get_viewport_size() const { return this->viewport_size_; }
+
+Vec2i Window::get_viewport_position() const { return this->viewport_position_; }
 
 float Window::get_viewport_aspect() const {
   return (float)this->viewport_size_.x / (float)this->viewport_size_.y;
 }
 
 void Window::render() {
-  Vec2I viewport_pos;
-
-  Vec2I dimensions = get_dimensions();
+  Vec2i dimensions = get_dimensions();
 
   float window_aspect = (float)dimensions.x / dimensions.y;
   float game_aspect = (float)1920 / 1080;
@@ -65,18 +67,18 @@ void Window::render() {
     this->viewport_size_.x = (int)(dimensions.y * game_aspect);
     this->viewport_size_.y = dimensions.y;
 
-    viewport_pos.x = (dimensions.x - this->viewport_size_.x) / 2;
-    viewport_pos.y = 0;
+    this->viewport_position_.x = (dimensions.x - this->viewport_size_.x) / 2;
+    this->viewport_position_.y = 0;
     this->pillarboxed_ = true;
   } else {
     this->viewport_size_.x = dimensions.x;
     this->viewport_size_.y = (int)(dimensions.x / game_aspect);
-    viewport_pos.x = 0;
-    viewport_pos.y = (dimensions.y - this->viewport_size_.y) / 2;
+    this->viewport_position_.x = 0;
+    this->viewport_position_.y = (dimensions.y - this->viewport_size_.y) / 2;
     this->letterboxed_ = true;
   }
-  glViewport(viewport_pos.x, viewport_pos.y, this->viewport_size_.x,
-             this->viewport_size_.y);
+  glViewport(this->viewport_position_.x, this->viewport_position_.y,
+             this->viewport_size_.x, this->viewport_size_.y);
   SDL_GL_SwapWindow(this->sdl_window_.get());
 }
 

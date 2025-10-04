@@ -7,24 +7,24 @@ namespace ducky {
 
 namespace math {
 
-typedef union Vec2I {
+typedef union Vec2i {
   struct {
     int x;
     int y;
   };
   int data[2];
-  Vec2I();
-  Vec2I(int x_, int y_);
+  Vec2i();
+  Vec2i(int x_, int y_);
   void zero();
   float length() const;
   void normalize();
 
-  Vec2I operator+(const Vec2I& other) const;
-  Vec2I operator-(const Vec2I& other) const;
-  void operator+=(const Vec2I& other);
-  void operator-=(const Vec2I& other);
-  bool operator==(const Vec2I& other) const;
-} Vec2I, Vector2I;
+  Vec2i operator+(const Vec2i& other) const;
+  Vec2i operator-(const Vec2i& other) const;
+  void operator+=(const Vec2i& other);
+  void operator-=(const Vec2i& other);
+  bool operator==(const Vec2i& other) const;
+} Vec2i, Vector2I;
 
 }  // namespace math
 
