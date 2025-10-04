@@ -7,7 +7,7 @@ Entity::Entity() { this->name = "game_object"; }
 
 Entity::Entity(std::string name) { this->name = name; }
 
-Entity::~Entity() { destroy(); }
+Entity::~Entity() { /*destroy();*/ }
 
 void Entity::destroy() {
   for (int i = 0; i < this->components_.size(); i++) {
@@ -22,9 +22,10 @@ void Entity::destroy() {
   this->children_.clear();
 }
 
-void Entity::add_component(Component* component) {
-  component->owner_ = this;
-  this->components_.push_back(component);
+void Entity::update() {
+  for (int i = 0; i < this->components_.size(); i++) {
+    this->components_[i]->process();
+  }
 }
 
 void Entity::remove_component(Component* component) {
@@ -41,7 +42,7 @@ void Entity::remove_component(Component* component) {
   if (found_comp == false)
     return;  // throw warning, cant find target component
 
-  component->owner_ = nullptr;
+  component->owner = nullptr;
   // maybe dont destroy component? what if we want to place that component on
   // another Entity?
   this->components_[comp_index]->destroy();
@@ -57,16 +58,6 @@ bool Entity::has_component(Component* component) {
   }
 
   return false;  // throw warning, cant find target component
-}
-
-template <typename T>
-bool Entity::has_component_of_type() {
-  for (int i = 0; i < this->components_.size(); i++) {
-    if (typeid(this->components_[i]) == typeid(T)) {
-      return true;
-    }
-  }
-  return false;
 }
 
 Entity* Entity::get_parent() { return parent_; }
@@ -118,14 +109,4 @@ bool Entity::has_child(int id) {
     }
   }
   return false;
-}
-
-template <typename T>
-T Entity::get_component() {
-  for (int i = 0; i < components_.size(); i++) {
-    if (typeid(components_[i]) == typeid(T)) {
-      return (T)components_[i];
-    }
-  }
-  return nullptr;
 }

@@ -5,14 +5,14 @@ using namespace ducky::math;
 
 Mat4::Mat4(bool identity) {
   if (identity) {
-    this->Identity();
+    this->identity();
   } else {
     for (int i = 0; i < 16; i++) {
       this->data[i] = 0;
     }
   }
 }
-Mat4 Mat4::Transformation(Vec3 pos, Vec3 rot, Vec3 sca,
+Mat4 Mat4::transformation(Vec3 pos, Vec3 rot, Vec3 sca,
                           Mat4_MultiplicationOrder order) {
   Mat4 result = Mat4();
   Mat4 position = Mat4();
@@ -52,7 +52,7 @@ Mat4 Mat4::Transformation(Vec3 pos, Vec3 rot, Vec3 sca,
   return result;
 }
 
-void Mat4::Identity() {
+void Mat4::identity() {
   for (int i = 0; i < 16; i++)
     this->data[i] = 0;
 
@@ -102,9 +102,9 @@ void Mat4::Scale(Vec3 scale) {
   this->data[10] = scale.z;
 }
 
-void Mat4::Perspective(float fov_in_rads, float aspect, float near_plane,
+void Mat4::perspective(float fov_in_rads, float aspect, float near_plane,
                        float far_plane) {
-  this->Identity();
+  this->identity();
   this->data[0] = 1 / (aspect * tan(fov_in_rads / 2));
   this->data[5] = 1 / tan(fov_in_rads / 2);
   this->data[10] = -(far_plane + near_plane) / (far_plane - near_plane);
@@ -114,7 +114,7 @@ void Mat4::Perspective(float fov_in_rads, float aspect, float near_plane,
 }
 
 void Mat4::LookAt(Vec3 position, Vec3 target_position) {
-  this->Identity();
+  this->identity();
   Vec3 forward = (position - target_position).normalized();
   Vec3 right = Vec3::cross(Vec3(0.0f, 1.0f, 0.0f), forward).normalized();
   Vec3 up = Vec3::cross(forward, right);

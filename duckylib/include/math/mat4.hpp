@@ -21,15 +21,15 @@ class Mat4 {
  public:
   float data[16];
   Mat4(bool identity = true);
-  static Mat4 Transformation(Vec3 pos, Vec3 rot, Vec3 sca,
+  static Mat4 transformation(Vec3 pos, Vec3 rot, Vec3 sca,
                              Mat4_MultiplicationOrder order = Mat4_TRS);
-  void Identity();
+  void identity();
 
   void Translate(Vec3 point);
   void Rotate(Vec3 angles);
   void Scale(Vec3 scale);
 
-  void Perspective(float fov_in_rads, float aspect, float near_plane,
+  void perspective(float fov_in_rads, float aspect, float near_plane,
                    float far_plane);
   void LookAt(Vec3 position, Vec3 targetPosition);
 

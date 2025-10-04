@@ -2,70 +2,29 @@
  ../duckylib/src/ecs/components/mesh_renderer.cpp \
  /usr/include/stdc-predef.h \
  ../duckylib/src/ecs/components/../../../include/ecs/components/mesh_renderer.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/khrplatform.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
- /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/time64.h /usr/include/bits/wchar.h \
- /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/renderer.hpp \
- /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
- /usr/include/SDL3/SDL_platform_defines.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
- /usr/include/string.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/wchar.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h /usr/include/bits/types/wint_t.h \
- /usr/include/bits/types/mbstate_t.h \
- /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/SDL3/SDL_begin_code.h \
- /usr/include/SDL3/SDL_close_code.h /usr/include/SDL3/SDL_assert.h \
- /usr/include/SDL3/SDL_asyncio.h /usr/include/SDL3/SDL_atomic.h \
- /usr/include/SDL3/SDL_audio.h /usr/include/SDL3/SDL_endian.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/bits/byteswap.h \
- /usr/include/bits/uintn-identity.h /usr/include/SDL3/SDL_error.h \
- /usr/include/SDL3/SDL_mutex.h /usr/include/SDL3/SDL_thread.h \
- /usr/include/SDL3/SDL_properties.h /usr/include/SDL3/SDL_iostream.h \
- /usr/include/SDL3/SDL_bits.h /usr/include/SDL3/SDL_blendmode.h \
- /usr/include/SDL3/SDL_camera.h /usr/include/SDL3/SDL_pixels.h \
- /usr/include/SDL3/SDL_surface.h /usr/include/SDL3/SDL_rect.h \
- /usr/include/SDL3/SDL_clipboard.h /usr/include/SDL3/SDL_cpuinfo.h \
- /usr/include/SDL3/SDL_dialog.h /usr/include/SDL3/SDL_video.h \
- /usr/include/SDL3/SDL_events.h /usr/include/SDL3/SDL_gamepad.h \
- /usr/include/SDL3/SDL_guid.h /usr/include/SDL3/SDL_joystick.h \
- /usr/include/SDL3/SDL_power.h /usr/include/SDL3/SDL_sensor.h \
- /usr/include/SDL3/SDL_keyboard.h /usr/include/SDL3/SDL_keycode.h \
- /usr/include/SDL3/SDL_scancode.h /usr/include/SDL3/SDL_mouse.h \
- /usr/include/SDL3/SDL_pen.h /usr/include/SDL3/SDL_touch.h \
- /usr/include/SDL3/SDL_filesystem.h /usr/include/SDL3/SDL_gpu.h \
- /usr/include/SDL3/SDL_haptic.h /usr/include/SDL3/SDL_hidapi.h \
- /usr/include/SDL3/SDL_hints.h /usr/include/SDL3/SDL_init.h \
- /usr/include/SDL3/SDL_loadso.h /usr/include/SDL3/SDL_locale.h \
- /usr/include/SDL3/SDL_log.h /usr/include/SDL3/SDL_messagebox.h \
- /usr/include/SDL3/SDL_metal.h /usr/include/SDL3/SDL_misc.h \
- /usr/include/SDL3/SDL_platform.h /usr/include/SDL3/SDL_process.h \
- /usr/include/SDL3/SDL_render.h /usr/include/SDL3/SDL_storage.h \
- /usr/include/SDL3/SDL_system.h /usr/include/SDL3/SDL_time.h \
- /usr/include/SDL3/SDL_timer.h /usr/include/SDL3/SDL_tray.h \
- /usr/include/SDL3/SDL_version.h /usr/include/SDL3/SDL_oldnames.h \
  /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
+ /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
+ /usr/include/gnu/stubs-64.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h \
  /usr/include/c++/15/pstl/pstl_config.h /usr/include/c++/15/ostream \
  /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
  /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
  /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
- /usr/include/c++/15/cwchar /usr/include/c++/15/exception \
+ /usr/include/c++/15/cwchar /usr/include/wchar.h \
+ /usr/include/bits/libc-header-start.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
+ /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
+ /usr/include/bits/types/mbstate_t.h \
+ /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/c++/15/exception \
  /usr/include/c++/15/bits/exception.h /usr/include/c++/15/bits/version.h \
  /usr/include/c++/15/bits/exception_ptr.h \
  /usr/include/c++/15/bits/exception_defines.h \
@@ -79,8 +38,10 @@
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h \
  /usr/include/c++/15/clocale /usr/include/locale.h \
  /usr/include/bits/locale.h /usr/include/c++/15/cctype \
- /usr/include/ctype.h /usr/include/c++/15/bits/ios_base.h \
- /usr/include/c++/15/ext/atomicity.h \
+ /usr/include/ctype.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/c++/15/bits/ios_base.h /usr/include/c++/15/ext/atomicity.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
@@ -142,6 +103,8 @@
  /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
  /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/c++/15/bits/std_abs.h \
@@ -173,6 +136,13 @@
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/shader.hpp \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../utils/file.hpp \
  /usr/include/c++/15/stdlib.h /usr/include/c++/15/ctime \
@@ -182,16 +152,38 @@
  /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
  /usr/include/c++/15/bits/sstream.tcc \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/built_in_shaders.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../ecs.hpp \
- /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/texture.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/stb/stb_image.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../runtime_err.hpp \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/enable_special_members.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../entity.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp \
+ /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
+ /usr/include/c++/15/compare /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/concurrence.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/bits/atomic_base.h \
+ /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp \
  /usr/include/c++/15/math.h /usr/include/c++/15/cmath /usr/include/math.h \
@@ -213,113 +205,65 @@
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
  /usr/include/c++/15/tr1/riemann_zeta.tcc \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp \
+ /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
+ /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
+ /usr/include/c++/15/bits/parse_numbers.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp \
+ /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
+ /usr/include/SDL3/SDL_platform_defines.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/SDL3/SDL_begin_code.h \
+ /usr/include/SDL3/SDL_close_code.h /usr/include/SDL3/SDL_assert.h \
+ /usr/include/SDL3/SDL_asyncio.h /usr/include/SDL3/SDL_atomic.h \
+ /usr/include/SDL3/SDL_audio.h /usr/include/SDL3/SDL_endian.h \
+ /usr/include/SDL3/SDL_error.h /usr/include/SDL3/SDL_mutex.h \
+ /usr/include/SDL3/SDL_thread.h /usr/include/SDL3/SDL_properties.h \
+ /usr/include/SDL3/SDL_iostream.h /usr/include/SDL3/SDL_bits.h \
+ /usr/include/SDL3/SDL_blendmode.h /usr/include/SDL3/SDL_camera.h \
+ /usr/include/SDL3/SDL_pixels.h /usr/include/SDL3/SDL_surface.h \
+ /usr/include/SDL3/SDL_rect.h /usr/include/SDL3/SDL_clipboard.h \
+ /usr/include/SDL3/SDL_cpuinfo.h /usr/include/SDL3/SDL_dialog.h \
+ /usr/include/SDL3/SDL_video.h /usr/include/SDL3/SDL_events.h \
+ /usr/include/SDL3/SDL_gamepad.h /usr/include/SDL3/SDL_guid.h \
+ /usr/include/SDL3/SDL_joystick.h /usr/include/SDL3/SDL_power.h \
+ /usr/include/SDL3/SDL_sensor.h /usr/include/SDL3/SDL_keyboard.h \
+ /usr/include/SDL3/SDL_keycode.h /usr/include/SDL3/SDL_scancode.h \
+ /usr/include/SDL3/SDL_mouse.h /usr/include/SDL3/SDL_pen.h \
+ /usr/include/SDL3/SDL_touch.h /usr/include/SDL3/SDL_filesystem.h \
+ /usr/include/SDL3/SDL_gpu.h /usr/include/SDL3/SDL_haptic.h \
+ /usr/include/SDL3/SDL_hidapi.h /usr/include/SDL3/SDL_hints.h \
+ /usr/include/SDL3/SDL_init.h /usr/include/SDL3/SDL_loadso.h \
+ /usr/include/SDL3/SDL_locale.h /usr/include/SDL3/SDL_log.h \
+ /usr/include/SDL3/SDL_messagebox.h /usr/include/SDL3/SDL_metal.h \
+ /usr/include/SDL3/SDL_misc.h /usr/include/SDL3/SDL_platform.h \
+ /usr/include/SDL3/SDL_process.h /usr/include/SDL3/SDL_render.h \
+ /usr/include/SDL3/SDL_storage.h /usr/include/SDL3/SDL_system.h \
+ /usr/include/SDL3/SDL_time.h /usr/include/SDL3/SDL_timer.h \
+ /usr/include/SDL3/SDL_tray.h /usr/include/SDL3/SDL_version.h \
+ /usr/include/SDL3/SDL_oldnames.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp
 /usr/include/stdc-predef.h:
 ../duckylib/src/ecs/components/../../../include/ecs/components/mesh_renderer.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/khrplatform.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
-/usr/include/stdint.h:
-/usr/include/bits/libc-header-start.h:
+/usr/include/c++/15/iostream:
+/usr/include/c++/15/bits/requires_hosted.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
+/usr/include/bits/wordsize.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h:
 /usr/include/features.h:
 /usr/include/features-time64.h:
-/usr/include/bits/wordsize.h:
 /usr/include/bits/timesize.h:
 /usr/include/sys/cdefs.h:
 /usr/include/bits/long-double.h:
 /usr/include/gnu/stubs.h:
 /usr/include/gnu/stubs-64.h:
-/usr/include/bits/types.h:
-/usr/include/bits/typesizes.h:
-/usr/include/bits/time64.h:
-/usr/include/bits/wchar.h:
-/usr/include/bits/stdint-intn.h:
-/usr/include/bits/stdint-uintn.h:
-/usr/include/bits/stdint-least.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/renderer.hpp:
-/usr/include/SDL3/SDL.h:
-/usr/include/SDL3/SDL_stdinc.h:
-/usr/include/SDL3/SDL_platform_defines.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h:
-/usr/include/string.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h:
-/usr/include/bits/types/locale_t.h:
-/usr/include/bits/types/__locale_t.h:
-/usr/include/strings.h:
-/usr/include/wchar.h:
-/usr/include/bits/floatn.h:
-/usr/include/bits/floatn-common.h:
-/usr/include/bits/types/wint_t.h:
-/usr/include/bits/types/mbstate_t.h:
-/usr/include/bits/types/__mbstate_t.h:
-/usr/include/bits/types/__FILE.h:
-/usr/include/bits/types/FILE.h:
-/usr/include/SDL3/SDL_begin_code.h:
-/usr/include/SDL3/SDL_close_code.h:
-/usr/include/SDL3/SDL_assert.h:
-/usr/include/SDL3/SDL_asyncio.h:
-/usr/include/SDL3/SDL_atomic.h:
-/usr/include/SDL3/SDL_audio.h:
-/usr/include/SDL3/SDL_endian.h:
-/usr/include/endian.h:
-/usr/include/bits/endian.h:
-/usr/include/bits/endianness.h:
-/usr/include/bits/byteswap.h:
-/usr/include/bits/uintn-identity.h:
-/usr/include/SDL3/SDL_error.h:
-/usr/include/SDL3/SDL_mutex.h:
-/usr/include/SDL3/SDL_thread.h:
-/usr/include/SDL3/SDL_properties.h:
-/usr/include/SDL3/SDL_iostream.h:
-/usr/include/SDL3/SDL_bits.h:
-/usr/include/SDL3/SDL_blendmode.h:
-/usr/include/SDL3/SDL_camera.h:
-/usr/include/SDL3/SDL_pixels.h:
-/usr/include/SDL3/SDL_surface.h:
-/usr/include/SDL3/SDL_rect.h:
-/usr/include/SDL3/SDL_clipboard.h:
-/usr/include/SDL3/SDL_cpuinfo.h:
-/usr/include/SDL3/SDL_dialog.h:
-/usr/include/SDL3/SDL_video.h:
-/usr/include/SDL3/SDL_events.h:
-/usr/include/SDL3/SDL_gamepad.h:
-/usr/include/SDL3/SDL_guid.h:
-/usr/include/SDL3/SDL_joystick.h:
-/usr/include/SDL3/SDL_power.h:
-/usr/include/SDL3/SDL_sensor.h:
-/usr/include/SDL3/SDL_keyboard.h:
-/usr/include/SDL3/SDL_keycode.h:
-/usr/include/SDL3/SDL_scancode.h:
-/usr/include/SDL3/SDL_mouse.h:
-/usr/include/SDL3/SDL_pen.h:
-/usr/include/SDL3/SDL_touch.h:
-/usr/include/SDL3/SDL_filesystem.h:
-/usr/include/SDL3/SDL_gpu.h:
-/usr/include/SDL3/SDL_haptic.h:
-/usr/include/SDL3/SDL_hidapi.h:
-/usr/include/SDL3/SDL_hints.h:
-/usr/include/SDL3/SDL_init.h:
-/usr/include/SDL3/SDL_loadso.h:
-/usr/include/SDL3/SDL_locale.h:
-/usr/include/SDL3/SDL_log.h:
-/usr/include/SDL3/SDL_messagebox.h:
-/usr/include/SDL3/SDL_metal.h:
-/usr/include/SDL3/SDL_misc.h:
-/usr/include/SDL3/SDL_platform.h:
-/usr/include/SDL3/SDL_process.h:
-/usr/include/SDL3/SDL_render.h:
-/usr/include/SDL3/SDL_storage.h:
-/usr/include/SDL3/SDL_system.h:
-/usr/include/SDL3/SDL_time.h:
-/usr/include/SDL3/SDL_timer.h:
-/usr/include/SDL3/SDL_tray.h:
-/usr/include/SDL3/SDL_version.h:
-/usr/include/SDL3/SDL_oldnames.h:
-/usr/include/c++/15/iostream:
-/usr/include/c++/15/bits/requires_hosted.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h:
 /usr/include/c++/15/pstl/pstl_config.h:
 /usr/include/c++/15/ostream:
@@ -330,6 +274,20 @@
 /usr/include/c++/15/bits/memoryfwd.h:
 /usr/include/c++/15/bits/postypes.h:
 /usr/include/c++/15/cwchar:
+/usr/include/wchar.h:
+/usr/include/bits/libc-header-start.h:
+/usr/include/bits/floatn.h:
+/usr/include/bits/floatn-common.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h:
+/usr/include/bits/wchar.h:
+/usr/include/bits/types/wint_t.h:
+/usr/include/bits/types/mbstate_t.h:
+/usr/include/bits/types/__mbstate_t.h:
+/usr/include/bits/types/__FILE.h:
+/usr/include/bits/types/FILE.h:
+/usr/include/bits/types/locale_t.h:
+/usr/include/bits/types/__locale_t.h:
 /usr/include/c++/15/exception:
 /usr/include/c++/15/bits/exception.h:
 /usr/include/c++/15/bits/version.h:
@@ -350,6 +308,11 @@
 /usr/include/bits/locale.h:
 /usr/include/c++/15/cctype:
 /usr/include/ctype.h:
+/usr/include/bits/types.h:
+/usr/include/bits/typesizes.h:
+/usr/include/bits/time64.h:
+/usr/include/bits/endian.h:
+/usr/include/bits/endianness.h:
 /usr/include/c++/15/bits/ios_base.h:
 /usr/include/c++/15/ext/atomicity.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h:
@@ -437,6 +400,10 @@
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/sys/types.h:
+/usr/include/bits/stdint-intn.h:
+/usr/include/endian.h:
+/usr/include/bits/byteswap.h:
+/usr/include/bits/uintn-identity.h:
 /usr/include/sys/select.h:
 /usr/include/bits/select.h:
 /usr/include/bits/types/sigset_t.h:
@@ -484,6 +451,14 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
+/usr/include/stdint.h:
+/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/stdint-least.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/shader.hpp:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../utils/file.hpp:
 /usr/include/c++/15/stdlib.h:
@@ -496,17 +471,43 @@
 /usr/include/c++/15/sstream:
 /usr/include/c++/15/bits/sstream.tcc:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/built_in_shaders.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../ecs.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/texture.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/stb/stb_image.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../runtime_err.hpp:
+/usr/include/c++/15/functional:
+/usr/include/c++/15/bits/std_function.h:
+/usr/include/c++/15/unordered_map:
+/usr/include/c++/15/bits/unordered_map.h:
+/usr/include/c++/15/bits/hashtable.h:
+/usr/include/c++/15/bits/hashtable_policy.h:
+/usr/include/c++/15/ext/aligned_buffer.h:
+/usr/include/c++/15/bits/enable_special_members.h:
+/usr/include/c++/15/bits/node_handle.h:
+/usr/include/c++/15/bits/erase_if.h:
 /usr/include/c++/15/vector:
 /usr/include/c++/15/bits/stl_uninitialized.h:
 /usr/include/c++/15/bits/stl_vector.h:
 /usr/include/c++/15/bits/stl_bvector.h:
 /usr/include/c++/15/bits/vector.tcc:
-../duckylib/src/ecs/components/../../../include/ecs/components/../entity.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp:
+/usr/include/c++/15/array:
+/usr/include/c++/15/compare:
+/usr/include/c++/15/memory:
+/usr/include/c++/15/bits/stl_tempbuf.h:
+/usr/include/c++/15/bits/stl_raw_storage_iter.h:
+/usr/include/c++/15/bits/align.h:
+/usr/include/c++/15/bits/unique_ptr.h:
+/usr/include/c++/15/bits/shared_ptr.h:
+/usr/include/c++/15/bits/shared_ptr_base.h:
+/usr/include/c++/15/bits/allocated_ptr.h:
+/usr/include/c++/15/ext/concurrence.h:
+/usr/include/c++/15/bits/shared_ptr_atomic.h:
+/usr/include/c++/15/bits/atomic_base.h:
+/usr/include/c++/15/bits/atomic_lockfree_defines.h:
+/usr/include/c++/15/backward/auto_ptr.h:
+/usr/include/c++/15/pstl/glue_memory_defs.h:
+/usr/include/c++/15/pstl/execution_defs.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp:
 /usr/include/c++/15/math.h:
@@ -537,3 +538,79 @@
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp:
+/usr/include/c++/15/chrono:
+/usr/include/c++/15/bits/chrono.h:
+/usr/include/c++/15/ratio:
+/usr/include/c++/15/cstdint:
+/usr/include/c++/15/bits/parse_numbers.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp:
+/usr/include/SDL3/SDL.h:
+/usr/include/SDL3/SDL_stdinc.h:
+/usr/include/SDL3/SDL_platform_defines.h:
+/usr/include/string.h:
+/usr/include/strings.h:
+/usr/include/SDL3/SDL_begin_code.h:
+/usr/include/SDL3/SDL_close_code.h:
+/usr/include/SDL3/SDL_assert.h:
+/usr/include/SDL3/SDL_asyncio.h:
+/usr/include/SDL3/SDL_atomic.h:
+/usr/include/SDL3/SDL_audio.h:
+/usr/include/SDL3/SDL_endian.h:
+/usr/include/SDL3/SDL_error.h:
+/usr/include/SDL3/SDL_mutex.h:
+/usr/include/SDL3/SDL_thread.h:
+/usr/include/SDL3/SDL_properties.h:
+/usr/include/SDL3/SDL_iostream.h:
+/usr/include/SDL3/SDL_bits.h:
+/usr/include/SDL3/SDL_blendmode.h:
+/usr/include/SDL3/SDL_camera.h:
+/usr/include/SDL3/SDL_pixels.h:
+/usr/include/SDL3/SDL_surface.h:
+/usr/include/SDL3/SDL_rect.h:
+/usr/include/SDL3/SDL_clipboard.h:
+/usr/include/SDL3/SDL_cpuinfo.h:
+/usr/include/SDL3/SDL_dialog.h:
+/usr/include/SDL3/SDL_video.h:
+/usr/include/SDL3/SDL_events.h:
+/usr/include/SDL3/SDL_gamepad.h:
+/usr/include/SDL3/SDL_guid.h:
+/usr/include/SDL3/SDL_joystick.h:
+/usr/include/SDL3/SDL_power.h:
+/usr/include/SDL3/SDL_sensor.h:
+/usr/include/SDL3/SDL_keyboard.h:
+/usr/include/SDL3/SDL_keycode.h:
+/usr/include/SDL3/SDL_scancode.h:
+/usr/include/SDL3/SDL_mouse.h:
+/usr/include/SDL3/SDL_pen.h:
+/usr/include/SDL3/SDL_touch.h:
+/usr/include/SDL3/SDL_filesystem.h:
+/usr/include/SDL3/SDL_gpu.h:
+/usr/include/SDL3/SDL_haptic.h:
+/usr/include/SDL3/SDL_hidapi.h:
+/usr/include/SDL3/SDL_hints.h:
+/usr/include/SDL3/SDL_init.h:
+/usr/include/SDL3/SDL_loadso.h:
+/usr/include/SDL3/SDL_locale.h:
+/usr/include/SDL3/SDL_log.h:
+/usr/include/SDL3/SDL_messagebox.h:
+/usr/include/SDL3/SDL_metal.h:
+/usr/include/SDL3/SDL_misc.h:
+/usr/include/SDL3/SDL_platform.h:
+/usr/include/SDL3/SDL_process.h:
+/usr/include/SDL3/SDL_render.h:
+/usr/include/SDL3/SDL_storage.h:
+/usr/include/SDL3/SDL_system.h:
+/usr/include/SDL3/SDL_time.h:
+/usr/include/SDL3/SDL_timer.h:
+/usr/include/SDL3/SDL_tray.h:
+/usr/include/SDL3/SDL_version.h:
+/usr/include/SDL3/SDL_oldnames.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp:

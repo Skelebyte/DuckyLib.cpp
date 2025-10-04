@@ -122,6 +122,9 @@ OBJECTS := \
 	$(OBJDIR)/app.o \
 	$(OBJDIR)/camera.o \
 	$(OBJDIR)/component.o \
+	$(OBJDIR)/camera_component.o \
+	$(OBJDIR)/mesh_renderer.o \
+	$(OBJDIR)/transform.o \
 	$(OBJDIR)/entity.o \
 	$(OBJDIR)/object.o \
 	$(OBJDIR)/ebo.o \
@@ -205,6 +208,15 @@ $(OBJDIR)/camera.o: ../duckylib/src/camera.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/component.o: ../duckylib/src/ecs/component.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/camera_component.o: ../duckylib/src/ecs/components/camera_component.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/mesh_renderer.o: ../duckylib/src/ecs/components/mesh_renderer.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/transform.o: ../duckylib/src/ecs/components/transform.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/entity.o: ../duckylib/src/ecs/entity.cpp

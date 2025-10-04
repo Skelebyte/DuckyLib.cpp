@@ -11,10 +11,11 @@ class Component : public Object {
  public:
   Component(std::string name);
   void destroy() override;
+  virtual void process() = 0;
 
  public:
-  std::string name_;
-  Object* owner_;
+  std::string name;
+  Object* owner;
 };
 
 }  // namespace ecs

@@ -3,11 +3,11 @@
 using namespace ducky;
 using namespace ducky::ecs;
 
-Component::Component(std::string name) { this->name_ = name; }
+Component::Component(std::string name) { this->name = name; }
 
 void Component::destroy() {
-  std::cout << "Destroying " << this->get_id() << ", " << this->name_
+  std::cout << "Destroying " << this->get_id() << ", " << this->name
             << std::endl;
-  this->owner_ = nullptr;
+  this->owner = nullptr;
   destroy();
 }
