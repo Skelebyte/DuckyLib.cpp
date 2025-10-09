@@ -51,6 +51,8 @@ Vec2i Window::get_viewport_size() const { return this->viewport_size_; }
 
 Vec2i Window::get_viewport_position() const { return this->viewport_position_; }
 
+void Window::stop() { this->running_ = false; }
+
 float Window::get_viewport_aspect() const {
   return (float)this->viewport_size_.x / (float)this->viewport_size_.y;
 }

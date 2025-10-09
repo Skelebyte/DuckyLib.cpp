@@ -17,6 +17,23 @@ Transform::Transform(Vec3 pos, Vec3 rot, Vec3 sca) : Component("Transform") {
   this->scale = sca;
 }
 
+Vec3 Transform::forward() const {
+  float yaw = Mathf::to_radians(this->rotation.y);
+  float pitch = Mathf::to_radians(this->rotation.x);
+
+  return Vec3(cos(pitch) * sin(yaw), sin(pitch), cos(pitch) * cos(yaw));
+}
+
+Vec3 Transform::right() const {
+  float yaw = Mathf::to_radians(this->rotation.y);
+  float pitch = Mathf::to_radians(this->rotation.x);
+
+  Vec3 result = Vec3(sin(yaw - Mathf::to_radians(90.0f)), 0,
+                     cos(yaw - Mathf::to_radians(90.0f)))
+                    .normalized();
+  return result;
+}
+
 void Transform::process() {
   if (this->rotation.x > 360.0f)
     this->rotation.x -= 360.0f;

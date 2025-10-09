@@ -25,13 +25,15 @@ class Mat4 {
                              Mat4_MultiplicationOrder order = Mat4_TRS);
   void identity();
 
-  void Translate(Vec3 point);
-  void Rotate(Vec3 angles);
-  void Scale(Vec3 scale);
+  void translate(Vec3 point);
+  void rotate(Vec3 angles);
+  void scale(Vec3 scale);
 
   void perspective(float fov_in_rads, float aspect, float near_plane,
                    float far_plane);
-  void LookAt(Vec3 position, Vec3 targetPosition);
+  void look_at(Vec3 position, Vec3 targetPosition);
+
+  Mat4 inverse() const;
 
   Mat4 operator*(const Mat4& other);
 };

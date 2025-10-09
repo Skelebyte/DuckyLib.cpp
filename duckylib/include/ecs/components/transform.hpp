@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../math/mathf.hpp"
 #include "../../math/vec3.hpp"
 #include "../component.hpp"
 
@@ -13,7 +14,8 @@ class Transform : public Component {
  public:
   Transform();
   Transform(math::Vec3 pos, math::Vec3 rot, math::Vec3 sca);
-
+  math::Vec3 forward() const;
+  math::Vec3 right() const;
   void process() override;
 
  public:

@@ -1,9 +1,8 @@
 ../obj/Debug-x64/DuckyLib/transform.o: \
  ../duckylib/src/ecs/components/transform.cpp /usr/include/stdc-predef.h \
  ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp \
- /usr/include/c++/15/math.h /usr/include/c++/15/cmath \
- /usr/include/c++/15/bits/requires_hosted.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp \
+ /usr/include/c++/15/cmath /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h \
@@ -69,12 +68,10 @@
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
- /usr/include/c++/15/iostream /usr/include/c++/15/ostream \
- /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
- /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/iostream \
+ /usr/include/c++/15/ostream /usr/include/c++/15/bits/ostream.h \
+ /usr/include/c++/15/ios /usr/include/c++/15/iosfwd \
+ /usr/include/c++/15/bits/stringfwd.h \
  /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
  /usr/include/c++/15/cwchar /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
@@ -157,6 +154,14 @@
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp \
+ /usr/include/c++/15/math.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h \
+ /usr/include/c++/15/stdlib.h \
+ ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
  /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
@@ -166,8 +171,7 @@
  /usr/include/c++/15/bits/parse_numbers.h
 /usr/include/stdc-predef.h:
 ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp:
-/usr/include/c++/15/math.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp:
 /usr/include/c++/15/cmath:
 /usr/include/c++/15/bits/requires_hosted.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
@@ -266,8 +270,6 @@
 /usr/include/c++/15/tr1/poly_hermite.tcc:
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/ostream:
 /usr/include/c++/15/bits/ostream.h:
@@ -395,6 +397,14 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp:
+/usr/include/c++/15/math.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp:
+../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h:
+/usr/include/c++/15/stdlib.h:
+../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp:
 /usr/include/c++/15/chrono:
 /usr/include/c++/15/bits/chrono.h:

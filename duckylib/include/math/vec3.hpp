@@ -24,6 +24,8 @@ typedef struct Vec3 {
 
   Vec3 operator+(const Vec3& other) const;
   Vec3 operator-(const Vec3& other) const;
+  Vec3 operator*(const Vec3& other) const;
+  Vec3 operator*(const float& other) const;
   void operator+=(const Vec3& other);
   void operator-=(const Vec3& other);
   bool operator==(const Vec3& other) const;

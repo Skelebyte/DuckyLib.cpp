@@ -18,9 +18,9 @@ Mat4 Mat4::transformation(Vec3 pos, Vec3 rot, Vec3 sca,
   Mat4 position = Mat4();
   Mat4 rotation = Mat4();
   Mat4 scale = Mat4();
-  position.Translate(pos);
-  rotation.Rotate(rot);
-  scale.Scale(sca);
+  position.translate(pos);
+  rotation.rotate(rot);
+  scale.scale(sca);
   Mat4 half_matrix;
   switch (order) {
     case Mat4_TRS:
@@ -62,13 +62,13 @@ void Mat4::identity() {
   this->data[15] = 1;
 }
 
-void Mat4::Translate(Vec3 point) {
+void Mat4::translate(Vec3 point) {
   this->data[12] = point.x;
   this->data[13] = point.y;
   this->data[14] = point.z;
 }
 
-void Mat4::Rotate(Vec3 angles) {
+void Mat4::rotate(Vec3 angles) {
   Mat4 x_rot;
   Mat4 y_rot;
   Mat4 z_rot;
@@ -96,7 +96,7 @@ void Mat4::Rotate(Vec3 angles) {
   }
 }
 
-void Mat4::Scale(Vec3 scale) {
+void Mat4::scale(Vec3 scale) {
   this->data[0] = scale.x;
   this->data[5] = scale.y;
   this->data[10] = scale.z;
@@ -113,7 +113,7 @@ void Mat4::perspective(float fov_in_rads, float aspect, float near_plane,
   this->data[15] = 0;
 }
 
-void Mat4::LookAt(Vec3 position, Vec3 target_position) {
+void Mat4::look_at(Vec3 position, Vec3 target_position) {
   this->identity();
   Vec3 forward = (position - target_position).normalized();
   Vec3 right = Vec3::cross(Vec3(0.0f, 1.0f, 0.0f), forward).normalized();
@@ -130,6 +130,41 @@ void Mat4::LookAt(Vec3 position, Vec3 target_position) {
   this->data[6] = forward.y;
   this->data[10] = forward.z;
   this->data[14] = -Vec3::dot(forward, position);
+}
+
+Mat4 Mat4::inverse() const {
+  Mat4 inv;
+
+  // 1. Transpose the 3x3 rotation part
+  inv.data[0] = this->data[0];
+  inv.data[1] = this->data[4];
+  inv.data[2] = this->data[8];
+  inv.data[3] = 0;
+  inv.data[4] = this->data[1];
+  inv.data[5] = this->data[5];
+  inv.data[6] = this->data[9];
+  inv.data[7] = 0;
+  inv.data[8] = this->data[2];
+  inv.data[9] = this->data[6];
+  inv.data[10] = this->data[10];
+  inv.data[11] = 0;
+  inv.data[15] = 1;
+  inv.data[12] = 0;
+  inv.data[13] = 0;
+  inv.data[14] = 0;
+
+  // 2. Invert translation
+  Vec3 t(this->data[12], this->data[13], this->data[14]);
+  Vec3 invT =
+      Vec3(-(inv.data[0] * t.x + inv.data[4] * t.y + inv.data[8] * t.z),
+           -(inv.data[1] * t.x + inv.data[5] * t.y + inv.data[9] * t.z),
+           -(inv.data[2] * t.x + inv.data[6] * t.y + inv.data[10] * t.z));
+
+  inv.data[12] = invT.x;
+  inv.data[13] = invT.y;
+  inv.data[14] = invT.z;
+
+  return inv;
 }
 
 Mat4 Mat4::operator*(const Mat4& other) {

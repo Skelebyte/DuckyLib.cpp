@@ -16,7 +16,7 @@ class Window {
   math::Vec2i get_dimensions();
   math::Vec2i get_viewport_size() const;
   math::Vec2i get_viewport_position() const;
-
+  void stop();
   float get_viewport_aspect() const;
   void render();
   bool running() const;

@@ -19,7 +19,8 @@ CameraComponent::CameraComponent(Transform* transform, Window* window)
 void CameraComponent::process() {
   this->view_ = Mat4::transformation(this->transform_->position,
                                      this->transform_->rotation,
-                                     math::Vec3(1.0f, 1.0f, 1.0f));
+                                     math::Vec3(1.0f, 1.0f, 1.0f))
+                    .inverse();
   this->projection_.perspective(Mathf::to_radians(this->field_of_view),
                                 window_->get_viewport_aspect(),
                                 this->near_plane, this->far_plane);

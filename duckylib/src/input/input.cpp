@@ -126,11 +126,11 @@ math::Vec2 Input::get_mouse_position(Window& window, bool raw) {
 }
 
 void Input::cursor(Window& window, bool locked, bool hidden) {
-  // if (locked) {
-  //   SDL_WarpMouseInWindow(window.get(), window.get_dimensions().x / 2,
-  //                         window.get_dimensions().y / 2);
-  // }
-  SDL_SetWindowMouseGrab(window.get(), locked);
+  if (locked) {
+    SDL_WarpMouseInWindow(window.get(), window.get_dimensions().x / 2,
+                          window.get_dimensions().y / 2);
+  }
+  // SDL_SetWindowMouseGrab(window.get(), locked);
 
   if (hidden) {
     SDL_HideCursor();
