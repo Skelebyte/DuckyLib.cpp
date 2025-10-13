@@ -2,6 +2,7 @@
 
 #include <math.h>
 #include <stdbool.h>
+#include <iostream>
 
 namespace ducky {
 
@@ -18,6 +19,7 @@ typedef union Vec2 {
   void zero();
   float length() const;
   Vec2 normalized();
+  std::string to_string() const;
 
   Vec2 operator+(const Vec2& other) const;
   Vec2 operator-(const Vec2& other) const;

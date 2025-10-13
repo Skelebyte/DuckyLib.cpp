@@ -165,7 +165,16 @@
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ ../duckylib/src/ecs/../../include/ecs/components/transform.hpp \
+ ../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp \
+ ../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp \
+ ../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp \
+ /usr/include/c++/15/math.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ ../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp \
+ ../duckylib/src/ecs/../../include/ecs/components/../../math/vec4.h \
+ /usr/include/c++/15/stdlib.h
 /usr/include/stdc-predef.h:
 ../duckylib/src/ecs/../../include/ecs/entity.hpp:
 /usr/include/c++/15/iostream:
@@ -410,3 +419,12 @@
 /usr/include/c++/15/tr1/poly_hermite.tcc:
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
+../duckylib/src/ecs/../../include/ecs/components/transform.hpp:
+../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp:
+../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp:
+../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp:
+/usr/include/c++/15/math.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp:
+../duckylib/src/ecs/../../include/ecs/components/../../math/vec4.h:
+/usr/include/c++/15/stdlib.h:

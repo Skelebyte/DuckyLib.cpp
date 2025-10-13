@@ -2,6 +2,8 @@
 
 #include <math.h>
 #include <stdbool.h>
+#include <iostream>
+#include <string>
 
 namespace ducky {
 
@@ -17,10 +19,12 @@ typedef struct Vec3 {
   Vec3();
   Vec3(float x_, float y_, float z_);
   void zero();
+  void rotate(float angle, Vec3 axis);
   float length() const;
   Vec3 normalized();
   static float dot(Vec3 a, Vec3 b);
   static Vec3 cross(Vec3 a, Vec3 b);
+  std::string to_string() const;
 
   Vec3 operator+(const Vec3& other) const;
   Vec3 operator-(const Vec3& other) const;

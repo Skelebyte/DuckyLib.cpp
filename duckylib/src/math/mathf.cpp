@@ -14,6 +14,17 @@ float Mathf::to_radians(float value) {
   return result;
 }
 
+float Mathf::to_degrees(float value) {
+  float result = value / M_PI * 180;
+
+  if (result != result) {
+    std::cout << "Mathf::to_radians: value is NaN, returning 0" << std::endl;
+    return 0;
+  }
+
+  return result;
+}
+
 // Vec2 Fmath::v3_to_v2(Vec3 value) { return Vec2(value.x, value.y); }
 
 // Vec3 Fmath::v2_to_v3(Vec2 value, float z_value) {

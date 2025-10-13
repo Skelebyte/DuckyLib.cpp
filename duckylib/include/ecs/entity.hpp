@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "component.hpp"
+#include "components/transform.hpp"
 #include "object.hpp"
 
 namespace ducky {
@@ -60,8 +61,9 @@ class Entity : public Object {
   bool has_child(std::string name);
   bool has_child(int id);
 
- public:
   std::string name;
+
+  components::Transform transform;
 
  private:
   std::vector<Component*> components_;

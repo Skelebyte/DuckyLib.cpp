@@ -9,7 +9,7 @@ using namespace ducky::ecs::components;
 MeshRenderer::MeshRenderer(Transform* transform, CameraComponent* camera,
                            GLfloat vertices[], size_t vertices_size,
                            GLuint indices[], size_t indices_size,
-                           graphics::Shader shader, graphics::Texture texture)
+                           graphics::Shader* shader, graphics::Texture texture)
     : Component("MeshRenderer") {
   this->transform = transform;
   this->camera_ = camera;
@@ -34,26 +34,25 @@ MeshRenderer::MeshRenderer(Transform* transform, CameraComponent* camera,
   this->ebo_.unbind();
 
   this->texture_ = texture;
-  this->texture_uniform_ = glGetUniformLocation(this->shader_.id, "tex0");
-  this->shader_.activate();
+  this->texture_uniform_ = glGetUniformLocation(this->shader_->id, "tex0");
+  this->shader_->activate();
   this->texture_.unbind();
 
-  this->model_uniform_ = glGetUniformLocation(this->shader_.id, "model");
-  this->view_uniform_ = glGetUniformLocation(this->shader_.id, "view");
+  this->model_uniform_ = glGetUniformLocation(this->shader_->id, "model");
+  this->view_uniform_ = glGetUniformLocation(this->shader_->id, "view");
   this->projection_uniform_ =
-      glGetUniformLocation(this->shader_.id, "projection");
+      glGetUniformLocation(this->shader_->id, "projection");
 }
 
 void MeshRenderer::set_texture(graphics::Texture new_texture) {
   this->texture_ = new_texture;
-  this->texture_uniform_ = glGetUniformLocation(this->shader_.id, "tex0");
-  this->shader_.activate();
+  this->texture_uniform_ = glGetUniformLocation(this->shader_->id, "tex0");
+  this->shader_->activate();
   this->texture_.unbind();
 }
 
 void MeshRenderer::process() {
-  this->shader_.activate();
-  this->texture_.bind();
+  this->shader_->activate();
 
   this->model_ =
       Mat4::transformation(this->transform->position, this->transform->rotation,
@@ -64,7 +63,7 @@ void MeshRenderer::process() {
                      this->camera_->get_view().data);
   glUniformMatrix4fv(this->projection_uniform_, 1, GL_FALSE,
                      this->camera_->get_projection().data);
-
+  this->texture_.bind();
   this->vao_.bind();
   glDrawElements(GL_TRIANGLES, this->indices_size_ / sizeof(int),
                  GL_UNSIGNED_INT, 0);

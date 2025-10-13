@@ -107,45 +107,16 @@
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
  /usr/include/c++/15/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/input/../../include/input/../window.hpp \
- /usr/include/c++/15/functional /usr/include/c++/15/bits/stl_function.h \
- /usr/include/c++/15/backward/binders.h /usr/include/c++/15/tuple \
- /usr/include/c++/15/bits/uses_allocator.h \
- /usr/include/c++/15/bits/invoke.h \
- /usr/include/c++/15/bits/functional_hash.h \
- /usr/include/c++/15/bits/hash_bytes.h /usr/include/c++/15/bits/refwrap.h \
- /usr/include/c++/15/bits/std_function.h /usr/include/c++/15/new \
- /usr/include/c++/15/bits/exception.h /usr/include/c++/15/typeinfo \
- /usr/include/c++/15/unordered_map /usr/include/c++/15/initializer_list \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/ext/alloc_traits.h \
- /usr/include/c++/15/bits/alloc_traits.h \
- /usr/include/c++/15/bits/stl_construct.h \
- /usr/include/c++/15/bits/memoryfwd.h \
- /usr/include/c++/15/bits/allocator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h \
- /usr/include/c++/15/bits/enable_special_members.h \
- /usr/include/c++/15/bits/node_handle.h \
- /usr/include/c++/15/bits/range_access.h \
- /usr/include/c++/15/bits/erase_if.h \
- /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
- /usr/include/c++/15/bits/uses_allocator_args.h \
- /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
- /usr/include/c++/15/compare /usr/include/c++/15/iostream \
- /usr/include/c++/15/ostream /usr/include/c++/15/bits/ostream.h \
- /usr/include/c++/15/ios /usr/include/c++/15/iosfwd \
- /usr/include/c++/15/bits/stringfwd.h /usr/include/c++/15/bits/postypes.h \
+ /usr/include/c++/15/iostream /usr/include/c++/15/ostream \
+ /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
+ /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
+ /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
  /usr/include/c++/15/cwchar /usr/include/c++/15/exception \
+ /usr/include/c++/15/bits/exception.h \
  /usr/include/c++/15/bits/exception_ptr.h \
  /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/hash_bytes.h \
+ /usr/include/c++/15/new /usr/include/c++/15/bits/nested_exception.h \
  /usr/include/c++/15/bits/char_traits.h \
  /usr/include/c++/15/bits/localefwd.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h \
@@ -171,9 +142,21 @@
  /usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h \
  /usr/include/sys/single_threaded.h \
  /usr/include/c++/15/bits/locale_classes.h /usr/include/c++/15/string \
+ /usr/include/c++/15/bits/allocator.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/15/bits/new_allocator.h \
  /usr/include/c++/15/bits/ostream_insert.h \
  /usr/include/c++/15/bits/cxxabi_forced.h \
- /usr/include/c++/15/bits/basic_string.h /usr/include/c++/15/string_view \
+ /usr/include/c++/15/bits/stl_function.h \
+ /usr/include/c++/15/backward/binders.h \
+ /usr/include/c++/15/bits/refwrap.h /usr/include/c++/15/bits/invoke.h \
+ /usr/include/c++/15/bits/range_access.h \
+ /usr/include/c++/15/initializer_list \
+ /usr/include/c++/15/bits/basic_string.h \
+ /usr/include/c++/15/ext/alloc_traits.h \
+ /usr/include/c++/15/bits/alloc_traits.h \
+ /usr/include/c++/15/bits/stl_construct.h /usr/include/c++/15/string_view \
+ /usr/include/c++/15/bits/functional_hash.h \
  /usr/include/c++/15/bits/string_view.tcc \
  /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
  /usr/include/c++/15/cstdio /usr/include/stdio.h \
@@ -186,6 +169,9 @@
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h /usr/include/c++/15/bits/charconv.h \
  /usr/include/c++/15/bits/basic_string.tcc \
+ /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
+ /usr/include/c++/15/bits/uses_allocator.h \
+ /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
  /usr/include/c++/15/bits/locale_classes.tcc \
  /usr/include/c++/15/system_error \
  /usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h \
@@ -200,7 +186,22 @@
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/istream.tcc \
+ ../duckylib/src/input/../../include/input/../window.hpp \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/enable_special_members.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
+ /usr/include/c++/15/compare /usr/include/c++/15/memory \
  /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
@@ -397,58 +398,22 @@
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/input/../../include/input/../window.hpp:
-/usr/include/c++/15/functional:
-/usr/include/c++/15/bits/stl_function.h:
-/usr/include/c++/15/backward/binders.h:
-/usr/include/c++/15/tuple:
-/usr/include/c++/15/bits/uses_allocator.h:
-/usr/include/c++/15/bits/invoke.h:
-/usr/include/c++/15/bits/functional_hash.h:
-/usr/include/c++/15/bits/hash_bytes.h:
-/usr/include/c++/15/bits/refwrap.h:
-/usr/include/c++/15/bits/std_function.h:
-/usr/include/c++/15/new:
-/usr/include/c++/15/bits/exception.h:
-/usr/include/c++/15/typeinfo:
-/usr/include/c++/15/unordered_map:
-/usr/include/c++/15/initializer_list:
-/usr/include/c++/15/bits/unordered_map.h:
-/usr/include/c++/15/bits/hashtable.h:
-/usr/include/c++/15/bits/hashtable_policy.h:
-/usr/include/c++/15/ext/aligned_buffer.h:
-/usr/include/c++/15/ext/alloc_traits.h:
-/usr/include/c++/15/bits/alloc_traits.h:
-/usr/include/c++/15/bits/stl_construct.h:
-/usr/include/c++/15/bits/memoryfwd.h:
-/usr/include/c++/15/bits/allocator.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
-/usr/include/c++/15/bits/new_allocator.h:
-/usr/include/c++/15/bits/enable_special_members.h:
-/usr/include/c++/15/bits/node_handle.h:
-/usr/include/c++/15/bits/range_access.h:
-/usr/include/c++/15/bits/erase_if.h:
-/usr/include/c++/15/bits/memory_resource.h:
-/usr/include/c++/15/cstddef:
-/usr/include/c++/15/bits/uses_allocator_args.h:
-/usr/include/c++/15/vector:
-/usr/include/c++/15/bits/stl_uninitialized.h:
-/usr/include/c++/15/bits/stl_vector.h:
-/usr/include/c++/15/bits/stl_bvector.h:
-/usr/include/c++/15/bits/vector.tcc:
-/usr/include/c++/15/array:
-/usr/include/c++/15/compare:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/ostream:
 /usr/include/c++/15/bits/ostream.h:
 /usr/include/c++/15/ios:
 /usr/include/c++/15/iosfwd:
 /usr/include/c++/15/bits/stringfwd.h:
+/usr/include/c++/15/bits/memoryfwd.h:
 /usr/include/c++/15/bits/postypes.h:
 /usr/include/c++/15/cwchar:
 /usr/include/c++/15/exception:
+/usr/include/c++/15/bits/exception.h:
 /usr/include/c++/15/bits/exception_ptr.h:
 /usr/include/c++/15/bits/cxxabi_init_exception.h:
+/usr/include/c++/15/typeinfo:
+/usr/include/c++/15/bits/hash_bytes.h:
+/usr/include/c++/15/new:
 /usr/include/c++/15/bits/nested_exception.h:
 /usr/include/c++/15/bits/char_traits.h:
 /usr/include/c++/15/bits/localefwd.h:
@@ -491,10 +456,23 @@
 /usr/include/sys/single_threaded.h:
 /usr/include/c++/15/bits/locale_classes.h:
 /usr/include/c++/15/string:
+/usr/include/c++/15/bits/allocator.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
+/usr/include/c++/15/bits/new_allocator.h:
 /usr/include/c++/15/bits/ostream_insert.h:
 /usr/include/c++/15/bits/cxxabi_forced.h:
+/usr/include/c++/15/bits/stl_function.h:
+/usr/include/c++/15/backward/binders.h:
+/usr/include/c++/15/bits/refwrap.h:
+/usr/include/c++/15/bits/invoke.h:
+/usr/include/c++/15/bits/range_access.h:
+/usr/include/c++/15/initializer_list:
 /usr/include/c++/15/bits/basic_string.h:
+/usr/include/c++/15/ext/alloc_traits.h:
+/usr/include/c++/15/bits/alloc_traits.h:
+/usr/include/c++/15/bits/stl_construct.h:
 /usr/include/c++/15/string_view:
+/usr/include/c++/15/bits/functional_hash.h:
 /usr/include/c++/15/bits/string_view.tcc:
 /usr/include/c++/15/ext/string_conversions.h:
 /usr/include/c++/15/cstdlib:
@@ -515,6 +493,11 @@
 /usr/include/bits/types/error_t.h:
 /usr/include/c++/15/bits/charconv.h:
 /usr/include/c++/15/bits/basic_string.tcc:
+/usr/include/c++/15/bits/memory_resource.h:
+/usr/include/c++/15/cstddef:
+/usr/include/c++/15/bits/uses_allocator.h:
+/usr/include/c++/15/bits/uses_allocator_args.h:
+/usr/include/c++/15/tuple:
 /usr/include/c++/15/bits/locale_classes.tcc:
 /usr/include/c++/15/system_error:
 /usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h:
@@ -534,6 +517,24 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
+../duckylib/src/input/../../include/input/../window.hpp:
+/usr/include/c++/15/functional:
+/usr/include/c++/15/bits/std_function.h:
+/usr/include/c++/15/unordered_map:
+/usr/include/c++/15/bits/unordered_map.h:
+/usr/include/c++/15/bits/hashtable.h:
+/usr/include/c++/15/bits/hashtable_policy.h:
+/usr/include/c++/15/ext/aligned_buffer.h:
+/usr/include/c++/15/bits/enable_special_members.h:
+/usr/include/c++/15/bits/node_handle.h:
+/usr/include/c++/15/bits/erase_if.h:
+/usr/include/c++/15/vector:
+/usr/include/c++/15/bits/stl_uninitialized.h:
+/usr/include/c++/15/bits/stl_vector.h:
+/usr/include/c++/15/bits/stl_bvector.h:
+/usr/include/c++/15/bits/vector.tcc:
+/usr/include/c++/15/array:
+/usr/include/c++/15/compare:
 /usr/include/c++/15/memory:
 /usr/include/c++/15/bits/stl_tempbuf.h:
 /usr/include/c++/15/bits/stl_raw_storage_iter.h:

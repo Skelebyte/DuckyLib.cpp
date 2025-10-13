@@ -16,7 +16,8 @@ class Transform : public Component {
   Transform(math::Vec3 pos, math::Vec3 rot, math::Vec3 sca);
   math::Vec3 forward() const;
   math::Vec3 right() const;
-  void process() override;
+  math::Vec3 up() const;
+  void process();
 
  public:
   math::Vec3 position;

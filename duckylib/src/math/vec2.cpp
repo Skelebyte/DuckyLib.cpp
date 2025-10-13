@@ -29,6 +29,10 @@ Vec2 Vec2::normalized() {
   return result;
 }
 
+std::string Vec2::to_string() const {
+  return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}
+
 Vec2 Vec2::operator+(const Vec2& other) const {
   return Vec2(x + other.x, y + other.y);
 }

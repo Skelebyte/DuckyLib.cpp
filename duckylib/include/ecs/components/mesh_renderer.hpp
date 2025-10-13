@@ -25,18 +25,18 @@ class MeshRenderer : public Component {
   MeshRenderer(Transform* transform, CameraComponent* camera,
                GLfloat vertices[], size_t vertices_size, GLuint indices[],
                size_t indices_size,
-               graphics::Shader shader =
-                   graphics::Shader("assets/shaders/vertex.glsl",
-                                    "assets/shaders/fragment.glsl"),
+               graphics::Shader* shader =
+                   new graphics::Shader("assets/shaders/vertex.glsl",
+                                        "assets/shaders/fragment.glsl"),
                graphics::Texture texture = graphics::Texture());
   void set_texture(graphics::Texture new_texture);
   void process() override;
   Transform* transform;
+  graphics::Shader* shader_;
 
  private:
   CameraComponent* camera_;
 
-  graphics::Shader shader_;
   size_t indices_size_;
 
   graphics::VAO vao_;

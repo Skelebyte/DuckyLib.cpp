@@ -6,6 +6,7 @@
 #include "include/ecs/entity.hpp"
 #include "include/graphics/built_in_shaders.hpp"
 #include "include/graphics/built_in_shapes.hpp"
+#include "include/graphics/color.hpp"
 #include "include/graphics/ebo.hpp"
 #include "include/graphics/renderer.hpp"
 #include "include/graphics/shader.hpp"

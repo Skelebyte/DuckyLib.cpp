@@ -2,7 +2,11 @@
 
 using namespace ducky;
 
-App::App() {
+App::App(const char* arg) {
+  if (arg == "dev") {
+    dev_mode_ = true;
+  }
+
   if (SDL_Init(SDL_INIT_VIDEO) == false) {
     RuntimeErr::throw_err("Failed to initialize SDL3: " +
                           std::string(SDL_GetError()));

@@ -18,35 +18,58 @@ Transform::Transform(Vec3 pos, Vec3 rot, Vec3 sca) : Component("Transform") {
 }
 
 Vec3 Transform::forward() const {
-  float yaw = Mathf::to_radians(this->rotation.y);
-  float pitch = Mathf::to_radians(this->rotation.x);
+  Vec3 result = Vec3();
 
-  return Vec3(cos(pitch) * sin(yaw), sin(pitch), cos(pitch) * cos(yaw));
+  // result.x = cos(Mathf::to_degrees(this->rotation.x)) *
+  //            sin(Mathf::to_degrees(this->rotation.y));
+  // result.y = -sin(Mathf::to_degrees(this->rotation.x));
+  // result.z = cos(Mathf::to_degrees(this->rotation.x)) *
+  //            cos(Mathf::to_degrees(this->rotation.y));
+
+  result = Vec3(0, 0, -1);
+
+  return result.normalized();
 }
 
 Vec3 Transform::right() const {
-  float yaw = Mathf::to_radians(this->rotation.y);
-  float pitch = Mathf::to_radians(this->rotation.x);
+  Vec3 result = Vec3();
 
-  Vec3 result = Vec3(sin(yaw - Mathf::to_radians(90.0f)), 0,
-                     cos(yaw - Mathf::to_radians(90.0f)))
-                    .normalized();
-  return result;
+  // result.x = cos(Mathf::to_degrees(this->rotation.y));
+  // result.y = 0;
+  // result.z = sin(Mathf::to_degrees(this->rotation.y));
+
+  result = Vec3(1, 0, 0);
+
+  return result.normalized();
+}
+
+Vec3 Transform::up() const {
+  Vec3 result = Vec3(0, 1, 0);
+
+  return result.normalized();
 }
 
 void Transform::process() {
-  if (this->rotation.x > 360.0f)
-    this->rotation.x -= 360.0f;
-  if (this->rotation.x < 360.0f)
-    this->rotation.x += 360.0f;
+  // this->rotation.x = Mathf::to_degrees(this->rotation.x);
+  // this->rotation.y = Mathf::to_degrees(this->rotation.y);
+  // this->rotation.z = Mathf::to_degrees(this->rotation.z);
 
-  if (this->rotation.y > 360.0f)
-    this->rotation.y -= 360.0f;
-  if (this->rotation.y < 360.0f)
-    this->rotation.y += 360.0f;
+  // if (this->rotation.x > 360.0f)
+  //   this->rotation.x -= 360.0f;
+  // if (this->rotation.x < 0.0f)
+  //   this->rotation.x += 360.0f;
 
-  if (this->rotation.z > 360.0f)
-    this->rotation.z -= 360.0f;
-  if (this->rotation.z < 360.0f)
-    this->rotation.z += 360.0f;
+  // if (this->rotation.y > 360.0f)
+  //   this->rotation.y -= 360.0f;
+  // if (this->rotation.y < 0.0f)
+  //   this->rotation.y += 360.0f;
+
+  // if (this->rotation.z > 360.0f)
+  //   this->rotation.z -= 360.0f;
+  // if (this->rotation.z < 0.0f)
+  //   this->rotation.z += 360.0f;
+
+  // this->rotation.x = Mathf::to_radians(this->rotation.x);
+  // this->rotation.y = Mathf::to_radians(this->rotation.y);
+  // this->rotation.z = Mathf::to_radians(this->rotation.z);
 }

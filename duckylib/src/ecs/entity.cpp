@@ -2,10 +2,11 @@
 
 using namespace ducky;
 using namespace ducky::ecs;
+using namespace ducky::ecs::components;
 
-Entity::Entity() { this->name = "game_object"; }
+Entity::Entity() : transform() { this->name = "game_object"; }
 
-Entity::Entity(std::string name) { this->name = name; }
+Entity::Entity(std::string name) : transform() { this->name = name; }
 
 Entity::~Entity() { /*destroy();*/ }
 
@@ -23,6 +24,7 @@ void Entity::destroy() {
 }
 
 void Entity::update() {
+  this->transform.process();
   for (int i = 0; i < this->components_.size(); i++) {
     this->components_[i]->process();
   }
