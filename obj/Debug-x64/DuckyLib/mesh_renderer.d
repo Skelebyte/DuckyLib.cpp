@@ -1,7 +1,7 @@
 ../obj/Debug-x64/DuckyLib/mesh_renderer.o: \
- ../duckylib/src/ecs/components/mesh_renderer.cpp \
+ ../duckylib/src/ecs/entities/mesh_renderer.cpp \
  /usr/include/stdc-predef.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/mesh_renderer.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/mesh_renderer.hpp \
  /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -136,86 +136,23 @@
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/shader.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../utils/file.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/ebo.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp \
  /usr/include/c++/15/stdlib.h /usr/include/c++/15/ctime \
  /usr/include/c++/15/fstream /usr/include/c++/15/bits/codecvt.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h \
  /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
  /usr/include/c++/15/bits/sstream.tcc \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/built_in_shaders.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/texture.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/stb/stb_image.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../runtime_err.hpp \
- /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
- /usr/include/c++/15/unordered_map \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/bits/enable_special_members.h \
- /usr/include/c++/15/bits/node_handle.h \
- /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/vector \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc /usr/include/c++/15/array \
- /usr/include/c++/15/compare /usr/include/c++/15/memory \
- /usr/include/c++/15/bits/stl_tempbuf.h \
- /usr/include/c++/15/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/bits/shared_ptr.h \
- /usr/include/c++/15/bits/shared_ptr_base.h \
- /usr/include/c++/15/bits/allocated_ptr.h \
- /usr/include/c++/15/ext/concurrence.h \
- /usr/include/c++/15/bits/shared_ptr_atomic.h \
- /usr/include/c++/15/bits/atomic_base.h \
- /usr/include/c++/15/bits/atomic_lockfree_defines.h \
- /usr/include/c++/15/backward/auto_ptr.h \
- /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp \
- /usr/include/c++/15/math.h /usr/include/c++/15/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
- /usr/include/c++/15/limits /usr/include/c++/15/tr1/gamma.tcc \
- /usr/include/c++/15/tr1/special_function_util.h \
- /usr/include/c++/15/tr1/bessel_function.tcc \
- /usr/include/c++/15/tr1/beta_function.tcc \
- /usr/include/c++/15/tr1/ell_integral.tcc \
- /usr/include/c++/15/tr1/exp_integral.tcc \
- /usr/include/c++/15/tr1/hypergeometric.tcc \
- /usr/include/c++/15/tr1/legendre_function.tcc \
- /usr/include/c++/15/tr1/modified_bessel_func.tcc \
- /usr/include/c++/15/tr1/poly_hermite.tcc \
- /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp \
- /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
- /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
- /usr/include/c++/15/bits/parse_numbers.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp \
  /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
  /usr/include/SDL3/SDL_platform_defines.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/SDL3/SDL_begin_code.h \
@@ -246,12 +183,78 @@
  /usr/include/SDL3/SDL_storage.h /usr/include/SDL3/SDL_system.h \
  /usr/include/SDL3/SDL_time.h /usr/include/SDL3/SDL_timer.h \
  /usr/include/SDL3/SDL_tray.h /usr/include/SDL3/SDL_version.h \
- /usr/include/SDL3/SDL_oldnames.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp
+ /usr/include/SDL3/SDL_oldnames.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/texture.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/stb/stb_image.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../runtime_err.hpp \
+ /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/bits/enable_special_members.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/array \
+ /usr/include/c++/15/compare /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/concurrence.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/bits/atomic_base.h \
+ /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vao.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vbo.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp \
+ /usr/include/c++/15/math.h /usr/include/c++/15/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
+ /usr/include/c++/15/limits /usr/include/c++/15/tr1/gamma.tcc \
+ /usr/include/c++/15/tr1/special_function_util.h \
+ /usr/include/c++/15/tr1/bessel_function.tcc \
+ /usr/include/c++/15/tr1/beta_function.tcc \
+ /usr/include/c++/15/tr1/ell_integral.tcc \
+ /usr/include/c++/15/tr1/exp_integral.tcc \
+ /usr/include/c++/15/tr1/hypergeometric.tcc \
+ /usr/include/c++/15/tr1/legendre_function.tcc \
+ /usr/include/c++/15/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15/tr1/poly_hermite.tcc \
+ /usr/include/c++/15/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp \
+ /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
+ /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
+ /usr/include/c++/15/bits/parse_numbers.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp
 /usr/include/stdc-predef.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/mesh_renderer.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/mesh_renderer.hpp:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/bits/requires_hosted.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
@@ -451,16 +454,16 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/stdint-uintn.h:
 /usr/include/bits/stdint-least.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/ebo.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/glad/glad.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/shader.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../utils/file.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/ebo.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp:
 /usr/include/c++/15/stdlib.h:
 /usr/include/c++/15/ctime:
 /usr/include/c++/15/fstream:
@@ -470,86 +473,8 @@
 /usr/include/c++/15/bits/fstream.tcc:
 /usr/include/c++/15/sstream:
 /usr/include/c++/15/bits/sstream.tcc:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/built_in_shaders.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/texture.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../../third_party/stb/stb_image.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/../runtime_err.hpp:
-/usr/include/c++/15/functional:
-/usr/include/c++/15/bits/std_function.h:
-/usr/include/c++/15/unordered_map:
-/usr/include/c++/15/bits/unordered_map.h:
-/usr/include/c++/15/bits/hashtable.h:
-/usr/include/c++/15/bits/hashtable_policy.h:
-/usr/include/c++/15/ext/aligned_buffer.h:
-/usr/include/c++/15/bits/enable_special_members.h:
-/usr/include/c++/15/bits/node_handle.h:
-/usr/include/c++/15/bits/erase_if.h:
-/usr/include/c++/15/vector:
-/usr/include/c++/15/bits/stl_uninitialized.h:
-/usr/include/c++/15/bits/stl_vector.h:
-/usr/include/c++/15/bits/stl_bvector.h:
-/usr/include/c++/15/bits/vector.tcc:
-/usr/include/c++/15/array:
-/usr/include/c++/15/compare:
-/usr/include/c++/15/memory:
-/usr/include/c++/15/bits/stl_tempbuf.h:
-/usr/include/c++/15/bits/stl_raw_storage_iter.h:
-/usr/include/c++/15/bits/align.h:
-/usr/include/c++/15/bits/unique_ptr.h:
-/usr/include/c++/15/bits/shared_ptr.h:
-/usr/include/c++/15/bits/shared_ptr_base.h:
-/usr/include/c++/15/bits/allocated_ptr.h:
-/usr/include/c++/15/ext/concurrence.h:
-/usr/include/c++/15/bits/shared_ptr_atomic.h:
-/usr/include/c++/15/bits/atomic_base.h:
-/usr/include/c++/15/bits/atomic_lockfree_defines.h:
-/usr/include/c++/15/backward/auto_ptr.h:
-/usr/include/c++/15/pstl/glue_memory_defs.h:
-/usr/include/c++/15/pstl/execution_defs.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vao.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../graphics/vbo.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp:
-/usr/include/c++/15/math.h:
-/usr/include/c++/15/cmath:
-/usr/include/math.h:
-/usr/include/bits/math-vector.h:
-/usr/include/bits/libm-simd-decl-stubs.h:
-/usr/include/bits/flt-eval-method.h:
-/usr/include/bits/fp-logb.h:
-/usr/include/bits/fp-fast.h:
-/usr/include/bits/mathcalls-macros.h:
-/usr/include/bits/mathcalls-helper-functions.h:
-/usr/include/bits/mathcalls.h:
-/usr/include/bits/mathcalls-narrow.h:
-/usr/include/bits/iscanonical.h:
-/usr/include/c++/15/bits/specfun.h:
-/usr/include/c++/15/limits:
-/usr/include/c++/15/tr1/gamma.tcc:
-/usr/include/c++/15/tr1/special_function_util.h:
-/usr/include/c++/15/tr1/bessel_function.tcc:
-/usr/include/c++/15/tr1/beta_function.tcc:
-/usr/include/c++/15/tr1/ell_integral.tcc:
-/usr/include/c++/15/tr1/exp_integral.tcc:
-/usr/include/c++/15/tr1/hypergeometric.tcc:
-/usr/include/c++/15/tr1/legendre_function.tcc:
-/usr/include/c++/15/tr1/modified_bessel_func.tcc:
-/usr/include/c++/15/tr1/poly_hermite.tcc:
-/usr/include/c++/15/tr1/poly_laguerre.tcc:
-/usr/include/c++/15/tr1/riemann_zeta.tcc:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp:
-/usr/include/c++/15/chrono:
-/usr/include/c++/15/bits/chrono.h:
-/usr/include/c++/15/ratio:
-/usr/include/c++/15/cstdint:
-/usr/include/c++/15/bits/parse_numbers.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp:
 /usr/include/SDL3/SDL.h:
 /usr/include/SDL3/SDL_stdinc.h:
 /usr/include/SDL3/SDL_platform_defines.h:
@@ -611,6 +536,87 @@
 /usr/include/SDL3/SDL_tray.h:
 /usr/include/SDL3/SDL_version.h:
 /usr/include/SDL3/SDL_oldnames.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp:
+/usr/include/c++/15/vector:
+/usr/include/c++/15/bits/stl_uninitialized.h:
+/usr/include/c++/15/bits/stl_vector.h:
+/usr/include/c++/15/bits/stl_bvector.h:
+/usr/include/c++/15/bits/vector.tcc:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/texture.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/stb/stb_image.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../runtime_err.hpp:
+/usr/include/c++/15/functional:
+/usr/include/c++/15/bits/std_function.h:
+/usr/include/c++/15/unordered_map:
+/usr/include/c++/15/bits/unordered_map.h:
+/usr/include/c++/15/bits/hashtable.h:
+/usr/include/c++/15/bits/hashtable_policy.h:
+/usr/include/c++/15/ext/aligned_buffer.h:
+/usr/include/c++/15/bits/enable_special_members.h:
+/usr/include/c++/15/bits/node_handle.h:
+/usr/include/c++/15/bits/erase_if.h:
+/usr/include/c++/15/array:
+/usr/include/c++/15/compare:
+/usr/include/c++/15/memory:
+/usr/include/c++/15/bits/stl_tempbuf.h:
+/usr/include/c++/15/bits/stl_raw_storage_iter.h:
+/usr/include/c++/15/bits/align.h:
+/usr/include/c++/15/bits/unique_ptr.h:
+/usr/include/c++/15/bits/shared_ptr.h:
+/usr/include/c++/15/bits/shared_ptr_base.h:
+/usr/include/c++/15/bits/allocated_ptr.h:
+/usr/include/c++/15/ext/concurrence.h:
+/usr/include/c++/15/bits/shared_ptr_atomic.h:
+/usr/include/c++/15/bits/atomic_base.h:
+/usr/include/c++/15/bits/atomic_lockfree_defines.h:
+/usr/include/c++/15/backward/auto_ptr.h:
+/usr/include/c++/15/pstl/glue_memory_defs.h:
+/usr/include/c++/15/pstl/execution_defs.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vao.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vbo.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp:
+/usr/include/c++/15/math.h:
+/usr/include/c++/15/cmath:
+/usr/include/math.h:
+/usr/include/bits/math-vector.h:
+/usr/include/bits/libm-simd-decl-stubs.h:
+/usr/include/bits/flt-eval-method.h:
+/usr/include/bits/fp-logb.h:
+/usr/include/bits/fp-fast.h:
+/usr/include/bits/mathcalls-macros.h:
+/usr/include/bits/mathcalls-helper-functions.h:
+/usr/include/bits/mathcalls.h:
+/usr/include/bits/mathcalls-narrow.h:
+/usr/include/bits/iscanonical.h:
+/usr/include/c++/15/bits/specfun.h:
+/usr/include/c++/15/limits:
+/usr/include/c++/15/tr1/gamma.tcc:
+/usr/include/c++/15/tr1/special_function_util.h:
+/usr/include/c++/15/tr1/bessel_function.tcc:
+/usr/include/c++/15/tr1/beta_function.tcc:
+/usr/include/c++/15/tr1/ell_integral.tcc:
+/usr/include/c++/15/tr1/exp_integral.tcc:
+/usr/include/c++/15/tr1/hypergeometric.tcc:
+/usr/include/c++/15/tr1/legendre_function.tcc:
+/usr/include/c++/15/tr1/modified_bessel_func.tcc:
+/usr/include/c++/15/tr1/poly_hermite.tcc:
+/usr/include/c++/15/tr1/poly_laguerre.tcc:
+/usr/include/c++/15/tr1/riemann_zeta.tcc:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp:
+/usr/include/c++/15/chrono:
+/usr/include/c++/15/bits/chrono.h:
+/usr/include/c++/15/ratio:
+/usr/include/c++/15/cstdint:
+/usr/include/c++/15/bits/parse_numbers.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp:

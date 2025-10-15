@@ -1,9 +1,13 @@
 #include "../../include/graphics/renderer.hpp"
+#include "../ecs/entities/light.hpp"
 
 using namespace ducky;
 using namespace ducky::graphics;
 
-void Renderer::init() {
+int Renderer::max_lights_ = 0;
+std::vector<ducky::ecs::entities::Light*> ducky::graphics::Renderer::lights;
+
+void Renderer::init(int max_lights) {
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glEnable(GL_BLEND);
 
@@ -19,9 +23,23 @@ void Renderer::init() {
   glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+  max_lights_ = max_lights;
 }
 
-void Renderer::clear_frame(float r, float g, float b) {
-  glClearColor(r, g, b, 1.0f);
+void Renderer::clear_frame(Color color) {
+  glClearColor(color.r, color.g, color.b, color.a);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
+
+int Renderer::get_max_lights() { return max_lights_; }
+
+void Renderer::add_light(ecs::entities::Light* light) {
+  if (lights.size() < max_lights_) {
+    lights.push_back(light);
+  } else {
+    std::cout << "Renderer::add_light: max lights reached" << std::endl;
+  }
+}
+
+void Renderer::update_lights() {}

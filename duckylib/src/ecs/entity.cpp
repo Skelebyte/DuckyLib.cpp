@@ -4,62 +4,17 @@ using namespace ducky;
 using namespace ducky::ecs;
 using namespace ducky::ecs::components;
 
-Entity::Entity() : transform() { this->name = "game_object"; }
+Entity::Entity() : transform() { this->name = "entity"; }
 
 Entity::Entity(std::string name) : transform() { this->name = name; }
 
 Entity::~Entity() { /*destroy();*/ }
 
 void Entity::destroy() {
-  for (int i = 0; i < this->components_.size(); i++) {
-    std::cout << "hi mum!\n";
-    this->components_[i]->destroy();
-  }
-  this->components_.clear();
-
   for (int i = 0; i < this->children_.size(); i++) {
     this->children_[i]->destroy();
   }
   this->children_.clear();
-}
-
-void Entity::update() {
-  this->transform.process();
-  for (int i = 0; i < this->components_.size(); i++) {
-    this->components_[i]->process();
-  }
-}
-
-void Entity::remove_component(Component* component) {
-  bool found_comp = false;
-  int comp_index = 0;
-  for (int i = 0; i < this->components_.size(); i++) {
-    if (this->components_[i]->get_id() == component->get_id()) {
-      found_comp = true;
-      comp_index = i;
-      break;
-    }
-  }
-
-  if (found_comp == false)
-    return;  // throw warning, cant find target component
-
-  component->owner = nullptr;
-  // maybe dont destroy component? what if we want to place that component on
-  // another Entity?
-  this->components_[comp_index]->destroy();
-  this->components_.erase(components_.begin() + comp_index);
-}
-
-bool Entity::has_component(Component* component) {
-  int comp_index = 0;
-  for (int i = 0; i < this->components_.size(); i++) {
-    if (this->components_[i]->get_id() == component->get_id()) {
-      return true;
-    }
-  }
-
-  return false;  // throw warning, cant find target component
 }
 
 Entity* Entity::get_parent() { return parent_; }

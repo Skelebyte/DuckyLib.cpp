@@ -1,8 +1,7 @@
-../obj/Debug-x64/DuckyLib/camera_component.o: \
- ../duckylib/src/ecs/components/camera_component.cpp \
- /usr/include/stdc-predef.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp \
+../obj/Debug-x64/DuckyLib/camera.o: \
+ ../duckylib/src/ecs/entities/camera.cpp /usr/include/stdc-predef.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp \
  /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -137,7 +136,7 @@
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp \
  /usr/include/c++/15/math.h /usr/include/c++/15/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
@@ -158,11 +157,9 @@
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
  /usr/include/c++/15/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h \
- /usr/include/c++/15/stdlib.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp \
  /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
  /usr/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
@@ -224,19 +221,20 @@
  /usr/include/c++/15/backward/auto_ptr.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
  /usr/include/c++/15/pstl/execution_defs.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../runtime_err.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../runtime_err.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
  /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
  /usr/include/c++/15/ctime /usr/include/c++/15/bits/parse_numbers.h \
- ../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp
 /usr/include/stdc-predef.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/camera_component.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mat4.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/bits/requires_hosted.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
@@ -436,7 +434,7 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec3.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp:
 /usr/include/c++/15/math.h:
 /usr/include/c++/15/cmath:
 /usr/include/math.h:
@@ -465,11 +463,9 @@
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/mathf.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h:
-/usr/include/c++/15/stdlib.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../window.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp:
 /usr/include/SDL3/SDL.h:
 /usr/include/SDL3/SDL_stdinc.h:
 /usr/include/SDL3/SDL_platform_defines.h:
@@ -567,16 +563,17 @@
 /usr/include/c++/15/backward/auto_ptr.h:
 /usr/include/c++/15/pstl/glue_memory_defs.h:
 /usr/include/c++/15/pstl/execution_defs.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/glad.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../../third_party/glad/khrplatform.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2i.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../runtime_err.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../runtime_err.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp:
 /usr/include/c++/15/chrono:
 /usr/include/c++/15/bits/chrono.h:
 /usr/include/c++/15/ratio:
 /usr/include/c++/15/cstdint:
 /usr/include/c++/15/ctime:
 /usr/include/c++/15/bits/parse_numbers.h:
-../duckylib/src/ecs/components/../../../include/ecs/components/transform.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp:

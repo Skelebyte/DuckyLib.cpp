@@ -1,6 +1,6 @@
-../obj/Debug-x64/DuckyLib/entity.o: ../duckylib/src/ecs/entity.cpp \
+../obj/Debug-x64/DuckyLib/color.o: ../duckylib/src/graphics/color.cpp \
  /usr/include/stdc-predef.h \
- ../duckylib/src/ecs/../../include/ecs/entity.hpp \
+ ../duckylib/src/graphics/../../include/graphics/color.hpp \
  /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -134,47 +134,9 @@
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/vector \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc \
- ../duckylib/src/ecs/../../include/ecs/component.hpp \
- ../duckylib/src/ecs/../../include/ecs/object.hpp \
- /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
- /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/c++/15/limits \
- /usr/include/c++/15/ctime /usr/include/c++/15/bits/parse_numbers.h \
- /usr/include/c++/15/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
- /usr/include/c++/15/tr1/gamma.tcc \
- /usr/include/c++/15/tr1/special_function_util.h \
- /usr/include/c++/15/tr1/bessel_function.tcc \
- /usr/include/c++/15/tr1/beta_function.tcc \
- /usr/include/c++/15/tr1/ell_integral.tcc \
- /usr/include/c++/15/tr1/exp_integral.tcc \
- /usr/include/c++/15/tr1/hypergeometric.tcc \
- /usr/include/c++/15/tr1/legendre_function.tcc \
- /usr/include/c++/15/tr1/modified_bessel_func.tcc \
- /usr/include/c++/15/tr1/poly_hermite.tcc \
- /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
- ../duckylib/src/ecs/../../include/ecs/components/transform.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp \
- /usr/include/c++/15/math.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp
+ /usr/include/c++/15/bits/istream.tcc
 /usr/include/stdc-predef.h:
-../duckylib/src/ecs/../../include/ecs/entity.hpp:
+../duckylib/src/graphics/../../include/graphics/color.hpp:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/bits/requires_hosted.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
@@ -374,53 +336,3 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
-/usr/include/c++/15/vector:
-/usr/include/c++/15/bits/stl_uninitialized.h:
-/usr/include/c++/15/bits/stl_vector.h:
-/usr/include/c++/15/bits/stl_bvector.h:
-/usr/include/c++/15/bits/vector.tcc:
-../duckylib/src/ecs/../../include/ecs/component.hpp:
-../duckylib/src/ecs/../../include/ecs/object.hpp:
-/usr/include/c++/15/chrono:
-/usr/include/c++/15/bits/chrono.h:
-/usr/include/c++/15/ratio:
-/usr/include/c++/15/cstdint:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
-/usr/include/stdint.h:
-/usr/include/bits/stdint-uintn.h:
-/usr/include/bits/stdint-least.h:
-/usr/include/c++/15/limits:
-/usr/include/c++/15/ctime:
-/usr/include/c++/15/bits/parse_numbers.h:
-/usr/include/c++/15/cmath:
-/usr/include/math.h:
-/usr/include/bits/math-vector.h:
-/usr/include/bits/libm-simd-decl-stubs.h:
-/usr/include/bits/flt-eval-method.h:
-/usr/include/bits/fp-logb.h:
-/usr/include/bits/fp-fast.h:
-/usr/include/bits/mathcalls-macros.h:
-/usr/include/bits/mathcalls-helper-functions.h:
-/usr/include/bits/mathcalls.h:
-/usr/include/bits/mathcalls-narrow.h:
-/usr/include/bits/iscanonical.h:
-/usr/include/c++/15/bits/specfun.h:
-/usr/include/c++/15/tr1/gamma.tcc:
-/usr/include/c++/15/tr1/special_function_util.h:
-/usr/include/c++/15/tr1/bessel_function.tcc:
-/usr/include/c++/15/tr1/beta_function.tcc:
-/usr/include/c++/15/tr1/ell_integral.tcc:
-/usr/include/c++/15/tr1/exp_integral.tcc:
-/usr/include/c++/15/tr1/hypergeometric.tcc:
-/usr/include/c++/15/tr1/legendre_function.tcc:
-/usr/include/c++/15/tr1/modified_bessel_func.tcc:
-/usr/include/c++/15/tr1/poly_hermite.tcc:
-/usr/include/c++/15/tr1/poly_laguerre.tcc:
-/usr/include/c++/15/tr1/riemann_zeta.tcc:
-../duckylib/src/ecs/../../include/ecs/components/transform.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp:
-/usr/include/c++/15/math.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp:

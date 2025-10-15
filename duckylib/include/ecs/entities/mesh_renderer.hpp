@@ -10,32 +10,31 @@
 #include "../../math/mat4.hpp"
 #include "../../math/mathf.hpp"
 #include "../../math/vec3.hpp"
-#include "../component.hpp"
-#include "camera_component.hpp"
-#include "transform.hpp"
+#include "../components/transform.hpp"
+#include "../entity.hpp"
+#include "camera.hpp"
+#include "light.hpp"
 
 namespace ducky {
 
 namespace ecs {
 
-namespace components {
+namespace entities {
 
-class MeshRenderer : public Component {
+class MeshRenderer : public Entity {
  public:
-  MeshRenderer(Transform* transform, CameraComponent* camera,
-               GLfloat vertices[], size_t vertices_size, GLuint indices[],
-               size_t indices_size,
+  MeshRenderer(Camera* camera, GLfloat vertices[], size_t vertices_size,
+               GLuint indices[], size_t indices_size,
                graphics::Shader* shader =
                    new graphics::Shader("assets/shaders/vertex.glsl",
                                         "assets/shaders/fragment.glsl"),
                graphics::Texture texture = graphics::Texture());
   void set_texture(graphics::Texture new_texture);
-  void process() override;
-  Transform* transform;
+  void update() override;
   graphics::Shader* shader_;
 
  private:
-  CameraComponent* camera_;
+  Camera* camera_;
 
   size_t indices_size_;
 
@@ -53,7 +52,7 @@ class MeshRenderer : public Component {
   GLuint projection_uniform_;
 };
 
-}  // namespace components
+}  // namespace entities
 
 }  // namespace ecs
 

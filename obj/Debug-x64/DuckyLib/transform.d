@@ -159,8 +159,6 @@
  /usr/include/c++/15/math.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp \
- ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h \
- /usr/include/c++/15/stdlib.h \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp \
  ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
@@ -402,8 +400,6 @@
 /usr/include/c++/15/math.h:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec2.hpp:
-../duckylib/src/ecs/components/../../../include/ecs/components/../../math/vec4.h:
-/usr/include/c++/15/stdlib.h:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../component.hpp:
 ../duckylib/src/ecs/components/../../../include/ecs/components/../object.hpp:
 /usr/include/c++/15/chrono:

@@ -2,18 +2,32 @@
 
 #include <SDL3/SDL.h>
 #include <iostream>
+#include <vector>
 #include "../../third_party/glad/glad.h"
+#include "color.hpp"
 
-namespace ducky {
+namespace ducky::ecs::entities {
+class Light;
+}
 
-namespace graphics {
-
+namespace ducky::graphics {
 class Renderer {
  public:
-  static void init();
-  static void clear_frame(float r = 0.1f, float g = 0.1f, float b = 0.1f);
+  static void init(int max_point_lights = 8);
+  static void clear_frame(Color color = Color(0.1f, 0.1f, 0.1f, 1.0f));
+  static int get_max_lights();
+  static void add_light(ducky::ecs::entities::Light* light);
+  static void update_lights();
+  static std::vector<ducky::ecs::entities::Light*> lights;
+
+ private:
+  static int max_lights_;
 };
 
-}  // namespace graphics
+}  // namespace ducky::graphics
 
-}  // namespace ducky
+/*
+      THE ISSUE
+renderer.hpp includes light.hpp, which includes shader.hpp, which includes
+renderer.hpp again
+*/

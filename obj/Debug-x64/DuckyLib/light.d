@@ -1,6 +1,6 @@
-../obj/Debug-x64/DuckyLib/entity.o: ../duckylib/src/ecs/entity.cpp \
+../obj/Debug-x64/DuckyLib/light.o: ../duckylib/src/ecs/entities/light.cpp \
  /usr/include/stdc-predef.h \
- ../duckylib/src/ecs/../../include/ecs/entity.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp \
  /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
  /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
@@ -134,19 +134,64 @@
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/istream.tcc \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/khrplatform.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp \
+ /usr/include/c++/15/stdlib.h /usr/include/c++/15/ctime \
+ /usr/include/c++/15/fstream /usr/include/c++/15/bits/codecvt.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
+ /usr/include/c++/15/bits/sstream.tcc \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp \
+ /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
+ /usr/include/SDL3/SDL_platform_defines.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/SDL3/SDL_begin_code.h \
+ /usr/include/SDL3/SDL_close_code.h /usr/include/SDL3/SDL_assert.h \
+ /usr/include/SDL3/SDL_asyncio.h /usr/include/SDL3/SDL_atomic.h \
+ /usr/include/SDL3/SDL_audio.h /usr/include/SDL3/SDL_endian.h \
+ /usr/include/SDL3/SDL_error.h /usr/include/SDL3/SDL_mutex.h \
+ /usr/include/SDL3/SDL_thread.h /usr/include/SDL3/SDL_properties.h \
+ /usr/include/SDL3/SDL_iostream.h /usr/include/SDL3/SDL_bits.h \
+ /usr/include/SDL3/SDL_blendmode.h /usr/include/SDL3/SDL_camera.h \
+ /usr/include/SDL3/SDL_pixels.h /usr/include/SDL3/SDL_surface.h \
+ /usr/include/SDL3/SDL_rect.h /usr/include/SDL3/SDL_clipboard.h \
+ /usr/include/SDL3/SDL_cpuinfo.h /usr/include/SDL3/SDL_dialog.h \
+ /usr/include/SDL3/SDL_video.h /usr/include/SDL3/SDL_events.h \
+ /usr/include/SDL3/SDL_gamepad.h /usr/include/SDL3/SDL_guid.h \
+ /usr/include/SDL3/SDL_joystick.h /usr/include/SDL3/SDL_power.h \
+ /usr/include/SDL3/SDL_sensor.h /usr/include/SDL3/SDL_keyboard.h \
+ /usr/include/SDL3/SDL_keycode.h /usr/include/SDL3/SDL_scancode.h \
+ /usr/include/SDL3/SDL_mouse.h /usr/include/SDL3/SDL_pen.h \
+ /usr/include/SDL3/SDL_touch.h /usr/include/SDL3/SDL_filesystem.h \
+ /usr/include/SDL3/SDL_gpu.h /usr/include/SDL3/SDL_haptic.h \
+ /usr/include/SDL3/SDL_hidapi.h /usr/include/SDL3/SDL_hints.h \
+ /usr/include/SDL3/SDL_init.h /usr/include/SDL3/SDL_loadso.h \
+ /usr/include/SDL3/SDL_locale.h /usr/include/SDL3/SDL_log.h \
+ /usr/include/SDL3/SDL_messagebox.h /usr/include/SDL3/SDL_metal.h \
+ /usr/include/SDL3/SDL_misc.h /usr/include/SDL3/SDL_platform.h \
+ /usr/include/SDL3/SDL_process.h /usr/include/SDL3/SDL_render.h \
+ /usr/include/SDL3/SDL_storage.h /usr/include/SDL3/SDL_system.h \
+ /usr/include/SDL3/SDL_time.h /usr/include/SDL3/SDL_timer.h \
+ /usr/include/SDL3/SDL_tray.h /usr/include/SDL3/SDL_version.h \
+ /usr/include/SDL3/SDL_oldnames.h /usr/include/c++/15/vector \
  /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
- ../duckylib/src/ecs/../../include/ecs/component.hpp \
- ../duckylib/src/ecs/../../include/ecs/object.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../component.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../object.hpp \
  /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
  /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/c++/15/limits \
- /usr/include/c++/15/ctime /usr/include/c++/15/bits/parse_numbers.h \
+ /usr/include/c++/15/limits /usr/include/c++/15/bits/parse_numbers.h \
  /usr/include/c++/15/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
@@ -166,15 +211,15 @@
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
  /usr/include/c++/15/tr1/riemann_zeta.tcc \
- ../duckylib/src/ecs/../../include/ecs/components/transform.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/mathf.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/mat4.hpp \
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/vec3.hpp \
  /usr/include/c++/15/math.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp
+ ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/vec2.hpp
 /usr/include/stdc-predef.h:
-../duckylib/src/ecs/../../include/ecs/entity.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp:
 /usr/include/c++/15/iostream:
 /usr/include/c++/15/bits/requires_hosted.h:
 /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
@@ -374,23 +419,100 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/khrplatform.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
+/usr/include/stdint.h:
+/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/stdint-least.h:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp:
+/usr/include/c++/15/stdlib.h:
+/usr/include/c++/15/ctime:
+/usr/include/c++/15/fstream:
+/usr/include/c++/15/bits/codecvt.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h:
+/usr/include/c++/15/bits/fstream.tcc:
+/usr/include/c++/15/sstream:
+/usr/include/c++/15/bits/sstream.tcc:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp:
+/usr/include/SDL3/SDL.h:
+/usr/include/SDL3/SDL_stdinc.h:
+/usr/include/SDL3/SDL_platform_defines.h:
+/usr/include/string.h:
+/usr/include/strings.h:
+/usr/include/SDL3/SDL_begin_code.h:
+/usr/include/SDL3/SDL_close_code.h:
+/usr/include/SDL3/SDL_assert.h:
+/usr/include/SDL3/SDL_asyncio.h:
+/usr/include/SDL3/SDL_atomic.h:
+/usr/include/SDL3/SDL_audio.h:
+/usr/include/SDL3/SDL_endian.h:
+/usr/include/SDL3/SDL_error.h:
+/usr/include/SDL3/SDL_mutex.h:
+/usr/include/SDL3/SDL_thread.h:
+/usr/include/SDL3/SDL_properties.h:
+/usr/include/SDL3/SDL_iostream.h:
+/usr/include/SDL3/SDL_bits.h:
+/usr/include/SDL3/SDL_blendmode.h:
+/usr/include/SDL3/SDL_camera.h:
+/usr/include/SDL3/SDL_pixels.h:
+/usr/include/SDL3/SDL_surface.h:
+/usr/include/SDL3/SDL_rect.h:
+/usr/include/SDL3/SDL_clipboard.h:
+/usr/include/SDL3/SDL_cpuinfo.h:
+/usr/include/SDL3/SDL_dialog.h:
+/usr/include/SDL3/SDL_video.h:
+/usr/include/SDL3/SDL_events.h:
+/usr/include/SDL3/SDL_gamepad.h:
+/usr/include/SDL3/SDL_guid.h:
+/usr/include/SDL3/SDL_joystick.h:
+/usr/include/SDL3/SDL_power.h:
+/usr/include/SDL3/SDL_sensor.h:
+/usr/include/SDL3/SDL_keyboard.h:
+/usr/include/SDL3/SDL_keycode.h:
+/usr/include/SDL3/SDL_scancode.h:
+/usr/include/SDL3/SDL_mouse.h:
+/usr/include/SDL3/SDL_pen.h:
+/usr/include/SDL3/SDL_touch.h:
+/usr/include/SDL3/SDL_filesystem.h:
+/usr/include/SDL3/SDL_gpu.h:
+/usr/include/SDL3/SDL_haptic.h:
+/usr/include/SDL3/SDL_hidapi.h:
+/usr/include/SDL3/SDL_hints.h:
+/usr/include/SDL3/SDL_init.h:
+/usr/include/SDL3/SDL_loadso.h:
+/usr/include/SDL3/SDL_locale.h:
+/usr/include/SDL3/SDL_log.h:
+/usr/include/SDL3/SDL_messagebox.h:
+/usr/include/SDL3/SDL_metal.h:
+/usr/include/SDL3/SDL_misc.h:
+/usr/include/SDL3/SDL_platform.h:
+/usr/include/SDL3/SDL_process.h:
+/usr/include/SDL3/SDL_render.h:
+/usr/include/SDL3/SDL_storage.h:
+/usr/include/SDL3/SDL_system.h:
+/usr/include/SDL3/SDL_time.h:
+/usr/include/SDL3/SDL_timer.h:
+/usr/include/SDL3/SDL_tray.h:
+/usr/include/SDL3/SDL_version.h:
+/usr/include/SDL3/SDL_oldnames.h:
 /usr/include/c++/15/vector:
 /usr/include/c++/15/bits/stl_uninitialized.h:
 /usr/include/c++/15/bits/stl_vector.h:
 /usr/include/c++/15/bits/stl_bvector.h:
 /usr/include/c++/15/bits/vector.tcc:
-../duckylib/src/ecs/../../include/ecs/component.hpp:
-../duckylib/src/ecs/../../include/ecs/object.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../component.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../object.hpp:
 /usr/include/c++/15/chrono:
 /usr/include/c++/15/bits/chrono.h:
 /usr/include/c++/15/ratio:
 /usr/include/c++/15/cstdint:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
-/usr/include/stdint.h:
-/usr/include/bits/stdint-uintn.h:
-/usr/include/bits/stdint-least.h:
 /usr/include/c++/15/limits:
-/usr/include/c++/15/ctime:
 /usr/include/c++/15/bits/parse_numbers.h:
 /usr/include/c++/15/cmath:
 /usr/include/math.h:
@@ -417,10 +539,10 @@
 /usr/include/c++/15/tr1/poly_hermite.tcc:
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 /usr/include/c++/15/tr1/riemann_zeta.tcc:
-../duckylib/src/ecs/../../include/ecs/components/transform.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/mathf.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/mat4.hpp:
-../duckylib/src/ecs/../../include/ecs/components/../../math/vec3.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/mathf.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/mat4.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/vec3.hpp:
 /usr/include/c++/15/math.h:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/../../include/ecs/components/../../math/vec2.hpp:
+../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../../math/vec2.hpp:

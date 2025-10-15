@@ -25,6 +25,8 @@ float Mathf::to_degrees(float value) {
   return result;
 }
 
+float Mathf::lerp(float a, float b, float t) { return a + t * (b - a); }
+
 // Vec2 Fmath::v3_to_v2(Vec3 value) { return Vec2(value.x, value.y); }
 
 // Vec3 Fmath::v2_to_v3(Vec2 value, float z_value) {

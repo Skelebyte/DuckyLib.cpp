@@ -10,11 +10,12 @@ namespace ducky {
 namespace ecs {
 
 namespace entities {
-
 class Light : public Entity {
  public:
+  Light();
   Light(graphics::Shader* shader);
   ~Light();
+  void update() override;
   graphics::Color color = graphics::Color::white();
 
  private:

@@ -166,9 +166,57 @@
  /usr/include/c++/15/bits/locale_facets.tcc \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc \
+ /usr/include/c++/15/bits/istream.tcc /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc \
  ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/glad.h \
- ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/khrplatform.h
+ ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/khrplatform.h \
+ ../duckylib/src/graphics/../../include/graphics/color.hpp \
+ ../duckylib/include/utils/../ecs/entities/light.hpp \
+ ../duckylib/include/utils/../ecs/entities/../../graphics/shader.hpp \
+ ../duckylib/include/utils/../ecs/entities/../../graphics/../../third_party/glad/glad.h \
+ ../duckylib/include/utils/../ecs/entities/../../graphics/../utils/file.hpp \
+ /usr/include/c++/15/stdlib.h /usr/include/c++/15/ctime \
+ /usr/include/c++/15/fstream /usr/include/c++/15/bits/codecvt.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
+ /usr/include/c++/15/bits/sstream.tcc \
+ ../duckylib/include/utils/../ecs/entities/../../graphics/built_in_shaders.hpp \
+ ../duckylib/include/utils/../ecs/entities/../entity.hpp \
+ ../duckylib/include/utils/../ecs/entities/../component.hpp \
+ ../duckylib/include/utils/../ecs/entities/../object.hpp \
+ /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
+ /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
+ /usr/include/c++/15/limits /usr/include/c++/15/bits/parse_numbers.h \
+ /usr/include/c++/15/cmath /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
+ /usr/include/c++/15/tr1/gamma.tcc \
+ /usr/include/c++/15/tr1/special_function_util.h \
+ /usr/include/c++/15/tr1/bessel_function.tcc \
+ /usr/include/c++/15/tr1/beta_function.tcc \
+ /usr/include/c++/15/tr1/ell_integral.tcc \
+ /usr/include/c++/15/tr1/exp_integral.tcc \
+ /usr/include/c++/15/tr1/hypergeometric.tcc \
+ /usr/include/c++/15/tr1/legendre_function.tcc \
+ /usr/include/c++/15/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15/tr1/poly_hermite.tcc \
+ /usr/include/c++/15/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ ../duckylib/include/utils/../ecs/entities/../components/transform.hpp \
+ ../duckylib/include/utils/../ecs/entities/../components/../../math/mathf.hpp \
+ ../duckylib/include/utils/../ecs/entities/../components/../../math/mat4.hpp \
+ ../duckylib/include/utils/../ecs/entities/../components/../../math/vec3.hpp \
+ /usr/include/c++/15/math.h \
+ /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
+ ../duckylib/include/utils/../ecs/entities/../components/../../math/vec2.hpp
 /usr/include/stdc-predef.h:
 ../duckylib/src/graphics/../../include/graphics/renderer.hpp:
 /usr/include/SDL3/SDL.h:
@@ -435,5 +483,66 @@
 /usr/include/c++/15/bits/ostream.tcc:
 /usr/include/c++/15/istream:
 /usr/include/c++/15/bits/istream.tcc:
+/usr/include/c++/15/vector:
+/usr/include/c++/15/bits/stl_uninitialized.h:
+/usr/include/c++/15/bits/stl_vector.h:
+/usr/include/c++/15/bits/stl_bvector.h:
+/usr/include/c++/15/bits/vector.tcc:
 ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/glad.h:
 ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/khrplatform.h:
+../duckylib/src/graphics/../../include/graphics/color.hpp:
+../duckylib/include/utils/../ecs/entities/light.hpp:
+../duckylib/include/utils/../ecs/entities/../../graphics/shader.hpp:
+../duckylib/include/utils/../ecs/entities/../../graphics/../../third_party/glad/glad.h:
+../duckylib/include/utils/../ecs/entities/../../graphics/../utils/file.hpp:
+/usr/include/c++/15/stdlib.h:
+/usr/include/c++/15/ctime:
+/usr/include/c++/15/fstream:
+/usr/include/c++/15/bits/codecvt.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h:
+/usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h:
+/usr/include/c++/15/bits/fstream.tcc:
+/usr/include/c++/15/sstream:
+/usr/include/c++/15/bits/sstream.tcc:
+../duckylib/include/utils/../ecs/entities/../../graphics/built_in_shaders.hpp:
+../duckylib/include/utils/../ecs/entities/../entity.hpp:
+../duckylib/include/utils/../ecs/entities/../component.hpp:
+../duckylib/include/utils/../ecs/entities/../object.hpp:
+/usr/include/c++/15/chrono:
+/usr/include/c++/15/bits/chrono.h:
+/usr/include/c++/15/ratio:
+/usr/include/c++/15/cstdint:
+/usr/include/c++/15/limits:
+/usr/include/c++/15/bits/parse_numbers.h:
+/usr/include/c++/15/cmath:
+/usr/include/math.h:
+/usr/include/bits/math-vector.h:
+/usr/include/bits/libm-simd-decl-stubs.h:
+/usr/include/bits/flt-eval-method.h:
+/usr/include/bits/fp-logb.h:
+/usr/include/bits/fp-fast.h:
+/usr/include/bits/mathcalls-macros.h:
+/usr/include/bits/mathcalls-helper-functions.h:
+/usr/include/bits/mathcalls.h:
+/usr/include/bits/mathcalls-narrow.h:
+/usr/include/bits/iscanonical.h:
+/usr/include/c++/15/bits/specfun.h:
+/usr/include/c++/15/tr1/gamma.tcc:
+/usr/include/c++/15/tr1/special_function_util.h:
+/usr/include/c++/15/tr1/bessel_function.tcc:
+/usr/include/c++/15/tr1/beta_function.tcc:
+/usr/include/c++/15/tr1/ell_integral.tcc:
+/usr/include/c++/15/tr1/exp_integral.tcc:
+/usr/include/c++/15/tr1/hypergeometric.tcc:
+/usr/include/c++/15/tr1/legendre_function.tcc:
+/usr/include/c++/15/tr1/modified_bessel_func.tcc:
+/usr/include/c++/15/tr1/poly_hermite.tcc:
+/usr/include/c++/15/tr1/poly_laguerre.tcc:
+/usr/include/c++/15/tr1/riemann_zeta.tcc:
+../duckylib/include/utils/../ecs/entities/../components/transform.hpp:
+../duckylib/include/utils/../ecs/entities/../components/../../math/mathf.hpp:
+../duckylib/include/utils/../ecs/entities/../components/../../math/mat4.hpp:
+../duckylib/include/utils/../ecs/entities/../components/../../math/vec3.hpp:
+/usr/include/c++/15/math.h:
+/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
+../duckylib/include/utils/../ecs/entities/../components/../../math/vec2.hpp:

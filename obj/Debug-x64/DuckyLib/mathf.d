@@ -157,9 +157,7 @@
  ../duckylib/src/math/../../include/math/vec3.hpp \
  /usr/include/c++/15/math.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/math/../../include/math/vec2.hpp \
- ../duckylib/src/math/../../include/math/vec4.h \
- /usr/include/c++/15/stdlib.h
+ ../duckylib/src/math/../../include/math/vec2.hpp
 /usr/include/stdc-predef.h:
 ../duckylib/src/math/../../include/math/mathf.hpp:
 /usr/include/c++/15/cmath:
@@ -392,5 +390,3 @@
 /usr/include/c++/15/math.h:
 /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
 ../duckylib/src/math/../../include/math/vec2.hpp:
-../duckylib/src/math/../../include/math/vec4.h:
-/usr/include/c++/15/stdlib.h:

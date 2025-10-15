@@ -4,6 +4,7 @@
 #include "../../third_party/glad/glad.h"
 #include "../utils/file.hpp"
 #include "built_in_shaders.hpp"
+#include "renderer.hpp"
 
 namespace ducky {
 
@@ -16,6 +17,8 @@ class Shader {
   ~Shader();
   void activate();
   void destroy();
+  void check_compile(GLuint shader, std::string type);
+  void check_link();
   GLuint id;
 };
 
