@@ -4,6 +4,7 @@
 #include "../../third_party/glad/glad.h"
 #include "../../third_party/stb/stb_image.h"
 #include "../runtime_err.hpp"
+#include "renderer.hpp"
 
 // typedef enum DL_Blendmode { BM_NEAREST, BM_LINEAR } DL_Blendmode, Blendmode;
 
@@ -27,6 +28,7 @@ namespace graphics {
 #define MISSING_TEXTURE "DUCKY_MISSING_TEXTURE"
 #define EMPTY_TEXTURE "DUCKY_EMPTY_TEXTURE"
 #define DEFAULT_TEXTURE "DUCKY_DEFAULT_TEXTURE"
+#define DEFAULT_TEXTURE_SPEC "DUCKY_DEFAULT_TEXTURE_SPEC"
 
 enum Blendmode { NEAREST, LINEAR };
 

@@ -43,3 +43,15 @@ void Renderer::add_light(ecs::entities::Light* light) {
 }
 
 void Renderer::update_lights() {}
+
+void Renderer::get_gl_error(std::string error_context) {
+  GLenum err = glGetError();
+  if (err != GL_NO_ERROR) {
+    if (error_context != "")
+      RuntimeErr::throw_err("OpenGL error in " + error_context + ": " +
+                            std::to_string(err));
+    else {
+      RuntimeErr::throw_err("OpenGL error: " + std::to_string(err));
+    }
+  }
+}

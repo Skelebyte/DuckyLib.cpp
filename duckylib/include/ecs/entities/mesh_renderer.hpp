@@ -3,8 +3,9 @@
 #include <iostream>
 #include "../../../third_party/glad/glad.h"
 #include "../../graphics/ebo.hpp"
+#include "../../graphics/material.hpp"
+#include "../../graphics/renderer.hpp"
 #include "../../graphics/shader.hpp"
-#include "../../graphics/texture.hpp"
 #include "../../graphics/vao.hpp"
 #include "../../graphics/vbo.hpp"
 #include "../../math/mat4.hpp"
@@ -28,8 +29,8 @@ class MeshRenderer : public Entity {
                graphics::Shader* shader =
                    new graphics::Shader("assets/shaders/vertex.glsl",
                                         "assets/shaders/fragment.glsl"),
-               graphics::Texture texture = graphics::Texture());
-  void set_texture(graphics::Texture new_texture);
+               graphics::Material material = graphics::Material());
+
   void update() override;
   graphics::Shader* shader_;
 
@@ -42,8 +43,7 @@ class MeshRenderer : public Entity {
   graphics::VBO vbo_;
   graphics::EBO ebo_;
 
-  graphics::Texture texture_;
-  GLuint texture_uniform_;
+  graphics::Material material_;
 
   math::Mat4 model_;
   GLuint model_uniform_;

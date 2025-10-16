@@ -54,7 +54,7 @@ Texture::Texture(std::string path, Blendmode blendmode) {
   unsigned char* data;
 
   if (path != MISSING_TEXTURE && path != EMPTY_TEXTURE &&
-      path != DEFAULT_TEXTURE) {
+      path != DEFAULT_TEXTURE && path != DEFAULT_TEXTURE_SPEC) {
     data = stbi_load(path.c_str(), &width, &height, &channel_count, 0);
   } else {
     width = 4;
@@ -86,6 +86,17 @@ Texture::Texture(std::string path, Blendmode blendmode) {
 
     if (path == DEFAULT_TEXTURE) {
       data = custom_texture(width, height, 255, 255, 255, 150, 150, 150);
+      if (!data) {
+        RuntimeErr::throw_err("Failed to generate default texture");
+      }
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
+                   GL_UNSIGNED_BYTE, data);
+      glGenerateMipmap(GL_TEXTURE_2D);
+      free(data);
+      return;
+    }
+    if (path == DEFAULT_TEXTURE_SPEC) {
+      data = custom_texture(width, height, 0, 0, 0, 0, 0, 0);
       if (!data) {
         RuntimeErr::throw_err("Failed to generate default texture");
       }
@@ -138,5 +149,8 @@ Texture::Texture(unsigned char* data, int width, int height,
   free(data);
 }
 
-void Texture::bind() { glBindTexture(GL_TEXTURE_2D, this->id); }
+void Texture::bind() {
+  glBindTexture(GL_TEXTURE_2D, this->id);
+  Renderer::get_gl_error();
+}
 void Texture::unbind() { glBindTexture(GL_TEXTURE_2D, 0); }

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "../../third_party/glad/glad.h"
+#include "../runtime_err.hpp"
 #include "color.hpp"
 
 namespace ducky::ecs::entities {
@@ -19,6 +20,7 @@ class Renderer {
   static void add_light(ducky::ecs::entities::Light* light);
   static void update_lights();
   static std::vector<ducky::ecs::entities::Light*> lights;
+  static void get_gl_error(std::string error_context = "");
 
  private:
   static int max_lights_;

@@ -9,8 +9,8 @@ using namespace ducky::ecs::components;
 
 MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
                            size_t vertices_size, GLuint indices[],
-                           size_t indices_size, graphics::Shader* shader,
-                           graphics::Texture texture)
+                           size_t indices_size, Shader* shader,
+                           Material material)
     : Entity("mesh_renderer") {
   this->camera_ = camera;
 
@@ -35,22 +35,15 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
   this->vbo_.unbind();
   this->ebo_.unbind();
 
-  this->texture_ = texture;
-  this->texture_uniform_ = glGetUniformLocation(this->shader_->id, "tex0");
+  this->material_ = material;
+  this->material_.get_uniforms(this->shader_);
   this->shader_->activate();
-  this->texture_.unbind();
+  this->material_.unbind();
 
   this->model_uniform_ = glGetUniformLocation(this->shader_->id, "model");
   this->view_uniform_ = glGetUniformLocation(this->shader_->id, "view");
   this->projection_uniform_ =
       glGetUniformLocation(this->shader_->id, "projection");
-}
-
-void MeshRenderer::set_texture(graphics::Texture new_texture) {
-  this->texture_ = new_texture;
-  this->texture_uniform_ = glGetUniformLocation(this->shader_->id, "tex0");
-  this->shader_->activate();
-  this->texture_.unbind();
 }
 
 void MeshRenderer::update() {
@@ -61,17 +54,22 @@ void MeshRenderer::update() {
                            this->transform.scale);
 
   glUniformMatrix4fv(this->model_uniform_, 1, GL_FALSE, this->model_.data);
+  Renderer::get_gl_error("MeshRenderer::update - model uniform");
   glUniformMatrix4fv(this->view_uniform_, 1, GL_FALSE,
                      this->camera_->get_view().data);
+  Renderer::get_gl_error("MeshRenderer::update - view uniform");
 
   glUniformMatrix4fv(this->projection_uniform_, 1, GL_FALSE,
                      this->camera_->get_projection().data);
+  Renderer::get_gl_error("MeshRenderer::update - projection uniform");
 
   glUniform1i(glGetUniformLocation(this->shader_->id, "light_count"),
               (int)Renderer::lights.size());
+  Renderer::get_gl_error("MeshRenderer::update - light_count uniform");
 
   glUniform3fv(glGetUniformLocation(this->shader_->id, "camera_position"), 1,
                this->camera_->transform.position.data);
+  Renderer::get_gl_error("MeshRenderer::update - camera_position uniform");
 
   for (size_t i = 0; i < Renderer::lights.size(); i++) {
     std::string base = "lights[" + std::to_string(i) + "]";
@@ -83,18 +81,31 @@ void MeshRenderer::update() {
     glUniform3fv(
         glGetUniformLocation(this->shader_->id, (base + ".pos").c_str()), 1,
         Renderer::lights[i]->transform.position.data);
+    Renderer::get_gl_error("MeshRenderer::update - light.pos uniform");
 
     glUniform3fv(
         glGetUniformLocation(this->shader_->id, (base + ".color").c_str()), 1,
         color.data);
-
-    int light_pos_loc =
-        glGetUniformLocation(this->shader_->id, "lights[0].pos");
-    int light_color_loc =
-        glGetUniformLocation(this->shader_->id, "lights[0].color");
+    Renderer::get_gl_error("MeshRenderer::update - light.color uniform");
   }
-  this->texture_.bind();
+
+  glUniform4fv(this->material_.color_uniform, 1, this->material_.color.data);
+  Renderer::get_gl_error("MeshRenderer::update - setting color");
+
+  glUniform1i(this->material_.diffuse_uniform, 0);
+  Renderer::get_gl_error("MeshRenderer::update - setting diffuse");
+  glUniform1i(this->material_.specular_uniform, 1);
+  Renderer::get_gl_error("MeshRenderer::update - setting specular");
+
+  glUniform1f(this->material_.specular_strength_uniform,
+              this->material_.specular_strength);
+  Renderer::get_gl_error("MeshRenderer::update - setting specular strength");
+
+  this->material_.bind();
+  Renderer::get_gl_error("MeshRenderer::update - material_.bind");
   this->vao_.bind();
+  Renderer::get_gl_error("MeshRenderer::update - vao_.bind");
   glDrawElements(GL_TRIANGLES, this->indices_size_ / sizeof(int),
                  GL_UNSIGNED_INT, 0);
+  Renderer::get_gl_error("MeshRenderer::update - glDrawElements");
 }

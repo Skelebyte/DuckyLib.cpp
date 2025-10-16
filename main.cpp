@@ -19,25 +19,27 @@ int main(int argc, char** argv) {
 
   Shader shader = Shader();
 
+  Material material = Material(Texture("assets/textures/container_diffuse.png"),
+                               Texture(DEFAULT_TEXTURE), Color::white());
+  material.specular_strength = 1.0f;
+  // Material material2 = Material();
+
   Camera camera = Camera(&window);
 
-  MeshRenderer pyramid = MeshRenderer(
-      &camera, pyramid_vertices, sizeof(pyramid_vertices), pyramid_indices,
-      sizeof(pyramid_indices), &shader, Texture("assets/textures/frank.png"));
-
-  pyramid.transform.position = Vec3(0.0f, -0.5f, -2.0f);
-
-  MeshRenderer mesh =
+  MeshRenderer cube =
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-                   sizeof(cube_indices), &shader, Texture(EMPTY_TEXTURE));
-  mesh.transform.scale = Vec3(0.1f, 0.1f, 0.1f);
+                   sizeof(cube_indices), &shader, material);
+
+  cube.transform.position = Vec3(0.0f, -0.5f, -2.0f);
+
+  // MeshRenderer mesh =
+  //     MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices),
+  //     cube_indices,
+  //                  sizeof(cube_indices), &shader, material2);
+  // mesh.transform.scale = Vec3(0.1f, 0.1f, 0.1f);
 
   Light light = Light();
-  Light light2 = Light();
   Renderer::add_light(&light);
-  Renderer::add_light(&light2);
-  light.color = Color::blue();
-  light2.color = Color::red();
 
   InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
   InputAxis axis_vertical = InputAxis(Keycode::W, Keycode::S);
@@ -53,10 +55,9 @@ int main(int argc, char** argv) {
     Renderer::update_lights();
 
     camera.update();
-    pyramid.update();
-    mesh.update();
+    cube.update();
 
-    light2.transform.position = camera.transform.position;
+    cube.transform.rotation.y += 0.5f;
 
     camera.transform.position +=
         Vec3::cross(camera.get_orientation(), camera.transform.up()) *

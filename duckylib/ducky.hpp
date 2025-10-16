@@ -9,6 +9,7 @@
 #include "include/graphics/built_in_shapes.hpp"
 #include "include/graphics/color.hpp"
 #include "include/graphics/ebo.hpp"
+#include "include/graphics/material.hpp"
 #include "include/graphics/renderer.hpp"
 #include "include/graphics/shader.hpp"
 #include "include/graphics/texture.hpp"

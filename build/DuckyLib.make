@@ -129,6 +129,7 @@ OBJECTS := \
 	$(OBJDIR)/object.o \
 	$(OBJDIR)/color.o \
 	$(OBJDIR)/ebo.o \
+	$(OBJDIR)/material.o \
 	$(OBJDIR)/renderer.o \
 	$(OBJDIR)/shader.o \
 	$(OBJDIR)/texture.o \
@@ -233,6 +234,9 @@ $(OBJDIR)/color.o: ../duckylib/src/graphics/color.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ebo.o: ../duckylib/src/graphics/ebo.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/material.o: ../duckylib/src/graphics/material.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/renderer.o: ../duckylib/src/graphics/renderer.cpp
