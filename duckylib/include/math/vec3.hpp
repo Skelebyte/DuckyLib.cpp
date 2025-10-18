@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <iostream>
 #include <string>
+#include "pi.hpp"
 
 namespace ducky {
 

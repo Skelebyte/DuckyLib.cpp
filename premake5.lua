@@ -12,7 +12,7 @@ project "DuckyLib"
 
     files { "duckylib/include/*/*.hpp", "duckylib/include/*.hpp", "duckylib/third_party/*/*.h", "duckylib/src/*/*.cpp", "duckylib/src/*/*/*.cpp", "duckylib/src/*.cpp", "duckylib/third_party/*/*.c" }
 
-    includedirs { "duckylib/include", "duckylib/third_party/*", "duckylib/include/*", "duckylib/include/*/*" }
+    includedirs { "duckylib/include", "duckylib/third_party/*", "duckylib/third_party/SDL3/include", "duckylib/include/*", "duckylib/include/*/*" }
 
     filter "configurations:Debug"
         defines { "DEBUG" }

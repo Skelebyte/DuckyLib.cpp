@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\duckylib\\include\\ecs\\entities",
+    "\\duckylib\\include\\graphics",
+    "\\duckylib\\include\\math",
+    "\\duckylib\\src\\math",
+    "\\duckylib\\third_party",
+    "\\duckylib\\third_party\\SDL3",
+    "\\duckylib\\third_party\\SDL3\\include"
+  ],
+  "SelectedNode": "\\main.cpp",
+  "PreviewInSolutionExplorer": false
+}

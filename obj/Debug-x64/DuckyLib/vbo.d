@@ -1,37 +1,27 @@
 ../obj/Debug-x64/DuckyLib/vbo.o: ../duckylib/src/graphics/vbo.cpp \
- /usr/include/stdc-predef.h \
  ../duckylib/src/graphics/../../include/graphics/vbo.hpp \
- ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/glad.h \
- ../duckylib/src/graphics/../../include/graphics/../../third_party/glad/khrplatform.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
- /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/time64.h /usr/include/bits/wchar.h \
- /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h
-/usr/include/stdc-predef.h:
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/khrplatform.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h C:/msys64/ucrt64/include/crtdefs.h \
+ C:/msys64/ucrt64/include/corecrt.h C:/msys64/ucrt64/include/_mingw.h \
+ C:/msys64/ucrt64/include/_mingw_mac.h \
+ C:/msys64/ucrt64/include/_mingw_secapi.h \
+ C:/msys64/ucrt64/include/vadefs.h \
+ C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/msys64/ucrt64/include/stddef.h
 ../duckylib/src/graphics/../../include/graphics/vbo.hpp:
-../duckylib/src/graphics/../../include/graphics/../../third_party/glad/glad.h:
-../duckylib/src/graphics/../../include/graphics/../../third_party/glad/khrplatform.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
-/usr/include/stdint.h:
-/usr/include/bits/libc-header-start.h:
-/usr/include/features.h:
-/usr/include/features-time64.h:
-/usr/include/bits/wordsize.h:
-/usr/include/bits/timesize.h:
-/usr/include/sys/cdefs.h:
-/usr/include/bits/long-double.h:
-/usr/include/gnu/stubs.h:
-/usr/include/gnu/stubs-64.h:
-/usr/include/bits/types.h:
-/usr/include/bits/typesizes.h:
-/usr/include/bits/time64.h:
-/usr/include/bits/wchar.h:
-/usr/include/bits/stdint-intn.h:
-/usr/include/bits/stdint-uintn.h:
-/usr/include/bits/stdint-least.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/khrplatform.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
+C:/msys64/ucrt64/include/stdint.h:
+C:/msys64/ucrt64/include/crtdefs.h:
+C:/msys64/ucrt64/include/corecrt.h:
+C:/msys64/ucrt64/include/_mingw.h:
+C:/msys64/ucrt64/include/_mingw_mac.h:
+C:/msys64/ucrt64/include/_mingw_secapi.h:
+C:/msys64/ucrt64/include/vadefs.h:
+C:/msys64/ucrt64/include/sdks/_mingw_ddk.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h:
+C:/msys64/ucrt64/include/stddef.h:

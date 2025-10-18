@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "vec3.hpp"
+#include "pi.hpp"
+
 
 namespace ducky {
 

@@ -1,624 +1,606 @@
 ../obj/Debug-x64/DuckyLib/mesh_renderer.o: \
  ../duckylib/src/ecs/entities/mesh_renderer.cpp \
- /usr/include/stdc-predef.h \
  ../duckylib/src/ecs/entities/../../../include/ecs/entities/mesh_renderer.hpp \
- /usr/include/c++/15/iostream /usr/include/c++/15/bits/requires_hosted.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
- /usr/include/bits/wordsize.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h \
- /usr/include/features.h /usr/include/features-time64.h \
- /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
- /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h \
- /usr/include/c++/15/pstl/pstl_config.h /usr/include/c++/15/ostream \
- /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
- /usr/include/c++/15/iosfwd /usr/include/c++/15/bits/stringfwd.h \
- /usr/include/c++/15/bits/memoryfwd.h /usr/include/c++/15/bits/postypes.h \
- /usr/include/c++/15/cwchar /usr/include/wchar.h \
- /usr/include/bits/libc-header-start.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
- /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
- /usr/include/bits/types/mbstate_t.h \
- /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h /usr/include/c++/15/exception \
- /usr/include/c++/15/bits/exception.h /usr/include/c++/15/bits/version.h \
- /usr/include/c++/15/bits/exception_ptr.h \
- /usr/include/c++/15/bits/exception_defines.h \
- /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/hash_bytes.h \
- /usr/include/c++/15/new /usr/include/c++/15/bits/move.h \
- /usr/include/c++/15/type_traits \
- /usr/include/c++/15/bits/nested_exception.h \
- /usr/include/c++/15/bits/char_traits.h \
- /usr/include/c++/15/bits/localefwd.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h \
- /usr/include/c++/15/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/15/cctype \
- /usr/include/ctype.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
- /usr/include/bits/endian.h /usr/include/bits/endianness.h \
- /usr/include/c++/15/bits/ios_base.h /usr/include/c++/15/ext/atomicity.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
- /usr/include/linux/sched/types.h /usr/include/linux/types.h \
- /usr/include/asm/types.h /usr/include/asm-generic/types.h \
- /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
- /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
- /usr/include/bits/pthreadtypes-arch.h \
- /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
- /usr/include/bits/struct_rwlock.h /usr/include/bits/setjmp.h \
- /usr/include/bits/types/__sigset_t.h \
- /usr/include/bits/types/struct___jmp_buf_tag.h \
- /usr/include/bits/pthread_stack_min-dynamic.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h \
- /usr/include/c++/15/bits/locale_classes.h /usr/include/c++/15/string \
- /usr/include/c++/15/bits/allocator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h \
- /usr/include/c++/15/bits/functexcept.h \
- /usr/include/c++/15/bits/cpp_type_traits.h \
- /usr/include/c++/15/bits/ostream_insert.h \
- /usr/include/c++/15/bits/cxxabi_forced.h \
- /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/15/bits/concept_check.h \
- /usr/include/c++/15/debug/assertions.h \
- /usr/include/c++/15/bits/stl_iterator_base_types.h \
- /usr/include/c++/15/bits/stl_iterator.h \
- /usr/include/c++/15/ext/type_traits.h \
- /usr/include/c++/15/bits/ptr_traits.h \
- /usr/include/c++/15/bits/stl_function.h \
- /usr/include/c++/15/backward/binders.h \
- /usr/include/c++/15/ext/numeric_traits.h \
- /usr/include/c++/15/bits/stl_algobase.h \
- /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/utility.h \
- /usr/include/c++/15/debug/debug.h \
- /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
- /usr/include/c++/15/concepts /usr/include/c++/15/bits/refwrap.h \
- /usr/include/c++/15/bits/invoke.h \
- /usr/include/c++/15/bits/range_access.h \
- /usr/include/c++/15/initializer_list \
- /usr/include/c++/15/bits/basic_string.h \
- /usr/include/c++/15/ext/alloc_traits.h \
- /usr/include/c++/15/bits/alloc_traits.h \
- /usr/include/c++/15/bits/stl_construct.h /usr/include/c++/15/string_view \
- /usr/include/c++/15/bits/functional_hash.h \
- /usr/include/c++/15/bits/string_view.tcc \
- /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/15/bits/std_abs.h \
- /usr/include/c++/15/cstdio /usr/include/stdio.h \
- /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
- /usr/include/bits/types/struct_FILE.h \
- /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/c++/15/cerrno \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/bits/types/error_t.h /usr/include/c++/15/bits/charconv.h \
- /usr/include/c++/15/bits/basic_string.tcc \
- /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
- /usr/include/c++/15/bits/uses_allocator.h \
- /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
- /usr/include/c++/15/bits/locale_classes.tcc \
- /usr/include/c++/15/system_error \
- /usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h \
- /usr/include/c++/15/stdexcept /usr/include/c++/15/streambuf \
- /usr/include/c++/15/bits/streambuf.tcc \
- /usr/include/c++/15/bits/basic_ios.h \
- /usr/include/c++/15/bits/locale_facets.h /usr/include/c++/15/cwctype \
- /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/ctype_base.h \
- /usr/include/c++/15/bits/streambuf_iterator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/ctype_inline.h \
- /usr/include/c++/15/bits/locale_facets.tcc \
- /usr/include/c++/15/bits/basic_ios.tcc \
- /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
- /usr/include/c++/15/bits/istream.tcc \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/ebo.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/material.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp \
- /usr/include/SDL3/SDL.h /usr/include/SDL3/SDL_stdinc.h \
- /usr/include/SDL3/SDL_platform_defines.h /usr/include/string.h \
- /usr/include/strings.h /usr/include/SDL3/SDL_begin_code.h \
- /usr/include/SDL3/SDL_close_code.h /usr/include/SDL3/SDL_assert.h \
- /usr/include/SDL3/SDL_asyncio.h /usr/include/SDL3/SDL_atomic.h \
- /usr/include/SDL3/SDL_audio.h /usr/include/SDL3/SDL_endian.h \
- /usr/include/SDL3/SDL_error.h /usr/include/SDL3/SDL_mutex.h \
- /usr/include/SDL3/SDL_thread.h /usr/include/SDL3/SDL_properties.h \
- /usr/include/SDL3/SDL_iostream.h /usr/include/SDL3/SDL_bits.h \
- /usr/include/SDL3/SDL_blendmode.h /usr/include/SDL3/SDL_camera.h \
- /usr/include/SDL3/SDL_pixels.h /usr/include/SDL3/SDL_surface.h \
- /usr/include/SDL3/SDL_rect.h /usr/include/SDL3/SDL_clipboard.h \
- /usr/include/SDL3/SDL_cpuinfo.h /usr/include/SDL3/SDL_dialog.h \
- /usr/include/SDL3/SDL_video.h /usr/include/SDL3/SDL_events.h \
- /usr/include/SDL3/SDL_gamepad.h /usr/include/SDL3/SDL_guid.h \
- /usr/include/SDL3/SDL_joystick.h /usr/include/SDL3/SDL_power.h \
- /usr/include/SDL3/SDL_sensor.h /usr/include/SDL3/SDL_keyboard.h \
- /usr/include/SDL3/SDL_keycode.h /usr/include/SDL3/SDL_scancode.h \
- /usr/include/SDL3/SDL_mouse.h /usr/include/SDL3/SDL_pen.h \
- /usr/include/SDL3/SDL_touch.h /usr/include/SDL3/SDL_filesystem.h \
- /usr/include/SDL3/SDL_gpu.h /usr/include/SDL3/SDL_haptic.h \
- /usr/include/SDL3/SDL_hidapi.h /usr/include/SDL3/SDL_hints.h \
- /usr/include/SDL3/SDL_init.h /usr/include/SDL3/SDL_loadso.h \
- /usr/include/SDL3/SDL_locale.h /usr/include/SDL3/SDL_log.h \
- /usr/include/SDL3/SDL_messagebox.h /usr/include/SDL3/SDL_metal.h \
- /usr/include/SDL3/SDL_misc.h /usr/include/SDL3/SDL_platform.h \
- /usr/include/SDL3/SDL_process.h /usr/include/SDL3/SDL_render.h \
- /usr/include/SDL3/SDL_storage.h /usr/include/SDL3/SDL_system.h \
- /usr/include/SDL3/SDL_time.h /usr/include/SDL3/SDL_timer.h \
- /usr/include/SDL3/SDL_tray.h /usr/include/SDL3/SDL_version.h \
- /usr/include/SDL3/SDL_oldnames.h /usr/include/c++/15/vector \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../runtime_err.hpp \
- /usr/include/c++/15/functional /usr/include/c++/15/bits/std_function.h \
- /usr/include/c++/15/unordered_map \
- /usr/include/c++/15/bits/unordered_map.h \
- /usr/include/c++/15/bits/hashtable.h \
- /usr/include/c++/15/bits/hashtable_policy.h \
- /usr/include/c++/15/ext/aligned_buffer.h \
- /usr/include/c++/15/bits/enable_special_members.h \
- /usr/include/c++/15/bits/node_handle.h \
- /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/array \
- /usr/include/c++/15/compare /usr/include/c++/15/memory \
- /usr/include/c++/15/bits/stl_tempbuf.h \
- /usr/include/c++/15/bits/stl_raw_storage_iter.h \
- /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
- /usr/include/c++/15/bits/shared_ptr.h \
- /usr/include/c++/15/bits/shared_ptr_base.h \
- /usr/include/c++/15/bits/allocated_ptr.h \
- /usr/include/c++/15/ext/concurrence.h \
- /usr/include/c++/15/bits/shared_ptr_atomic.h \
- /usr/include/c++/15/bits/atomic_base.h \
- /usr/include/c++/15/bits/atomic_lockfree_defines.h \
- /usr/include/c++/15/backward/auto_ptr.h \
- /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp \
- /usr/include/c++/15/stdlib.h /usr/include/c++/15/ctime \
- /usr/include/c++/15/fstream /usr/include/c++/15/bits/codecvt.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/15/bits/fstream.tcc /usr/include/c++/15/sstream \
- /usr/include/c++/15/bits/sstream.tcc \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/texture.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/stb/stb_image.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vao.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vbo.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp \
- /usr/include/c++/15/math.h /usr/include/c++/15/cmath /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/specfun.h \
- /usr/include/c++/15/limits /usr/include/c++/15/tr1/gamma.tcc \
- /usr/include/c++/15/tr1/special_function_util.h \
- /usr/include/c++/15/tr1/bessel_function.tcc \
- /usr/include/c++/15/tr1/beta_function.tcc \
- /usr/include/c++/15/tr1/ell_integral.tcc \
- /usr/include/c++/15/tr1/exp_integral.tcc \
- /usr/include/c++/15/tr1/hypergeometric.tcc \
- /usr/include/c++/15/tr1/legendre_function.tcc \
- /usr/include/c++/15/tr1/modified_bessel_func.tcc \
- /usr/include/c++/15/tr1/poly_hermite.tcc \
- /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
- /usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp \
- /usr/include/c++/15/chrono /usr/include/c++/15/bits/chrono.h \
- /usr/include/c++/15/ratio /usr/include/c++/15/cstdint \
- /usr/include/c++/15/bits/parse_numbers.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/iostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ios \
+ C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
+ C:/msys64/ucrt64/include/wchar.h C:/msys64/ucrt64/include/corecrt.h \
+ C:/msys64/ucrt64/include/_mingw.h C:/msys64/ucrt64/include/_mingw_mac.h \
+ C:/msys64/ucrt64/include/_mingw_secapi.h \
+ C:/msys64/ucrt64/include/vadefs.h \
+ C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+ C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+ C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+ C:/msys64/ucrt64/include/corecrt_wctype.h \
+ C:/msys64/ucrt64/include/_mingw_off_t.h \
+ C:/msys64/ucrt64/include/_mingw_stat64.h \
+ C:/msys64/ucrt64/include/swprintf.inl \
+ C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/exception \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/msys64/ucrt64/include/stddef.h C:/msys64/ucrt64/include/crtdefs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/new \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/clocale \
+ C:/msys64/ucrt64/include/locale.h C:/msys64/ucrt64/include/stdio.h \
+ C:/msys64/ucrt64/include/sec_api/stdio_s.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cctype \
+ C:/msys64/ucrt64/include/ctype.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+ C:/msys64/ucrt64/include/pthread.h C:/msys64/ucrt64/include/errno.h \
+ C:/msys64/ucrt64/include/sys/types.h C:/msys64/ucrt64/include/process.h \
+ C:/msys64/ucrt64/include/corecrt_startup.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
+ C:/msys64/ucrt64/include/limits.h C:/msys64/ucrt64/include/signal.h \
+ C:/msys64/ucrt64/include/pthread_signal.h \
+ C:/msys64/ucrt64/include/time.h C:/msys64/ucrt64/include/sys/timeb.h \
+ C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
+ C:/msys64/ucrt64/include/_timeval.h \
+ C:/msys64/ucrt64/include/pthread_time.h \
+ C:/msys64/ucrt64/include/pthread_compat.h \
+ C:/msys64/ucrt64/include/sched.h \
+ C:/msys64/ucrt64/include/pthread_unistd.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/string \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bit \
+ C:/msys64/ucrt64/include/c++/15.2.0/concepts \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/string_view \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+ C:/msys64/ucrt64/include/stdlib.h \
+ C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
+ C:/msys64/ucrt64/include/malloc.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
+ C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/tuple \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/system_error \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
+ C:/msys64/ucrt64/include/c++/15.2.0/streambuf \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cwctype \
+ C:/msys64/ucrt64/include/wctype.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/istream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/khrplatform.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/ebo.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/material.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/color.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/renderer.hpp \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_stdinc.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_platform_defines.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+ C:/msys64/ucrt64/include/stdarg.h \
+ C:/msys64/ucrt64/include/_mingw_stdarg.h \
+ C:/msys64/ucrt64/include/string.h \
+ C:/msys64/ucrt64/include/sec_api/string_s.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_begin_code.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_close_code.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_assert.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_asyncio.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_atomic.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_audio.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_endian.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_error.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_mutex.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_thread.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_properties.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_iostream.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_bits.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_blendmode.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_camera.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_pixels.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_surface.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_rect.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_clipboard.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_cpuinfo.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_dialog.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_video.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_events.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_gamepad.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_guid.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_joystick.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_power.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_sensor.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_keyboard.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_keycode.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_scancode.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_mouse.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_pen.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_touch.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_filesystem.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_gpu.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_haptic.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_hidapi.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_hints.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_init.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_loadso.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_locale.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_log.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_messagebox.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_metal.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_misc.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_platform.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_process.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_render.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_storage.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_system.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_time.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_timer.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_tray.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_version.h \
+ ../duckylib/third_party/SDL3/include/SDL3/SDL_oldnames.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/runtime_err.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/functional \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/unordered_map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/array \
+ C:/msys64/ucrt64/include/c++/15.2.0/compare \
+ C:/msys64/ucrt64/include/c++/15.2.0/memory \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/shader.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/utils/file.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/ctime \
+ C:/msys64/ucrt64/include/c++/15.2.0/fstream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/sstream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/built_in_shaders.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/texture.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/stb/stb_image.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/vao.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/vbo.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/mat4.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec3.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/math.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cmath \
+ C:/msys64/ucrt64/include/math.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/limits \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/pi.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/mathf.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec2.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/components/transform.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/component.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/object.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/chrono \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/chrono.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ratio \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstdint \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/entity.hpp \
  ../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h \
- ../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/window.hpp \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h \
+ C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec2i.hpp \
  ../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp
-/usr/include/stdc-predef.h:
 ../duckylib/src/ecs/entities/../../../include/ecs/entities/mesh_renderer.hpp:
-/usr/include/c++/15/iostream:
-/usr/include/c++/15/bits/requires_hosted.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h:
-/usr/include/bits/wordsize.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/os_defines.h:
-/usr/include/features.h:
-/usr/include/features-time64.h:
-/usr/include/bits/timesize.h:
-/usr/include/sys/cdefs.h:
-/usr/include/bits/long-double.h:
-/usr/include/gnu/stubs.h:
-/usr/include/gnu/stubs-64.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h:
-/usr/include/c++/15/pstl/pstl_config.h:
-/usr/include/c++/15/ostream:
-/usr/include/c++/15/bits/ostream.h:
-/usr/include/c++/15/ios:
-/usr/include/c++/15/iosfwd:
-/usr/include/c++/15/bits/stringfwd.h:
-/usr/include/c++/15/bits/memoryfwd.h:
-/usr/include/c++/15/bits/postypes.h:
-/usr/include/c++/15/cwchar:
-/usr/include/wchar.h:
-/usr/include/bits/libc-header-start.h:
-/usr/include/bits/floatn.h:
-/usr/include/bits/floatn-common.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h:
-/usr/include/bits/wchar.h:
-/usr/include/bits/types/wint_t.h:
-/usr/include/bits/types/mbstate_t.h:
-/usr/include/bits/types/__mbstate_t.h:
-/usr/include/bits/types/__FILE.h:
-/usr/include/bits/types/FILE.h:
-/usr/include/bits/types/locale_t.h:
-/usr/include/bits/types/__locale_t.h:
-/usr/include/c++/15/exception:
-/usr/include/c++/15/bits/exception.h:
-/usr/include/c++/15/bits/version.h:
-/usr/include/c++/15/bits/exception_ptr.h:
-/usr/include/c++/15/bits/exception_defines.h:
-/usr/include/c++/15/bits/cxxabi_init_exception.h:
-/usr/include/c++/15/typeinfo:
-/usr/include/c++/15/bits/hash_bytes.h:
-/usr/include/c++/15/new:
-/usr/include/c++/15/bits/move.h:
-/usr/include/c++/15/type_traits:
-/usr/include/c++/15/bits/nested_exception.h:
-/usr/include/c++/15/bits/char_traits.h:
-/usr/include/c++/15/bits/localefwd.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++locale.h:
-/usr/include/c++/15/clocale:
-/usr/include/locale.h:
-/usr/include/bits/locale.h:
-/usr/include/c++/15/cctype:
-/usr/include/ctype.h:
-/usr/include/bits/types.h:
-/usr/include/bits/typesizes.h:
-/usr/include/bits/time64.h:
-/usr/include/bits/endian.h:
-/usr/include/bits/endianness.h:
-/usr/include/c++/15/bits/ios_base.h:
-/usr/include/c++/15/ext/atomicity.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/gthr.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/gthr-default.h:
-/usr/include/pthread.h:
-/usr/include/sched.h:
-/usr/include/bits/types/time_t.h:
-/usr/include/bits/types/struct_timespec.h:
-/usr/include/bits/sched.h:
-/usr/include/linux/sched/types.h:
-/usr/include/linux/types.h:
-/usr/include/asm/types.h:
-/usr/include/asm-generic/types.h:
-/usr/include/asm-generic/int-ll64.h:
-/usr/include/asm/bitsperlong.h:
-/usr/include/asm-generic/bitsperlong.h:
-/usr/include/linux/posix_types.h:
-/usr/include/linux/stddef.h:
-/usr/include/asm/posix_types.h:
-/usr/include/asm/posix_types_64.h:
-/usr/include/asm-generic/posix_types.h:
-/usr/include/bits/types/struct_sched_param.h:
-/usr/include/bits/cpu-set.h:
-/usr/include/time.h:
-/usr/include/bits/time.h:
-/usr/include/bits/timex.h:
-/usr/include/bits/types/struct_timeval.h:
-/usr/include/bits/types/clock_t.h:
-/usr/include/bits/types/struct_tm.h:
-/usr/include/bits/types/clockid_t.h:
-/usr/include/bits/types/timer_t.h:
-/usr/include/bits/types/struct_itimerspec.h:
-/usr/include/bits/pthreadtypes.h:
-/usr/include/bits/thread-shared-types.h:
-/usr/include/bits/pthreadtypes-arch.h:
-/usr/include/bits/atomic_wide_counter.h:
-/usr/include/bits/struct_mutex.h:
-/usr/include/bits/struct_rwlock.h:
-/usr/include/bits/setjmp.h:
-/usr/include/bits/types/__sigset_t.h:
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-/usr/include/bits/pthread_stack_min-dynamic.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/atomic_word.h:
-/usr/include/sys/single_threaded.h:
-/usr/include/c++/15/bits/locale_classes.h:
-/usr/include/c++/15/string:
-/usr/include/c++/15/bits/allocator.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h:
-/usr/include/c++/15/bits/new_allocator.h:
-/usr/include/c++/15/bits/functexcept.h:
-/usr/include/c++/15/bits/cpp_type_traits.h:
-/usr/include/c++/15/bits/ostream_insert.h:
-/usr/include/c++/15/bits/cxxabi_forced.h:
-/usr/include/c++/15/bits/stl_iterator_base_funcs.h:
-/usr/include/c++/15/bits/concept_check.h:
-/usr/include/c++/15/debug/assertions.h:
-/usr/include/c++/15/bits/stl_iterator_base_types.h:
-/usr/include/c++/15/bits/stl_iterator.h:
-/usr/include/c++/15/ext/type_traits.h:
-/usr/include/c++/15/bits/ptr_traits.h:
-/usr/include/c++/15/bits/stl_function.h:
-/usr/include/c++/15/backward/binders.h:
-/usr/include/c++/15/ext/numeric_traits.h:
-/usr/include/c++/15/bits/stl_algobase.h:
-/usr/include/c++/15/bits/stl_pair.h:
-/usr/include/c++/15/bits/utility.h:
-/usr/include/c++/15/debug/debug.h:
-/usr/include/c++/15/bits/predefined_ops.h:
-/usr/include/c++/15/bit:
-/usr/include/c++/15/concepts:
-/usr/include/c++/15/bits/refwrap.h:
-/usr/include/c++/15/bits/invoke.h:
-/usr/include/c++/15/bits/range_access.h:
-/usr/include/c++/15/initializer_list:
-/usr/include/c++/15/bits/basic_string.h:
-/usr/include/c++/15/ext/alloc_traits.h:
-/usr/include/c++/15/bits/alloc_traits.h:
-/usr/include/c++/15/bits/stl_construct.h:
-/usr/include/c++/15/string_view:
-/usr/include/c++/15/bits/functional_hash.h:
-/usr/include/c++/15/bits/string_view.tcc:
-/usr/include/c++/15/ext/string_conversions.h:
-/usr/include/c++/15/cstdlib:
-/usr/include/stdlib.h:
-/usr/include/bits/waitflags.h:
-/usr/include/bits/waitstatus.h:
-/usr/include/sys/types.h:
-/usr/include/bits/stdint-intn.h:
-/usr/include/endian.h:
-/usr/include/bits/byteswap.h:
-/usr/include/bits/uintn-identity.h:
-/usr/include/sys/select.h:
-/usr/include/bits/select.h:
-/usr/include/bits/types/sigset_t.h:
-/usr/include/alloca.h:
-/usr/include/bits/stdlib-float.h:
-/usr/include/c++/15/bits/std_abs.h:
-/usr/include/c++/15/cstdio:
-/usr/include/stdio.h:
-/usr/include/bits/types/__fpos_t.h:
-/usr/include/bits/types/__fpos64_t.h:
-/usr/include/bits/types/struct_FILE.h:
-/usr/include/bits/types/cookie_io_functions_t.h:
-/usr/include/bits/stdio_lim.h:
-/usr/include/c++/15/cerrno:
-/usr/include/errno.h:
-/usr/include/bits/errno.h:
-/usr/include/linux/errno.h:
-/usr/include/asm/errno.h:
-/usr/include/asm-generic/errno.h:
-/usr/include/asm-generic/errno-base.h:
-/usr/include/bits/types/error_t.h:
-/usr/include/c++/15/bits/charconv.h:
-/usr/include/c++/15/bits/basic_string.tcc:
-/usr/include/c++/15/bits/memory_resource.h:
-/usr/include/c++/15/cstddef:
-/usr/include/c++/15/bits/uses_allocator.h:
-/usr/include/c++/15/bits/uses_allocator_args.h:
-/usr/include/c++/15/tuple:
-/usr/include/c++/15/bits/locale_classes.tcc:
-/usr/include/c++/15/system_error:
-/usr/include/c++/15/x86_64-redhat-linux/bits/error_constants.h:
-/usr/include/c++/15/stdexcept:
-/usr/include/c++/15/streambuf:
-/usr/include/c++/15/bits/streambuf.tcc:
-/usr/include/c++/15/bits/basic_ios.h:
-/usr/include/c++/15/bits/locale_facets.h:
-/usr/include/c++/15/cwctype:
-/usr/include/wctype.h:
-/usr/include/bits/wctype-wchar.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/ctype_base.h:
-/usr/include/c++/15/bits/streambuf_iterator.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/ctype_inline.h:
-/usr/include/c++/15/bits/locale_facets.tcc:
-/usr/include/c++/15/bits/basic_ios.tcc:
-/usr/include/c++/15/bits/ostream.tcc:
-/usr/include/c++/15/istream:
-/usr/include/c++/15/bits/istream.tcc:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/khrplatform.h:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h:
-/usr/include/stdint.h:
-/usr/include/bits/stdint-uintn.h:
-/usr/include/bits/stdint-least.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/ebo.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/glad/glad.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/material.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/color.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/renderer.hpp:
-/usr/include/SDL3/SDL.h:
-/usr/include/SDL3/SDL_stdinc.h:
-/usr/include/SDL3/SDL_platform_defines.h:
-/usr/include/string.h:
-/usr/include/strings.h:
-/usr/include/SDL3/SDL_begin_code.h:
-/usr/include/SDL3/SDL_close_code.h:
-/usr/include/SDL3/SDL_assert.h:
-/usr/include/SDL3/SDL_asyncio.h:
-/usr/include/SDL3/SDL_atomic.h:
-/usr/include/SDL3/SDL_audio.h:
-/usr/include/SDL3/SDL_endian.h:
-/usr/include/SDL3/SDL_error.h:
-/usr/include/SDL3/SDL_mutex.h:
-/usr/include/SDL3/SDL_thread.h:
-/usr/include/SDL3/SDL_properties.h:
-/usr/include/SDL3/SDL_iostream.h:
-/usr/include/SDL3/SDL_bits.h:
-/usr/include/SDL3/SDL_blendmode.h:
-/usr/include/SDL3/SDL_camera.h:
-/usr/include/SDL3/SDL_pixels.h:
-/usr/include/SDL3/SDL_surface.h:
-/usr/include/SDL3/SDL_rect.h:
-/usr/include/SDL3/SDL_clipboard.h:
-/usr/include/SDL3/SDL_cpuinfo.h:
-/usr/include/SDL3/SDL_dialog.h:
-/usr/include/SDL3/SDL_video.h:
-/usr/include/SDL3/SDL_events.h:
-/usr/include/SDL3/SDL_gamepad.h:
-/usr/include/SDL3/SDL_guid.h:
-/usr/include/SDL3/SDL_joystick.h:
-/usr/include/SDL3/SDL_power.h:
-/usr/include/SDL3/SDL_sensor.h:
-/usr/include/SDL3/SDL_keyboard.h:
-/usr/include/SDL3/SDL_keycode.h:
-/usr/include/SDL3/SDL_scancode.h:
-/usr/include/SDL3/SDL_mouse.h:
-/usr/include/SDL3/SDL_pen.h:
-/usr/include/SDL3/SDL_touch.h:
-/usr/include/SDL3/SDL_filesystem.h:
-/usr/include/SDL3/SDL_gpu.h:
-/usr/include/SDL3/SDL_haptic.h:
-/usr/include/SDL3/SDL_hidapi.h:
-/usr/include/SDL3/SDL_hints.h:
-/usr/include/SDL3/SDL_init.h:
-/usr/include/SDL3/SDL_loadso.h:
-/usr/include/SDL3/SDL_locale.h:
-/usr/include/SDL3/SDL_log.h:
-/usr/include/SDL3/SDL_messagebox.h:
-/usr/include/SDL3/SDL_metal.h:
-/usr/include/SDL3/SDL_misc.h:
-/usr/include/SDL3/SDL_platform.h:
-/usr/include/SDL3/SDL_process.h:
-/usr/include/SDL3/SDL_render.h:
-/usr/include/SDL3/SDL_storage.h:
-/usr/include/SDL3/SDL_system.h:
-/usr/include/SDL3/SDL_time.h:
-/usr/include/SDL3/SDL_timer.h:
-/usr/include/SDL3/SDL_tray.h:
-/usr/include/SDL3/SDL_version.h:
-/usr/include/SDL3/SDL_oldnames.h:
-/usr/include/c++/15/vector:
-/usr/include/c++/15/bits/stl_uninitialized.h:
-/usr/include/c++/15/bits/stl_vector.h:
-/usr/include/c++/15/bits/stl_bvector.h:
-/usr/include/c++/15/bits/vector.tcc:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../runtime_err.hpp:
-/usr/include/c++/15/functional:
-/usr/include/c++/15/bits/std_function.h:
-/usr/include/c++/15/unordered_map:
-/usr/include/c++/15/bits/unordered_map.h:
-/usr/include/c++/15/bits/hashtable.h:
-/usr/include/c++/15/bits/hashtable_policy.h:
-/usr/include/c++/15/ext/aligned_buffer.h:
-/usr/include/c++/15/bits/enable_special_members.h:
-/usr/include/c++/15/bits/node_handle.h:
-/usr/include/c++/15/bits/erase_if.h:
-/usr/include/c++/15/array:
-/usr/include/c++/15/compare:
-/usr/include/c++/15/memory:
-/usr/include/c++/15/bits/stl_tempbuf.h:
-/usr/include/c++/15/bits/stl_raw_storage_iter.h:
-/usr/include/c++/15/bits/align.h:
-/usr/include/c++/15/bits/unique_ptr.h:
-/usr/include/c++/15/bits/shared_ptr.h:
-/usr/include/c++/15/bits/shared_ptr_base.h:
-/usr/include/c++/15/bits/allocated_ptr.h:
-/usr/include/c++/15/ext/concurrence.h:
-/usr/include/c++/15/bits/shared_ptr_atomic.h:
-/usr/include/c++/15/bits/atomic_base.h:
-/usr/include/c++/15/bits/atomic_lockfree_defines.h:
-/usr/include/c++/15/backward/auto_ptr.h:
-/usr/include/c++/15/pstl/glue_memory_defs.h:
-/usr/include/c++/15/pstl/execution_defs.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/shader.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../utils/file.hpp:
-/usr/include/c++/15/stdlib.h:
-/usr/include/c++/15/ctime:
-/usr/include/c++/15/fstream:
-/usr/include/c++/15/bits/codecvt.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/basic_file.h:
-/usr/include/c++/15/x86_64-redhat-linux/bits/c++io.h:
-/usr/include/c++/15/bits/fstream.tcc:
-/usr/include/c++/15/sstream:
-/usr/include/c++/15/bits/sstream.tcc:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/built_in_shaders.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/texture.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/../../third_party/stb/stb_image.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vao.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../graphics/vbo.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mat4.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec3.hpp:
-/usr/include/c++/15/math.h:
-/usr/include/c++/15/cmath:
-/usr/include/math.h:
-/usr/include/bits/math-vector.h:
-/usr/include/bits/libm-simd-decl-stubs.h:
-/usr/include/bits/flt-eval-method.h:
-/usr/include/bits/fp-logb.h:
-/usr/include/bits/fp-fast.h:
-/usr/include/bits/mathcalls-macros.h:
-/usr/include/bits/mathcalls-helper-functions.h:
-/usr/include/bits/mathcalls.h:
-/usr/include/bits/mathcalls-narrow.h:
-/usr/include/bits/iscanonical.h:
-/usr/include/c++/15/bits/specfun.h:
-/usr/include/c++/15/limits:
-/usr/include/c++/15/tr1/gamma.tcc:
-/usr/include/c++/15/tr1/special_function_util.h:
-/usr/include/c++/15/tr1/bessel_function.tcc:
-/usr/include/c++/15/tr1/beta_function.tcc:
-/usr/include/c++/15/tr1/ell_integral.tcc:
-/usr/include/c++/15/tr1/exp_integral.tcc:
-/usr/include/c++/15/tr1/hypergeometric.tcc:
-/usr/include/c++/15/tr1/legendre_function.tcc:
-/usr/include/c++/15/tr1/modified_bessel_func.tcc:
-/usr/include/c++/15/tr1/poly_hermite.tcc:
-/usr/include/c++/15/tr1/poly_laguerre.tcc:
-/usr/include/c++/15/tr1/riemann_zeta.tcc:
-/usr/lib/gcc/x86_64-redhat-linux/15/include/stdbool.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/mathf.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/transform.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../component.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../components/../object.hpp:
-/usr/include/c++/15/chrono:
-/usr/include/c++/15/bits/chrono.h:
-/usr/include/c++/15/ratio:
-/usr/include/c++/15/cstdint:
-/usr/include/c++/15/bits/parse_numbers.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../entity.hpp:
+C:/msys64/ucrt64/include/c++/15.2.0/iostream:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h:
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ostream:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ios:
+C:/msys64/ucrt64/include/c++/15.2.0/iosfwd:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cwchar:
+C:/msys64/ucrt64/include/wchar.h:
+C:/msys64/ucrt64/include/corecrt.h:
+C:/msys64/ucrt64/include/_mingw.h:
+C:/msys64/ucrt64/include/_mingw_mac.h:
+C:/msys64/ucrt64/include/_mingw_secapi.h:
+C:/msys64/ucrt64/include/vadefs.h:
+C:/msys64/ucrt64/include/sdks/_mingw_ddk.h:
+C:/msys64/ucrt64/include/corecrt_stdio_config.h:
+C:/msys64/ucrt64/include/corecrt_wstdlib.h:
+C:/msys64/ucrt64/include/corecrt_wctype.h:
+C:/msys64/ucrt64/include/_mingw_off_t.h:
+C:/msys64/ucrt64/include/_mingw_stat64.h:
+C:/msys64/ucrt64/include/swprintf.inl:
+C:/msys64/ucrt64/include/sec_api/wchar_s.h:
+C:/msys64/ucrt64/include/c++/15.2.0/exception:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h:
+C:/msys64/ucrt64/include/stddef.h:
+C:/msys64/ucrt64/include/crtdefs.h:
+C:/msys64/ucrt64/include/c++/15.2.0/typeinfo:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h:
+C:/msys64/ucrt64/include/c++/15.2.0/new:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h:
+C:/msys64/ucrt64/include/c++/15.2.0/type_traits:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h:
+C:/msys64/ucrt64/include/c++/15.2.0/clocale:
+C:/msys64/ucrt64/include/locale.h:
+C:/msys64/ucrt64/include/stdio.h:
+C:/msys64/ucrt64/include/sec_api/stdio_s.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cctype:
+C:/msys64/ucrt64/include/ctype.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h:
+C:/msys64/ucrt64/include/pthread.h:
+C:/msys64/ucrt64/include/errno.h:
+C:/msys64/ucrt64/include/sys/types.h:
+C:/msys64/ucrt64/include/process.h:
+C:/msys64/ucrt64/include/corecrt_startup.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
+C:/msys64/ucrt64/include/limits.h:
+C:/msys64/ucrt64/include/signal.h:
+C:/msys64/ucrt64/include/pthread_signal.h:
+C:/msys64/ucrt64/include/time.h:
+C:/msys64/ucrt64/include/sys/timeb.h:
+C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h:
+C:/msys64/ucrt64/include/_timeval.h:
+C:/msys64/ucrt64/include/pthread_time.h:
+C:/msys64/ucrt64/include/pthread_compat.h:
+C:/msys64/ucrt64/include/sched.h:
+C:/msys64/ucrt64/include/pthread_unistd.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h:
+C:/msys64/ucrt64/include/c++/15.2.0/string:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h:
+C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h:
+C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h:
+C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bit:
+C:/msys64/ucrt64/include/c++/15.2.0/concepts:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h:
+C:/msys64/ucrt64/include/c++/15.2.0/initializer_list:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h:
+C:/msys64/ucrt64/include/c++/15.2.0/string_view:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cstdlib:
+C:/msys64/ucrt64/include/stdlib.h:
+C:/msys64/ucrt64/include/sec_api/stdlib_s.h:
+C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h:
+C:/msys64/ucrt64/include/malloc.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cstdio:
+C:/msys64/ucrt64/include/c++/15.2.0/cerrno:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cstddef:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h:
+C:/msys64/ucrt64/include/c++/15.2.0/tuple:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/system_error:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h:
+C:/msys64/ucrt64/include/c++/15.2.0/stdexcept:
+C:/msys64/ucrt64/include/c++/15.2.0/streambuf:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cwctype:
+C:/msys64/ucrt64/include/wctype.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/istream:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/khrplatform.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
+C:/msys64/ucrt64/include/stdint.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/ebo.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/material.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/color.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/renderer.hpp:
+../duckylib/third_party/SDL3/include/SDL3/SDL.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_stdinc.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_platform_defines.h:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h:
+C:/msys64/ucrt64/include/stdarg.h:
+C:/msys64/ucrt64/include/_mingw_stdarg.h:
+C:/msys64/ucrt64/include/string.h:
+C:/msys64/ucrt64/include/sec_api/string_s.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_begin_code.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_close_code.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_assert.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_asyncio.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_atomic.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_audio.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_endian.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_error.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_mutex.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_thread.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_properties.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_iostream.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_bits.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_blendmode.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_camera.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_pixels.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_surface.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_rect.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_clipboard.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_cpuinfo.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_dialog.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_video.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_events.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_gamepad.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_guid.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_joystick.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_power.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_sensor.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_keyboard.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_keycode.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_scancode.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_mouse.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_pen.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_touch.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_filesystem.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_gpu.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_haptic.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_hidapi.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_hints.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_init.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_loadso.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_locale.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_log.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_messagebox.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_metal.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_misc.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_platform.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_process.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_render.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_storage.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_system.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_time.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_timer.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_tray.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_version.h:
+../duckylib/third_party/SDL3/include/SDL3/SDL_oldnames.h:
+C:/msys64/ucrt64/include/c++/15.2.0/vector:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/runtime_err.hpp:
+C:/msys64/ucrt64/include/c++/15.2.0/functional:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h:
+C:/msys64/ucrt64/include/c++/15.2.0/unordered_map:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/hashtable_policy.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/node_handle.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h:
+C:/msys64/ucrt64/include/c++/15.2.0/array:
+C:/msys64/ucrt64/include/c++/15.2.0/compare:
+C:/msys64/ucrt64/include/c++/15.2.0/memory:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h:
+C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h:
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/shader.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/utils/file.hpp:
+C:/msys64/ucrt64/include/c++/15.2.0/ctime:
+C:/msys64/ucrt64/include/c++/15.2.0/fstream:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h:
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/sstream:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/built_in_shaders.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/texture.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/stb/stb_image.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/vao.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/graphics/vbo.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/mat4.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec3.hpp:
+C:/msys64/ucrt64/include/c++/15.2.0/math.h:
+C:/msys64/ucrt64/include/c++/15.2.0/cmath:
+C:/msys64/ucrt64/include/math.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/specfun.h:
+C:/msys64/ucrt64/include/c++/15.2.0/limits:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/gamma.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/special_function_util.h:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/bessel_function.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/beta_function.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/ell_integral.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/exp_integral.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/hypergeometric.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/legendre_function.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/modified_bessel_func.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_hermite.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/poly_laguerre.tcc:
+C:/msys64/ucrt64/include/c++/15.2.0/tr1/riemann_zeta.tcc:
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdbool.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/pi.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/mathf.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec2.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/components/transform.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/component.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/object.hpp:
+C:/msys64/ucrt64/include/c++/15.2.0/chrono:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/chrono.h:
+C:/msys64/ucrt64/include/c++/15.2.0/ratio:
+C:/msys64/ucrt64/include/c++/15.2.0/cstdint:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/parse_numbers.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/ecs/entity.hpp:
 ../duckylib/src/ecs/entities/../../../include/ecs/entities/camera.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../window.hpp:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../../third_party/glad/glad.h:
-../duckylib/src/ecs/entities/../../../include/ecs/entities/../../math/vec2i.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/window.hpp:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/third_party/glad/glad.h:
+C:/Users/Adam/Dev/C++/DuckyLib.cpp/duckylib/include/math/vec2i.hpp:
 ../duckylib/src/ecs/entities/../../../include/ecs/entities/light.hpp:

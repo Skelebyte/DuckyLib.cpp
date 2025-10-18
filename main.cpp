@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
     camera.update();
     cube.update();
 
-    cube.transform.rotation.y += 0.5f;
+    cube.transform.rotation.y += 0.1f;
 
     camera.transform.position +=
         Vec3::cross(camera.get_orientation(), camera.transform.up()) *
