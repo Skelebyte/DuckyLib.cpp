@@ -12,9 +12,24 @@ class Light;
 }
 
 namespace ducky::graphics {
+
+typedef enum {
+  BACK = 0,
+  FRONT = 1
+} FaceCullingType;
+
+typedef struct {
+  unsigned int max_lights;
+  bool enable_blending;
+  bool enable_depth_test;
+  bool enable_culling;
+  FaceCullingType culling_type;  
+  bool enable_line_smoothing;
+} RendererSettings;
+
 class Renderer {
  public:
-  static void init(int max_point_lights = 8);
+  static void init(RendererSettings renderer_settings = {8, true, true, true, FaceCullingType::BACK, true});
   static void clear_frame(Color color = Color(0.1f, 0.1f, 0.1f, 1.0f));
   static int get_max_lights();
   static void add_light(ducky::ecs::entities::Light* light);
@@ -23,13 +38,14 @@ class Renderer {
   static void get_gl_error(std::string error_context = "");
 
  private:
-  static int max_lights_;
+  static bool initialized_;
+  static RendererSettings settings_;
 };
 
 }  // namespace ducky::graphics
 
 /*
-      THE ISSUE
+THE ISSUE
 renderer.hpp includes light.hpp, which includes shader.hpp, which includes
 renderer.hpp again
 */

@@ -6,12 +6,13 @@
 #include <memory>
 #include "../third_party/glad/glad.h"
 #include "math/vec2i.hpp"
+#include "graphics/renderer.hpp"
 #include "runtime_err.hpp"
 
 namespace ducky {
 class Window {
  public:
-  Window(const std::string& title, int w, int h);
+  Window(const std::string& title, int w, int h, bool init_renderer = true);
   void poll();
   math::Vec2i get_dimensions();
   math::Vec2i get_viewport_size() const;

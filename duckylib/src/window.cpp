@@ -2,8 +2,9 @@
 
 using namespace ducky;
 using namespace ducky::math;
+using namespace ducky::graphics;
 
-Window::Window(const std::string& title, int w, int h) {
+Window::Window(const std::string& title, int w, int h, bool init_renderer) {
   SDL_WindowFlags flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL;
 
   this->sdl_window_ =
@@ -30,6 +31,11 @@ Window::Window(const std::string& title, int w, int h) {
   }
 
   this->running_ = true;
+
+  if(init_renderer) {
+    Renderer::init();
+  }
+
 }
 
 void Window::poll() {
