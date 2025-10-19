@@ -10,18 +10,15 @@ endif
 
 ifeq ($(config),debug_x64)
   DuckyLib_config = debug_x64
-
-else ifeq ($(config),debug_x86)
+endif
+ifeq ($(config),debug_x86)
   DuckyLib_config = debug_x86
-
-else ifeq ($(config),release_x64)
+endif
+ifeq ($(config),release_x64)
   DuckyLib_config = release_x64
-
-else ifeq ($(config),release_x86)
+endif
+ifeq ($(config),release_x86)
   DuckyLib_config = release_x86
-
-else
-  $(error "invalid configuration $(config)")
 endif
 
 PROJECTS := DuckyLib

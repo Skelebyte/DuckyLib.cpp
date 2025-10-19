@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
     camera.update();
     cube.update();
 
-    cube.transform.rotation.y += 0.1f;
+    cube.transform.rotation.y = 45.0f;
 
     camera.transform.position +=
         Vec3::cross(camera.get_orientation(), camera.transform.up()) *
@@ -73,7 +73,9 @@ int main(int argc, char** argv) {
       float y = mouse.y * dimensions.y * sens;
 
       camera.transform.rotation = Vec3(y, x, 0.0f);
-      // Input::cursor(window, true, false);
+
+      std::cout << camera.transform.rotation.to_string() << std::endl;
+
     } else {
       Input::cursor(window, false, false);
     }

@@ -8,158 +8,162 @@ ifndef verbose
   SILENT = @
 endif
 
-.PHONY: clean prebuild
+.PHONY: clean prebuild prelink
+
+ifeq ($(config),debug_x64)
+  RESCOMP = windres
+  TARGETDIR = ../bin/Debug-x64
+  TARGET = $(TARGETDIR)/libDuckyLib.a
+  OBJDIR = ../obj/Debug-x64/DuckyLib
+  DEFINES += -DDEBUG
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/third_party/SDL3 -I../duckylib/third_party/SDL3/include -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/input -I../duckylib/include/ecs/components -I../duckylib/include/ecs/entities
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: prebuild prelink $(TARGET)
+	@:
+
+endif
+
+ifeq ($(config),debug_x86)
+  RESCOMP = windres
+  TARGETDIR = ../bin/Debug-x86
+  TARGET = $(TARGETDIR)/libDuckyLib.a
+  OBJDIR = ../obj/Debug-x86/DuckyLib
+  DEFINES += -DDEBUG
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/third_party/SDL3 -I../duckylib/third_party/SDL3/include -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/input -I../duckylib/include/ecs/components -I../duckylib/include/ecs/entities
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -g
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -g -std=c++17
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: prebuild prelink $(TARGET)
+	@:
+
+endif
+
+ifeq ($(config),release_x64)
+  RESCOMP = windres
+  TARGETDIR = ../bin/Release-x64
+  TARGET = $(TARGETDIR)/libDuckyLib.a
+  OBJDIR = ../obj/Release-x64/DuckyLib
+  DEFINES += -DNDEBUG
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/third_party/SDL3 -I../duckylib/third_party/SDL3/include -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/input -I../duckylib/include/ecs/components -I../duckylib/include/ecs/entities
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: prebuild prelink $(TARGET)
+	@:
+
+endif
+
+ifeq ($(config),release_x86)
+  RESCOMP = windres
+  TARGETDIR = ../bin/Release-x86
+  TARGET = $(TARGETDIR)/libDuckyLib.a
+  OBJDIR = ../obj/Release-x86/DuckyLib
+  DEFINES += -DNDEBUG
+  INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/stb -I../duckylib/third_party/SDL3 -I../duckylib/third_party/SDL3/include -I../duckylib/include/utils -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/math -I../duckylib/include/input -I../duckylib/include/ecs/components -I../duckylib/include/ecs/entities
+  FORCE_INCLUDE +=
+  ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -std=c++17
+  ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
+  LIBS +=
+  LDDEPS +=
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -s
+  LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
+  define PREBUILDCMDS
+  endef
+  define PRELINKCMDS
+  endef
+  define POSTBUILDCMDS
+  endef
+all: prebuild prelink $(TARGET)
+	@:
+
+endif
+
+OBJECTS := \
+	$(OBJDIR)/app.o \
+	$(OBJDIR)/component.o \
+	$(OBJDIR)/transform.o \
+	$(OBJDIR)/camera.o \
+	$(OBJDIR)/light.o \
+	$(OBJDIR)/mesh_renderer.o \
+	$(OBJDIR)/entity.o \
+	$(OBJDIR)/object.o \
+	$(OBJDIR)/color.o \
+	$(OBJDIR)/ebo.o \
+	$(OBJDIR)/material.o \
+	$(OBJDIR)/renderer.o \
+	$(OBJDIR)/shader.o \
+	$(OBJDIR)/texture.o \
+	$(OBJDIR)/vao.o \
+	$(OBJDIR)/vbo.o \
+	$(OBJDIR)/input.o \
+	$(OBJDIR)/input_axis.o \
+	$(OBJDIR)/keybind.o \
+	$(OBJDIR)/mat4.o \
+	$(OBJDIR)/mathf.o \
+	$(OBJDIR)/vec2.o \
+	$(OBJDIR)/vec2i.o \
+	$(OBJDIR)/vec3.o \
+	$(OBJDIR)/runtime_err.o \
+	$(OBJDIR)/debug.o \
+	$(OBJDIR)/file.o \
+	$(OBJDIR)/window.o \
+	$(OBJDIR)/glad.o \
+
+RESOURCES := \
+
+CUSTOMFILES := \
 
 SHELLTYPE := posix
-ifeq ($(shell echo "test"), "test")
+ifeq (.exe,$(findstring .exe,$(ComSpec)))
 	SHELLTYPE := msdos
 endif
 
-# Configurations
-# #############################################
-
-ifeq ($(origin CC), default)
-  CC = gcc
-endif
-ifeq ($(origin CXX), default)
-  CXX = g++
-endif
-ifeq ($(origin AR), default)
-  AR = ar
-endif
-RESCOMP = windres
-INCLUDES += -I../duckylib/include -I../duckylib/third_party/glad -I../duckylib/third_party/SDL3 -I../duckylib/third_party/stb -I../duckylib/third_party/SDL3/include -I../duckylib/include/ecs -I../duckylib/include/graphics -I../duckylib/include/input -I../duckylib/include/math -I../duckylib/include/utils -I../duckylib/include/ecs/components -I../duckylib/include/ecs/entities
-FORCE_INCLUDE +=
-ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
-ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-LIBS +=
-LDDEPS +=
-LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
-define PREBUILDCMDS
-endef
-define PRELINKCMDS
-endef
-define POSTBUILDCMDS
-endef
-
-ifeq ($(config),debug_x64)
-TARGETDIR = ../bin/Debug-x64
-TARGET = $(TARGETDIR)/DuckyLib.lib
-OBJDIR = ../obj/Debug-x64/DuckyLib
-DEFINES += -DDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++17
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
-
-else ifeq ($(config),debug_x86)
-TARGETDIR = ../bin/Debug-x86
-TARGET = $(TARGETDIR)/DuckyLib.lib
-OBJDIR = ../obj/Debug-x86/DuckyLib
-DEFINES += -DDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -g -std=c++17
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32
-
-else ifeq ($(config),release_x64)
-TARGETDIR = ../bin/Release-x64
-TARGET = $(TARGETDIR)/DuckyLib.lib
-OBJDIR = ../obj/Release-x64/DuckyLib
-DEFINES += -DNDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++17
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
-
-else ifeq ($(config),release_x86)
-TARGETDIR = ../bin/Release-x86
-TARGET = $(TARGETDIR)/DuckyLib.lib
-OBJDIR = ../obj/Release-x86/DuckyLib
-DEFINES += -DNDEBUG
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -O2 -std=c++17
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -s
-
-endif
-
-# Per File Configurations
-# #############################################
-
-
-# File sets
-# #############################################
-
-GENERATED :=
-OBJECTS :=
-
-GENERATED += $(OBJDIR)/app.o
-GENERATED += $(OBJDIR)/camera.o
-GENERATED += $(OBJDIR)/color.o
-GENERATED += $(OBJDIR)/component.o
-GENERATED += $(OBJDIR)/debug.o
-GENERATED += $(OBJDIR)/ebo.o
-GENERATED += $(OBJDIR)/entity.o
-GENERATED += $(OBJDIR)/file.o
-GENERATED += $(OBJDIR)/glad.o
-GENERATED += $(OBJDIR)/input.o
-GENERATED += $(OBJDIR)/input_axis.o
-GENERATED += $(OBJDIR)/keybind.o
-GENERATED += $(OBJDIR)/light.o
-GENERATED += $(OBJDIR)/mat4.o
-GENERATED += $(OBJDIR)/material.o
-GENERATED += $(OBJDIR)/mathf.o
-GENERATED += $(OBJDIR)/mesh_renderer.o
-GENERATED += $(OBJDIR)/object.o
-GENERATED += $(OBJDIR)/renderer.o
-GENERATED += $(OBJDIR)/runtime_err.o
-GENERATED += $(OBJDIR)/shader.o
-GENERATED += $(OBJDIR)/texture.o
-GENERATED += $(OBJDIR)/transform.o
-GENERATED += $(OBJDIR)/vao.o
-GENERATED += $(OBJDIR)/vbo.o
-GENERATED += $(OBJDIR)/vec2.o
-GENERATED += $(OBJDIR)/vec2i.o
-GENERATED += $(OBJDIR)/vec3.o
-GENERATED += $(OBJDIR)/window.o
-OBJECTS += $(OBJDIR)/app.o
-OBJECTS += $(OBJDIR)/camera.o
-OBJECTS += $(OBJDIR)/color.o
-OBJECTS += $(OBJDIR)/component.o
-OBJECTS += $(OBJDIR)/debug.o
-OBJECTS += $(OBJDIR)/ebo.o
-OBJECTS += $(OBJDIR)/entity.o
-OBJECTS += $(OBJDIR)/file.o
-OBJECTS += $(OBJDIR)/glad.o
-OBJECTS += $(OBJDIR)/input.o
-OBJECTS += $(OBJDIR)/input_axis.o
-OBJECTS += $(OBJDIR)/keybind.o
-OBJECTS += $(OBJDIR)/light.o
-OBJECTS += $(OBJDIR)/mat4.o
-OBJECTS += $(OBJDIR)/material.o
-OBJECTS += $(OBJDIR)/mathf.o
-OBJECTS += $(OBJDIR)/mesh_renderer.o
-OBJECTS += $(OBJDIR)/object.o
-OBJECTS += $(OBJDIR)/renderer.o
-OBJECTS += $(OBJDIR)/runtime_err.o
-OBJECTS += $(OBJDIR)/shader.o
-OBJECTS += $(OBJDIR)/texture.o
-OBJECTS += $(OBJDIR)/transform.o
-OBJECTS += $(OBJDIR)/vao.o
-OBJECTS += $(OBJDIR)/vbo.o
-OBJECTS += $(OBJDIR)/vec2.o
-OBJECTS += $(OBJDIR)/vec2i.o
-OBJECTS += $(OBJDIR)/vec3.o
-OBJECTS += $(OBJDIR)/window.o
-
-# Rules
-# #############################################
-
-all: $(TARGET)
-	@:
-
-$(TARGET): $(GENERATED) $(OBJECTS) $(LDDEPS) | $(TARGETDIR)
-	$(PRELINKCMDS)
+$(TARGET): $(GCH) ${CUSTOMFILES} $(OBJECTS) $(LDDEPS) $(RESOURCES) | $(TARGETDIR)
 	@echo Linking DuckyLib
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
+
+$(CUSTOMFILES): | $(OBJDIR)
 
 $(TARGETDIR):
 	@echo Creating $(TARGETDIR)
@@ -181,125 +185,116 @@ clean:
 	@echo Cleaning DuckyLib
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
-	$(SILENT) rm -rf $(GENERATED)
 	$(SILENT) rm -rf $(OBJDIR)
 else
 	$(SILENT) if exist $(subst /,\\,$(TARGET)) del $(subst /,\\,$(TARGET))
-	$(SILENT) if exist $(subst /,\\,$(GENERATED)) del /s /q $(subst /,\\,$(GENERATED))
 	$(SILENT) if exist $(subst /,\\,$(OBJDIR)) rmdir /s /q $(subst /,\\,$(OBJDIR))
 endif
 
-prebuild: | $(OBJDIR)
+prebuild:
 	$(PREBUILDCMDS)
 
+prelink:
+	$(PRELINKCMDS)
+
 ifneq (,$(PCH))
-$(OBJECTS): $(GCH) | $(PCH_PLACEHOLDER)
-$(GCH): $(PCH) | prebuild
+$(OBJECTS): $(GCH) $(PCH) | $(OBJDIR)
+$(GCH): $(PCH) | $(OBJDIR)
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
-$(PCH_PLACEHOLDER): $(GCH) | $(OBJDIR)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) touch "$@"
 else
-	$(SILENT) echo $null >> "$@"
+$(OBJECTS): | $(OBJDIR)
 endif
-else
-$(OBJECTS): | prebuild
-endif
-
-
-# File Rules
-# #############################################
 
 $(OBJDIR)/app.o: ../duckylib/src/app.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/component.o: ../duckylib/src/ecs/component.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/transform.o: ../duckylib/src/ecs/components/transform.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/camera.o: ../duckylib/src/ecs/entities/camera.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/light.o: ../duckylib/src/ecs/entities/light.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/mesh_renderer.o: ../duckylib/src/ecs/entities/mesh_renderer.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/entity.o: ../duckylib/src/ecs/entity.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/object.o: ../duckylib/src/ecs/object.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/color.o: ../duckylib/src/graphics/color.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ebo.o: ../duckylib/src/graphics/ebo.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/material.o: ../duckylib/src/graphics/material.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/renderer.o: ../duckylib/src/graphics/renderer.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/shader.o: ../duckylib/src/graphics/shader.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/texture.o: ../duckylib/src/graphics/texture.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/vao.o: ../duckylib/src/graphics/vao.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/vbo.o: ../duckylib/src/graphics/vbo.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/input.o: ../duckylib/src/input/input.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/input_axis.o: ../duckylib/src/input/input_axis.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/keybind.o: ../duckylib/src/input/keybind.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/mat4.o: ../duckylib/src/math/mat4.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/mathf.o: ../duckylib/src/math/mathf.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/vec2.o: ../duckylib/src/math/vec2.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/vec2i.o: ../duckylib/src/math/vec2i.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/vec3.o: ../duckylib/src/math/vec3.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/runtime_err.o: ../duckylib/src/runtime_err.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/debug.o: ../duckylib/src/utils/debug.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/file.o: ../duckylib/src/utils/file.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/window.o: ../duckylib/src/window.cpp
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/glad.o: ../duckylib/third_party/glad/glad.c
-	@echo "$(notdir $<)"
+	@echo $(notdir $<)
 	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 -include $(OBJECTS:%.o=%.d)
 ifneq (,$(PCH))
-  -include $(PCH_PLACEHOLDER).d
+  -include $(OBJDIR)/$(notdir $(PCH)).d
 endif
