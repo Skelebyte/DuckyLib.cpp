@@ -4,9 +4,15 @@ using namespace ducky;
 using namespace ducky::ecs;
 using namespace ducky::ecs::components;
 
-Entity::Entity() : transform() { this->name = "entity"; }
+Entity::Entity() : transform() {
+  this->name = "entity";
+  enabled = true;
+}
 
-Entity::Entity(std::string name) : transform() { this->name = name; }
+Entity::Entity(std::string name) : transform() {
+  this->name = name;
+  enabled = true;
+}
 
 Entity::~Entity() { /*destroy();*/ }
 

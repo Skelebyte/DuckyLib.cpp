@@ -33,6 +33,8 @@ class Entity : public Object {
 
   components::Transform transform;
 
+  bool enabled;
+
  private:
   std::vector<Entity*> children_;
   Entity* parent_;

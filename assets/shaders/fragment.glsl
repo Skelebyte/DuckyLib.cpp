@@ -127,7 +127,7 @@ vec4 directional_light() {
   vec4 result = vec4(0.0);
 
   for (int i = 0; i < directional_light_count; i++) {
-    vec3 light_dir = normalize(-directional_lights[i].direction);
+    vec3 light_dir = normalize(directional_lights[i].direction);
 
     float diffuse = max(dot(normal, light_dir), 0.0);
     vec3 reflect_dir = reflect(-light_dir, normal);

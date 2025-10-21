@@ -150,11 +150,30 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
                    &point_lights[i]->b);
       Renderer::get_gl_error("Renderer::update_lights - PointLight.b uniform");
 
-      glUniform1fv(
-          glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
-          &point_lights[i]->intensity);
-      Renderer::get_gl_error(
-          "Renderer::update_lights - PointLight.intensity uniform");
+      if (!point_lights[i]->enabled) {
+        float zero = 0.0f;
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &zero);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - PointLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            Vec3(1.0f).data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - PointLight.color uniform");
+      } else {
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &point_lights[i]->intensity);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - PointLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            color.data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - PointLight.color uniform");
+      }
     }
 #pragma endregion
   }
@@ -182,11 +201,6 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
                    spot_lights[i]->transform.position.data);
       Renderer::get_gl_error("Renderer::update_lights - SpotLight.pos uniform");
 
-      glUniform3fv(glGetUniformLocation(shader->id, (base + ".color").c_str()),
-                   1, color.data);
-      Renderer::get_gl_error(
-          "Renderer::update_lights - SpotLight.color uniform");
-
       glUniform1fv(glGetUniformLocation(shader->id,
                                         (base + ".outer_cone_angle").c_str()),
                    1, &spot_lights[i]->outer_cone);
@@ -199,11 +213,30 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
       Renderer::get_gl_error(
           "Renderer::update_lights - SpotLight.inner_cone_angle uniform");
 
-      glUniform1fv(
-          glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
-          &spot_lights[i]->intensity);
-      Renderer::get_gl_error(
-          "Renderer::update_lights - SpotLight.intensity uniform");
+      if (!spot_lights[i]->enabled) {
+        float zero = 0.0f;
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &zero);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - SpotLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            Vec3(1.0f).data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - SpotLight.color uniform");
+      } else {
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &spot_lights[i]->intensity);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - SpotLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            color.data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - SpotLight.color uniform");
+      }
 
       glUniform3fv(
           glGetUniformLocation(shader->id, (base + ".direction").c_str()), 1,
@@ -239,16 +272,30 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
       Renderer::get_gl_error(
           "Renderer::update_lights - DirectionalLight.pos uniform");
 
-      glUniform3fv(glGetUniformLocation(shader->id, (base + ".color").c_str()),
-                   1, color.data);
-      Renderer::get_gl_error(
-          "Renderer::update_lights - DirectionalLight.color uniform");
-
-      glUniform1fv(
-          glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
-          &directional_lights[i]->intensity);
-      Renderer::get_gl_error(
-          "Renderer::update_lights - DirectionalLight.intensity uniform");
+      if (!directional_lights[i]->enabled) {
+        float zero = 0.0f;
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &zero);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - DirectionalLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            Vec3(1.0f).data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - DirectionalLight.color uniform");
+      } else {
+        glUniform1fv(
+            glGetUniformLocation(shader->id, (base + ".intensity").c_str()), 1,
+            &directional_lights[i]->intensity);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - DirectionalLight.intensity uniform");
+        glUniform3fv(
+            glGetUniformLocation(shader->id, (base + ".color").c_str()), 1,
+            color.data);
+        Renderer::get_gl_error(
+            "Renderer::update_lights - DirectionalLight.color uniform");
+      }
 
       glUniform3fv(
           glGetUniformLocation(shader->id, (base + ".direction").c_str()), 1,
