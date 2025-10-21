@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
   settings.enable_line_smoothing = true;
   Renderer::init(settings);
   Renderer::ambient_strength = 0.5f;
-  Renderer::ambient_color = Vec3(0.05f);
+  Renderer::ambient_color = Vec3(0.1f);
 
   Shader shader = Shader();
 
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
   // Renderer::add_light(&sun);
   // sun.transform.rotation = Vec3(1.0f, 1.0f, 0.0f);
 
-  SpotLight flashlight = SpotLight();
+  DirectionalLight flashlight = DirectionalLight();
   Renderer::add_light(&flashlight);
 
   InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
