@@ -17,20 +17,25 @@ int main(int argc, char** argv) {
 
   Shader shader = Shader();
 
-  Material material = Material(Texture("assets/textures/container_diffuse.png"),
-                               Texture(DEFAULT_TEXTURE), Color::white());
+  Material material = Material(
+      Texture("assets/textures/container_diffuse.png"),
+      Texture("assets/textures/container_specular.png"), Color::white());
   material.specular_strength = 1.0f;
 
   Camera camera = Camera(&window);
 
+  MeshRenderer plane =
+      MeshRenderer(&camera, plane_vertices, sizeof(plane_vertices),
+                   plane_indices, sizeof(plane_indices), &shader, material);
+  plane.transform.position = Vec3(0.0f, -0.5f, -0.0f);
+  plane.transform.scale = Vec3(10.0f, 1.0f, 10.0f);
   MeshRenderer cube =
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                    sizeof(cube_indices), &shader, material);
 
-  cube.transform.position = Vec3(0.0f, -0.5f, -2.0f);
-
   Light light = Light();
   Renderer::add_light(&light);
+  light.transform.position = Vec3(0.0f, 5.0f, 0.0f);
 
   InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
   InputAxis axis_vertical = InputAxis(Keycode::W, Keycode::S);
@@ -45,9 +50,10 @@ int main(int argc, char** argv) {
     Renderer::clear_frame();
 
     camera.update();
+    plane.update();
     cube.update();
 
-    cube.transform.rotation.y = 45.0f;
+    plane.transform.rotation.y = 45.0f;
 
     camera.transform.position +=
         Vec3::cross(camera.get_orientation(), camera.transform.up()) *
