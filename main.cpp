@@ -13,7 +13,20 @@ float sens = 10.0f;
 int main(int argc, char** argv) {
   App app(argv[1]);
 
-  Window window = Window("Hi mum!", 1000, 800);
+  Window window = Window("Hi mum!", 1000, 800, false);
+
+  RendererSettings settings = {0};
+  settings.max_point_lights = 8;
+  settings.max_spot_lights = 8;
+  settings.max_directional_lights = 1;
+  settings.culling_type = FaceCullingType::BACK;
+  settings.enable_blending = true;
+  settings.enable_culling = true;
+  settings.enable_depth_test = true;
+  settings.enable_line_smoothing = true;
+  Renderer::init(settings);
+  Renderer::ambient_strength = 0.5f;
+  Renderer::ambient_color = Vec3(0.05f);
 
   Shader shader = Shader();
 
@@ -33,9 +46,12 @@ int main(int argc, char** argv) {
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                    sizeof(cube_indices), &shader, material);
 
-  Light light = Light();
-  Renderer::add_light(&light);
-  light.transform.position = Vec3(0.0f, 5.0f, 0.0f);
+  // DirectionalLight sun = DirectionalLight();
+  // Renderer::add_light(&sun);
+  // sun.transform.rotation = Vec3(1.0f, 1.0f, 0.0f);
+
+  SpotLight flashlight = SpotLight();
+  Renderer::add_light(&flashlight);
 
   InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
   InputAxis axis_vertical = InputAxis(Keycode::W, Keycode::S);
@@ -52,6 +68,9 @@ int main(int argc, char** argv) {
     camera.update();
     plane.update();
     cube.update();
+
+    flashlight.transform.position = camera.transform.position;
+    flashlight.transform.rotation = camera.get_orientation();
 
     plane.transform.rotation.y = 45.0f;
 

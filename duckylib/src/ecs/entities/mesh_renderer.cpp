@@ -63,31 +63,15 @@ void MeshRenderer::update() {
                      this->camera_->get_projection().data);
   Renderer::get_gl_error("MeshRenderer::update - projection uniform");
 
-  glUniform1i(glGetUniformLocation(this->shader_->id, "light_count"),
-              (int)Renderer::lights.size());
-  Renderer::get_gl_error("MeshRenderer::update - light_count uniform");
+  Renderer::update_lights(shader_, camera_);
 
-  glUniform3fv(glGetUniformLocation(this->shader_->id, "camera_position"), 1,
-               this->camera_->transform.position.data);
-  Renderer::get_gl_error("MeshRenderer::update - camera_position uniform");
+  glUniform1f(glGetUniformLocation(this->shader_->id, "ambient_strength"),
+              Renderer::ambient_strength);
+  Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
 
-  for (size_t i = 0; i < Renderer::lights.size(); i++) {
-    std::string base = "lights[" + std::to_string(i) + "]";
-
-    Vec3 color =
-        Vec3(Renderer::lights[i]->color.r, Renderer::lights[i]->color.g,
-             Renderer::lights[i]->color.b);
-
-    glUniform3fv(
-        glGetUniformLocation(this->shader_->id, (base + ".pos").c_str()), 1,
-        Renderer::lights[i]->transform.position.data);
-    Renderer::get_gl_error("MeshRenderer::update - light.pos uniform");
-
-    glUniform3fv(
-        glGetUniformLocation(this->shader_->id, (base + ".color").c_str()), 1,
-        color.data);
-    Renderer::get_gl_error("MeshRenderer::update - light.color uniform");
-  }
+  glUniform3fv(glGetUniformLocation(this->shader_->id, "ambient_color"), 1,
+               Renderer::ambient_color.data);
+  Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
 
   glUniform4fv(this->material_.color_uniform, 1, this->material_.color.data);
   Renderer::get_gl_error("MeshRenderer::update - setting color");

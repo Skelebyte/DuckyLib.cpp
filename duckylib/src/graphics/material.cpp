@@ -12,10 +12,13 @@ Material::Material(Texture diff, Texture spec, Color col) {
 void Material::get_uniforms(Shader* shader) {
   diffuse_uniform = glGetUniformLocation(shader->id, "diffuse_texture");
   Renderer::get_gl_error("Material::get_uniforms - diffuse uniform");
+
   specular_uniform = glGetUniformLocation(shader->id, "specular_texture");
   Renderer::get_gl_error("Material::get_uniforms - specular uniform");
+
   color_uniform = glGetUniformLocation(shader->id, "color");
   Renderer::get_gl_error("Material::get_uniforms - color uniform");
+
   specular_strength_uniform =
       glGetUniformLocation(shader->id, "specular_strength");
   Renderer::get_gl_error("Material::get_uniforms - specular strength uniform");

@@ -18,6 +18,7 @@ typedef struct Vec3 {
     float data[3];
   };
   Vec3();
+  Vec3(float xyz_);
   Vec3(float x_, float y_, float z_);
   void zero();
   void rotate(float angle, Vec3 axis);

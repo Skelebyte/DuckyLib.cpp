@@ -4,19 +4,28 @@
 #include <iostream>
 #include <vector>
 #include "../../third_party/glad/glad.h"
+#include "../math/vec3.hpp"
 #include "../runtime_err.hpp"
 #include "color.hpp"
 
 namespace ducky::ecs::entities {
 class Light;
-}
+class PointLight;
+class SpotLight;
+class DirectionalLight;
+class Camera;
+}  // namespace ducky::ecs::entities
 
 namespace ducky::graphics {
+
+class Shader;
 
 typedef enum { BACK = 0, FRONT = 1 } FaceCullingType;
 
 typedef struct {
-  unsigned int max_lights;
+  unsigned int max_point_lights;
+  unsigned int max_spot_lights;
+  unsigned int max_directional_lights;
   bool enable_blending;
   bool enable_depth_test;
   bool enable_culling;
@@ -27,12 +36,21 @@ typedef struct {
 class Renderer {
  public:
   static void init(RendererSettings renderer_settings = {
-                       8, true, true, true, FaceCullingType::BACK, true});
+                       8, 8, 1, true, true, true, FaceCullingType::BACK, true});
   static void clear_frame(Color color = Color(0.1f, 0.1f, 0.1f, 1.0f));
-  static int get_max_lights();
+  static int get_max_point_lights();
+  static int get_max_spot_lights();
+  static int get_max_directional_lights();
   static void add_light(ducky::ecs::entities::Light* light);
-  static std::vector<ducky::ecs::entities::Light*> lights;
   static void get_gl_error(std::string error_context = "");
+  static void update_lights(Shader* shader,
+                            ducky::ecs::entities::Camera* camera);
+  static std::vector<ducky::ecs::entities::PointLight*> point_lights;
+  static std::vector<ducky::ecs::entities::SpotLight*> spot_lights;
+  static std::vector<ducky::ecs::entities::DirectionalLight*>
+      directional_lights;
+  static float ambient_strength;
+  static ducky::math::Vec3 ambient_color;
 
  private:
   static bool initialized_;

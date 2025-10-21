@@ -21,6 +21,12 @@ Vec3::Vec3(float x_, float y_, float z_) {
   z = z_;
 }
 
+Vec3::Vec3(float xyz_) {
+  x = xyz_;
+  y = xyz_;
+  z = xyz_;
+}
+
 void Vec3::rotate(float angle, Vec3 axis) {
   axis = axis.normalized();
   angle *= M_PI / 180;
