@@ -43,7 +43,6 @@ int main(int argc, char** argv) {
     window.poll();
 
     Renderer::clear_frame();
-    Renderer::update_lights();
 
     camera.update();
     cube.update();
@@ -72,7 +71,6 @@ int main(int argc, char** argv) {
     }
 
     window.render();
-    // window.stop();
   }
 
   return 0;

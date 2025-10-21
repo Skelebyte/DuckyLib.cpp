@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/ebdd5199-39f1-41e1-aa46-73f4e53797cb/project/e708815b-f08a-47a1-8da3-91a45c945786.svg)](https://wakatime.com/badge/user/ebdd5199-39f1-41e1-aa46-73f4e53797cb/project/e708815b-f08a-47a1-8da3-91a45c945786)
+
 # DuckyLib.cpp
 
 Simple C++ game engine powered by SDL 3 and OpenGL.

@@ -9,34 +9,34 @@ RendererSettings Renderer::settings_ = {};
 std::vector<ducky::ecs::entities::Light*> ducky::graphics::Renderer::lights;
 
 void Renderer::init(RendererSettings renderer_settings) {
-  if(initialized_) {
-    std::cout<<"Renderer is already initialized!\n";
+  if (initialized_) {
+    std::cout << "Renderer is already initialized!\n";
     return;
   }
-  if(renderer_settings.enable_blending) {
+  if (renderer_settings.enable_blending) {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
   }
 
-  if(renderer_settings.enable_depth_test) {
+  if (renderer_settings.enable_depth_test) {
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LESS);
   }
 
-  if(renderer_settings.enable_culling) {
+  if (renderer_settings.enable_culling) {
     glEnable(GL_CULL_FACE);
-    if(renderer_settings.culling_type == FaceCullingType::BACK) {
+    if (renderer_settings.culling_type == FaceCullingType::BACK) {
       glCullFace(GL_BACK);
-    } else if(renderer_settings.culling_type == FaceCullingType::FRONT) {// super dooper coolio
+    } else if (renderer_settings.culling_type ==
+               FaceCullingType::FRONT) {  // super dooper coolio
       glCullFace(GL_FRONT);
     }
     glFrontFace(GL_CCW);
   }
 
-  if(renderer_settings.enable_line_smoothing) {
+  if (renderer_settings.enable_line_smoothing) {
     glEnable(GL_LINE_SMOOTH);
   }
-
 
   glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
@@ -60,8 +60,6 @@ void Renderer::add_light(ecs::entities::Light* light) {
     std::cout << "Renderer::add_light: max lights reached" << std::endl;
   }
 }
-
-void Renderer::update_lights() {}
 
 void Renderer::get_gl_error(std::string error_context) {
   GLenum err = glGetError();
