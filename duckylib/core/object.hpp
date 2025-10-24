@@ -8,22 +8,18 @@
 
 namespace ducky {
 
-namespace ecs {
-
 class Object {
  public:
   Object();
 
   virtual void destroy();
-  int get_id();
+  unsigned int get_id();
 
  protected:
-  bool destroyed;
+  bool destroyed_;
 
  private:
-  int id_;
+  unsigned int id_;
 };
-
-}  // namespace ecs
 
 }  // namespace ducky

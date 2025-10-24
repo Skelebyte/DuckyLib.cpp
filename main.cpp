@@ -22,8 +22,7 @@ int main(int argc, char** argv) {
   Camera camera = Camera(&window);
 
   Material crate = Material(Texture("assets/textures/container_diffuse.png"),
-                            Texture("assets/textures/container_specular.png"),
-                            Color::white());
+                            Texture(DEFAULT_TEXTURE), Color::white());
   crate.specular_strength = 1.0f;
 
   MeshRenderer cube =

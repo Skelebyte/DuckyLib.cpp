@@ -2,9 +2,9 @@
 
 #include <iostream>
 #include <vector>
+#include "../object.hpp"
 #include "component.hpp"
-#include "components/transform.hpp"
-#include "object.hpp"
+#include "transform.hpp"
 
 namespace ducky {
 

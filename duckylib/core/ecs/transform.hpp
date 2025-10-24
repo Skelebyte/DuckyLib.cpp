@@ -1,16 +1,12 @@
 #pragma once
 
-#include "../../math/mathf.hpp"
-#include "../../math/vec3.hpp"
-#include "../component.hpp"
+#include "../math/mathf.hpp"
+#include "../math/vec3.hpp"
+#include "../object.hpp"
 
-namespace ducky {
+namespace ducky::ecs {
 
-namespace ecs {
-
-namespace components {
-
-class Transform : public Component {
+class Transform : public Object {
  public:
   Transform();
   Transform(math::Vec3 pos, math::Vec3 rot, math::Vec3 sca);
@@ -25,8 +21,4 @@ class Transform : public Component {
   math::Vec3 scale;
 };
 
-}  // namespace components
-
-}  // namespace ecs
-
-}  // namespace ducky
+}  // namespace ducky::ecs

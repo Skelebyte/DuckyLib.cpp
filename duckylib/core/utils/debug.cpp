@@ -1,4 +1,4 @@
-#include "../../include/utils/debug.h"
+#include "debug.h"
 
 namespace DL {
 void DL::Debug::Log(string message, Severity severity) {

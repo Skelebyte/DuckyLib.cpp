@@ -1,4 +1,4 @@
-#include "../include/runtime_err.hpp"
+#include "runtime_err.hpp"
 
 using namespace ducky;
 

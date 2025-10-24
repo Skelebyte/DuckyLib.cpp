@@ -1,4 +1,4 @@
-#include "../include/window.hpp"
+#include "window.hpp"
 
 using namespace ducky;
 using namespace ducky::math;

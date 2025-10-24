@@ -1,7 +1,6 @@
-#include "../../include/ecs/object.hpp"
+#include "object.hpp"
 
 using namespace ducky;
-using namespace ducky::ecs;
 
 Object::Object() {
   using namespace std::chrono;
@@ -16,11 +15,11 @@ Object::Object() {
 }
 
 void Object::destroy() {
-  if (this->destroyed)
+  if (this->destroyed_)
     return;
 
-  this->destroyed = true;
+  this->destroyed_ = true;
   delete this;
 }
 
-int Object::get_id() { return this->id_; }
+unsigned int Object::get_id() { return this->id_; }

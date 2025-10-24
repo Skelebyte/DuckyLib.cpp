@@ -4,8 +4,8 @@
 #include "../../math/mathf.hpp"
 #include "../../math/vec3.hpp"
 #include "../../window.hpp"
-#include "../components/transform.hpp"
 #include "../entity.hpp"
+#include "../transform.hpp"
 
 namespace ducky {
 
