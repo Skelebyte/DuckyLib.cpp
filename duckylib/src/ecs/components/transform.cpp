@@ -18,17 +18,12 @@ Transform::Transform(Vec3 pos, Vec3 rot, Vec3 sca) : Component("Transform") {
 }
 
 Vec3 Transform::forward() const {
-  Vec3 result = Vec3();
+  Vec3 forward = Vec3(0, 0, -1);
+  forward.rotate(Mathf::to_radians(rotation.x), right());
+  forward.rotate(Mathf::to_radians(rotation.y), up());
+  forward.rotate(Mathf::to_radians(rotation.z), Vec3(0, 0, -1));
 
-  // result.x = cos(Mathf::to_degrees(this->rotation.x)) *
-  //            sin(Mathf::to_degrees(this->rotation.y));
-  // result.y = -sin(Mathf::to_degrees(this->rotation.x));
-  // result.z = cos(Mathf::to_degrees(this->rotation.x)) *
-  //            cos(Mathf::to_degrees(this->rotation.y));
-
-  result = Vec3(0, 0, -1);
-
-  return result.normalized();
+  return forward;
 }
 
 Vec3 Transform::right() const {

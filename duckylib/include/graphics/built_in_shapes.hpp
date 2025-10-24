@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../third_party/glad/glad.h"
+#include "mesh.hpp"
 
 namespace ducky {
 

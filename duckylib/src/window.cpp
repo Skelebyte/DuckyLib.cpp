@@ -32,38 +32,18 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
 
   this->running_ = true;
 
-  if(init_renderer) {
+  if (init_renderer) {
     Renderer::init();
   }
-
 }
 
-void Window::poll() {
+void Window::update() {
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
     if (event.type == SDL_EVENT_QUIT)
       this->running_ = false;
   }
-}
 
-Vec2i Window::get_dimensions() {
-  Vec2i d;
-  SDL_GetWindowSize(this->sdl_window_.get(), &d.x, &d.y);
-
-  return d;
-}
-
-Vec2i Window::get_viewport_size() const { return this->viewport_size_; }
-
-Vec2i Window::get_viewport_position() const { return this->viewport_position_; }
-
-void Window::stop() { this->running_ = false; }
-
-float Window::get_viewport_aspect() const {
-  return (float)this->viewport_size_.x / (float)this->viewport_size_.y;
-}
-
-void Window::render() {
   Vec2i dimensions = get_dimensions();
 
   float window_aspect = (float)dimensions.x / dimensions.y;
@@ -87,8 +67,26 @@ void Window::render() {
   }
   glViewport(this->viewport_position_.x, this->viewport_position_.y,
              this->viewport_size_.x, this->viewport_size_.y);
-  SDL_GL_SwapWindow(this->sdl_window_.get());
 }
+
+Vec2i Window::get_dimensions() {
+  Vec2i d;
+  SDL_GetWindowSize(this->sdl_window_.get(), &d.x, &d.y);
+
+  return d;
+}
+
+Vec2i Window::get_viewport_size() const { return this->viewport_size_; }
+
+Vec2i Window::get_viewport_position() const { return this->viewport_position_; }
+
+void Window::stop() { this->running_ = false; }
+
+float Window::get_viewport_aspect() const {
+  return (float)this->viewport_size_.x / (float)this->viewport_size_.y;
+}
+
+void Window::swap() { SDL_GL_SwapWindow(this->sdl_window_.get()); }
 
 bool Window::running() const { return running_; }
 

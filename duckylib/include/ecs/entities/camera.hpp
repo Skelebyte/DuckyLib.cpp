@@ -22,13 +22,11 @@ class Camera : public Entity {
   float far_plane = 100.0f;
   math::Mat4 get_projection() const;
   math::Mat4 get_view() const;
-  math::Vec3 get_orientation() const;
 
  private:
   Window* window_;
   math::Mat4 projection_;
   math::Mat4 view_;
-  math::Vec3 orientation_;
 };
 
 }  // namespace entities
