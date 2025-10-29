@@ -1,12 +1,14 @@
+#include <filesystem>
 #include "duckylib/ducky.hpp"
 
 using namespace ducky;
 using namespace ducky::ecs;
-using namespace ducky::ecs::components;
 using namespace ducky::ecs::entities;
 using namespace ducky::graphics;
 using namespace ducky::math;
 using namespace ducky::input;
+using namespace ducky::tools;
+using namespace ducky::utils;
 
 float sens = 10.0f;
 
@@ -22,7 +24,8 @@ int main(int argc, char** argv) {
   Camera camera = Camera(&window);
 
   Material crate = Material(Texture("assets/textures/container_diffuse.png"),
-                            Texture(DEFAULT_TEXTURE), Color::white());
+                            Texture("assets/textures/container_specular.png"),
+                            Color::white());
   crate.specular_strength = 1.0f;
 
   MeshRenderer cube =
