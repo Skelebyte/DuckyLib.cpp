@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
         camera.transform.forward() * Input::get_axis(axis_vertical) * 0.01f +
         camera.transform.up() * Input::get_axis(axis_up) * 0.01f;
 
-    if (Input::get_key(&disable, true)) {
+    if (Input::get_key_once(&disable)) {
       cube2.enabled = !cube2.enabled;
     }
 

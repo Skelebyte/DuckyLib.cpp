@@ -14,7 +14,8 @@ namespace input {
 class Input {
  public:
   static int get_axis(const InputAxis& axis);
-  static bool get_key(Keybind* keybind, bool once = false);
+  static bool get_key(Keybind* keybind);
+  static bool get_key_once(Keybind* keybind);
   static math::Vec2 get_mouse_position(Window& window, bool raw = false);
   static void cursor(Window& window, bool locked, bool hidden);
 };
