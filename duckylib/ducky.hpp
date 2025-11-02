@@ -3,6 +3,7 @@
 #include "include/ecs/entities/light.hpp"
 #include "include/ecs/entities/mesh_renderer.hpp"
 #include "include/ecs/entity.hpp"
+#include "include/ecs/entity_registry.hpp"
 #include "include/ecs/transform.hpp"
 #include "include/graphics/built_in_shaders.hpp"
 #include "include/graphics/built_in_shapes.hpp"
@@ -20,7 +21,19 @@
 #include "include/math/vec2.hpp"
 #include "include/math/vec3.hpp"
 #include "include/object.hpp"
+#include "include/object_registry.hpp"
 #include "include/tools/asset_manager.hpp"
 #include "include/utils/file.hpp"
 #include "include/utils/to_string.hpp"
 #include "include/window.hpp"
+
+#ifdef DUCKY_USE_NAMESPACES
+using namespace ducky;
+using namespace ducky::ecs;
+using namespace ducky::ecs::entities;
+using namespace ducky::graphics;
+using namespace ducky::math;
+using namespace ducky::input;
+using namespace ducky::tools;
+using namespace ducky::utils;
+#endif

@@ -11,7 +11,6 @@ namespace ecs {
 
 class Entity : public Object {
  public:
-  Entity();
   Entity(std::string name);
   ~Entity();
   void destroy();

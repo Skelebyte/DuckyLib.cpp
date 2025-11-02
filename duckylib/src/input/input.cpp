@@ -42,58 +42,64 @@ int Input::get_axis(const InputAxis& axis) {
   return 0;
 }
 
-bool Input::get_key(Keybind& keybind, bool once) {
+bool Input::get_key(Keybind* keybind, bool once) {
   SDL_MouseButtonFlags flags = SDL_GetMouseState(NULL, NULL);
 
-  if (keybind.keycode < 0) {
+  if (keybind->keycode < 0) {  // checking mouse keys
     if (once == true) {
-      if (flags & SDL_BUTTON_MASK(-keybind.keycode) &&
-          keybind.pressed == false) {
-        keybind.pressed = true;
-        return 1;
+      if (flags & SDL_BUTTON_MASK(-keybind->keycode) &&
+          keybind->pressed == false) {
+        keybind->pressed = true;
+        return true;
       }
 
-      if ((flags & SDL_BUTTON_MASK(-keybind.keycode)) == 0 &&
-          keybind.pressed == true) {
-        keybind.pressed = false;
-        return 0;
+      if ((flags & SDL_BUTTON_MASK(-keybind->keycode)) == 0 &&
+          keybind->pressed == true) {
+        keybind->pressed = false;
+        return false;
       }
+
+      if (once) {
+        std::cout << keybind->keycode << ", " << keybind->pressed << std::endl;
+      }
+
     } else {
-      if (flags == SDL_BUTTON_MASK(-keybind.keycode)) {
-        keybind.pressed = true;
-        return 1;
+      if (flags == SDL_BUTTON_MASK(-keybind->keycode)) {
+        keybind->pressed = true;
+        return true;
       } else {
-        keybind.pressed = false;
-        return 0;
+        keybind->pressed = false;
+        return false;
       }
     }
-    return 0;
+
+    return false;
   }
 
   const bool* input = SDL_GetKeyboardState(NULL);
   if (once == true)  // get key after its been pressed once
   {
-    if (input[keybind.keycode] == true && keybind.pressed == false) {
-      keybind.pressed = true;
-      return 1;
+    if (input[keybind->keycode] == true && keybind->pressed == false) {
+      keybind->pressed = true;
+      return true;
     }
 
-    if (input[keybind.keycode] == false && keybind.pressed == true) {
-      keybind.pressed = false;
-      return 0;
+    if (input[keybind->keycode] == false && keybind->pressed == true) {
+      keybind->pressed = false;
+      return false;
     }
   } else  // get key while its down
   {
-    if (input[keybind.keycode] == true) {
-      keybind.pressed = true;
-      return 1;
+    if (input[keybind->keycode] == true) {
+      keybind->pressed = true;
+      return true;
     } else {
-      keybind.pressed = false;
-      return 0;
+      keybind->pressed = false;
+      return false;
     }
   }
 
-  return 0;
+  return false;
 }
 
 math::Vec2 Input::get_mouse_position(Window& window, bool raw) {

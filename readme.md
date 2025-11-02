@@ -8,11 +8,10 @@ Simple C++ game engine powered by SDL 3 and OpenGL.
 
 ### 1. Install [Premake5](https://premake.github.io/download)
 
-### 2. Install msys2, install the required packages
+### 2. Install msys2, install the required packages in the MSYS2 MINGW terminal
 
 ```bash
-pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
-pacman -S mingw-w64-ucrt-x86_64-sdl3
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain
 ```
 
 ### 3. Run the following commands in Windows terminal

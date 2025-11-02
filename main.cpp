@@ -1,14 +1,6 @@
 #include <filesystem>
+#define DUCKY_USE_NAMESPACES
 #include "duckylib/ducky.hpp"
-
-using namespace ducky;
-using namespace ducky::ecs;
-using namespace ducky::ecs::entities;
-using namespace ducky::graphics;
-using namespace ducky::math;
-using namespace ducky::input;
-using namespace ducky::tools;
-using namespace ducky::utils;
 
 float sens = 10.0f;
 
@@ -32,6 +24,11 @@ int main(int argc, char** argv) {
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                    sizeof(cube_indices), &shader, crate);
 
+  MeshRenderer cube2 =
+      MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
+                   sizeof(cube_indices), &shader, crate);
+  cube2.transform.position.z = 2;
+  cube2.transform.scale = Vec3(0.1f);
   DirectionalLight sun = DirectionalLight();
   Renderer::add_light(&sun);
   sun.transform.rotation = Vec3(1.0f, 1.0f, 1.0f);
@@ -42,6 +39,7 @@ int main(int argc, char** argv) {
   InputAxis axis_up = InputAxis(Keycode::Q, Keycode::E);
   Keybind esc = Keybind(Keycode::ESC);
   Keybind look = Keybind(Keycode::LMB);
+  Keybind disable = Keybind(Keycode::SPACE);
 
   bool cursor = false;
 
@@ -49,9 +47,7 @@ int main(int argc, char** argv) {
     window.update();
 
     Renderer::clear_frame();
-
-    camera.update();
-    cube.update();
+    EntityRegistry::update();
 
     camera.transform.position +=
         Vec3::cross(camera.transform.forward(), camera.transform.up()) *
@@ -59,7 +55,11 @@ int main(int argc, char** argv) {
         camera.transform.forward() * Input::get_axis(axis_vertical) * 0.01f +
         camera.transform.up() * Input::get_axis(axis_up) * 0.01f;
 
-    if (Input::get_key(look)) {
+    if (Input::get_key(&disable, true)) {
+      cube2.enabled = !cube2.enabled;
+    }
+
+    if (Input::get_key(&look)) {
       Vec2 mouse = Input::get_mouse_position(window);
       Vec2i dimensions = window.get_dimensions();
 

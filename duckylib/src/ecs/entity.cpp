@@ -1,16 +1,13 @@
 #include "../../include/ecs/entity.hpp"
+#include "../../include/ecs/entity_registry.hpp"
 
 using namespace ducky;
 using namespace ducky::ecs;
 
-Entity::Entity() : Object(), transform() {
-  this->name = "entity";
-  enabled = true;
-}
-
 Entity::Entity(std::string name) : Object(), transform() {
   this->name = name;
   enabled = true;
+  EntityRegistry::register_entity(this);
 }
 
 Entity::~Entity() { /*destroy();*/ }

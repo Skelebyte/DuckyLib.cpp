@@ -3,4 +3,7 @@
 using namespace ducky;
 using namespace ducky::input;
 
-Keybind::Keybind(Keycode code) { this->keycode = code; }
+Keybind::Keybind(Keycode code) {
+  keycode = code;
+  pressed = false;
+}
