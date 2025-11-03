@@ -12,7 +12,7 @@ LINUX_LIB = bin/Debug-x64/libDuckyLib.a
 FLAGS = 
 
 WINDOWS_FLAGS = -lSDL3 -L$(WINDOWS_LIB) -lpthread -lm -lopengl32 -static-libgcc -static-libstdc++
-LINUX_FLAGS = -lSDL3 -lpthread -lm -ldl
+LINUX_FLAGS = -lSDL3 -lpthread -lm -ldl -lassimp
 
 ifeq ($(OS),Windows_NT)
 	EXECUTABLE +=$(PROJECT_NAME)$(WINDOWS_EXT)
