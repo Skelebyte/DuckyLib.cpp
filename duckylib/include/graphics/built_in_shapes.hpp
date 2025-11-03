@@ -8,7 +8,7 @@ namespace ducky {
 namespace graphics {
 
 inline GLfloat pyramid_vertices[] = {
-    // pos                // uv       // normal
+    // pos              // uv       // normal
     -0.5f, 0.0f, 0.5f,  0.0f, 0.0f, 0.0f,  -1.0f, 0.0f,  // bottom
     -0.5f, 0.0f, -0.5f, 0.0f, 5.0f, 0.0f,  -1.0f, 0.0f,  // bottom
     0.5f,  0.0f, -0.5f, 5.0f, 5.0f, 0.0f,  -1.0f, 0.0f,  // bottom
@@ -41,7 +41,7 @@ inline GLuint pyramid_indices[] = {
 };
 
 inline GLfloat cube_vertices[] = {
-    // pos                 // uv      // normal
+    // pos               // uv       // normal
     -0.5f, -0.5f, 0.5f,  0.0f, 0.0f, 0.0f,  0.0f,  1.0f,  // front
     0.5f,  -0.5f, 0.5f,  1.0f, 0.0f, 0.0f,  0.0f,  1.0f,  // front
     0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 0.0f,  0.0f,  1.0f,  // front

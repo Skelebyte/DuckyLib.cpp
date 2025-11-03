@@ -17,8 +17,10 @@ int main(int argc, char** argv) {
   Camera camera = Camera(&window);
 
   Material crate = Material(Texture("assets/textures/container_diffuse.png"),
-                            Texture(), Color::white());
-  crate.specular_strength = 0.5f;
+                            Texture("assets/textures/container_specular.png"),
+                            Color::white());
+  crate.specular_strength = 1.0f;
+  crate.unlit = true;
 
   MeshRenderer cube =
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
@@ -66,9 +68,9 @@ int main(int argc, char** argv) {
 
     camera.transform.position +=
         Vec3::cross(camera.transform.forward(), camera.transform.up()) *
-            Input::get_axis(axis_horizontal) * 0.5f +
-        camera.transform.forward() * Input::get_axis(axis_vertical) * 0.5f +
-        camera.transform.up() * Input::get_axis(axis_up) * 0.5f;
+            Input::get_axis(axis_horizontal) * 0.02f +
+        camera.transform.forward() * Input::get_axis(axis_vertical) * 0.02f +
+        camera.transform.up() * Input::get_axis(axis_up) * 0.02f;
 
     if (Input::get_key_once(&disable)) {
       cube2.enabled = !cube2.enabled;

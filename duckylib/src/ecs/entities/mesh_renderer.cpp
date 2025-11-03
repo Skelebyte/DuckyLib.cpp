@@ -43,6 +43,7 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
   this->view_uniform_ = glGetUniformLocation(this->shader_->id, "view");
   this->projection_uniform_ =
       glGetUniformLocation(this->shader_->id, "projection");
+  this->scale_uniform_ = glGetUniformLocation(this->shader_->id, "scale");
 }
 
 void MeshRenderer::update() {
@@ -63,6 +64,9 @@ void MeshRenderer::update() {
   glUniformMatrix4fv(this->projection_uniform_, 1, GL_FALSE,
                      this->camera_->get_projection().data);
   Renderer::get_gl_error("MeshRenderer::update - projection uniform");
+
+  glUniform3fv(scale_uniform_, 1, transform.scale.data);
+  Renderer::get_gl_error("MeshRenderer::update - scale uniform");
 
   Renderer::update_lights(shader_, camera_);
 

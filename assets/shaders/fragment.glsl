@@ -39,6 +39,7 @@ in vec2 texture_coord;
 in vec3 normal;
 in vec3 position;
 
+uniform vec3 scale = vec3(1.0, 1.0, 1.0);
 uniform sampler2D diffuse_texture;
 uniform sampler2D specular_texture;
 uniform vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
@@ -48,8 +49,10 @@ uniform vec3 ambient_color = vec3(1.0, 1.0, 1.0);
 uniform float ambient_strength = 0.2;
 uniform bool unlit = false;
 
+vec3 get_scaled_normal() { return normal * scale; }
+
 vec4 point_light() {
-  vec3 n = normalize(normal);
+  vec3 n = normalize(get_scaled_normal());
   vec3 view_dir = normalize(camera_position - position);
 
   vec4 result = vec4(0.0);
@@ -61,8 +64,8 @@ vec4 point_light() {
                                    point_lights[i].b * distance + 1.0);
     vec3 light_dir = normalize(light_vec);
 
-    float diffuse = max(dot(normal, light_dir), 0.0);
-    vec3 reflect_dir = reflect(-light_dir, normal);
+    float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
+    vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
     vec3 amb_res = ambient_strength *
@@ -84,7 +87,7 @@ vec4 point_light() {
 }
 
 vec4 spot_light() {
-  vec3 n = normalize(normal);
+  vec3 n = normalize(get_scaled_normal());
   vec3 view_dir = normalize(camera_position - position);
 
   vec4 result = vec4(0.0);
@@ -95,8 +98,8 @@ vec4 spot_light() {
 
     vec3 light_dir = normalize(spot_lights[i].pos - position);
 
-    float diffuse = max(dot(normal, light_dir), 0.0);
-    vec3 reflect_dir = reflect(-light_dir, normal);
+    float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
+    vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
     vec3 amb_res = ambient_strength *
@@ -122,7 +125,7 @@ vec4 spot_light() {
 }
 
 vec4 directional_light() {
-  vec3 n = normalize(normal);
+  vec3 n = normalize(get_scaled_normal());
   vec3 view_dir = normalize(camera_position - position);
 
   vec4 result = vec4(0.0);
@@ -130,8 +133,8 @@ vec4 directional_light() {
   for (int i = 0; i < directional_light_count; i++) {
     vec3 light_dir = normalize(directional_lights[i].direction);
 
-    float diffuse = max(dot(normal, light_dir), 0.0);
-    vec3 reflect_dir = reflect(-light_dir, normal);
+    float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
+    vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
     vec3 amb_res = ambient_strength *

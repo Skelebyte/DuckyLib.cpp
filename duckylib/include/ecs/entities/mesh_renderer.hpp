@@ -50,6 +50,8 @@ class MeshRenderer : public Entity {
 
   GLuint view_uniform_;
   GLuint projection_uniform_;
+
+  GLuint scale_uniform_;
 };
 
 }  // namespace entities
