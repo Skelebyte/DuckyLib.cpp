@@ -37,3 +37,15 @@ using namespace ducky::input;
 using namespace ducky::tools;
 using namespace ducky::utils;
 #endif
+
+#ifdef DUCKY_ALLOW_ENGINE_KEYBINDS
+namespace ducky {
+input::Keybind ducky_toggle_wireframe = input::Keybind(input::Keycode::F1);
+
+static void ducky_engine_keybinds() {
+  if (Input::get_key_once(&ducky_toggle_wireframe)) {
+    Renderer::toggle_wireframe();
+  }
+}
+}  // namespace ducky
+#endif

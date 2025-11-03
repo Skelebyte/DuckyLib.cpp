@@ -29,7 +29,7 @@ class MeshRenderer : public Entity {
                graphics::Shader* shader =
                    new graphics::Shader("assets/shaders/vertex.glsl",
                                         "assets/shaders/fragment.glsl"),
-               graphics::Material material = graphics::Material());
+               graphics::Material* material = new graphics::Material());
 
   void update() override;
   graphics::Shader* shader_;
@@ -43,7 +43,7 @@ class MeshRenderer : public Entity {
   graphics::VBO vbo_;
   graphics::EBO ebo_;
 
-  graphics::Material material_;
+  graphics::Material* material_;
 
   math::Mat4 model_;
   GLuint model_uniform_;

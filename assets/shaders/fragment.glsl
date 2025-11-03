@@ -41,11 +41,12 @@ in vec3 position;
 
 uniform sampler2D diffuse_texture;
 uniform sampler2D specular_texture;
-uniform vec4 color;
+uniform vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform float specular_strength = 0.5;
 uniform vec3 camera_position;
-uniform vec3 ambient_color;
+uniform vec3 ambient_color = vec3(1.0, 1.0, 1.0);
 uniform float ambient_strength = 0.2;
+uniform bool unlit = false;
 
 vec4 point_light() {
   vec3 n = normalize(normal);
@@ -151,7 +152,10 @@ vec4 directional_light() {
 }
 
 void main() {
-  vec4 res = directional_light();
-
-  FragColor = point_light() + spot_light() + directional_light();
+  if (unlit == false) {
+    vec4 lighting = point_light() + spot_light() + directional_light();
+    FragColor = lighting;
+  } else {
+    FragColor = texture(diffuse_texture, texture_coord);
+  }
 }

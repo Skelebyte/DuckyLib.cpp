@@ -22,10 +22,12 @@ class Material : public Object {
   Texture specular;
   Color color;
   float specular_strength;
+  bool unlit;
 
   GLuint diffuse_uniform;
   GLuint specular_uniform;
   GLuint specular_strength_uniform;
   GLuint color_uniform;
+  GLboolean unlit_uniform;
 };
 }  // namespace ducky::graphics

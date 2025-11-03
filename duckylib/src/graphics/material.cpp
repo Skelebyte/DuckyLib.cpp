@@ -22,6 +22,9 @@ void Material::get_uniforms(Shader* shader) {
   specular_strength_uniform =
       glGetUniformLocation(shader->id, "specular_strength");
   Renderer::get_gl_error("Material::get_uniforms - specular strength uniform");
+
+  unlit_uniform = glGetUniformLocation(shader->id, "unlit");
+  Renderer::get_gl_error("Material::get_uniforms - unlit uniform");
 }
 
 void Material::bind() {

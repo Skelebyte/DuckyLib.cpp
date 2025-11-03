@@ -7,8 +7,6 @@ out vec2 texture_coord;
 out vec3 normal;
 out vec3 position;
 
-uniform float scale;
-
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;

@@ -51,8 +51,10 @@ class Renderer {
       directional_lights;
   static float ambient_strength;
   static ducky::math::Vec3 ambient_color;
+  static void toggle_wireframe();
 
  private:
+  static bool wireframe_;
   static bool initialized_;
   static RendererSettings settings_;
 };

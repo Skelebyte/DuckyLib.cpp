@@ -1,5 +1,6 @@
 #include <filesystem>
 #define DUCKY_USE_NAMESPACES
+#define DUCKY_ALLOW_ENGINE_KEYBINDS
 #include "duckylib/ducky.hpp"
 
 float sens = 10.0f;
@@ -16,17 +17,16 @@ int main(int argc, char** argv) {
   Camera camera = Camera(&window);
 
   Material crate = Material(Texture("assets/textures/container_diffuse.png"),
-                            Texture("assets/textures/container_specular.png"),
-                            Color::white());
-  crate.specular_strength = 1.0f;
+                            Texture(), Color::white());
+  crate.specular_strength = 0.5f;
 
   MeshRenderer cube =
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-                   sizeof(cube_indices), &shader, crate);
+                   sizeof(cube_indices), &shader, &crate);
 
   MeshRenderer cube2 =
       MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-                   sizeof(cube_indices), &shader, crate);
+                   sizeof(cube_indices), &shader, &crate);
   cube2.transform.position.z = 2;
   cube2.transform.scale = Vec3(0.1f);
   DirectionalLight sun = DirectionalLight();
@@ -40,20 +40,35 @@ int main(int argc, char** argv) {
   Keybind esc = Keybind(Keycode::ESC);
   Keybind look = Keybind(Keycode::LMB);
   Keybind disable = Keybind(Keycode::SPACE);
+  Keybind size_up = Keybind(Keycode::U_ARROW);
+  Keybind size_down = Keybind(Keycode::D_ARROW);
+
+  float s = 0.1f;
 
   bool cursor = false;
 
   while (window.running()) {
     window.update();
 
+    ducky_engine_keybinds();
     Renderer::clear_frame();
     EntityRegistry::update();
 
+    cube2.transform.scale = Vec3(s);
+
+    if (Input::get_key(&size_up)) {
+      s += 0.1f;
+    }
+
+    if (Input::get_key(&size_down)) {
+      s -= 0.1f;
+    }
+
     camera.transform.position +=
         Vec3::cross(camera.transform.forward(), camera.transform.up()) *
-            Input::get_axis(axis_horizontal) * 0.01f +
-        camera.transform.forward() * Input::get_axis(axis_vertical) * 0.01f +
-        camera.transform.up() * Input::get_axis(axis_up) * 0.01f;
+            Input::get_axis(axis_horizontal) * 0.5f +
+        camera.transform.forward() * Input::get_axis(axis_vertical) * 0.5f +
+        camera.transform.up() * Input::get_axis(axis_up) * 0.5f;
 
     if (Input::get_key_once(&disable)) {
       cube2.enabled = !cube2.enabled;

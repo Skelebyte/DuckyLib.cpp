@@ -12,7 +12,8 @@ namespace ducky {
 namespace graphics {
 
 #define MISSING_TEXTURE "DUCKY_MISSING_TEXTURE"
-#define EMPTY_TEXTURE "DUCKY_EMPTY_TEXTURE"
+#define EMPTY_TEXTURE_WHITE "EMPTY_TEXTURE_WHITE"
+#define EMPTY_TEXTURE_BLACK "DUCKY_EMPTY_TEXTURE_BLACK"
 #define DEFAULT_TEXTURE "DUCKY_DEFAULT_TEXTURE"
 #define DEFAULT_TEXTURE_SPEC "DUCKY_DEFAULT_TEXTURE_SPEC"
 
@@ -28,8 +29,12 @@ class Texture {
           Blendmode blendmode = LINEAR);
   void bind();
   void unbind();
+  bool is_valid() const;
   GLuint id;
   const char* path;
+
+ private:
+  bool valid_;
 };
 
 }  // namespace graphics

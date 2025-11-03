@@ -9,6 +9,7 @@ using namespace ducky::graphics;
 using namespace ducky::ecs::entities;
 
 bool Renderer::initialized_ = false;
+bool Renderer::wireframe_ = false;
 RendererSettings Renderer::settings_ = {};
 std::vector<ducky::ecs::entities::PointLight*>
     ducky::graphics::Renderer::point_lights;
@@ -304,5 +305,15 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
           "Renderer::update_lights - DirectionalLight.direction uniform");
     }
 #pragma endregion
+  }
+}
+
+void Renderer::toggle_wireframe() {
+  wireframe_ = !wireframe_;
+
+  if (wireframe_) {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+  } else {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
   }
 }
