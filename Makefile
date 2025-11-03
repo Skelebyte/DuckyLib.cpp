@@ -4,9 +4,9 @@ LINUX_EXT =
 
 EXECUTABLE = 
 
-WINDOWS_SDL_INCL = duckylib/third_party/SDL3/include
+WINDOWS_SDL_INCL = duckylib\third_party\SDL3\include
 
-WINDOWS_LIB = bin\Debug-x64\DuckyLib.lib
+WINDOWS_LIB = bin\Debug-x64\DuckyLib.lib duckylib\third_party\assimp\assimp-vc143-mtd.lib
 LINUX_LIB = bin/Debug-x64/libDuckyLib.a
 
 FLAGS = 
