@@ -8,6 +8,7 @@
 #include "graphics/renderer.hpp"
 #include "math/vec2i.hpp"
 #include "runtime_err.hpp"
+#include "time.hpp"
 
 namespace ducky {
 class Window {
@@ -22,6 +23,7 @@ class Window {
   void swap();
   bool running() const;
   SDL_Window* get();
+  void set_title(const std::string& title);
 
  private:
   SDL_GLContext sdl_glc_;

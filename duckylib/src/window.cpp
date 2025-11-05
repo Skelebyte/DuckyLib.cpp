@@ -38,6 +38,7 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
 }
 
 void Window::update() {
+  Time::begin_frame();
   SDL_Event event;
   while (SDL_PollEvent(&event)) {
     if (event.type == SDL_EVENT_QUIT)
@@ -91,3 +92,7 @@ void Window::swap() { SDL_GL_SwapWindow(this->sdl_window_.get()); }
 bool Window::running() const { return running_; }
 
 SDL_Window* Window::get() { return this->sdl_window_.get(); }
+
+void Window::set_title(const std::string& title) {
+  SDL_SetWindowTitle(sdl_window_.get(), title.c_str());
+}

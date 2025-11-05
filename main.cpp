@@ -3,7 +3,7 @@
 #define DUCKY_ALLOW_ENGINE_KEYBINDS
 #include "duckylib/ducky.hpp"
 
-float sens = 10.0f;
+float sens = 2.0f;
 
 int main(int argc, char** argv) {
   App app(argv[1]);
@@ -45,9 +45,12 @@ int main(int argc, char** argv) {
   Keybind size_up = Keybind(Keycode::U_ARROW);
   Keybind size_down = Keybind(Keycode::D_ARROW);
 
-  float s = 0.1f;
+  float s = 2.0f;
 
   bool cursor = false;
+
+  Vec2 last_mouse = Vec2(0, 0);
+  bool first_mouse = true;
 
   while (window.running()) {
     window.update();
@@ -78,16 +81,34 @@ int main(int argc, char** argv) {
 
     if (Input::get_key(&look)) {
       Vec2 mouse = Input::get_mouse_position(window);
-      Vec2i dimensions = window.get_dimensions();
+      Input::cursor(window, true, false);
 
-      float x = -mouse.x * dimensions.x * sens;
-      float y = mouse.y * dimensions.y * sens;
+      if (first_mouse) {
+        last_mouse = mouse;
+        first_mouse = false;
+      }
 
-      camera.transform.rotation = Vec3(y, x, 0.0f);
+      Vec2 mouse_delta = mouse;
+      //- last_mouse;
+      last_mouse = mouse;
+
+      float x = -mouse_delta.y * sens * window.get_viewport_aspect();
+      float y = -mouse_delta.x * sens * window.get_viewport_aspect();
+
+      camera.transform.rotation.x += x;
+      camera.transform.rotation.y += y;
+
+      camera.transform.rotation.x =
+          std::clamp(camera.transform.rotation.x, -89.0f, 89.0f);
+
+      std::cout << camera.transform.rotation.to_string() << "\n";
 
     } else {
       Input::cursor(window, false, false);
+      first_mouse = true;
     }
+
+    window.set_title(std::to_string(Time::fps()));
 
     window.swap();
   }

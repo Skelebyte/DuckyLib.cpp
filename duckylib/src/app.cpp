@@ -17,6 +17,8 @@ App::App(const char* arg) {
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
   SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
   SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 8);
+
+  Time::set_target_fps(60);
 }
 
 App::~App() { SDL_Quit(); }

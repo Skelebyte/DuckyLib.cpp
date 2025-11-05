@@ -11,6 +11,7 @@
 #include "../../math/mat4.hpp"
 #include "../../math/mathf.hpp"
 #include "../../math/vec3.hpp"
+#include "../../time.hpp"
 #include "../entity.hpp"
 #include "../transform.hpp"
 #include "camera.hpp"

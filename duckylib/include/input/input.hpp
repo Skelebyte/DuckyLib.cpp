@@ -16,7 +16,8 @@ class Input {
   static int get_axis(const InputAxis& axis);
   static bool get_key(Keybind* keybind);
   static bool get_key_once(Keybind* keybind);
-  static math::Vec2 get_mouse_position(Window& window, bool raw = false);
+  static math::Vec2 get_raw_mouse_position(Window& window);
+  static math::Vec2 get_mouse_position(Window& window);
   static void cursor(Window& window, bool locked, bool hidden);
 };
 

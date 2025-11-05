@@ -101,43 +101,51 @@ bool Input::get_key_once(Keybind* keybind) {
   return false;
 }
 
-math::Vec2 Input::get_mouse_position(Window& window, bool raw) {
+math::Vec2 Input::get_raw_mouse_position(Window& window) {
   Vec2 pos;
   SDL_GetMouseState(&pos.x, &pos.y);
+  return pos;
 
-  if (raw) {
-    return pos;
-  } else {
-    pos.x -= window.get_viewport_position().x;
-    pos.x -= window.get_viewport_size().x / 2;
-    pos.x /= window.get_viewport_size().x / 2;
-    pos.y -= window.get_viewport_position().y;
-    pos.y -= window.get_viewport_size().y / 2;
-    pos.y /= window.get_viewport_size().y / 2;
+  // if (raw) {
 
-    pos.y = -pos.y;
+  // } else {
+  //   pos.x -= window.get_viewport_position().x;
+  //   pos.x -= window.get_viewport_size().x / 2;
+  //   pos.x /= window.get_viewport_size().x / 2;
+  //   pos.y -= window.get_viewport_position().y;
+  //   pos.y -= window.get_viewport_size().y / 2;
+  //   pos.y /= window.get_viewport_size().y / 2;
 
-    if (pos.x > 1.0f)
-      pos.x = 1.0f;
-    if (pos.x < -1.0f)
-      pos.x = -1.0f;
-    if (pos.y > 1.0f)
-      pos.y = 1.0f;
-    if (pos.y < -1.0f)
-      pos.y = -1.0f;
+  //   pos.y = -pos.y;
 
-    return pos;
-  }
+  //   if (pos.x > 1.0f)
+  //     pos.x = 1.0f;
+  //   if (pos.x < -1.0f)
+  //     pos.x = -1.0f;
+  //   if (pos.y > 1.0f)
+  //     pos.y = 1.0f;
+  //   if (pos.y < -1.0f)
+  //     pos.y = -1.0f;
+
+  //   return pos;
+  // }
+}
+
+math::Vec2 Input::get_mouse_position(Window& window) {
+  Vec2 pos;
+  SDL_GetRelativeMouseState(&pos.x, &pos.y);
+
+  return pos;
 }
 
 void Input::cursor(Window& window, bool locked, bool hidden) {
   if (locked) {
-    // SDL_WarpMouseInWindow(window.get(), window.get_dimensions().x / 2,
-    //                       window.get_dimensions().y / 2);
+    SDL_WarpMouseInWindow(window.get(), window.get_dimensions().x / 2,
+                          window.get_dimensions().y / 2);
   }
   // SDL_SetWindowMouseGrab(window.get(), locked);
 
-  SDL_SetWindowRelativeMouseMode(window.get(), locked);
+  // SDL_SetWindowRelativeMouseMode(window.get(), locked);
 
   if (hidden) {
     SDL_HideCursor();

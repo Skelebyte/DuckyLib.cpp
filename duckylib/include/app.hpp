@@ -1,11 +1,11 @@
 #pragma once
 
 #include <SDL3/SDL.h>
-#include <SDL3/SDL_vulkan.h>
 #include <functional>
 #include <iostream>
 #include <memory>
 #include "runtime_err.hpp"
+#include "time.hpp"
 
 namespace ducky {
 class App {

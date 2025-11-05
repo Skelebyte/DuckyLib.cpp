@@ -49,6 +49,10 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
 void MeshRenderer::update() {
   if (!enabled)
     return;
+
+  if (!Time::should_render_frame())
+    return;
+
   this->shader_->activate();
 
   this->model_ =
