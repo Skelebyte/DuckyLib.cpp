@@ -14,6 +14,17 @@ project "DuckyLib"
 
     includedirs { "duckylib/include", "duckylib/third_party/*", "duckylib/third_party/SDL3/include", "duckylib/include/*", "duckylib/include/*/*" }
 
+    libdirs { "duckylib/third_party/libs/windows", "duckylib/third_party/libs/linux" }
+
+    buildoptions { "-lSDL3" }
+
+    filter "system:windows"
+        links { "SDL3", "Imgui", "assimp-vc143-mtd" }
+
+    filter "system:linux"
+        links { "SDL3", "Imgui", "assimp" }
+        
+    
     filter "configurations:Debug"
         defines { "DEBUG" }
         symbols "On"
