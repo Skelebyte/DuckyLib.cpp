@@ -6,6 +6,7 @@
 #include "../../third_party/glad/glad.h"
 #include "../math/vec3.hpp"
 #include "../runtime_err.hpp"
+#include "../time.hpp"
 #include "color.hpp"
 
 namespace ducky::ecs::entities {

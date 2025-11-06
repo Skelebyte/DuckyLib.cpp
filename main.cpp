@@ -4,6 +4,7 @@
 #include "duckylib/ducky.hpp"
 
 float sens = 2.0f;
+float speed = 0.001f;
 
 int main(int argc, char** argv) {
   App app(argv[1]);
@@ -62,18 +63,22 @@ int main(int argc, char** argv) {
     cube2.transform.scale = Vec3(s);
 
     if (Input::get_key(&size_up)) {
-      s += 0.1f;
+      s += 0.1f * Time::delta_time();
     }
 
     if (Input::get_key(&size_down)) {
-      s -= 0.1f;
+      s -= 0.1f * Time::delta_time();
     }
+
+    cube.transform.rotation.y += 0.1f * Time::delta_time();
 
     camera.transform.position +=
         Vec3::cross(camera.transform.forward(), camera.transform.up()) *
-            Input::get_axis(axis_horizontal) * 0.02f +
-        camera.transform.forward() * Input::get_axis(axis_vertical) * 0.02f +
-        camera.transform.up() * Input::get_axis(axis_up) * 0.02f;
+            Input::get_axis(axis_horizontal) * speed * Time::delta_time() +
+        camera.transform.forward() * Input::get_axis(axis_vertical) * speed *
+            Time::delta_time() +
+        camera.transform.up() * Input::get_axis(axis_up) * speed *
+            Time::delta_time();
 
     if (Input::get_key_once(&disable)) {
       cube2.enabled = !cube2.enabled;
@@ -92,14 +97,16 @@ int main(int argc, char** argv) {
       //- last_mouse;
       last_mouse = mouse;
 
-      float x = -mouse_delta.y * sens * window.get_viewport_aspect();
-      float y = -mouse_delta.x * sens * window.get_viewport_aspect();
+      float x = -mouse_delta.y * sens * Time::delta_time();
+      float y = -mouse_delta.x * sens * Time::delta_time();
 
       camera.transform.rotation.x += x;
       camera.transform.rotation.y += y;
 
-      camera.transform.rotation.x =
-          std::clamp(camera.transform.rotation.x, -89.0f, 89.0f);
+      // camera.transform.rotation.x =
+      //     std::clamp(camera.transform.rotation.x,
+      //                -89.0f - window.get_viewport_size().y / 2,
+      //                89.0f + window.get_viewport_size().y / 2);
 
       std::cout << camera.transform.rotation.to_string() << "\n";
 

@@ -63,6 +63,9 @@ void Renderer::init(RendererSettings renderer_settings) {
 }
 
 void Renderer::clear_frame(Color color) {
+  if (!Time::should_render_frame())
+    return;
+
   glClearColor(color.r, color.g, color.b, color.a);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
