@@ -3,3 +3,4 @@
 /build
 /bin
 /duckylib/third_party/libs
+*.exe
