@@ -23,8 +23,11 @@ class Camera : public Entity {
   math::Mat4 get_projection() const;
   math::Mat4 get_view() const;
 
- private:
+ protected:
   Window* window_;
+  void camera_update();
+
+ private:
   math::Mat4 projection_;
   math::Mat4 view_;
 };

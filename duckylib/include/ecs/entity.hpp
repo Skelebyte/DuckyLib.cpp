@@ -11,7 +11,7 @@ namespace ecs {
 
 class Entity : public Object {
  public:
-  Entity(std::string name);
+  Entity(std::string name, std::string tag = "entity");
   ~Entity();
   void destroy();
 
@@ -28,6 +28,7 @@ class Entity : public Object {
   bool has_child(int id);
 
   std::string name;
+  std::string tag;
 
   Transform transform;
 

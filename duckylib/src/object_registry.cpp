@@ -8,6 +8,7 @@ std::vector<Object*> ObjectRegistry::objects_;
 unsigned int ObjectRegistry::register_object(Object* object) {
   unsigned int id = next_id_;
   next_id_++;
+  std::cout << "next id: " << next_id_ << std::endl;
 
   objects_.push_back(object);
 

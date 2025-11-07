@@ -1,5 +1,6 @@
 #include "include/app.hpp"
 #include "include/ecs/entities/camera.hpp"
+#include "include/ecs/entities/editor_camera.hpp"
 #include "include/ecs/entities/light.hpp"
 #include "include/ecs/entities/mesh_renderer.hpp"
 #include "include/ecs/entity.hpp"

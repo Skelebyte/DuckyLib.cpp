@@ -4,8 +4,9 @@
 using namespace ducky;
 using namespace ducky::ecs;
 
-Entity::Entity(std::string name) : Object(), transform() {
+Entity::Entity(std::string name, std::string tag) : Object(), transform() {
   this->name = name;
+  this->tag = tag;
   enabled = true;
   EntityRegistry::register_entity(this);
 }

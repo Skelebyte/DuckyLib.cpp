@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 
   Shader shader = Shader();
 
-  Camera camera = Camera(&window);
+  EditorCamera camera = EditorCamera(&window);
 
   Material crate = Material(Texture("assets/textures/container_diffuse.png"),
                             Texture("assets/textures/container_specular.png"),
@@ -37,11 +37,7 @@ int main(int argc, char** argv) {
   sun.transform.rotation = Vec3(1.0f, 1.0f, 1.0f);
   sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
 
-  InputAxis axis_horizontal = InputAxis(Keycode::D, Keycode::A);
-  InputAxis axis_vertical = InputAxis(Keycode::W, Keycode::S);
-  InputAxis axis_up = InputAxis(Keycode::Q, Keycode::E);
   Keybind esc = Keybind(Keycode::ESC);
-  Keybind look = Keybind(Keycode::LMB);
   Keybind disable = Keybind(Keycode::SPACE);
   Keybind size_up = Keybind(Keycode::U_ARROW);
   Keybind size_down = Keybind(Keycode::D_ARROW);
@@ -51,16 +47,15 @@ int main(int argc, char** argv) {
 
   float s = 2.0f;
 
-  bool cursor = false;
-
-  Vec2 last_mouse = Vec2(0, 0);
-  bool first_mouse = true;
+  std::cout << camera.field_of_view << "\n";
+  std::cout << camera.near_plane << "\n";
 
   while (window.running()) {
     window.update();
 
     ducky_engine_keybinds();
     Renderer::clear_frame();
+    EntityRegistry::update();
 
     cube2.transform.scale = Vec3(s);
 
@@ -72,58 +67,11 @@ int main(int argc, char** argv) {
       s -= 0.1f * Time::delta_time();
     }
 
+    std::cout << camera.transform.rotation.to_string() << std::endl;
+
     cube.transform.rotation.y += 45.0f * Time::delta_time();
 
-    camera.transform.position +=
-        Vec3::cross(camera.transform.forward(), camera.transform.up())
-                .normalized() *
-            Input::get_axis(axis_horizontal) * speed * Time::delta_time() +
-        camera.transform.forward() * Input::get_axis(axis_vertical) * speed *
-            Time::delta_time() +
-        camera.transform.up() * Input::get_axis(axis_up) * speed *
-            Time::delta_time();
-
-    if (Input::get_key_once(&disable)) {
-      camera.transform.rotation.zero();
-    }
-
-    if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
-      Vec2 mouse = Input::get_mouse_position(window);
-      Input::cursor(window, true, false);
-
-      if (first_mouse) {
-        last_mouse = mouse;
-        first_mouse = false;
-      }
-
-      Vec2 mouse_delta = mouse;
-      last_mouse = mouse;
-
-      float x = (-mouse_delta.y / 10) * sens * Time::delta_time();
-      float y = (-mouse_delta.x / 10) * sens * Time::delta_time();
-
-      if (!Input::get_key(&lock_x))
-        camera.transform.rotation.x += Mathf::degrees(x);
-      if (!Input::get_key(&lock_y))
-        camera.transform.rotation.y += Mathf::degrees(y);
-
-      camera.transform.rotation.x =
-          std::clamp(camera.transform.rotation.x, -1.57f, 1.57f);
-
-      std::cout << Vec3::cross(camera.transform.forward(),
-                               camera.transform.up())
-                       .normalized()
-                       .to_string()
-                << "\n";
-
-    } else {
-      Input::cursor(window, false, false);
-      first_mouse = true;
-    }
-
     window.set_title(std::to_string(Time::fps()));
-
-    EntityRegistry::update();
 
     window.swap();
   }

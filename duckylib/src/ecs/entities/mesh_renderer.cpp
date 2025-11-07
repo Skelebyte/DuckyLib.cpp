@@ -10,7 +10,7 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
                            size_t vertices_size, GLuint indices[],
                            size_t indices_size, Shader* shader,
                            Material* material)
-    : Entity("mesh_renderer") {
+    : Entity("mesh_renderer", "mesh_renderer") {
   this->camera_ = camera;
 
   this->indices_size_ = indices_size;

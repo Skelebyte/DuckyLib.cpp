@@ -5,7 +5,7 @@ using namespace ducky::ecs;
 using namespace ducky::ecs::entities;
 using namespace ducky::math;
 
-Camera::Camera(Window* window) : Entity("camera") {
+Camera::Camera(Window* window) : Entity("camera", "camera") {
   this->window_ = window;
   this->view_ = Mat4();
   this->projection_ = Mat4();
@@ -14,7 +14,9 @@ Camera::Camera(Window* window) : Entity("camera") {
                                 this->far_plane);
 }
 
-void Camera::update() {
+void Camera::update() { camera_update(); }
+
+void Camera::camera_update() {
   this->view_.look_at(transform.position,
                       transform.position + transform.forward(),
                       transform.forward());
