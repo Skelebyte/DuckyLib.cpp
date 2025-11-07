@@ -5,6 +5,9 @@
 #include <iostream>
 #include <memory>
 #include "../third_party/glad/glad.h"
+#include "../third_party/imgui/imgui.h"
+#include "../third_party/imgui/imgui_impl_opengl3.h"
+#include "../third_party/imgui/imgui_impl_sdl3.h"
 #include "graphics/renderer.hpp"
 #include "math/vec2i.hpp"
 #include "runtime_err.hpp"
@@ -34,5 +37,6 @@ class Window {
   bool letterboxed_;
   math::Vec2i viewport_size_;
   math::Vec2i viewport_position_;
+  ImGuiIO* io_;
 };
 }  // namespace ducky

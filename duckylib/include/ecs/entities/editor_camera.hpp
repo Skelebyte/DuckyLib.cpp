@@ -18,7 +18,7 @@ class EditorCamera : public ecs::entities::Camera {
   input::Keybind speed_up;
   input::Keybind look;
 
-  float sensitivity = 0.001f;
+  float sensitivity = 0.0005f;
   float speed = 0.01f;
 
  private:

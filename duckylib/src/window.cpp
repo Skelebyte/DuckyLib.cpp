@@ -35,12 +35,21 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
   if (init_renderer) {
     Renderer::init();
   }
+
+  ImGui::CreateContext();
+  io_ = &ImGui::GetIO();
+  io_->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+
+  ImGui_ImplSDL3_InitForOpenGL(this->sdl_window_.get(), this->sdl_glc_);
+  ImGui_ImplOpenGL3_Init();
 }
 
 void Window::update() {
   Time::begin_frame();
   SDL_Event event;
+
   while (SDL_PollEvent(&event)) {
+    ImGui_ImplSDL3_ProcessEvent(&event);
     if (event.type == SDL_EVENT_QUIT)
       this->running_ = false;
   }
@@ -68,6 +77,10 @@ void Window::update() {
   }
   glViewport(this->viewport_position_.x, this->viewport_position_.y,
              this->viewport_size_.x, this->viewport_size_.y);
+
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplSDL3_NewFrame();
+  ImGui::NewFrame();
 }
 
 Vec2i Window::get_dimensions() {
@@ -87,7 +100,11 @@ float Window::get_viewport_aspect() const {
   return (float)this->viewport_size_.x / (float)this->viewport_size_.y;
 }
 
-void Window::swap() { SDL_GL_SwapWindow(this->sdl_window_.get()); }
+void Window::swap() {
+  ImGui::Render();
+  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+  SDL_GL_SwapWindow(this->sdl_window_.get());
+}
 
 bool Window::running() const { return running_; }
 

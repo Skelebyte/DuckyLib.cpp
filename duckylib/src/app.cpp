@@ -19,6 +19,13 @@ App::App(const char* arg) {
   SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 8);
 
   Time::set_target_fps(60);
+
+  IMGUI_CHECKVERSION();
 }
 
-App::~App() { SDL_Quit(); }
+App::~App() {
+  ImGui_ImplOpenGL3_Shutdown();
+  ImGui_ImplSDL3_Shutdown();
+  ImGui::DestroyContext();
+  SDL_Quit();
+}
