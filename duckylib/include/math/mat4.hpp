@@ -1,9 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include "vec3.hpp"
 #include "pi.hpp"
-
+#include "vec3.hpp"
 
 namespace ducky {
 
@@ -33,7 +32,7 @@ class Mat4 {
 
   void perspective(float fov_in_rads, float aspect, float near_plane,
                    float far_plane);
-  void look_at(Vec3 position, Vec3 targetPosition);
+  void look_at(Vec3 position, Vec3 target_position, Vec3 forward);
 
   Mat4 inverse() const;
 

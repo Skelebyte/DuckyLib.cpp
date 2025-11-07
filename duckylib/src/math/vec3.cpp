@@ -1,4 +1,5 @@
 #include "../../include/math/vec3.hpp"
+#include "mathf.hpp"
 
 using namespace ducky;
 using namespace ducky::math;
@@ -29,7 +30,6 @@ Vec3::Vec3(float xyz_) {
 
 void Vec3::rotate(float angle, Vec3 axis) {
   axis = axis.normalized();
-  angle *= M_PI / 180;
   Vec3 old = *this;
 
   if (axis.x != 0) {

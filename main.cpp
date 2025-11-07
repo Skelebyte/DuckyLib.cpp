@@ -3,8 +3,8 @@
 #define DUCKY_ALLOW_ENGINE_KEYBINDS
 #include "duckylib/ducky.hpp"
 
-float sens = 2.0f;
-float speed = 0.001f;
+float sens = 0.001f;
+float speed = 0.01f;
 
 int main(int argc, char** argv) {
   App app(argv[1]);
@@ -46,6 +46,9 @@ int main(int argc, char** argv) {
   Keybind size_up = Keybind(Keycode::U_ARROW);
   Keybind size_down = Keybind(Keycode::D_ARROW);
 
+  Keybind lock_x = Keybind(Keycode::X);
+  Keybind lock_y = Keybind(Keycode::Z);
+
   float s = 2.0f;
 
   bool cursor = false;
@@ -58,7 +61,6 @@ int main(int argc, char** argv) {
 
     ducky_engine_keybinds();
     Renderer::clear_frame();
-    EntityRegistry::update();
 
     cube2.transform.scale = Vec3(s);
 
@@ -70,10 +72,11 @@ int main(int argc, char** argv) {
       s -= 0.1f * Time::delta_time();
     }
 
-    cube.transform.rotation.y += 0.1f * Time::delta_time();
+    cube.transform.rotation.y += 45.0f * Time::delta_time();
 
     camera.transform.position +=
-        Vec3::cross(camera.transform.forward(), camera.transform.up()) *
+        Vec3::cross(camera.transform.forward(), camera.transform.up())
+                .normalized() *
             Input::get_axis(axis_horizontal) * speed * Time::delta_time() +
         camera.transform.forward() * Input::get_axis(axis_vertical) * speed *
             Time::delta_time() +
@@ -81,10 +84,10 @@ int main(int argc, char** argv) {
             Time::delta_time();
 
     if (Input::get_key_once(&disable)) {
-      cube2.enabled = !cube2.enabled;
+      camera.transform.rotation.zero();
     }
 
-    if (Input::get_key(&look)) {
+    if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
       Vec2 mouse = Input::get_mouse_position(window);
       Input::cursor(window, true, false);
 
@@ -94,21 +97,24 @@ int main(int argc, char** argv) {
       }
 
       Vec2 mouse_delta = mouse;
-      //- last_mouse;
       last_mouse = mouse;
 
-      float x = -mouse_delta.y * sens * Time::delta_time();
-      float y = -mouse_delta.x * sens * Time::delta_time();
+      float x = (-mouse_delta.y / 10) * sens * Time::delta_time();
+      float y = (-mouse_delta.x / 10) * sens * Time::delta_time();
 
-      camera.transform.rotation.x += x;
-      camera.transform.rotation.y += y;
+      if (!Input::get_key(&lock_x))
+        camera.transform.rotation.x += Mathf::degrees(x);
+      if (!Input::get_key(&lock_y))
+        camera.transform.rotation.y += Mathf::degrees(y);
 
-      // camera.transform.rotation.x =
-      //     std::clamp(camera.transform.rotation.x,
-      //                -89.0f - window.get_viewport_size().y / 2,
-      //                89.0f + window.get_viewport_size().y / 2);
+      camera.transform.rotation.x =
+          std::clamp(camera.transform.rotation.x, -1.57f, 1.57f);
 
-      std::cout << camera.transform.rotation.to_string() << "\n";
+      std::cout << Vec3::cross(camera.transform.forward(),
+                               camera.transform.up())
+                       .normalized()
+                       .to_string()
+                << "\n";
 
     } else {
       Input::cursor(window, false, false);
@@ -116,6 +122,8 @@ int main(int argc, char** argv) {
     }
 
     window.set_title(std::to_string(Time::fps()));
+
+    EntityRegistry::update();
 
     window.swap();
   }

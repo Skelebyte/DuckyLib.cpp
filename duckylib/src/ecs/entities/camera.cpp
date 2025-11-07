@@ -15,10 +15,11 @@ Camera::Camera(Window* window) : Entity("camera") {
 }
 
 void Camera::update() {
-  this->view_.look_at(this->transform.position,
-                      this->transform.position + this->transform.forward());
+  this->view_.look_at(transform.position,
+                      transform.position + transform.forward(),
+                      transform.forward());
 
-  this->projection_.perspective(Mathf::to_radians(this->field_of_view),
+  this->projection_.perspective(Mathf::radians(this->field_of_view),
                                 window_->get_viewport_aspect(),
                                 this->near_plane, this->far_plane);
 }

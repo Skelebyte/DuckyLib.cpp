@@ -18,9 +18,9 @@ Transform::Transform(Vec3 pos, Vec3 rot, Vec3 sca) : Object() {
 
 Vec3 Transform::forward() const {
   Vec3 forward = Vec3(0, 0, -1);
-  forward.rotate(Mathf::to_radians(rotation.x), right());
-  forward.rotate(Mathf::to_radians(rotation.y), up());
-  forward.rotate(Mathf::to_radians(rotation.z), Vec3(0, 0, -1));
+  forward.rotate(rotation.x, Vec3(1, 0, 0));
+  forward.rotate(rotation.y, Vec3(0, 1, 0));
+  forward.rotate(rotation.z, Vec3(0, 0, -1));
 
   return forward;
 }
@@ -28,9 +28,9 @@ Vec3 Transform::forward() const {
 Vec3 Transform::right() const {
   Vec3 result = Vec3();
 
-  // result.x = cos(Mathf::to_degrees(this->rotation.y));
+  // result.x = cos(Mathf::degrees(this->rotation.y));
   // result.y = 0;
-  // result.z = sin(Mathf::to_degrees(this->rotation.y));
+  // result.z = sin(Mathf::degrees(this->rotation.y));
 
   result = Vec3(1, 0, 0);
 
@@ -44,9 +44,9 @@ Vec3 Transform::up() const {
 }
 
 void Transform::process() {
-  // this->rotation.x = Mathf::to_degrees(this->rotation.x);
-  // this->rotation.y = Mathf::to_degrees(this->rotation.y);
-  // this->rotation.z = Mathf::to_degrees(this->rotation.z);
+  this->rotation.x = Mathf::degrees(this->rotation.x);
+  this->rotation.y = Mathf::degrees(this->rotation.y);
+  this->rotation.z = Mathf::degrees(this->rotation.z);
 
   if (this->rotation.x > 360.0f)
     this->rotation.x -= 360.0f;
@@ -63,7 +63,7 @@ void Transform::process() {
   if (this->rotation.z < 0.0f)
     this->rotation.z += 360.0f;
 
-  // this->rotation.x = Mathf::to_radians(this->rotation.x);
-  // this->rotation.y = Mathf::to_radians(this->rotation.y);
-  // this->rotation.z = Mathf::to_radians(this->rotation.z);
+  // this->rotation.x = Mathf::radians(this->rotation.x);
+  // this->rotation.y = Mathf::radians(this->rotation.y);
+  // this->rotation.z = Mathf::radians(this->rotation.z);
 }

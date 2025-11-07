@@ -1,4 +1,5 @@
 #include "../../include/math/mat4.hpp"
+#include "mathf.hpp"
 
 using namespace ducky;
 using namespace ducky::math;
@@ -73,21 +74,21 @@ void Mat4::rotate(Vec3 angles) {
   Mat4 y_rot;
   Mat4 z_rot;
 
-  Vec3 angles_in_rad =
-      Vec3(angles.x * M_PI / 180, angles.y * M_PI / 180, angles.z * M_PI / 180);
+  Vec3 angles_in_rad = Vec3(Mathf::radians(angles.x), Mathf::radians(angles.y),
+                            Mathf::radians(angles.z));
 
-  x_rot.data[5] = cos(angles_in_rad.x);
-  x_rot.data[6] = -sin(angles_in_rad.x);
-  x_rot.data[9] = sin(angles_in_rad.x);
-  x_rot.data[10] = cos(angles_in_rad.x);
-  y_rot.data[0] = cos(angles_in_rad.y);
-  y_rot.data[2] = sin(angles_in_rad.y);
-  y_rot.data[8] = -sin(angles_in_rad.y);
-  y_rot.data[10] = cos(angles_in_rad.y);
-  z_rot.data[0] = cos(angles_in_rad.z);
-  z_rot.data[1] = sin(angles_in_rad.z);
-  z_rot.data[4] = -sin(angles_in_rad.z);
-  z_rot.data[5] = cos(angles_in_rad.z);
+  x_rot.data[5] = cos(angles.x);
+  x_rot.data[6] = -sin(angles.x);
+  x_rot.data[9] = sin(angles.x);
+  x_rot.data[10] = cos(angles.x);
+  y_rot.data[0] = cos(angles.y);
+  y_rot.data[2] = sin(angles.y);
+  y_rot.data[8] = -sin(angles.y);
+  y_rot.data[10] = cos(angles.y);
+  z_rot.data[0] = cos(angles.z);
+  z_rot.data[1] = sin(angles.z);
+  z_rot.data[4] = -sin(angles.z);
+  z_rot.data[5] = cos(angles.z);
   Mat4 xy_rot = x_rot * y_rot;
   Mat4 xyz_rot = xy_rot * z_rot;
   Mat4 rot = *this * xyz_rot;
@@ -113,11 +114,25 @@ void Mat4::perspective(float fov_in_rads, float aspect, float near_plane,
   this->data[15] = 0;
 }
 
-void Mat4::look_at(Vec3 position, Vec3 target_position) {
+void Mat4::look_at(Vec3 position, Vec3 target_position, Vec3 forward) {
   this->identity();
-  Vec3 forward = (position - target_position).normalized();
-  Vec3 right = Vec3::cross(Vec3(0.0f, 1.0f, 0.0f), forward).normalized();
-  Vec3 up = Vec3::cross(forward, right);
+  Vec3 forward_ = (position - target_position).normalized();
+  Vec3 right = Vec3::cross(Vec3(0.0f, 1.0f, 0.0f), forward_).normalized();
+  Vec3 up = Vec3::cross(forward_, right);
+
+  // this->data[0] = right.x;
+  // this->data[1] = right.y;
+  // this->data[2] = right.z;
+  // this->data[4] = up.x;
+  // this->data[5] = up.y;
+  // this->data[6] = up.z;
+  // this->data[8] = -forward_.x;
+  // this->data[9] = -forward_.y;
+  // this->data[10] = -forward_.z;
+  // this->data[3] = -Vec3::dot(right, position);
+  // this->data[7] = -Vec3::dot(up, position);
+  // this->data[11] = Vec3::dot(forward_, position);
+
   this->data[0] = right.x;
   this->data[4] = right.y;
   this->data[8] = right.z;
@@ -126,16 +141,15 @@ void Mat4::look_at(Vec3 position, Vec3 target_position) {
   this->data[5] = up.y;
   this->data[9] = up.z;
   this->data[13] = -Vec3::dot(up, position);
-  this->data[2] = forward.x;
-  this->data[6] = forward.y;
-  this->data[10] = forward.z;
-  this->data[14] = -Vec3::dot(forward, position);
+  this->data[2] = forward_.x;
+  this->data[6] = forward_.y;
+  this->data[10] = forward_.z;
+  this->data[14] = -Vec3::dot(forward_, position);
 }
 
 Mat4 Mat4::inverse() const {
   Mat4 inv;
 
-  // 1. Transpose the 3x3 rotation part
   inv.data[0] = this->data[0];
   inv.data[1] = this->data[4];
   inv.data[2] = this->data[8];
@@ -153,7 +167,6 @@ Mat4 Mat4::inverse() const {
   inv.data[13] = 0;
   inv.data[14] = 0;
 
-  // 2. Invert translation
   Vec3 t(this->data[12], this->data[13], this->data[14]);
   Vec3 invT =
       Vec3(-(inv.data[0] * t.x + inv.data[4] * t.y + inv.data[8] * t.z),

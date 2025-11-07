@@ -3,22 +3,22 @@
 using namespace ducky;
 using namespace ducky::math;
 
-float Mathf::to_radians(float value) {
+float Mathf::radians(float value) {
   float result = value * M_PI / 180;
 
   if (result != result) {
-    std::cout << "Mathf::to_radians: value is NaN, returning 0" << std::endl;
+    std::cout << "Mathf::radians: value is NaN, returning 0" << std::endl;
     return 0;
   }
 
   return result;
 }
 
-float Mathf::to_degrees(float value) {
+float Mathf::degrees(float value) {
   float result = value / M_PI * 180;
 
   if (result != result) {
-    std::cout << "Mathf::to_radians: value is NaN, returning 0" << std::endl;
+    std::cout << "Mathf::radians: value is NaN, returning 0" << std::endl;
     return 0;
   }
 
