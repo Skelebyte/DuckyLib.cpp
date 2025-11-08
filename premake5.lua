@@ -10,7 +10,7 @@ project "DuckyLib"
     targetdir "bin/%{cfg.buildcfg}-%{cfg.platform}"
     objdir "obj/%{cfg.buildcfg}-%{cfg.platform}/%{prj.name}"
 
-    files { "duckylib/include/*/*.hpp", "duckylib/include/*/*.h", "duckylib/include/*.hpp", "duckylib/third_party/*/*.h", "duckylib/src/*/*.cpp", "duckylib/src/*/*/*.cpp", "duckylib/src/*.cpp", "duckylib/third_party/*/*.c", "duckylib/thirdparty/*/*.cpp" }
+    files { "duckylib/include/*/*.hpp", "duckylib/third_party/*.hpp", "duckylib/third_party/*/*.h", "duckylib/src/*/*.cpp", "duckylib/src/*/*/*.cpp", "duckylib/src/*.cpp", "duckylib/third_party/*/*.c", "duckylib/third_party/*/*.cpp" }
 
     includedirs { "duckylib/include", "duckylib/third_party/*", "duckylib/third_party/SDL3/include", "duckylib/include/*", "duckylib/include/*/*" }
 
