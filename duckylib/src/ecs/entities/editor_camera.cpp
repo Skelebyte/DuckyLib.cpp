@@ -10,7 +10,8 @@ EditorCamera::EditorCamera(Window* window)
       axis_forward(InputAxis(Keycode::W, Keycode::S)),
       axis_vertical(InputAxis(Keycode::Q, Keycode::E)),
       look(Keycode::RMB),
-      speed_up(Keycode::L_SHIFT) {
+      speed_up(Keycode::L_SHIFT),
+      slow_down(Keycode::L_CTRL) {
   last_mouse_ = Vec2(0, 0);
   first_mouse_ = true;
   name = "editor_camera";
@@ -23,6 +24,10 @@ void EditorCamera::update() {
     current_speed = speed * 2;
   }
 
+  if (Input::get_key(&slow_down)) {
+    current_speed = speed / 2;
+  }
+
   transform.position +=
       Vec3::cross(transform.forward(), transform.up()).normalized() *
           Input::get_axis(axis_horizontal) * current_speed *
@@ -33,7 +38,7 @@ void EditorCamera::update() {
           Time::delta_time();
 
   if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
-    Input::cursor(*window_, true, false);
+    Input::cursor(*window_, true, true);
     Vec2 mouse = Input::get_mouse_position(*window_);
 
     if (first_mouse_) {

@@ -9,6 +9,8 @@ namespace ducky {
 
 namespace ecs {
 
+enum EntityType { GENERIC, MESH_RENDERER, CAMERA, LIGHT };
+
 class Entity : public Object {
  public:
   Entity(std::string name, std::string tag = "entity");
