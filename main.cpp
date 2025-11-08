@@ -51,24 +51,46 @@ int main(int argc, char** argv) {
 
   float s = 2.0f;
 
+  unsigned int selected_entity = -1;
+
   while (window.running()) {
     window.update();
     ducky_engine_keybinds();
     Renderer::clear_frame();
     EntityRegistry::update();
 
-    ImGui::Begin("Interactions!");
-    ImGui::InputFloat3("Position", cube.transform.position.data);
-    ImGui::InputFloat3("Rotation", cube.transform.rotation.data);
-    ImGui::InputFloat3("Scale", cube.transform.scale.data);
+    ImGui::Begin("Entities");
+    for (int i = 0; i < EntityRegistry::get_entities().size(); i++) {
+      std::string label = EntityRegistry::get_entities()[i]->name;
+      label.append(" (" +
+                   std::to_string(EntityRegistry::get_entities()[i]->get_id()) +
+                   ")");
+      if (ImGui::Button(label.c_str())) {
+        selected_entity = EntityRegistry::get_entities()[i]->get_id();
+      }
+    }
     ImGui::End();
 
-    if (Input::get_key(&size_up))
-      s += 0.1f * Time::delta_time();
-    if (Input::get_key(&size_down))
-      s -= 0.1f * Time::delta_time();
+    ImGui::Begin("Inspector");
+    if (selected_entity != -1) {
+      Entity* e = EntityRegistry::get_entity_by_id(selected_entity);
+      if (e) {
+        ImGui::Text(("Entity ID: " + std::to_string(e->get_id())).c_str());
+        ImGui::Text(("Name: " + e->name).c_str());
 
-    cube2.transform.scale = Vec3(s);
+        ImGui::Separator();
+
+        ImGui::Text("Transform");
+        ImGui::DragFloat3("Position", &e->transform.position.x, 0.1f);
+        ImGui::DragFloat3("Rotation", &e->transform.rotation.x, 0.1f);
+        ImGui::DragFloat3("Scale", &e->transform.scale.x, 0.1f, 0.01f, 100.0f);
+      } else {
+        selected_entity = -1;
+      }
+    } else {
+      ImGui::Text("No entity selected.");
+    }
+    ImGui::End();
 
     window.set_title(std::to_string(Time::fps()));
     window.swap();

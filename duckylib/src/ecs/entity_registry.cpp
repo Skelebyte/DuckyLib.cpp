@@ -15,3 +15,12 @@ void EntityRegistry::update() {
     entity->update();
   }
 }
+
+Entity* EntityRegistry::get_entity_by_id(unsigned int id) {
+  for (Entity* entity : entities_) {
+    if (entity->get_id() == id) {
+      return entity;
+    }
+  }
+  return nullptr;
+}

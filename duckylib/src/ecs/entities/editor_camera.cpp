@@ -13,6 +13,7 @@ EditorCamera::EditorCamera(Window* window)
       speed_up(Keycode::L_SHIFT) {
   last_mouse_ = Vec2(0, 0);
   first_mouse_ = true;
+  name = "editor_camera";
 }
 
 void EditorCamera::update() {
@@ -32,8 +33,8 @@ void EditorCamera::update() {
           Time::delta_time();
 
   if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
-    Vec2 mouse = Input::get_mouse_position(*window_);
     Input::cursor(*window_, true, false);
+    Vec2 mouse = Input::get_mouse_position(*window_);
 
     if (first_mouse_) {
       last_mouse_ = mouse;
