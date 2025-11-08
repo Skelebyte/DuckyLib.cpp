@@ -10,7 +10,7 @@ class Time {
   static void begin_frame();
   static float time_scale;
   static void set_target_fps(int fps);
-  static float get_target_fps();
+  static int get_target_fps();
   static bool should_render_frame();
   static int fps();
 
@@ -21,7 +21,8 @@ class Time {
   static float last_;
   static bool is_render_frame_;
 
-  static float target_fps_;
+  static int target_fps_;
+  static float target_fps_processed_;
   static float frame_time_;
   static int fps_;
   static int frame_count_;

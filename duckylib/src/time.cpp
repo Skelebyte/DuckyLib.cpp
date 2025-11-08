@@ -8,7 +8,8 @@ float Time::processed_delta_time_ = 0.0f;
 float Time::first_ = 0.0f;
 float Time::last_ = 0.0f;
 bool Time::is_render_frame_ = false;
-float Time::target_fps_ = 1.0f / 60.0f;
+float Time::target_fps_processed_ = 1.0f / 60.0f;
+int Time::target_fps_ = 0;
 float Time::frame_time_ = 0.0f;
 int Time::fps_ = 0;
 int Time::frame_count_ = 0;
@@ -27,8 +28,8 @@ void Time::begin_frame() {
   processed_delta_time_ += delta_time_;
   frame_time_ += delta_time_;
 
-  while (processed_delta_time_ >= target_fps_) {
-    processed_delta_time_ -= target_fps_;
+  while (processed_delta_time_ >= target_fps_processed_) {
+    processed_delta_time_ -= target_fps_processed_;
     is_render_frame_ = true;
 
     if (frame_time_ >= 1000.0f) {
@@ -43,9 +44,12 @@ void Time::begin_frame() {
   }
 }
 
-void Time::set_target_fps(int fps) { target_fps_ = 1.0f / (float)fps; }
+void Time::set_target_fps(int fps) {
+  target_fps_ = fps;
+  target_fps_processed_ = 1.0f / (float)fps;
+}
 
-float Time::get_target_fps() { return target_fps_; }
+int Time::get_target_fps() { return target_fps_; }
 
 bool Time::should_render_frame() { return is_render_frame_; }
 

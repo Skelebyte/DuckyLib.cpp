@@ -33,7 +33,7 @@ class MeshRenderer : public Entity {
                graphics::Material* material = new graphics::Material());
 
   void update() override;
-  graphics::Shader* shader_;
+  graphics::Shader* shader;
 
  private:
   Camera* camera_;
