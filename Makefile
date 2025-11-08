@@ -6,13 +6,13 @@ EXECUTABLE =
 
 WINDOWS_SDL_INCL = duckylib\third_party\SDL3\include
 
-WINDOWS_LIB = bin\Debug-x64\DuckyLib.lib duckylib\third_party\libs\windows\assimp-vc143-mtd.lib duckylib\third_party\libs\windows\SDL3.lib duckylib\third_party\libs\windows\Imgui.lib
+WINDOWS_LIB = bin\Debug-x64\DuckyLib.lib duckylib\third_party\libs\windows\assimp-vc143-mtd.lib duckylib\third_party\libs\windows\SDL3.lib #duckylib\third_party\libs\windows\Imgui.lib
 LINUX_LIB = bin/Debug-x64/libDuckyLib.a duckylib/third_party/libs/linux/libassimp.a duckylib/third_party/libs/linux/libSDL3.a duckylib/third_party/libs/linux/libImgui.a
 
 FLAGS = 
 
 WINDOWS_FLAGS = -I$(WINDOWS_SDL_INCL) -lSDL3 -L$(WINDOWS_LIB) -lpthread -lm -lopengl32 -static-libgcc -static-libstdc++
-LINUX_FLAGS = -lSDL3 -lpthread -lm -ldl -lassimp
+LINUX_FLAGS = -lSDL3 -lpthread -lm -ldl #-lassimp
 
 ifeq ($(OS),Windows_NT)
 	EXECUTABLE +=$(PROJECT_NAME)$(WINDOWS_EXT)
