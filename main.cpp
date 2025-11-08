@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
   Material crate(Texture("assets/textures/container_diffuse.png"),
                  Texture("assets/textures/container_specular.png"),
                  Color::white());
-  crate.specular_strength = 0.5f;
+  crate.specular_strength = 1.0f;
 
   MeshRenderer cube(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                     sizeof(cube_indices), &shader, &crate);
