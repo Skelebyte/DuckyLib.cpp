@@ -42,6 +42,7 @@ void EditorCamera::update() {
     Vec2 mouse = Input::get_mouse_position(*window_);
 
     if (first_mouse_) {
+      mouse = Input::get_mouse_position(*window_);
       last_mouse_ = mouse;
       first_mouse_ = false;
     }

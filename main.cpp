@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
   App app(argv[1]);
   Window window("Hi mum!", 1000, 800);
 
-  Renderer::ambient_color = Vec3(1.0f);
+  Renderer::ambient_color = Vec3(0.1f);
 
   Shader shader;
   EditorCamera camera(&window);
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
   Material crate(Texture("assets/textures/container_diffuse.png"),
                  Texture("assets/textures/container_specular.png"),
                  Color::white());
-  crate.specular_strength = 1.0f;
+  crate.specular_strength = 0.5f;
 
   MeshRenderer cube(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                     sizeof(cube_indices), &shader, &crate);

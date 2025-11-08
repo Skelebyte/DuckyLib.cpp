@@ -7,6 +7,7 @@ Material::Material(Texture diff, Texture spec, Color col) : Object() {
   specular = spec;
   color = col;
   specular_strength = 0.5f;
+  unlit = false;
 }
 
 void Material::get_uniforms(Shader* shader) {
