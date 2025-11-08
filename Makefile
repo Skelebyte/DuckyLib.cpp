@@ -23,7 +23,7 @@ else
 endif
 
 default: premake_setup build
-	g++ main.cpp $(FLAGS)
+	g++ main.cpp duckylib/third_party/imgui/*.cpp $(FLAGS)
 
 premake_setup:
 	premake5 gmake

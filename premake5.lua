@@ -10,7 +10,17 @@ project "DuckyLib"
     targetdir "bin/%{cfg.buildcfg}-%{cfg.platform}"
     objdir "obj/%{cfg.buildcfg}-%{cfg.platform}/%{prj.name}"
 
-    files { "duckylib/include/*/*.hpp", "duckylib/third_party/*.hpp", "duckylib/third_party/*/*.h", "duckylib/src/*/*.cpp", "duckylib/src/*/*/*.cpp", "duckylib/src/*.cpp", "duckylib/third_party/*/*.c", "duckylib/third_party/*/*.cpp" }
+    files { 
+        "duckylib/include/*/*.hpp",
+        "duckylib/third_party/*.hpp", 
+        "duckylib/third_party/*/*.h", 
+        "duckylib/src/*/*.cpp", 
+        "duckylib/src/*/*/*.cpp", 
+        "duckylib/src/*.cpp", 
+        "duckylib/third_party/*/*.c", 
+        "duckylib/third_party/*/*.cpp",
+    }
+    
 
     includedirs { "duckylib/include", "duckylib/third_party/*", "duckylib/third_party/SDL3/include", "duckylib/include/*", "duckylib/include/*/*" }
 
@@ -19,10 +29,10 @@ project "DuckyLib"
     buildoptions { "-lSDL3" }
 
     filter "system:windows"
-        links { "SDL3", "Imgui", "assimp-vc143-mtd" }
+        links { "SDL3", "assimp-vc143-mtd" }
 
     filter "system:linux"
-        links { "SDL3", "Imgui", "assimp" }
+        links { "SDL3", "assimp" }
         
     
     filter "configurations:Debug"
