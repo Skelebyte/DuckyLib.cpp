@@ -33,8 +33,8 @@ int main(int argc, char** argv) {
                  Color::white());
   crate.specular_strength = 1.0f;
 
-  Material bird(Texture("assets/textures/damn.png"),
-                Texture("assets/textures/damn.png"), Color::white());
+  Material bird(Texture("assets/textures/damn.png"), Texture(DEFAULT_TEXTURE),
+                Color::white());
   bird.specular_strength = 1.0f;
 
   MeshRenderer cube(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
@@ -152,6 +152,7 @@ int main(int argc, char** argv) {
     Time::set_target_fps(target_fps);
     ImGui::DragFloat("Time Scale", &Time::time_scale, 0.01f, 0.01f, 10.0f);
     ImGui::ColorEdit3("Ambient Color", Renderer::ambient_color.data);
+    ImGui::ColorEdit3("Sun Color", sun.color.data);
 
     ImGui::Spacing();
 
@@ -163,7 +164,7 @@ int main(int argc, char** argv) {
     ImGui::Text("Left Control - Slow down");
     ImGui::DragFloat("Sensitivity", &camera.sensitivity, 0.0001f, 0.0001f,
                      0.01f);
-
+    ImGui::DragFloat("Speed", &camera.speed, 0.001f, 0.001f, 100.0f);
     ImGui::End();
 
     window.set_title(std::to_string(Time::fps()));
