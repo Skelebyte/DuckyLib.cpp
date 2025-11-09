@@ -77,18 +77,18 @@ void Mat4::rotate(Vec3 angles) {
   Vec3 angles_in_rad = Vec3(Mathf::radians(angles.x), Mathf::radians(angles.y),
                             Mathf::radians(angles.z));
 
-  x_rot.data[5] = cos(angles.x);
-  x_rot.data[6] = -sin(angles.x);
-  x_rot.data[9] = sin(angles.x);
-  x_rot.data[10] = cos(angles.x);
-  y_rot.data[0] = cos(angles.y);
-  y_rot.data[2] = sin(angles.y);
-  y_rot.data[8] = -sin(angles.y);
-  y_rot.data[10] = cos(angles.y);
-  z_rot.data[0] = cos(angles.z);
-  z_rot.data[1] = sin(angles.z);
-  z_rot.data[4] = -sin(angles.z);
-  z_rot.data[5] = cos(angles.z);
+  x_rot.data[5] = cos(angles_in_rad.x);
+  x_rot.data[6] = -sin(angles_in_rad.x);
+  x_rot.data[9] = sin(angles_in_rad.x);
+  x_rot.data[10] = cos(angles_in_rad.x);
+  y_rot.data[0] = cos(angles_in_rad.y);
+  y_rot.data[2] = sin(angles_in_rad.y);
+  y_rot.data[8] = -sin(angles_in_rad.y);
+  y_rot.data[10] = cos(angles_in_rad.y);
+  z_rot.data[0] = cos(angles_in_rad.z);
+  z_rot.data[1] = sin(angles_in_rad.z);
+  z_rot.data[4] = -sin(angles_in_rad.z);
+  z_rot.data[5] = cos(angles_in_rad.z);
   Mat4 xy_rot = x_rot * y_rot;
   Mat4 xyz_rot = xy_rot * z_rot;
   Mat4 rot = *this * xyz_rot;

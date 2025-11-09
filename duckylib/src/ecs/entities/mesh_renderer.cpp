@@ -53,6 +53,8 @@ void MeshRenderer::update() {
   if (!Time::should_render_frame())
     return;
 
+  transform.process();
+
   this->shader->activate();
 
   this->model_ =

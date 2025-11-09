@@ -44,9 +44,9 @@ Vec3 Transform::up() const {
 }
 
 void Transform::process() {
-  this->rotation.x = Mathf::degrees(this->rotation.x);
-  this->rotation.y = Mathf::degrees(this->rotation.y);
-  this->rotation.z = Mathf::degrees(this->rotation.z);
+  // this->rotation.x = Mathf::degrees(this->rotation.x);
+  // this->rotation.y = Mathf::degrees(this->rotation.y);
+  // this->rotation.z = Mathf::degrees(this->rotation.z);
 
   if (this->rotation.x > 360.0f)
     this->rotation.x -= 360.0f;

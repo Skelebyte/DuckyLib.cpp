@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
   App app(argv[1]);
   Window window("Hi mum!", 1000, 800);
 
-  Renderer::ambient_color = Vec3(0.1f);
+  Renderer::ambient_color = Vec3(1.0f);
 
   Shader shader;
   EditorCamera camera(&window);
@@ -33,8 +33,16 @@ int main(int argc, char** argv) {
                  Color::white());
   crate.specular_strength = 1.0f;
 
+  Material bird(Texture("assets/textures/damn.png"),
+                Texture("assets/textures/damn.png"), Color::white());
+  bird.specular_strength = 1.0f;
+
   MeshRenderer cube(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
                     sizeof(cube_indices), &shader, &crate);
+
+  MeshRenderer damn(&camera, plane_vertices, sizeof(plane_vertices),
+                    plane_indices, sizeof(plane_indices), &shader, &bird);
+  damn.name = "DAMN!!!";
 
   DirectionalLight sun;
   sun.transform.rotation = Vec3(1.0f);

@@ -244,9 +244,14 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
             "Renderer::update_lights - SpotLight.color uniform");
       }
 
+      Vec3 rotation_in_radians =
+          Vec3(Mathf::radians(spot_lights[i]->transform.rotation.x),
+               Mathf::radians(spot_lights[i]->transform.rotation.y),
+               Mathf::radians(spot_lights[i]->transform.rotation.z));
+
       glUniform3fv(
           glGetUniformLocation(shader->id, (base + ".direction").c_str()), 1,
-          spot_lights[i]->transform.rotation.data);
+          rotation_in_radians.data);
       Renderer::get_gl_error(
           "Renderer::update_lights - SpotLight.direction uniform");
     }
@@ -303,9 +308,14 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
             "Renderer::update_lights - DirectionalLight.color uniform");
       }
 
+      Vec3 rotation_in_radians =
+          Vec3(Mathf::radians(directional_lights[i]->transform.rotation.x),
+               Mathf::radians(directional_lights[i]->transform.rotation.y),
+               Mathf::radians(directional_lights[i]->transform.rotation.z));
+
       glUniform3fv(
           glGetUniformLocation(shader->id, (base + ".direction").c_str()), 1,
-          directional_lights[i]->transform.rotation.data);
+          rotation_in_radians.data);
       Renderer::get_gl_error(
           "Renderer::update_lights - DirectionalLight.direction uniform");
     }
