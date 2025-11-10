@@ -68,22 +68,21 @@ vec4 point_light() {
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
-    vec3 amb_res = ambient_strength *
-                   vec3(texture(diffuse_texture, texture_coord)) *
-                   ambient_color;
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
 
     result += vec4(point_lights[i].color *
-                       (amb_res +
-                        dif_res * point_intensity * point_lights[i].intensity *
+                       (dif_res * point_intensity * point_lights[i].intensity *
                             vec3(color) +
                         spec_res * point_intensity * point_lights[i].intensity),
                    1.0);
   }
 
-  return result;
+  vec3 amb_res = ambient_strength *
+                 vec3(texture(diffuse_texture, texture_coord)) * ambient_color;
+
+  return result + vec4(amb_res, 1.0) * color;
 }
 
 vec4 spot_light() {
@@ -102,9 +101,6 @@ vec4 spot_light() {
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
-    vec3 amb_res = ambient_strength *
-                   vec3(texture(diffuse_texture, texture_coord)) *
-                   ambient_color;
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
@@ -115,13 +111,15 @@ vec4 spot_light() {
 
     result += vec4(
         spot_lights[i].color *
-            (amb_res +
-             dif_res * spot_intensity * spot_lights[i].intensity * vec3(color) +
+            (dif_res * spot_intensity * spot_lights[i].intensity * vec3(color) +
              spec_res * spot_intensity * spot_lights[i].intensity),
         1.0);
   }
 
-  return result;
+  vec3 amb_res = ambient_strength *
+                 vec3(texture(diffuse_texture, texture_coord)) * ambient_color;
+
+  return result + vec4(amb_res, 1.0) * color;
 }
 
 vec4 directional_light() {
@@ -137,21 +135,20 @@ vec4 directional_light() {
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
     float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
 
-    vec3 amb_res = ambient_strength *
-                   vec3(texture(diffuse_texture, texture_coord)) *
-                   ambient_color;
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
 
-    result = vec4(
-        directional_lights[i].color *
-            (amb_res + dif_res * directional_lights[i].intensity * vec3(color) +
-             spec_res * directional_lights[i].intensity),
-        1.0);
+    result = vec4(directional_lights[i].color *
+                      (dif_res * directional_lights[i].intensity * vec3(color) +
+                       spec_res * directional_lights[i].intensity),
+                  1.0);
   }
 
-  return result;
+  vec3 amb_res = ambient_strength *
+                 vec3(texture(diffuse_texture, texture_coord)) * ambient_color;
+
+  return result + vec4(amb_res, 1.0) * color;
 }
 
 void main() {

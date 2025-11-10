@@ -216,11 +216,10 @@ int main(int argc, char** argv) {
       std::cout << "Changed texture to: " << mat.diffuse.path << std::endl;
     }
 
-    // ImFont* font = window.io->Fonts->AddFontFromFileTTF(
-    //     "assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf",
-    //     32.0f);
-    // window.io->Fonts->Build();
-    // window.io->FontDefault = font;
+    ImFont* font = window.io->Fonts->AddFontFromFileTTF(
+        "assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf", 32.0f);
+    window.io->Fonts->Build();
+    window.io->FontDefault = font;
 
     ImGui::Begin("Entities");
     if (ImGui::Button("Create Entity")) {
