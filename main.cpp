@@ -59,6 +59,7 @@ int main(int argc, char** argv) {
 
   while (window.running()) {
     window.update();
+    // ImGui::DockSpaceOverViewport();
     ducky_engine_keybinds();
     Renderer::clear_frame();
     EntityRegistry::update();
@@ -165,6 +166,18 @@ int main(int argc, char** argv) {
     ImGui::DragFloat("Sensitivity", &camera.sensitivity, 0.0001f, 0.0001f,
                      0.01f);
     ImGui::DragFloat("Speed", &camera.speed, 0.001f, 0.001f, 100.0f);
+    ImGui::End();
+
+    ImGui::ShowDemoWindow();
+
+    ImGuiWindowFlags overlay_flags = ImGuiWindowFlags_NoDecoration |
+                                     ImGuiWindowFlags_NoResize |
+                                     ImGuiWindowFlags_NoBackground;
+
+    bool overlay_open = true;
+
+    ImGui::Begin("Overlay!", &overlay_open, overlay_flags);
+    ImGui::Text("This is an overlay!");
     ImGui::End();
 
     window.set_title(std::to_string(Time::fps()));

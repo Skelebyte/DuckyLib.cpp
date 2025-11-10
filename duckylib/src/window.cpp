@@ -39,6 +39,7 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
   ImGui::CreateContext();
   io_ = &ImGui::GetIO();
   io_->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+  io_->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   ImGui_ImplSDL3_InitForOpenGL(this->sdl_window_.get(), this->sdl_glc_);
   ImGui_ImplOpenGL3_Init();
@@ -81,6 +82,8 @@ void Window::update() {
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplSDL3_NewFrame();
   ImGui::NewFrame();
+  ImGui::DockSpaceOverViewport(0, ImGui::GetMainViewport(),
+                               ImGuiDockNodeFlags_PassthruCentralNode);
 }
 
 Vec2i Window::get_dimensions() {
