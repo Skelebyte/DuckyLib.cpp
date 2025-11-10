@@ -31,7 +31,7 @@ class Texture {
   void unbind();
   bool is_valid() const;
   GLuint id;
-  const char* path;
+  std::string path;
 
  private:
   bool valid_;

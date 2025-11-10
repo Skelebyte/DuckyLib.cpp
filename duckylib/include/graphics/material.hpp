@@ -17,6 +17,7 @@ class Material : public Object {
   void get_uniforms(Shader* shader);
   void bind();
   void unbind();
+  void imgui_widget();
 
   Texture diffuse;
   Texture specular;

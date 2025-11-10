@@ -33,6 +33,8 @@ build:
 	make all
 	cd ..
 
+editor: premake_setup build
+	g++ duckylib/editor/editor_main.cpp $(FLAGS)
 
 cleanup:
 	cd build

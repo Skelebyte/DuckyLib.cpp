@@ -33,7 +33,10 @@ class MeshRenderer : public Entity {
                graphics::Material* material = new graphics::Material());
 
   void update() override;
+  void imgui_widget() override;
   graphics::Shader* shader;
+
+  graphics::Material* material;
 
  private:
   Camera* camera_;
@@ -43,8 +46,6 @@ class MeshRenderer : public Entity {
   graphics::VAO vao_;
   graphics::VBO vbo_;
   graphics::EBO ebo_;
-
-  graphics::Material* material_;
 
   math::Mat4 model_;
   GLuint model_uniform_;

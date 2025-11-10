@@ -18,6 +18,7 @@ class Entity : public Object {
   void destroy();
 
   virtual void update() = 0;
+  virtual void imgui_widget() = 0;
 
   Entity* get_parent();
 

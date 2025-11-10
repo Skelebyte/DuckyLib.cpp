@@ -43,3 +43,23 @@ void Material::unbind() {
   specular.unbind();
   Renderer::get_gl_error("Material::unbind - specular.unbind");
 }
+
+void Material::imgui_widget() {
+  ImGui::Text("Material");
+  ImGui::Checkbox("Unlit", &unlit);
+  if (ImGui::InputText("Diffuse Path", (char*)diffuse.path.c_str(), 256)) {
+    diffuse = Texture(std::string(diffuse.path));
+  }
+  if (diffuse.path != "" || diffuse.is_valid() == false) {
+    ImGui::Image(ImTextureRef(diffuse.id), ImVec2(64, 64));
+  }
+  if (ImGui::InputText("Specular Path", (char*)specular.path.c_str(), 256)) {
+    specular = Texture(std::string(specular.path));
+  }
+  if (specular.path != "" || specular.is_valid() == false) {
+    ImGui::Image(ImTextureRef(specular.id), ImVec2(64, 64));
+  }
+
+  ImGui::DragFloat("Specular Strength", &specular_strength, 0.01f, 0.0f, 10.0f);
+  ImGui::ColorEdit4("Color", color.data);
+}

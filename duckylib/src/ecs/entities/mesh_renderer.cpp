@@ -34,10 +34,10 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
   this->vbo_.unbind();
   this->ebo_.unbind();
 
-  this->material_ = material;
-  this->material_->get_uniforms(this->shader);
+  this->material = material;
+  this->material->get_uniforms(this->shader);
   this->shader->activate();
-  this->material_->unbind();
+  this->material->unbind();
 
   this->model_uniform_ = glGetUniformLocation(this->shader->id, "model");
   this->view_uniform_ = glGetUniformLocation(this->shader->id, "view");
@@ -76,15 +76,14 @@ void MeshRenderer::update() {
 
   Renderer::update_lights(shader, camera_);
 
-  if (material_->diffuse.is_valid() == false) {
-    material_->unlit = true;
+  if (material->diffuse.is_valid() == false) {
+    material->unlit = true;
   }
 
-  glUniform1i(glGetUniformLocation(this->shader->id, "unlit"),
-              material_->unlit);
+  glUniform1i(glGetUniformLocation(this->shader->id, "unlit"), material->unlit);
   Renderer::get_gl_error("MeshRenderer::update - setting unlit");
 
-  if (material_->unlit == false) {
+  if (material->unlit == false) {
     glUniform1f(glGetUniformLocation(this->shader->id, "ambient_strength"),
                 Renderer::ambient_strength);
     Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
@@ -93,28 +92,34 @@ void MeshRenderer::update() {
                  Renderer::ambient_color.data);
     Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
 
-    glUniform4fv(this->material_->color_uniform, 1,
-                 this->material_->color.data);
+    glUniform4fv(this->material->color_uniform, 1, this->material->color.data);
     Renderer::get_gl_error("MeshRenderer::update - setting color");
 
-    glUniform1i(this->material_->diffuse_uniform, 0);
+    glUniform1i(this->material->diffuse_uniform, 0);
     Renderer::get_gl_error("MeshRenderer::update - setting diffuse");
-    glUniform1i(this->material_->specular_uniform, 1);
+    glUniform1i(this->material->specular_uniform, 1);
     Renderer::get_gl_error("MeshRenderer::update - setting specular");
 
-    glUniform1f(this->material_->specular_strength_uniform,
-                this->material_->specular_strength);
+    glUniform1f(this->material->specular_strength_uniform,
+                this->material->specular_strength);
     Renderer::get_gl_error("MeshRenderer::update - setting specular strength");
   } else {
-    glUniform1i(this->material_->diffuse_uniform, 0);
+    glUniform1i(this->material->diffuse_uniform, 0);
     Renderer::get_gl_error("MeshRenderer::update - setting diffuse");
   }
 
-  this->material_->bind();
+  this->material->bind();
   Renderer::get_gl_error("MeshRenderer::update - material_.bind");
   this->vao_.bind();
   Renderer::get_gl_error("MeshRenderer::update - vao_.bind");
   glDrawElements(GL_TRIANGLES, this->indices_size_ / sizeof(int),
                  GL_UNSIGNED_INT, 0);
   Renderer::get_gl_error("MeshRenderer::update - glDrawElements");
+}
+
+void MeshRenderer::imgui_widget() {
+  transform.imgui_widget();
+  ImGui::Text("Mesh Renderer");
+  ImGui::Text(("Shader ID: " + std::to_string(this->shader->id)).c_str());
+  material->imgui_widget();
 }

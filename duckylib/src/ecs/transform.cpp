@@ -67,3 +67,9 @@ void Transform::process() {
   // this->rotation.y = Mathf::radians(this->rotation.y);
   // this->rotation.z = Mathf::radians(this->rotation.z);
 }
+
+void Transform::imgui_widget() {
+  ImGui::DragFloat3("Position", this->position.data, 0.1f);
+  ImGui::DragFloat3("Rotation", this->rotation.data, 0.1f);
+  ImGui::DragFloat3("Scale", this->scale.data, 0.1f, -100.0f, 100.0f);
+}

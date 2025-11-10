@@ -28,16 +28,19 @@ void EditorCamera::update() {
     current_speed = speed / 2;
   }
 
-  transform.position +=
-      Vec3::cross(transform.forward(), transform.up()).normalized() *
-          Input::get_axis(axis_horizontal) * current_speed *
-          Time::delta_time() +
-      transform.forward() * Input::get_axis(axis_forward) * current_speed *
-          Time::delta_time() +
-      transform.up() * Input::get_axis(axis_vertical) * current_speed *
-          Time::delta_time();
+  if (can_move_) {
+    transform.position +=
+        Vec3::cross(transform.forward(), transform.up()).normalized() *
+            Input::get_axis(axis_horizontal) * current_speed *
+            Time::delta_time() +
+        transform.forward() * Input::get_axis(axis_forward) * current_speed *
+            Time::delta_time() +
+        transform.up() * Input::get_axis(axis_vertical) * current_speed *
+            Time::delta_time();
+  }
 
   if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
+    can_move_ = true;
     Input::cursor(*window_, true, true);
     Vec2 mouse = Input::get_mouse_position(*window_);
 
@@ -60,7 +63,15 @@ void EditorCamera::update() {
   } else {
     Input::cursor(*window_, false, false);
     first_mouse_ = true;
+    can_move_ = false;
   }
 
   camera_update();
+}
+
+void EditorCamera::imgui_widget() {
+  Camera::imgui_widget();
+  ImGui::Text("Editor Camera");
+  ImGui::DragFloat("Sensitivity", &this->sensitivity, 0.0001f, 0.0001f, 0.01f);
+  ImGui::DragFloat("Speed", &this->speed, 0.001f, 0.001f, 100.0f);
 }

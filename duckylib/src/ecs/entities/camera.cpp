@@ -29,3 +29,11 @@ void Camera::camera_update() {
 Mat4 Camera::get_projection() const { return this->projection_; }
 
 Mat4 Camera::get_view() const { return this->view_; }
+
+void Camera::imgui_widget() {
+  transform.imgui_widget();
+  ImGui::Text("Camera");
+  ImGui::DragFloat("Field of View", &this->field_of_view, 0.1f, 1.0f, 179.0f);
+  ImGui::DragFloat("Near Plane", &this->near_plane, 0.01f, 0.01f, 100.0f);
+  ImGui::DragFloat("Far Plane", &this->far_plane, 1.0f, 1.0f, 1000.0f);
+}

@@ -18,6 +18,7 @@ class Light : public Entity {
   Light(LightType type = LightType::POINT);
   ~Light();
   void update() override;
+  void imgui_widget() override;
   LightType get_type() const;
   graphics::Color color = graphics::Color::white();
   float intensity;
@@ -29,6 +30,7 @@ class Light : public Entity {
 class PointLight : public Light {
  public:
   PointLight(float _a = 0.56f, float _b = 0.08f, float inten = 1.0f);
+  void imgui_widget() override;
   float a;
   float b;
 };
@@ -36,6 +38,7 @@ class PointLight : public Light {
 class SpotLight : public Light {
  public:
   SpotLight(float inner = 18.2f, float outer = 25.8f, float inten = 1.0f);
+  void imgui_widget() override;
   float inner_cone;
   float outer_cone;
 };
@@ -43,6 +46,7 @@ class SpotLight : public Light {
 class DirectionalLight : public Light {
  public:
   DirectionalLight(float inten = 1.0f);
+  void imgui_widget() override;
 };
 
 }  // namespace entities

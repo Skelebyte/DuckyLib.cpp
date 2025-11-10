@@ -155,6 +155,9 @@ vec4 directional_light() {
 }
 
 void main() {
+  if (texture(diffuse_texture, texture_coord).a < 0.1)
+    discard;
+
   if (unlit == false) {
     vec4 lighting = point_light() + spot_light() + directional_light();
     FragColor = lighting;

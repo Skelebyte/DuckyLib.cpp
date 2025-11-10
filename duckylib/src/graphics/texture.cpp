@@ -30,6 +30,7 @@ static unsigned char* graphics::custom_texture(int width, int height, int r1,
 }
 
 Texture::Texture(std::string path, Blendmode blendmode) {
+  this->path = (char*)path.c_str();
   stbi_set_flip_vertically_on_load(1);
 
   bool load_success = false;

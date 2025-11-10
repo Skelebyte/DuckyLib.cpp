@@ -7,7 +7,7 @@ namespace ducky {
 
 namespace graphics {
 
-class EBO : public Object {
+class EBO {
  public:
   EBO();
   void init(GLuint* indices, GLsizeiptr size);

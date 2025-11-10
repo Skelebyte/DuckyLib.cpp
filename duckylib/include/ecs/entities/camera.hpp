@@ -22,6 +22,7 @@ class Camera : public Entity {
   float far_plane = 100.0f;
   math::Mat4 get_projection() const;
   math::Mat4 get_view() const;
+  void imgui_widget() override;
 
  protected:
   Window* window_;
