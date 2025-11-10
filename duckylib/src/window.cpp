@@ -37,9 +37,9 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
   }
 
   ImGui::CreateContext();
-  io_ = &ImGui::GetIO();
-  io_->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-  io_->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+  io = &ImGui::GetIO();
+  io->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+  io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
   ImGui_ImplSDL3_InitForOpenGL(this->sdl_window_.get(), this->sdl_glc_);
   ImGui_ImplOpenGL3_Init();

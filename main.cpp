@@ -59,11 +59,15 @@ int main(int argc, char** argv) {
 
   while (window.running()) {
     window.update();
-    // ImGui::DockSpaceOverViewport();
     ducky_engine_keybinds();
     Renderer::clear_frame();
     EntityRegistry::update();
 
+    ImFont* font = window.io->Fonts->AddFontFromFileTTF(
+        "assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf",
+        32.0f);
+    window.io->Fonts->Build();
+    window.io->FontDefault = font;
     ImGui::Begin("Entities");
     if (ImGui::Button("Create Entity")) {
       ImGui::OpenPopup("New Entity");

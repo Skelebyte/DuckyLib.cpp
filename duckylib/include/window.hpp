@@ -27,6 +27,7 @@ class Window {
   bool running() const;
   SDL_Window* get();
   void set_title(const std::string& title);
+  ImGuiIO* io;
 
  private:
   SDL_GLContext sdl_glc_;
@@ -37,6 +38,5 @@ class Window {
   bool letterboxed_;
   math::Vec2i viewport_size_;
   math::Vec2i viewport_position_;
-  ImGuiIO* io_;
 };
 }  // namespace ducky

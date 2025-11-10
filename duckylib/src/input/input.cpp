@@ -4,6 +4,9 @@ using namespace ducky;
 using namespace ducky::math;
 using namespace ducky::input;
 
+bool Input::mouse_hidden_ = false;
+bool Input::mouse_locked_ = false;
+
 int Input::get_axis(const InputAxis& axis) {
   SDL_MouseButtonFlags flags = SDL_GetMouseState(NULL, NULL);
 
@@ -140,16 +143,17 @@ math::Vec2 Input::get_mouse_position(Window& window) {
 
 void Input::cursor(Window& window, bool locked, bool hidden) {
   if (locked) {
+    SDL_SetWindowRelativeMouseMode(window.get(), true);
     SDL_WarpMouseInWindow(window.get(), window.get_dimensions().x / 2,
                           window.get_dimensions().y / 2);
+  } else {
+    SDL_SetWindowRelativeMouseMode(window.get(), false);
   }
-  // SDL_SetWindowMouseGrab(window.get(), locked);
-
-  // SDL_SetWindowRelativeMouseMode(window.get(), locked);
 
   if (hidden) {
     SDL_HideCursor();
   } else {
     SDL_ShowCursor();
   }
+  SDL_ShowCursor();
 }

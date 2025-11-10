@@ -19,6 +19,10 @@ class Input {
   static math::Vec2 get_raw_mouse_position(Window& window);
   static math::Vec2 get_mouse_position(Window& window);
   static void cursor(Window& window, bool locked, bool hidden);
+
+ private:
+  static bool mouse_hidden_;
+  static bool mouse_locked_;
 };
 
 }  // namespace input
