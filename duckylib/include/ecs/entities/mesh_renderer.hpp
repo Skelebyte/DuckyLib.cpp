@@ -34,6 +34,8 @@ class MeshRenderer : public Entity {
 
   void update() override;
   void imgui_widget() override;
+  void save(std::string path) override;
+  void load(std::string path) override;
   graphics::Shader* shader;
 
   graphics::Material* material;

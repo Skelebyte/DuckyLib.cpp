@@ -17,6 +17,8 @@ class Transform : public Object {
   math::Vec3 up() const;
   void process();
   void imgui_widget() override;
+  void save(std::string path) override;
+  void load(std::string path) override;
 
  public:
   math::Vec3 position;

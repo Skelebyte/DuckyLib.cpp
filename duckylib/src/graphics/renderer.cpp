@@ -21,6 +21,8 @@ std::vector<ducky::ecs::entities::DirectionalLight*>
 ducky::math::Vec3 ducky::graphics::Renderer::ambient_color =
     ducky::math::Vec3(0.1f, 0.1f, 0.1f);
 float ducky::graphics::Renderer::ambient_strength = 0.2f;
+unsigned int Renderer::shadow_map_fbo_ = 0;
+unsigned int Renderer::shadow_map_ = 0;
 
 void Renderer::init(RendererSettings renderer_settings) {
   if (initialized_) {
@@ -59,6 +61,29 @@ void Renderer::init(RendererSettings renderer_settings) {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   settings_ = renderer_settings;
+
+  glGenFramebuffers(1, &shadow_map_fbo_);
+  glGenTextures(1, &shadow_map_);
+  glBindTexture(GL_TEXTURE_2D, shadow_map_);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT,
+               settings_.shadow_map_size.x, settings_.shadow_map_size.y, 0,
+               GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+  glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, Color::white().data);
+
+  glBindFramebuffer(GL_FRAMEBUFFER, shadow_map_fbo_);
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D,
+                         shadow_map_, 0);
+  glDrawBuffer(GL_NONE);
+  glReadBuffer(GL_NONE);
+  glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+  Mat4 ortho = Mat4();
+  ortho.orthogonal(-35.0f, 35.0f, 35.0f, -35.0f, 0.1f, 75.0f);
+
   initialized_ = true;
 }
 
@@ -207,15 +232,18 @@ void Renderer::update_lights(Shader* shader, Camera* camera) {
                    spot_lights[i]->transform.position.data);
       Renderer::get_gl_error("Renderer::update_lights - SpotLight.pos uniform");
 
+      float inner_angle_rad = Mathf::radians(spot_lights[i]->inner_cone);
+      float outer_angle_rad = Mathf::radians(spot_lights[i]->outer_cone);
+
       glUniform1fv(glGetUniformLocation(shader->id,
                                         (base + ".outer_cone_angle").c_str()),
-                   1, &spot_lights[i]->outer_cone);
+                   1, &outer_angle_rad);
       Renderer::get_gl_error(
           "Renderer::update_lights - SpotLight.outer_cone_angle uniform");
 
       glUniform1fv(glGetUniformLocation(shader->id,
                                         (base + ".inner_cone_angle").c_str()),
-                   1, &spot_lights[i]->inner_cone);
+                   1, &inner_angle_rad);
       Renderer::get_gl_error(
           "Renderer::update_lights - SpotLight.inner_cone_angle uniform");
 

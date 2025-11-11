@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../../graphics/color.hpp"
 #include "../../graphics/shader.hpp"
+#include "../../math/mat4.hpp"
 #include "../entity.hpp"
 
 namespace ducky {
@@ -19,9 +20,17 @@ class Light : public Entity {
   ~Light();
   void update() override;
   void imgui_widget() override;
+  void save(std::string path) override;
+  void load(std::string path) override;
   LightType get_type() const;
   graphics::Color color = graphics::Color::white();
   float intensity;
+
+ protected:
+  math::Mat4 ortho_projection_;
+  math::Mat4 light_view_;
+  math::Mat4 light_projection_;
+  graphics::Shader shadow_map_shader_;
 
  private:
   LightType light_type_;

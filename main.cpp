@@ -202,24 +202,19 @@ int main(int argc, char** argv) {
   int type_index = 0;
   bool spawn_zeroed = true;
 
-  Keybind space = Keybind(Keycode::SPACE);
+  float font_size = 14.0f;
+  char* font_path =
+      (char*)"assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf";
+
+  ImFont* font = window.io->Fonts->AddFontFromFileTTF(font_path, font_size);
+  window.io->Fonts->Build();
+  window.io->FontDefault = font;
 
   while (window.running()) {
     window.update();
     ducky_engine_keybinds();
     Renderer::clear_frame();
     EntityRegistry::update();
-
-    if (Input::get_key_once(&space)) {
-      mat.diffuse =
-          Texture("assets/textures/container_diffuse.png", Blendmode::LINEAR);
-      std::cout << "Changed texture to: " << mat.diffuse.path << std::endl;
-    }
-
-    ImFont* font = window.io->Fonts->AddFontFromFileTTF(
-        "assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf", 32.0f);
-    window.io->Fonts->Build();
-    window.io->FontDefault = font;
 
     ImGui::Begin("Entities");
     if (ImGui::Button("Create Entity")) {
@@ -309,31 +304,22 @@ int main(int argc, char** argv) {
     Time::set_target_fps(target_fps);
     ImGui::DragFloat("Time Scale", &Time::time_scale, 0.01f, 0.01f, 10.0f);
     ImGui::ColorEdit3("Ambient Color", Renderer::ambient_color.data);
-    ImGui::ColorEdit3("Sun Color", sun.color.data);
-
-    ImGui::Spacing();
-
-    ImGui::Text("Controls");
     ImGui::Separator();
-    ImGui::Text("WASD - Move camera");
-    ImGui::Text("Right Mouse Button - Look");
-    ImGui::Text("Left Shift - Speed up");
-    ImGui::Text("Left Control - Slow down");
-    ImGui::DragFloat("Sensitivity", &camera.sensitivity, 0.0001f, 0.0001f,
-                     0.01f);
-    ImGui::DragFloat("Speed", &camera.speed, 0.001f, 0.001f, 100.0f);
-    ImGui::End();
-
-    ImGui::ShowDemoWindow();
-
-    ImGuiWindowFlags overlay_flags = ImGuiWindowFlags_NoDecoration |
-                                     ImGuiWindowFlags_NoResize |
-                                     ImGuiWindowFlags_NoBackground;
-
-    bool overlay_open = true;
-
-    ImGui::Begin("Overlay!", &overlay_open, overlay_flags);
-    ImGui::Text("This is an overlay!");
+    ImGui::Text("Editor Settings");
+    if (ImGui::Button("Save all")) {
+      for (Entity* e : EntityRegistry::get_entities()) {
+        std::string path = "assets/saves/" + e->name + "_" +
+                           std::to_string(e->get_id()) + ".json";
+        e->save(path);
+      }
+    }
+    if (ImGui::Button("Load all")) {
+      for (Entity* e : EntityRegistry::get_entities()) {
+        std::string path = "assets/saves/" + e->name + "_" +
+                           std::to_string(e->get_id()) + ".json";
+        e->load(path);
+      }
+    }
     ImGui::End();
     window.swap();
   }

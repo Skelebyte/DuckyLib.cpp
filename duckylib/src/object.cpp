@@ -13,3 +13,5 @@ void Object::destroy() {
 }
 
 int Object::get_id() { return this->id_; }
+
+void Object::load(std::string path) {}

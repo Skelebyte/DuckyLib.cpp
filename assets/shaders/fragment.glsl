@@ -49,7 +49,7 @@ uniform vec3 ambient_color = vec3(1.0, 1.0, 1.0);
 uniform float ambient_strength = 0.2;
 uniform bool unlit = false;
 
-vec3 get_scaled_normal() { return normal * scale; }
+vec3 get_scaled_normal() { return normalize(normal * scale); }
 
 vec4 point_light() {
   vec3 n = normalize(get_scaled_normal());
@@ -65,10 +65,15 @@ vec4 point_light() {
     vec3 light_dir = normalize(light_vec);
 
     float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
+
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
-    float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
+    vec3 halfway = normalize(view_dir + light_dir);
+    float specular = pow(max(dot(get_scaled_normal(), halfway), 0.0), 8);
 
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
+    if (diffuse == 0.0) {
+      specular = 0.0;
+    }
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
 
@@ -99,9 +104,13 @@ vec4 spot_light() {
 
     float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
-    float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
+    vec3 halfway = normalize(view_dir + light_dir);
+    float specular = pow(max(dot(get_scaled_normal(), halfway), 0.0), 8);
 
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
+    if (diffuse == 0.0) {
+      specular = 0.0;
+    }
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
 
@@ -133,9 +142,13 @@ vec4 directional_light() {
 
     float diffuse = max(dot(get_scaled_normal(), light_dir), 0.0);
     vec3 reflect_dir = reflect(-light_dir, get_scaled_normal());
-    float specular = pow(max(dot(view_dir, reflect_dir), 0.0), 8);
+    vec3 halfway = normalize(view_dir + light_dir);
+    float specular = pow(max(dot(get_scaled_normal(), halfway), 0.0), 8);
 
     vec3 dif_res = diffuse * vec3(texture(diffuse_texture, texture_coord));
+    if (diffuse == 0.0) {
+      specular = 0.0;
+    }
     vec3 spec_res = specular_strength * specular *
                     vec3(texture(specular_texture, texture_coord));
 

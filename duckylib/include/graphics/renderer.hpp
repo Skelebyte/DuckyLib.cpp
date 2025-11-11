@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "../../third_party/glad/glad.h"
+#include "../math/vec2i.hpp"
 #include "../math/vec3.hpp"
 #include "../runtime_err.hpp"
 #include "../time.hpp"
@@ -32,12 +33,14 @@ typedef struct {
   bool enable_culling;
   FaceCullingType culling_type;
   bool enable_line_smoothing;
+  math::Vec2i shadow_map_size;
 } RendererSettings;
 
 class Renderer {
  public:
   static void init(RendererSettings renderer_settings = {
-                       8, 8, 1, true, true, true, FaceCullingType::BACK, true});
+                       8, 8, 1, true, true, true, FaceCullingType::BACK, true,
+                       math::Vec2i(2048, 2048)});
   static void clear_frame(Color color = Color(0.1f, 0.1f, 0.1f, 1.0f));
   static int get_max_point_lights();
   static int get_max_spot_lights();
@@ -58,6 +61,8 @@ class Renderer {
   static bool wireframe_;
   static bool initialized_;
   static RendererSettings settings_;
+  static unsigned int shadow_map_fbo_;
+  static unsigned int shadow_map_;
 };
 
 }  // namespace ducky::graphics

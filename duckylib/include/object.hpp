@@ -4,10 +4,14 @@
 #include <cmath>
 #include <cstdint>
 #include <cstdlib>
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include "../third_party/imgui/imgui.h"
 #include "../third_party/imgui/imgui_impl_opengl3.h"
 #include "../third_party/imgui/imgui_impl_sdl3.h"
+#include "tools/asset_manager.hpp"
+#include "utils/file.hpp"
 
 namespace ducky {
 class Object {
@@ -15,6 +19,8 @@ class Object {
   Object();
   virtual void destroy();
   virtual void imgui_widget() = 0;
+  virtual void save(std::string path) = 0;
+  virtual void load(std::string path) = 0;
   int get_id();
 
  protected:

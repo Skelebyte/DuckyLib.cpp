@@ -30,6 +30,9 @@ class Entity : public Object {
   bool has_child(std::string name);
   bool has_child(int id);
 
+  void save(std::string path) override;
+  void load(std::string path) override;
+
   std::string name;
   std::string tag;
 

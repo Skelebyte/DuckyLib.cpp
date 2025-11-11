@@ -9,18 +9,32 @@ using namespace ducky::math;
 Light::Light(LightType type) : Entity("light", "light") {
   light_type_ = type;
   intensity = 1.0f;
+  // shadow_map_shader_ = Shader("assets/shaders/shadow_map_vertex.glsl",
+  //                             "assets/shaders/shadow_map_fragment.glsl");
   Renderer::add_light(this);
 }
 
 Light::~Light() {}
 
-void Light::update() {}
+void Light::update() {
+  ortho_projection_.orthogonal(-35.0f, 35.0f, 35.0f, -35.0f, 0.1f, 75.0f);
+  light_view_.look_at(transform.position * 20.0f, Vec3(0, 0, 0), Vec3(0, 1, 0));
+  light_projection_ = ortho_projection_ * light_view_;
+
+  // shadow_map_shader_.activate();
+  // glUniformMatrix4fv(
+  //     glGetUniformLocation(shadow_map_shader_.id, "light_projection"), 1,
+  //     GL_FALSE, light_projection_.data);
+}
 
 void Light::imgui_widget() {
   transform.imgui_widget();
   ImGui::ColorEdit3("Color", color.data);
   ImGui::DragFloat("Intensity", &intensity, 0.1f, 0.0f, 100.0f);
 }
+
+void Light::save(std::string path) {}
+void Light::load(std::string path) { Entity::load(path); }
 
 LightType Light::get_type() const { return light_type_; }
 

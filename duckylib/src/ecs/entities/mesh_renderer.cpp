@@ -5,6 +5,8 @@ using namespace ducky::graphics;
 using namespace ducky::ecs;
 using namespace ducky::ecs::entities;
 using namespace ducky::math;
+using namespace ducky::utils;
+using namespace ducky::tools;
 
 MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
                            size_t vertices_size, GLuint indices[],
@@ -122,4 +124,22 @@ void MeshRenderer::imgui_widget() {
   ImGui::Text("Mesh Renderer");
   ImGui::Text(("Shader ID: " + std::to_string(this->shader->id)).c_str());
   material->imgui_widget();
+}
+
+void MeshRenderer::save(std::string path) {
+  Entity::save(path);
+  nlohmann::json json;
+  transform.save(path);
+  material->save(path);
+}
+
+void MeshRenderer::load(std::string path) {
+  if (AssetManager::is_path_valid(path) == false) {
+    return;
+  }
+
+  Entity::load(path);
+
+  transform.load(path);
+  material->load(path);
 }

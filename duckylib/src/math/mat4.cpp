@@ -114,6 +114,18 @@ void Mat4::perspective(float fov_in_rads, float aspect, float near_plane,
   this->data[15] = 0;
 }
 
+void Mat4::orthogonal(float left, float right, float top, float bottom,
+                      float near_plane, float far_plane) {
+  this->identity();
+  this->data[0] = 2 / (right - left);
+  this->data[5] = 2 / (top - bottom);
+  this->data[10] = -2 / (far_plane - near_plane);
+  this->data[12] = -(right + left) / (right - left);
+  this->data[13] = -(top + bottom) / (top - bottom);
+  this->data[14] = -(far_plane + near_plane) / (far_plane - near_plane);
+  this->data[15] = 1;
+}
+
 void Mat4::look_at(Vec3 position, Vec3 target_position, Vec3 forward) {
   this->identity();
   Vec3 forward_ = (position - target_position).normalized();

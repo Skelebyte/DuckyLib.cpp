@@ -1,4 +1,5 @@
 #pragma once
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include "../../third_party/json.hpp/json.hpp"
@@ -16,6 +17,7 @@ class AssetManager {
  public:
   static DuckyAsset get(std::string path);
   static void pack(std::string path, DuckyAsset& asset);
+  static bool is_path_valid(std::string path);
 };
 
 }  // namespace ducky::tools

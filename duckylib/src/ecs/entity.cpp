@@ -3,6 +3,7 @@
 
 using namespace ducky;
 using namespace ducky::ecs;
+using namespace ducky::tools;
 
 Entity::Entity(std::string name, std::string tag) : Object(), transform() {
   this->name = name;
@@ -69,4 +70,21 @@ bool Entity::has_child(int id) {
     }
   }
   return false;
+}
+
+void Entity::save(std::string path) {
+  nlohmann::json json;
+  json["enabled"] = enabled;
+}
+
+void Entity::load(std::string path) {
+  if (AssetManager::is_path_valid(path) == false) {
+    return;
+  }
+
+  std::ifstream f = std::ifstream(path);
+  nlohmann::json json = nlohmann::json::parse(f);
+  f.close();
+
+  enabled = json["enabled"];
 }

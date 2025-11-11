@@ -32,6 +32,8 @@ class Mat4 {
 
   void perspective(float fov_in_rads, float aspect, float near_plane,
                    float far_plane);
+  void orthogonal(float left, float right, float top, float bottom,
+                  float near_plane, float far_plane);
   void look_at(Vec3 position, Vec3 target_position, Vec3 forward);
 
   Mat4 inverse() const;

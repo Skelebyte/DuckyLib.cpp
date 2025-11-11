@@ -17,3 +17,7 @@ void AssetManager::pack(std::string path, DuckyAsset& asset) {
   j["data"] = asset.data;
   File::write(j.dump(), path, true);
 }
+
+bool AssetManager::is_path_valid(std::string path) {
+  return std::filesystem::exists(path);
+}
