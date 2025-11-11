@@ -10,14 +10,11 @@ using namespace ducky::tools;
 
 MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
                            size_t vertices_size, GLuint indices[],
-                           size_t indices_size, Shader* shader,
-                           Material* material)
+                           size_t indices_size, Material* material)
     : Entity("mesh_renderer", "mesh_renderer") {
   this->camera_ = camera;
 
   this->indices_size_ = indices_size;
-
-  this->shader = shader;
 
   this->vao_.init();
   this->vao_.bind();
@@ -37,15 +34,17 @@ MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
   this->ebo_.unbind();
 
   this->material = material;
-  this->material->get_uniforms(this->shader);
-  this->shader->activate();
+  this->material->get_uniforms(Renderer::main_shader);
+  Renderer::main_shader->activate();
   this->material->unbind();
 
-  this->model_uniform_ = glGetUniformLocation(this->shader->id, "model");
-  this->view_uniform_ = glGetUniformLocation(this->shader->id, "view");
+  this->model_uniform_ =
+      glGetUniformLocation(Renderer::main_shader->id, "model");
+  this->view_uniform_ = glGetUniformLocation(Renderer::main_shader->id, "view");
   this->projection_uniform_ =
-      glGetUniformLocation(this->shader->id, "projection");
-  this->scale_uniform_ = glGetUniformLocation(this->shader->id, "scale");
+      glGetUniformLocation(Renderer::main_shader->id, "projection");
+  this->scale_uniform_ =
+      glGetUniformLocation(Renderer::main_shader->id, "scale");
 }
 
 void MeshRenderer::update() {
@@ -57,7 +56,7 @@ void MeshRenderer::update() {
 
   transform.process();
 
-  this->shader->activate();
+  Renderer::main_shader->activate();
 
   this->model_ =
       Mat4::transformation(this->transform.position, this->transform.rotation,
@@ -76,22 +75,25 @@ void MeshRenderer::update() {
   glUniform3fv(scale_uniform_, 1, transform.scale.data);
   Renderer::get_gl_error("MeshRenderer::update - scale uniform");
 
-  Renderer::update_lights(shader, camera_);
+  Renderer::update_lights(camera_);
 
   if (material->diffuse.is_valid() == false) {
     material->unlit = true;
   }
 
-  glUniform1i(glGetUniformLocation(this->shader->id, "unlit"), material->unlit);
+  glUniform1i(glGetUniformLocation(Renderer::main_shader->id, "unlit"),
+              material->unlit);
   Renderer::get_gl_error("MeshRenderer::update - setting unlit");
 
   if (material->unlit == false) {
-    glUniform1f(glGetUniformLocation(this->shader->id, "ambient_strength"),
-                Renderer::ambient_strength);
+    glUniform1f(
+        glGetUniformLocation(Renderer::main_shader->id, "ambient_strength"),
+        Renderer::ambient_strength);
     Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
 
-    glUniform3fv(glGetUniformLocation(this->shader->id, "ambient_color"), 1,
-                 Renderer::ambient_color.data);
+    glUniform3fv(
+        glGetUniformLocation(Renderer::main_shader->id, "ambient_color"), 1,
+        Renderer::ambient_color.data);
     Renderer::get_gl_error("MeshRenderer::update - setting ambient strength");
 
     glUniform4fv(this->material->color_uniform, 1, this->material->color.data);
@@ -122,15 +124,22 @@ void MeshRenderer::update() {
 void MeshRenderer::imgui_widget() {
   transform.imgui_widget();
   ImGui::Text("Mesh Renderer");
-  ImGui::Text(("Shader ID: " + std::to_string(this->shader->id)).c_str());
+  ImGui::Text(
+      ("Shader ID: " + std::to_string(Renderer::main_shader->id)).c_str());
   material->imgui_widget();
 }
 
 void MeshRenderer::save(std::string path) {
-  Entity::save(path);
-  nlohmann::json json;
-  transform.save(path);
-  material->save(path);
+  add_entity_data();
+
+  add("diffuse_path", material->diffuse.path, "material");
+  add("specular_path", material->specular.path, "material");
+  add("color", material->color.to_string(), "material");
+  add("specular_strength", std::to_string(material->specular_strength),
+      "material");
+  add("unlit", std::to_string(material->unlit), "material");
+
+  write(path);
 }
 
 void MeshRenderer::load(std::string path) {
@@ -138,8 +147,13 @@ void MeshRenderer::load(std::string path) {
     return;
   }
 
-  Entity::load(path);
+  load_entity_data(path);
 
-  transform.load(path);
-  material->load(path);
+  material->diffuse = Texture(get(path, "diffuse_path", "material"));
+  material->specular = Texture(get(path, "specular_path", "material"));
+  material->color = Color::from_string(get(path, "color", "material"));
+  material->specular_strength =
+      std::stof(get(path, "specular_strength", "material"));
+
+  material->unlit = std::stoi(get(path, "unlit", "material"));
 }

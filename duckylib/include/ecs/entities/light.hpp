@@ -20,11 +20,11 @@ class Light : public Entity {
   ~Light();
   void update() override;
   void imgui_widget() override;
-  void save(std::string path) override;
-  void load(std::string path) override;
   LightType get_type() const;
   graphics::Color color = graphics::Color::white();
   float intensity;
+  void save(std::string path) override;
+  void load(std::string path) override;
 
  protected:
   math::Mat4 ortho_projection_;

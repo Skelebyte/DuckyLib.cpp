@@ -4,6 +4,7 @@
 using namespace ducky;
 using namespace ducky::ecs;
 using namespace ducky::tools;
+using namespace ducky::math;
 
 Entity::Entity(std::string name, std::string tag) : Object(), transform() {
   this->name = name;
@@ -72,19 +73,30 @@ bool Entity::has_child(int id) {
   return false;
 }
 
-void Entity::save(std::string path) {
-  nlohmann::json json;
-  json["enabled"] = enabled;
+void Entity::save(std::string path) {}
+
+void Entity::load(std::string path) {}
+
+EntityType Entity::get_type() const { return type_; }
+
+void Entity::add_entity_data() {
+  add("name", name, "entity");
+  add("tag", tag, "entity");
+  add("enabled", std::to_string(enabled), "entity");
+  add("type_", std::to_string(static_cast<int>(type_)), "entity");
+
+  add("position", transform.position.to_string(), "transform");
+  add("rotation", transform.rotation.to_string(), "transform");
+  add("scale", transform.scale.to_string(), "transform");
 }
 
-void Entity::load(std::string path) {
-  if (AssetManager::is_path_valid(path) == false) {
-    return;
-  }
+void Entity::load_entity_data(std::string path) {
+  name = get(path, "name", "entity");
+  tag = get(path, "tag", "entity");
+  enabled = std::stoi(get(path, "enabled", "entity"));
+  type_ = (EntityType)std::stoi(get(path, "type_", "entity"));
 
-  std::ifstream f = std::ifstream(path);
-  nlohmann::json json = nlohmann::json::parse(f);
-  f.close();
-
-  enabled = json["enabled"];
+  transform.position = Vec3::from_string(get(path, "position", "transform"));
+  transform.rotation = Vec3::from_string(get(path, "rotation", "transform"));
+  transform.scale = Vec3::from_string(get(path, "scale", "transform"));
 }

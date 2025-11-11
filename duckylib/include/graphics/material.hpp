@@ -18,8 +18,6 @@ class Material : public Object {
   void bind();
   void unbind();
   void imgui_widget();
-  void save(std::string path) override;
-  void load(std::string path) override;
 
   Texture diffuse;
   Texture specular;

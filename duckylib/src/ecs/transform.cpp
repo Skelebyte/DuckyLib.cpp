@@ -75,30 +75,3 @@ void Transform::imgui_widget() {
   ImGui::DragFloat3("Rotation", this->rotation.data, 0.1f);
   ImGui::DragFloat3("Scale", this->scale.data, 0.1f, -100.0f, 100.0f);
 }
-
-void Transform::save(std::string path) {
-  std::string pos_data = position.to_string();
-  std::string rot_data = rotation.to_string();
-  std::string scale_data = scale.to_string();
-
-  nlohmann::json json;
-  json["position"] = pos_data;
-  json["rotation"] = rot_data;
-  json["scale"] = scale_data;
-
-  File::write(json.dump(), path + "_tfm", true);
-}
-
-void Transform::load(std::string path) {
-  if (AssetManager::is_path_valid(path + "_tfm") == false) {
-    return;
-  }
-
-  std::ifstream f = std::ifstream(path + "_tfm");
-  nlohmann::json json = nlohmann::json::parse(f);
-  f.close();
-
-  position = Vec3::from_string(json["position"]);
-  rotation = Vec3::from_string(json["rotation"]);
-  scale = Vec3::from_string(json["scale"]);
-}

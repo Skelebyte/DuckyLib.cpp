@@ -41,24 +41,19 @@ void Camera::imgui_widget() {
 }
 
 void Camera::save(std::string path) {
-  nlohmann::json json;
-  transform.save(path);
-  json["field_of_view"] = field_of_view;
-  json["near_plane"] = near_plane;
-  json["far_plane"] = far_plane;
-  File::write(json.dump(), path, true);
+  add_entity_data();
+
+  add("field_of_view", std::to_string(field_of_view), "camera");
+  add("near_plane", std::to_string(near_plane), "camera");
+  add("far_plane", std::to_string(far_plane), "camera");
+
+  write(path);
 }
 
 void Camera::load(std::string path) {
-  if (AssetManager::is_path_valid(path) == false) {
-    return;
-  }
+  load_entity_data(path);
 
-  std::ifstream f = std::ifstream(path);
-  nlohmann::json json = nlohmann::json::parse(f);
-  f.close();
-  transform.load(path);
-  field_of_view = json["field_of_view"];
-  near_plane = json["near_plane"];
-  far_plane = json["far_plane"];
+  field_of_view = std::stof(get(path, "field_of_view", "camera"));
+  near_plane = std::stof(get(path, "near_plane", "camera"));
+  far_plane = std::stof(get(path, "far_plane", "camera"));
 }

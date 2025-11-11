@@ -5,6 +5,7 @@
 #include "include/ecs/entities/mesh_renderer.hpp"
 #include "include/ecs/entity.hpp"
 #include "include/ecs/entity_registry.hpp"
+#include "include/ecs/level.hpp"
 #include "include/ecs/transform.hpp"
 #include "include/graphics/built_in_shaders.hpp"
 #include "include/graphics/built_in_shapes.hpp"

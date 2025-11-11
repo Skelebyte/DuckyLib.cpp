@@ -33,9 +33,6 @@ void Light::imgui_widget() {
   ImGui::DragFloat("Intensity", &intensity, 0.1f, 0.0f, 100.0f);
 }
 
-void Light::save(std::string path) {}
-void Light::load(std::string path) { Entity::load(path); }
-
 LightType Light::get_type() const { return light_type_; }
 
 PointLight::PointLight(float _a, float _b, float inten)
@@ -52,6 +49,9 @@ void PointLight::imgui_widget() {
   ImGui::DragFloat("Constant (a)", &a, 0.01f, 0.0f, 10.0f);
   ImGui::DragFloat("Linear (b)", &b, 0.001f, 0.0f, 1.0f);
 }
+
+void Light::save(std::string path) {}
+void Light::load(std::string path) {}
 
 SpotLight::SpotLight(float inner, float outer, float inten)
     : Light(LightType::SPOT) {

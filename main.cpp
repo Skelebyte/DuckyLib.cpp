@@ -177,11 +177,14 @@ int main(int argc, char** argv) {
 
 int main(int argc, char** argv) {
   App app(argv[1]);
-  Window window("DuckyEditor", 1000, 800);
+  Window window("Ducky Editor", 1000, 800);
 
   Renderer::ambient_color = Vec3(1.0f);
 
-  Shader shader = Shader();
+  renderer::main_shader = new Shader();
+
+  Level current_level = Level("base_level");
+
   EditorCamera camera(&window);
 
   Material mat = Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
@@ -305,20 +308,13 @@ int main(int argc, char** argv) {
     ImGui::DragFloat("Time Scale", &Time::time_scale, 0.01f, 0.01f, 10.0f);
     ImGui::ColorEdit3("Ambient Color", Renderer::ambient_color.data);
     ImGui::Separator();
-    ImGui::Text("Editor Settings");
-    if (ImGui::Button("Save all")) {
-      for (Entity* e : EntityRegistry::get_entities()) {
-        std::string path = "assets/saves/" + e->name + "_" +
-                           std::to_string(e->get_id()) + ".json";
-        e->save(path);
-      }
+    ImGui::Text("Level Settings");
+    ImGui::InputText("Level Name", current_level.name.data(), 256);
+    if (ImGui::Button("Save Level")) {
+      current_level.save(current_level.level_path);
     }
-    if (ImGui::Button("Load all")) {
-      for (Entity* e : EntityRegistry::get_entities()) {
-        std::string path = "assets/saves/" + e->name + "_" +
-                           std::to_string(e->get_id()) + ".json";
-        e->load(path);
-      }
+    if (ImGui::Button("Load Level")) {
+      current_level.load(current_level.content_path);
     }
     ImGui::End();
     window.swap();
