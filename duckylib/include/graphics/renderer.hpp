@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "../../third_party/glad/glad.h"
+#include "../ecs/entity.hpp"
 #include "../math/vec2i.hpp"
 #include "../math/vec3.hpp"
 #include "../runtime_err.hpp"
@@ -17,6 +18,10 @@ class SpotLight;
 class DirectionalLight;
 class Camera;
 }  // namespace ducky::ecs::entities
+
+namespace ducky {
+class Window;
+}
 
 namespace ducky::graphics {
 
@@ -47,8 +52,7 @@ class Renderer {
   static int get_max_directional_lights();
   static void add_light(ducky::ecs::entities::Light* light);
   static void get_gl_error(std::string error_context = "");
-  static void update_lights(Shader* shader,
-                            ducky::ecs::entities::Camera* camera);
+  static void update_lights();
   static std::vector<ducky::ecs::entities::PointLight*> point_lights;
   static std::vector<ducky::ecs::entities::SpotLight*> spot_lights;
   static std::vector<ducky::ecs::entities::DirectionalLight*>
@@ -56,6 +60,9 @@ class Renderer {
   static float ambient_strength;
   static ducky::math::Vec3 ambient_color;
   static void toggle_wireframe();
+  static Shader* main_shader;
+  static ecs::entities::Camera* main_camera;
+  static Window* main_window;
 
  private:
   static bool wireframe_;

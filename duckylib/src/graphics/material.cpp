@@ -65,31 +65,3 @@ void Material::imgui_widget() {
   ImGui::DragFloat("Specular Strength", &specular_strength, 0.01f, 0.0f, 10.0f);
   ImGui::ColorEdit4("Color", color.data);
 }
-
-void Material::save(std::string path) {
-  nlohmann::json json;
-
-  json["diffuse_path"] = diffuse.path;
-  json["specular_path"] = specular.path;
-  json["color"] = color.to_string();
-  json["specular_strength"] = specular_strength;
-  json["unlit"] = unlit;
-  File::write(json.dump(), path + "_mat", true);
-}
-
-void Material::load(std::string path) {
-  if (AssetManager::is_path_valid(path + "_mat") == false)
-    return;
-  std::ifstream f = std::ifstream(path + "_mat");
-  nlohmann::json json = nlohmann::json::parse(f);
-  f.close();
-
-  diffuse.path = json["diffuse_path"];
-  specular.path = json["specular_path"];
-  color = Color::from_string(json["color"]);
-  specular_strength = json["specular_strength"];
-  unlit = json["unlit"];
-
-  diffuse = Texture(diffuse.path);
-  specular = Texture(specular.path);
-}

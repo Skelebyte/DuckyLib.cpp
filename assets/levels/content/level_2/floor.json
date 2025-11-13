@@ -1,0 +1,20 @@
+{
+  "entity": {
+    "enabled": "1",
+    "name": "floor",
+    "tag": "mesh_renderer",
+    "type_": "1"
+  },
+  "material": {
+    "color": "0.539124,0.906977,0.181395,1.000000",
+    "diffuse_path": "DUCKY_DEFAULT_TEXTURE",
+    "specular_path": "DUCKY_DEFAULT_TEXTURE",
+    "specular_strength": "0.500000",
+    "unlit": "0"
+  },
+  "transform": {
+    "position": "0.000000,-1.000000,0.000000",
+    "rotation": "0.000000,20.600000,0.000000",
+    "scale": "3.000000,1.000000,3.000000"
+  }
+}

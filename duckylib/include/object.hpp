@@ -19,8 +19,6 @@ class Object {
   Object();
   virtual void destroy();
   virtual void imgui_widget() = 0;
-  virtual void save(std::string path) = 0;
-  virtual void load(std::string path) = 0;
   int get_id();
 
  protected:

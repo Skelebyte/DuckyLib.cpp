@@ -1,1 +1,17 @@
-{"far_plane":100.0,"field_of_view":75.0,"near_plane":0.10000000149011612}
+{
+  "camera": {
+    "far_plane": "100.000000",
+    "field_of_view": "75.000000",
+    "near_plane": "0.100000"
+  },
+  "entity": {
+    "enabled": "1",
+    "name": "editor_camera",
+    "tag": "camera"
+  },
+  "transform": {
+    "position": "-5.540872,5.864184,5.617374",
+    "rotation": "-0.724792,-0.656037,0.000000",
+    "scale": "1.000000,1.000000,1.000000"
+  }
+}

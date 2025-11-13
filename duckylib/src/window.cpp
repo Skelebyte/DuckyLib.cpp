@@ -43,6 +43,8 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
 
   ImGui_ImplSDL3_InitForOpenGL(this->sdl_window_.get(), this->sdl_glc_);
   ImGui_ImplOpenGL3_Init();
+
+  Renderer::main_window = this;
 }
 
 void Window::update() {

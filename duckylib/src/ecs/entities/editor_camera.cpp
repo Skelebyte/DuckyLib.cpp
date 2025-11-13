@@ -3,9 +3,10 @@
 using namespace ducky::ecs::entities;
 using namespace ducky::input;
 using namespace ducky::math;
+using namespace ducky::graphics;
 
-EditorCamera::EditorCamera(Window* window)
-    : Camera(window),
+EditorCamera::EditorCamera()
+    : Camera(),
       axis_horizontal(InputAxis(Keycode::D, Keycode::A)),
       axis_forward(InputAxis(Keycode::W, Keycode::S)),
       axis_vertical(InputAxis(Keycode::Q, Keycode::E)),
@@ -15,6 +16,7 @@ EditorCamera::EditorCamera(Window* window)
   last_mouse_ = Vec2(0, 0);
   first_mouse_ = true;
   name = "editor_camera";
+  type_ = EntityType::EDITOR_CAMERA;
 }
 
 void EditorCamera::update() {
@@ -41,11 +43,11 @@ void EditorCamera::update() {
 
   if (Input::get_key(&look)) {  // the rotation is in RADIANS for some reason.
     can_move_ = true;
-    Input::cursor(*window_, true, true);
-    Vec2 mouse = Input::get_mouse_position(*window_);
+    Input::cursor(*Renderer::main_window, true, true);
+    Vec2 mouse = Input::get_mouse_position(*Renderer::main_window);
 
     if (first_mouse_) {
-      mouse = Input::get_mouse_position(*window_);
+      mouse = Input::get_mouse_position(*Renderer::main_window);
       last_mouse_ = mouse;
       first_mouse_ = false;
     }
@@ -61,7 +63,7 @@ void EditorCamera::update() {
 
     transform.rotation.x = std::clamp(transform.rotation.x, -1.57f, 1.57f);
   } else {
-    Input::cursor(*window_, false, false);
+    Input::cursor(*Renderer::main_window, false, false);
     first_mouse_ = true;
     can_move_ = false;
   }

@@ -2,16 +2,26 @@
 
 #include <iostream>
 #include <vector>
+#include "../math/vec3.hpp"
 #include "../object.hpp"
+#include "../utils/serializable.hpp"
 #include "transform.hpp"
 
 namespace ducky {
 
 namespace ecs {
 
-enum EntityType { GENERIC, MESH_RENDERER, CAMERA, LIGHT };
+enum EntityType {
+  GENERIC = 0,
+  MESH_RENDERER = 1,
+  CAMERA = 2,
+  EDITOR_CAMERA = 3,
+  POINT_LIGHT = 4,
+  SPOT_LIGHT = 5,
+  DIRECTIONAL_LIGHT = 6
+};
 
-class Entity : public Object {
+class Entity : public Object, public utils::Serializable {
  public:
   Entity(std::string name, std::string tag = "entity");
   ~Entity();
@@ -32,6 +42,7 @@ class Entity : public Object {
 
   void save(std::string path) override;
   void load(std::string path) override;
+  EntityType get_type() const;
 
   std::string name;
   std::string tag;
@@ -39,6 +50,11 @@ class Entity : public Object {
   Transform transform;
 
   bool enabled;
+
+ protected:
+  EntityType type_;
+  void add_entity_data();
+  void load_entity_data(std::string path);
 
  private:
   std::vector<Entity*> children_;

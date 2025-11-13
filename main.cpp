@@ -177,22 +177,19 @@ int main(int argc, char** argv) {
 
 int main(int argc, char** argv) {
   App app(argv[1]);
-  Window window("DuckyEditor", 1000, 800);
+  Window window("Ducky Editor", 1000, 800);
 
   Renderer::ambient_color = Vec3(1.0f);
 
-  Shader shader = Shader();
-  EditorCamera camera(&window);
+  Renderer::main_shader = new Shader();
 
-  Material mat = Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
-                          Color::white());
-  MeshRenderer mr =
-      MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-                   sizeof(cube_indices), &shader, &mat);
+  Level current_level = Level("base_level");
 
-  DirectionalLight sun;
-  sun.transform.rotation = Vec3(1.0f);
-  sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
+  Renderer::main_camera = new EditorCamera();
+
+  // DirectionalLight sun;
+  // sun.transform.rotation = Vec3(1.0f);
+  // sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
 
   unsigned int selected_entity = -1;
 
@@ -228,8 +225,8 @@ int main(int argc, char** argv) {
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
-              &camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-              sizeof(cube_indices), &shader,
+              cube_vertices, sizeof(cube_vertices), cube_indices,
+              sizeof(cube_indices),
               new Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
                            Color::white()));
           if (name != "") {
@@ -280,10 +277,13 @@ int main(int argc, char** argv) {
     ImGui::Begin("Inspector");
     if (selected_entity != -1) {
       Entity* e = EntityRegistry::get_entity_by_id(selected_entity);
+      char* name_temp = (char*)e->name.c_str();
       if (e) {
         ImGui::Checkbox("Enabled", &e->enabled);
         ImGui::Text(("Entity ID: " + std::to_string(e->get_id())).c_str());
-        ImGui::Text(("Name: " + e->name).c_str());
+        if (ImGui::InputText("Name", name_temp, 128)) {
+          e->name = std::string(name_temp);
+        }
 
         ImGui::Separator();
 
@@ -305,20 +305,17 @@ int main(int argc, char** argv) {
     ImGui::DragFloat("Time Scale", &Time::time_scale, 0.01f, 0.01f, 10.0f);
     ImGui::ColorEdit3("Ambient Color", Renderer::ambient_color.data);
     ImGui::Separator();
-    ImGui::Text("Editor Settings");
-    if (ImGui::Button("Save all")) {
-      for (Entity* e : EntityRegistry::get_entities()) {
-        std::string path = "assets/saves/" + e->name + "_" +
-                           std::to_string(e->get_id()) + ".json";
-        e->save(path);
-      }
+    ImGui::Text("Level Settings");
+    char* level_name_temp = (char*)current_level.name.c_str();
+    if (ImGui::InputText("Level Name", level_name_temp, 256)) {
+      current_level.name = level_name_temp;
+      current_level.update_paths();
     }
-    if (ImGui::Button("Load all")) {
-      for (Entity* e : EntityRegistry::get_entities()) {
-        std::string path = "assets/saves/" + e->name + "_" +
-                           std::to_string(e->get_id()) + ".json";
-        e->load(path);
-      }
+    if (ImGui::Button("Save Level")) {
+      current_level.save(current_level.level_path);
+    }
+    if (ImGui::Button("Load Level")) {
+      current_level.load(current_level.content_path);
     }
     ImGui::End();
     window.swap();

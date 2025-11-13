@@ -9,7 +9,7 @@
 namespace ducky::ecs::entities {
 class EditorCamera : public Camera {
  public:
-  EditorCamera(Window* window);
+  EditorCamera();
   void update() override;
   void imgui_widget() override;
   input::InputAxis axis_horizontal;

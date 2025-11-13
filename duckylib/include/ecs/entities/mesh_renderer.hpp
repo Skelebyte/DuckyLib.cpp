@@ -12,6 +12,7 @@
 #include "../../math/mathf.hpp"
 #include "../../math/vec3.hpp"
 #include "../../time.hpp"
+#include "../../utils/serializable.hpp"
 #include "../entity.hpp"
 #include "../transform.hpp"
 #include "camera.hpp"
@@ -25,24 +26,18 @@ namespace entities {
 
 class MeshRenderer : public Entity {
  public:
-  MeshRenderer(Camera* camera, GLfloat vertices[], size_t vertices_size,
-               GLuint indices[], size_t indices_size,
-               graphics::Shader* shader =
-                   new graphics::Shader("assets/shaders/vertex.glsl",
-                                        "assets/shaders/fragment.glsl"),
+  MeshRenderer(GLfloat vertices[], size_t vertices_size, GLuint indices[],
+               size_t indices_size,
                graphics::Material* material = new graphics::Material());
 
   void update() override;
   void imgui_widget() override;
   void save(std::string path) override;
   void load(std::string path) override;
-  graphics::Shader* shader;
 
   graphics::Material* material;
 
  private:
-  Camera* camera_;
-
   size_t indices_size_;
 
   graphics::VAO vao_;
