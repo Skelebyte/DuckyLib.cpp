@@ -5,6 +5,7 @@ using namespace ducky::ecs;
 using namespace ducky::ecs::entities;
 using namespace ducky::graphics;
 using namespace ducky::math;
+using namespace ducky::tools;
 
 Light::Light(LightType type) : Entity("light", "light") {
   light_type_ = type;
@@ -33,6 +34,25 @@ void Light::imgui_widget() {
   ImGui::DragFloat("Intensity", &intensity, 0.1f, 0.0f, 100.0f);
 }
 
+void Light::save(std::string path) {
+  add_entity_data();
+
+  add("color", color.to_string(), "light");
+  add("intensity", std::to_string(intensity), "light");
+
+  write(path);
+}
+void Light::load(std::string path) {
+  if (AssetManager::is_path_valid(path) == false) {
+    return;
+  }
+
+  load_entity_data(path);
+
+  color = Color::from_string(get(path, "color", "light"));
+  intensity = std::stof(get(path, "intensity", "light"));
+}
+
 LightType Light::get_type() const { return light_type_; }
 
 PointLight::PointLight(float _a, float _b, float inten)
@@ -42,6 +62,8 @@ PointLight::PointLight(float _a, float _b, float inten)
   a = _a;
   b = _b;
   intensity = inten;
+
+  type_ = EntityType::POINT_LIGHT;
 }
 
 void PointLight::imgui_widget() {
@@ -50,9 +72,6 @@ void PointLight::imgui_widget() {
   ImGui::DragFloat("Linear (b)", &b, 0.001f, 0.0f, 1.0f);
 }
 
-void Light::save(std::string path) {}
-void Light::load(std::string path) {}
-
 SpotLight::SpotLight(float inner, float outer, float inten)
     : Light(LightType::SPOT) {
   name = "spot_light";
@@ -60,6 +79,8 @@ SpotLight::SpotLight(float inner, float outer, float inten)
   inner_cone = inner;
   outer_cone = outer;
   intensity = inten;
+
+  type_ = EntityType::SPOT_LIGHT;
 }
 
 void SpotLight::imgui_widget() {
@@ -73,6 +94,8 @@ DirectionalLight::DirectionalLight(float inten)
   name = "directional_light";
   tag = "directional_light";
   intensity = inten;
+
+  type_ = EntityType::DIRECTIONAL_LIGHT;
 }
 
 void DirectionalLight::imgui_widget() { Light::imgui_widget(); }

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 #include "../../third_party/json.hpp/json.hpp"
+#include "../graphics/built_in_shapes.hpp"
 #include "../utils/serializable.hpp"
 #include "entities/camera.hpp"
 #include "entities/editor_camera.hpp"
@@ -17,7 +19,9 @@ class EntityRegistry {
   static std::vector<Entity*>& get_entities();
   static void update();
   static Entity* get_entity_by_id(unsigned int id);
-  static void create_entity_from_file(std::string path);
+  static void create_entity_from_file(std::string path,
+                                      std::vector<Entity*>* created_entities);
+  static void clear();
 
  private:
   static std::vector<Entity*> entities_;

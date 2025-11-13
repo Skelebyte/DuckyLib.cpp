@@ -26,8 +26,8 @@ namespace entities {
 
 class MeshRenderer : public Entity {
  public:
-  MeshRenderer(Camera* camera, GLfloat vertices[], size_t vertices_size,
-               GLuint indices[], size_t indices_size,
+  MeshRenderer(GLfloat vertices[], size_t vertices_size, GLuint indices[],
+               size_t indices_size,
                graphics::Material* material = new graphics::Material());
 
   void update() override;
@@ -38,8 +38,6 @@ class MeshRenderer : public Entity {
   graphics::Material* material;
 
  private:
-  Camera* camera_;
-
   size_t indices_size_;
 
   graphics::VAO vao_;

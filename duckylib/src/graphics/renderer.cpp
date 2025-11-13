@@ -17,6 +17,9 @@ std::vector<ducky::ecs::entities::SpotLight*>
     ducky::graphics::Renderer::spot_lights;
 std::vector<ducky::ecs::entities::DirectionalLight*>
     ducky::graphics::Renderer::directional_lights;
+ducky::graphics::Shader* Renderer::main_shader;
+ducky::ecs::entities::Camera* Renderer::main_camera;
+ducky::Window* Renderer::main_window;
 
 ducky::math::Vec3 ducky::graphics::Renderer::ambient_color =
     ducky::math::Vec3(0.1f, 0.1f, 0.1f);
@@ -143,7 +146,7 @@ void Renderer::get_gl_error(std::string error_context) {
   }
 }
 
-void Renderer::update_lights(Camera* camera) {
+void Renderer::update_lights() {
   if (point_lights.size() > 0) {
 #pragma region Point Lights
     glUniform1i(glGetUniformLocation(main_shader->id, "point_light_count"),
@@ -152,7 +155,7 @@ void Renderer::update_lights(Camera* camera) {
         "Renderer::update_lights - point_light_count uniform");
 
     glUniform3fv(glGetUniformLocation(main_shader->id, "camera_position"), 1,
-                 camera->transform.position.data);
+                 main_camera->transform.position.data);
     Renderer::get_gl_error("Renderer::update_lights - camera_position uniform");
 
     for (size_t i = 0; i < point_lights.size(); i++) {
@@ -219,7 +222,7 @@ void Renderer::update_lights(Camera* camera) {
         "Renderer::update_lights - spot_light_count uniform");
 
     glUniform3fv(glGetUniformLocation(main_shader->id, "camera_position"), 1,
-                 camera->transform.position.data);
+                 main_camera->transform.position.data);
     Renderer::get_gl_error("Renderer::update_lights - camera_position uniform");
 
     for (size_t i = 0; i < spot_lights.size(); i++) {
@@ -298,7 +301,7 @@ void Renderer::update_lights(Camera* camera) {
         "Renderer::update_lights - directional_light_count uniform");
 
     glUniform3fv(glGetUniformLocation(main_shader->id, "camera_position"), 1,
-                 camera->transform.position.data);
+                 main_camera->transform.position.data);
     Renderer::get_gl_error("Renderer::update_lights - camera_position uniform");
 
     for (size_t i = 0; i < directional_lights.size(); i++) {

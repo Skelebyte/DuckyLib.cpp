@@ -26,8 +26,8 @@ std::string Serializable::get(std::string path, std::string name,
   }
 }
 
-std::string Serializable::get(std::string path, std::string name,
-                              std::string parent) {
+std::string Serializable::static_get(std::string path, std::string name,
+                                     std::string parent) {
   std::ifstream f = std::ifstream(path);
   nlohmann::json temp = nlohmann::json::parse(f);
   f.close();

@@ -12,6 +12,7 @@ namespace ducky::ecs {
 class Level : public Object, public utils::Serializable {
  public:
   Level(std::string name = "level");
+  void update_paths();
   void imgui_widget() override;
 
   void save(std::string path) override;
@@ -21,5 +22,7 @@ class Level : public Object, public utils::Serializable {
 
   std::string level_path;
   std::string content_path;
+
+  std::vector<Entity*> entities;
 };
 }  // namespace ducky::ecs

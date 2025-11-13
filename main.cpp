@@ -181,21 +181,15 @@ int main(int argc, char** argv) {
 
   Renderer::ambient_color = Vec3(1.0f);
 
-  renderer::main_shader = new Shader();
+  Renderer::main_shader = new Shader();
 
   Level current_level = Level("base_level");
 
-  EditorCamera camera(&window);
+  Renderer::main_camera = new EditorCamera();
 
-  Material mat = Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
-                          Color::white());
-  MeshRenderer mr =
-      MeshRenderer(&camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-                   sizeof(cube_indices), &shader, &mat);
-
-  DirectionalLight sun;
-  sun.transform.rotation = Vec3(1.0f);
-  sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
+  // DirectionalLight sun;
+  // sun.transform.rotation = Vec3(1.0f);
+  // sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
 
   unsigned int selected_entity = -1;
 
@@ -231,8 +225,8 @@ int main(int argc, char** argv) {
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
-              &camera, cube_vertices, sizeof(cube_vertices), cube_indices,
-              sizeof(cube_indices), &shader,
+              cube_vertices, sizeof(cube_vertices), cube_indices,
+              sizeof(cube_indices),
               new Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
                            Color::white()));
           if (name != "") {
@@ -283,10 +277,13 @@ int main(int argc, char** argv) {
     ImGui::Begin("Inspector");
     if (selected_entity != -1) {
       Entity* e = EntityRegistry::get_entity_by_id(selected_entity);
+      char* name_temp = (char*)e->name.c_str();
       if (e) {
         ImGui::Checkbox("Enabled", &e->enabled);
         ImGui::Text(("Entity ID: " + std::to_string(e->get_id())).c_str());
-        ImGui::Text(("Name: " + e->name).c_str());
+        if (ImGui::InputText("Name", name_temp, 128)) {
+          e->name = std::string(name_temp);
+        }
 
         ImGui::Separator();
 
@@ -309,7 +306,11 @@ int main(int argc, char** argv) {
     ImGui::ColorEdit3("Ambient Color", Renderer::ambient_color.data);
     ImGui::Separator();
     ImGui::Text("Level Settings");
-    ImGui::InputText("Level Name", current_level.name.data(), 256);
+    char* level_name_temp = (char*)current_level.name.c_str();
+    if (ImGui::InputText("Level Name", level_name_temp, 256)) {
+      current_level.name = level_name_temp;
+      current_level.update_paths();
+    }
     if (ImGui::Button("Save Level")) {
       current_level.save(current_level.level_path);
     }

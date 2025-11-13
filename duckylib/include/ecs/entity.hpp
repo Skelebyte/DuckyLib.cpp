@@ -15,9 +15,10 @@ enum EntityType {
   GENERIC = 0,
   MESH_RENDERER = 1,
   CAMERA = 2,
-  POINT_LIGHT = 3,
-  SPOT_LIGHT = 4,
-  DIRECTIONAL_LIGHT = 5
+  EDITOR_CAMERA = 3,
+  POINT_LIGHT = 4,
+  SPOT_LIGHT = 5,
+  DIRECTIONAL_LIGHT = 6
 };
 
 class Entity : public Object, public utils::Serializable {

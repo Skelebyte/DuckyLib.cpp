@@ -15,7 +15,7 @@ namespace entities {
 
 class Camera : public Entity {
  public:
-  Camera(Window* window);
+  Camera();
   void update() override;
   float field_of_view = 75.0f;
   float near_plane = 0.1f;
@@ -27,7 +27,6 @@ class Camera : public Entity {
   void load(std::string path) override;
 
  protected:
-  Window* window_;
   void camera_update();
 
  private:

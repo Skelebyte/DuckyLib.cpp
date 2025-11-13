@@ -10,8 +10,8 @@ class Serializable {
   void add(std::string name, std::string value, std::string parent = "");
   void write(std::string path);
   std::string get(std::string path, std::string name, std::string parent = "");
-  static std::string get(std::string path, std::string name,
-                         std::string parent = "");
+  static std::string static_get(std::string path, std::string name,
+                                std::string parent = "");
   virtual void save(std::string path) = 0;
   virtual void load(std::string path) = 0;
   bool allow_saving = true;

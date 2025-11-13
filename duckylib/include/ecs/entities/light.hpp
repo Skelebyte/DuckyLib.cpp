@@ -4,6 +4,7 @@
 #include "../../graphics/color.hpp"
 #include "../../graphics/shader.hpp"
 #include "../../math/mat4.hpp"
+#include "../../tools/asset_manager.hpp"
 #include "../entity.hpp"
 
 namespace ducky {
@@ -30,7 +31,7 @@ class Light : public Entity {
   math::Mat4 ortho_projection_;
   math::Mat4 light_view_;
   math::Mat4 light_projection_;
-  graphics::Shader shadow_map_shader_;
+  // graphics::Shader shadow_map_shader_;
 
  private:
   LightType light_type_;

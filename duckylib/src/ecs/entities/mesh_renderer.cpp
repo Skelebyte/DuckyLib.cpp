@@ -8,11 +8,11 @@ using namespace ducky::math;
 using namespace ducky::utils;
 using namespace ducky::tools;
 
-MeshRenderer::MeshRenderer(Camera* camera, GLfloat vertices[],
-                           size_t vertices_size, GLuint indices[],
-                           size_t indices_size, Material* material)
+MeshRenderer::MeshRenderer(GLfloat vertices[], size_t vertices_size,
+                           GLuint indices[], size_t indices_size,
+                           Material* material)
     : Entity("mesh_renderer", "mesh_renderer") {
-  this->camera_ = camera;
+  type_ = EntityType::MESH_RENDERER;
 
   this->indices_size_ = indices_size;
 
@@ -54,6 +54,9 @@ void MeshRenderer::update() {
   if (!Time::should_render_frame())
     return;
 
+  if (Renderer::main_camera == nullptr)
+    return;
+
   transform.process();
 
   Renderer::main_shader->activate();
@@ -65,17 +68,17 @@ void MeshRenderer::update() {
   glUniformMatrix4fv(this->model_uniform_, 1, GL_FALSE, this->model_.data);
   Renderer::get_gl_error("MeshRenderer::update - model uniform");
   glUniformMatrix4fv(this->view_uniform_, 1, GL_FALSE,
-                     this->camera_->get_view().data);
+                     Renderer::main_camera->get_view().data);
   Renderer::get_gl_error("MeshRenderer::update - view uniform");
 
   glUniformMatrix4fv(this->projection_uniform_, 1, GL_FALSE,
-                     this->camera_->get_projection().data);
+                     Renderer::main_camera->get_projection().data);
   Renderer::get_gl_error("MeshRenderer::update - projection uniform");
 
   glUniform3fv(scale_uniform_, 1, transform.scale.data);
   Renderer::get_gl_error("MeshRenderer::update - scale uniform");
 
-  Renderer::update_lights(camera_);
+  Renderer::update_lights();
 
   if (material->diffuse.is_valid() == false) {
     material->unlit = true;
@@ -150,8 +153,11 @@ void MeshRenderer::load(std::string path) {
   load_entity_data(path);
 
   material->diffuse = Texture(get(path, "diffuse_path", "material"));
+
   material->specular = Texture(get(path, "specular_path", "material"));
+
   material->color = Color::from_string(get(path, "color", "material"));
+
   material->specular_strength =
       std::stof(get(path, "specular_strength", "material"));
 
