@@ -20,6 +20,8 @@ class Object {
   virtual void destroy();
   virtual void imgui_widget() = 0;
   int get_id();
+  void register_object();
+  bool auto_register = false;
 
  protected:
   bool destroyed;

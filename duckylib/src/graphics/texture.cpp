@@ -30,6 +30,13 @@ static unsigned char* graphics::custom_texture(int width, int height, int r1,
 }
 
 Texture::Texture(std::string path, Blendmode blendmode) {
+  if (path == NONE_TEXTURE) {
+    this->id = 0;
+    this->path = NONE_TEXTURE;
+    this->valid_ = false;
+    return;
+  }
+
   this->path = (char*)path.c_str();
   stbi_set_flip_vertically_on_load(1);
 
@@ -198,6 +205,15 @@ Texture::Texture(unsigned char* data, int width, int height,
                GL_UNSIGNED_BYTE, data);
   glGenerateMipmap(GL_TEXTURE_2D);
   free(data);
+}
+
+Texture::~Texture() {
+  // std::cout << "Texture destructor\n";
+  if (id == 0 || path == NONE_TEXTURE) {
+    return;
+  }
+  glDeleteTextures(1, &id);
+  id = 0;
 }
 
 void Texture::bind() {

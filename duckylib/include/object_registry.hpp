@@ -8,6 +8,7 @@ class ObjectRegistry {
  public:
   static unsigned int register_object(Object* object);
   static std::vector<Object*>& get_objects();
+  static void clear();
 
  private:
   static std::vector<Object*> objects_;

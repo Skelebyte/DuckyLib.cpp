@@ -3,7 +3,7 @@
 
 using namespace ducky;
 
-Object::Object() { id_ = ObjectRegistry::register_object(this); }
+Object::Object() { register_object(); }
 
 void Object::destroy() {
   if (this->destroyed)
@@ -13,3 +13,5 @@ void Object::destroy() {
 }
 
 int Object::get_id() { return this->id_; }
+
+void Object::register_object() { id_ = ObjectRegistry::register_object(this); }

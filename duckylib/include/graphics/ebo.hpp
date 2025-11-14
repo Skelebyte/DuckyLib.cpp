@@ -10,11 +10,10 @@ namespace graphics {
 class EBO {
  public:
   EBO();
-  void init(GLuint* indices, GLsizeiptr size);
   ~EBO();
+  void init(GLuint* indices, GLsizeiptr size);
   void bind();
   void unbind();
-  void destroy();
   GLuint id;
 };
 

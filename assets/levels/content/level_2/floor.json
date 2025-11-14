@@ -6,7 +6,7 @@
     "type_": "1"
   },
   "material": {
-    "color": "0.539124,0.906977,0.181395,1.000000",
+    "color": "0.906977,0.424381,0.181395,1.000000",
     "diffuse_path": "DUCKY_DEFAULT_TEXTURE",
     "specular_path": "DUCKY_DEFAULT_TEXTURE",
     "specular_strength": "0.500000",

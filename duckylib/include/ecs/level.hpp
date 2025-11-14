@@ -22,7 +22,5 @@ class Level : public Object, public utils::Serializable {
 
   std::string level_path;
   std::string content_path;
-
-  std::vector<Entity*> entities;
 };
 }  // namespace ducky::ecs

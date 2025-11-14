@@ -15,7 +15,6 @@ class VAO {
                       GLenum type, GLsizeiptr stride, void* offset);
   void bind();
   void unbind();
-  void destroy();
   GLuint id;
 };
 

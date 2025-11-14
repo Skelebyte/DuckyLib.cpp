@@ -11,16 +11,17 @@
 namespace ducky::graphics {
 class Material : public Object {
  public:
-  Material(Texture diff = Texture(),
-           Texture spec = Texture(DEFAULT_TEXTURE_SPEC),
+  Material(Texture* diff = new Texture(),
+           Texture* spec = new Texture(DEFAULT_TEXTURE_SPEC),
            Color col = Color::white());
+  ~Material();
   void get_uniforms(Shader* shader);
   void bind();
   void unbind();
   void imgui_widget();
 
-  Texture diffuse;
-  Texture specular;
+  Texture* diffuse;
+  Texture* specular;
   Color color;
   float specular_strength;
   bool unlit;

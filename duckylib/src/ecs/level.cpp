@@ -8,6 +8,7 @@ Level::Level(std::string name) : Object() {
   this->name = name;
   level_path = "assets/levels/";
   content_path = "assets/levels/content/" + name + "/";
+  auto_register = true;
 }
 
 void Level::update_paths() {
@@ -56,6 +57,6 @@ void Level::load(std::string path) {
       break;
     }
 
-    EntityRegistry::create_entity_from_file(path + file_name, &entities);
+    EntityRegistry::create_entity_from_file(path + file_name);
   }
 }

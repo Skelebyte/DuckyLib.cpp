@@ -12,7 +12,6 @@ class VBO {
   void init(GLfloat* vertices, GLsizeiptr size);
   void bind();
   void unbind();
-  void destroy();
   GLuint id;
 };
 

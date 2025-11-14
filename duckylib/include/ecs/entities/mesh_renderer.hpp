@@ -29,7 +29,7 @@ class MeshRenderer : public Entity {
   MeshRenderer(GLfloat vertices[], size_t vertices_size, GLuint indices[],
                size_t indices_size,
                graphics::Material* material = new graphics::Material());
-
+  ~MeshRenderer();
   void update() override;
   void imgui_widget() override;
   void save(std::string path) override;

@@ -5,7 +5,7 @@ using namespace ducky::graphics;
 
 void VAO::init() { glGenVertexArrays(1, &this->id); }
 
-VAO::~VAO() { this->destroy(); }
+VAO::~VAO() { glDeleteVertexArrays(1, &this->id); }
 
 void VAO::link_attribute(VBO& vbo, GLuint layout, GLuint num_components,
                          GLenum type, GLsizeiptr stride, void* offset) {
@@ -18,5 +18,3 @@ void VAO::link_attribute(VBO& vbo, GLuint layout, GLuint num_components,
 void VAO::bind() { glBindVertexArray(this->id); }
 
 void VAO::unbind() { glBindVertexArray(0); }
-
-void VAO::destroy() { glDeleteVertexArrays(1, &this->id); }

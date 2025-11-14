@@ -24,7 +24,7 @@ enum EntityType {
 class Entity : public Object, public utils::Serializable {
  public:
   Entity(std::string name, std::string tag = "entity");
-  ~Entity();
+  virtual ~Entity() = 0;
   void destroy();
 
   virtual void update() = 0;

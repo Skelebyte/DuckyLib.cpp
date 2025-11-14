@@ -13,7 +13,7 @@ Entity::Entity(std::string name, std::string tag) : Object(), transform() {
   EntityRegistry::register_entity(this);
 }
 
-Entity::~Entity() { /*destroy();*/ }
+Entity::~Entity() { /*std::cout << "Destructor for " << name << std::endl;*/ }
 
 void Entity::destroy() {
   for (int i = 0; i < this->children_.size(); i++) {

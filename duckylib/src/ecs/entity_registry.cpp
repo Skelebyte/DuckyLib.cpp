@@ -28,8 +28,7 @@ Entity* EntityRegistry::get_entity_by_id(unsigned int id) {
   return nullptr;
 }
 
-void EntityRegistry::create_entity_from_file(
-    std::string path, std::vector<Entity*>* created_entities) {
+void EntityRegistry::create_entity_from_file(std::string path) {
   std::ifstream f = std::ifstream(path);
   nlohmann::json temp = nlohmann::json::parse(f);
   f.close();
@@ -39,49 +38,41 @@ void EntityRegistry::create_entity_from_file(
   if (entity_type == EntityType::MESH_RENDERER) {
     MeshRenderer* mesh_renderer = new MeshRenderer(
         cube_vertices, sizeof(cube_vertices), cube_indices,
-        sizeof(cube_indices),
-        new Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
-                     Color::white()));
+        sizeof(cube_indices), new Material(nullptr, nullptr, Color::white()));
     mesh_renderer->load(path);
-    created_entities->push_back(mesh_renderer);
   }
 
   if (entity_type == EntityType::CAMERA) {
     Camera* camera = new Camera();
     camera->load(path);
-    created_entities->push_back(camera);
     Renderer::main_camera = camera;
   }
 
   if (entity_type == EntityType::EDITOR_CAMERA) {
     EditorCamera* editor_camera = new EditorCamera();
     editor_camera->load(path);
-    created_entities->push_back(editor_camera);
     Renderer::main_camera = editor_camera;
   }
 
   if (entity_type == EntityType::POINT_LIGHT) {
     PointLight* point_light = new PointLight();
     point_light->load(path);
-    created_entities->push_back(point_light);
   }
 
   if (entity_type == EntityType::SPOT_LIGHT) {
     SpotLight* spot_light = new SpotLight();
     spot_light->load(path);
-    created_entities->push_back(spot_light);
   }
 
   if (entity_type == EntityType::DIRECTIONAL_LIGHT) {
     DirectionalLight* directional_light = new DirectionalLight();
     directional_light->load(path);
-    created_entities->push_back(directional_light);
   }
 }
 
 void EntityRegistry::clear() {
   for (Entity* entity : entities_) {
-    entity->destroy();
+    delete entity;
   }
   entities_.clear();
 

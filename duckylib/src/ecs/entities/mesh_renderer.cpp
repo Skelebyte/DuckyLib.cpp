@@ -47,6 +47,8 @@ MeshRenderer::MeshRenderer(GLfloat vertices[], size_t vertices_size,
       glGetUniformLocation(Renderer::main_shader->id, "scale");
 }
 
+MeshRenderer::~MeshRenderer() { delete material; }
+
 void MeshRenderer::update() {
   if (!enabled)
     return;
@@ -80,7 +82,7 @@ void MeshRenderer::update() {
 
   Renderer::update_lights();
 
-  if (material->diffuse.is_valid() == false) {
+  if (material->diffuse->is_valid() == false) {
     material->unlit = true;
   }
 
@@ -135,8 +137,8 @@ void MeshRenderer::imgui_widget() {
 void MeshRenderer::save(std::string path) {
   add_entity_data();
 
-  add("diffuse_path", material->diffuse.path, "material");
-  add("specular_path", material->specular.path, "material");
+  add("diffuse_path", material->diffuse->path, "material");
+  add("specular_path", material->specular->path, "material");
   add("color", material->color.to_string(), "material");
   add("specular_strength", std::to_string(material->specular_strength),
       "material");
@@ -152,9 +154,11 @@ void MeshRenderer::load(std::string path) {
 
   load_entity_data(path);
 
-  material->diffuse = Texture(get(path, "diffuse_path", "material"));
+  delete material->diffuse;
+  material->diffuse = new Texture(get(path, "diffuse_path", "material"));
 
-  material->specular = Texture(get(path, "specular_path", "material"));
+  delete material->specular;
+  material->specular = new Texture(get(path, "specular_path", "material"));
 
   material->color = Color::from_string(get(path, "color", "material"));
 

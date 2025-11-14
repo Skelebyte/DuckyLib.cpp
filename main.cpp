@@ -6,14 +6,30 @@
 int main(int argc, char** argv) {
   App app(argv[1]);
   Window window("Ducky Editor", 1000, 800);
+  std::cout << "window\n";
+  for (Object* obj : ObjectRegistry::get_objects()) {
+    std::cout << "Object: " << obj->get_id() << "\n";
+  }
 
   Renderer::ambient_color = Vec3(1.0f);
 
   Renderer::main_shader = new Shader();
+  std::cout << "shader\n";
+  for (Object* obj : ObjectRegistry::get_objects()) {
+    std::cout << "Object: " << obj->get_id() << "\n";
+  }
 
   Level current_level = Level("base_level");
+  std::cout << "level\n";
+  for (Object* obj : ObjectRegistry::get_objects()) {
+    std::cout << "Object: " << obj->get_id() << "\n";
+  }
 
   Renderer::main_camera = new EditorCamera();
+  std::cout << "camera\n";
+  for (Object* obj : ObjectRegistry::get_objects()) {
+    std::cout << "Object: " << obj->get_id() << "\n";
+  }
 
   // DirectionalLight sun;
   // sun.transform.rotation = Vec3(1.0f);
@@ -35,6 +51,11 @@ int main(int argc, char** argv) {
   window.io->Fonts->Build();
   window.io->FontDefault = font;
 
+  std::cout << "all\n";
+  for (Object* obj : ObjectRegistry::get_objects()) {
+    std::cout << "Object: " << obj->get_id() << "\n";
+  }
+
   while (window.running()) {
     window.update();
     ducky_engine_keybinds();
@@ -55,8 +76,8 @@ int main(int argc, char** argv) {
           MeshRenderer* new_entity = new MeshRenderer(
               cube_vertices, sizeof(cube_vertices), cube_indices,
               sizeof(cube_indices),
-              new Material(Texture(DEFAULT_TEXTURE), Texture(DEFAULT_TEXTURE),
-                           Color::white()));
+              new Material(new Texture(DEFAULT_TEXTURE),
+                           new Texture(DEFAULT_TEXTURE), Color::white()));
           if (name != "") {
             new_entity->name = name;
           }
@@ -145,7 +166,28 @@ int main(int argc, char** argv) {
     if (ImGui::Button("Load Level")) {
       current_level.load(current_level.content_path);
     }
+    if (ImGui::Button("Print Entities")) {
+      for (Entity* e : EntityRegistry::get_entities()) {
+        std::cout << "Entity: " << e->name << " (ID: " << e->get_id() << ")\n";
+      }
+    }
+    if (ImGui::Button("leak memory")) {
+      for (int i = 0; i < 100; i++) {
+        if (i % 2 == 0) {
+          current_level.name = "level_2";
+          current_level.update_paths();
+          current_level.load(current_level.content_path);
+        } else {
+          current_level.name = "level_1";
+          current_level.update_paths();
+          current_level.load(current_level.content_path);
+        }
+      }
+    }
+
     ImGui::End();
     window.swap();
   }
+
+  EntityRegistry::clear();
 }

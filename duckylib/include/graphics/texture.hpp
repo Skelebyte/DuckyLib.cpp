@@ -16,6 +16,7 @@ namespace graphics {
 #define EMPTY_TEXTURE_BLACK "DUCKY_EMPTY_TEXTURE_BLACK"
 #define DEFAULT_TEXTURE "DUCKY_DEFAULT_TEXTURE"
 #define DEFAULT_TEXTURE_SPEC "DUCKY_DEFAULT_TEXTURE_SPEC"
+#define NONE_TEXTURE "DUCKY_NONE_TEXTURE"
 
 enum Blendmode { NEAREST, LINEAR };
 
@@ -27,6 +28,7 @@ class Texture {
   Texture(std::string path = DEFAULT_TEXTURE, Blendmode blendmode = LINEAR);
   Texture(unsigned char* data, int width, int height,
           Blendmode blendmode = LINEAR);
+  ~Texture();
   void bind();
   void unbind();
   bool is_valid() const;

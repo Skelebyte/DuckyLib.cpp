@@ -21,7 +21,10 @@ std::string File::read(std::string path) {
 
   file.close();
 
-  return buffer;
+  std::string data = buffer;
+  delete[] buffer;
+
+  return data;
 }
 
 void File::write(std::string value, std::string path, bool overwrite) {
