@@ -6,11 +6,11 @@ using namespace ducky::graphics;
 using namespace ducky::tools;
 
 AudioPlayer::AudioPlayer(std::string path, bool play_on_start, bool loop,
-                         bool is3D)
+                         bool is_3d)
     : Entity("audio_player", "audio_player") {
   this->path = path;
   this->loop = loop;
-  this->is3D = is3D;
+  this->is_3d = is_3d;
 
   result_ = ma_sound_init_from_file(AudioManager::get_engine(), path.c_str(), 0,
                                     NULL, NULL, &sound_);
@@ -41,7 +41,7 @@ void AudioPlayer::update() {
     return;
   }
 
-  if (is3D) {
+  if (is_3d) {
     Vec3 pos = transform.position - Renderer::main_camera->transform.position;
     ma_sound_set_position(&sound_, pos.x, pos.y, pos.z);
 
@@ -87,7 +87,7 @@ void AudioPlayer::imgui_widget() {
     }
   }
   ImGui::Checkbox("Loop", &loop);
-  ImGui::Checkbox("3D Sound", &is3D);
+  ImGui::Checkbox("3D Sound", &is_3d);
   if (ImGui::Button("Play")) {
     play();
   }
@@ -141,5 +141,41 @@ bool AudioPlayer::is_playing() const {
     return true;
   } else {
     return false;
+  }
+}
+
+void AudioPlayer::save(std::string path) {
+  add_entity_data();
+
+  add("audio_file_path", this->path, "audio_player");
+  add("volume", std::to_string(this->volume), "audio_player");
+  add("pitch", std::to_string(this->pitch), "audio_player");
+  add("pan", std::to_string(this->pan), "audio_player");
+  add("loop", this->loop ? "true" : "false", "audio_player");
+  add("is_3d", this->is_3d ? "true" : "false", "audio_player");
+
+  write(path);
+}
+
+void AudioPlayer::load(std::string path) {
+  load_entity_data(path);
+
+  this->path = get(path, "audio_file_path", "audio_player");
+  this->volume = std::stof(get(path, "volume", "audio_player"));
+  this->pitch = std::stof(get(path, "pitch", "audio_player"));
+  this->pan = std::stof(get(path, "pan", "audio_player"));
+  this->loop = get(path, "loop", "audio_player") == "true" ? true : false;
+  this->is_3d = get(path, "is_3d", "audio_player") == "true" ? true : false;
+
+  stop();
+
+  result_ = ma_sound_init_from_file(AudioManager::get_engine(),
+                                    this->path.c_str(), 0, NULL, NULL, &sound_);
+
+  if (result_ != MA_SUCCESS) {
+    std::cout << "failed to init sound: " << this->path << "\n";
+    is_initialized_ = false;
+  } else {
+    is_initialized_ = true;
   }
 }

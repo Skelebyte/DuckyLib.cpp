@@ -1,0 +1,21 @@
+{
+  "audio_player": {
+    "audio_file_path": "assets/sounds/fanatica.wav",
+    "is_3d": "false",
+    "loop": "false",
+    "pan": "0.000000",
+    "pitch": "1.000000",
+    "volume": "1.000000"
+  },
+  "entity": {
+    "enabled": "1",
+    "name": "audio_player",
+    "tag": "audio_player",
+    "type_": "0"
+  },
+  "transform": {
+    "position": "0.000000,0.000000,0.000000",
+    "rotation": "0.000000,0.000000,0.000000",
+    "scale": "1.000000,1.000000,1.000000"
+  }
+}

@@ -12,18 +12,20 @@ namespace ducky::ecs::entities {
 class AudioPlayer : public Entity {
  public:
   AudioPlayer(std::string audio_file_path, bool play_on_start = false,
-              bool loop = false, bool is3D = false);
+              bool loop = false, bool is_3d = false);
   ~AudioPlayer();
   void update() override;
   void imgui_widget() override;
   void play(bool from_beginning = true);
   void stop();
   bool is_playing() const;
+  void save(std::string path) override;
+  void load(std::string path) override;
   float volume = 1.0f;
   float pitch = 1.0f;
   float pan;
   bool loop;
-  bool is3D;
+  bool is_3d;
   std::string path;
 
  private:
