@@ -167,9 +167,5 @@ int main(int argc, char** argv) {
     window.swap();
   }
 
-  for (;;) {
-    char* evil = (char*)malloc(392489023 * sizeof(char));
-  }
-
   EntityRegistry::clear();
 }
