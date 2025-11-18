@@ -1,4 +1,6 @@
+#define MINIAUDIO_IMPLEMENTATION
 #include "include/app.hpp"
+#include "include/ecs/entities/audio_player.hpp"
 #include "include/ecs/entities/camera.hpp"
 #include "include/ecs/entities/editor_camera.hpp"
 #include "include/ecs/entities/light.hpp"

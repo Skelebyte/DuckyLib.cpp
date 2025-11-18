@@ -23,7 +23,7 @@ else
 endif
 
 default: premake_setup build
-	g++ main.cpp $(FLAGS) -g -fsanitize=address -fno-omit-frame-pointer
+	g++ main.cpp $(FLAGS) 
 
 
 premake_setup:

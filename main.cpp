@@ -6,34 +6,14 @@
 int main(int argc, char** argv) {
   App app(argv[1]);
   Window window("Ducky Editor", 1000, 800);
-  std::cout << "window\n";
-  for (Object* obj : ObjectRegistry::get_objects()) {
-    std::cout << "Object: " << obj->get_id() << "\n";
-  }
 
   Renderer::ambient_color = Vec3(1.0f);
 
   Renderer::main_shader = new Shader();
-  std::cout << "shader\n";
-  for (Object* obj : ObjectRegistry::get_objects()) {
-    std::cout << "Object: " << obj->get_id() << "\n";
-  }
 
   Level current_level = Level("base_level");
-  std::cout << "level\n";
-  for (Object* obj : ObjectRegistry::get_objects()) {
-    std::cout << "Object: " << obj->get_id() << "\n";
-  }
 
   Renderer::main_camera = new EditorCamera();
-  std::cout << "camera\n";
-  for (Object* obj : ObjectRegistry::get_objects()) {
-    std::cout << "Object: " << obj->get_id() << "\n";
-  }
-
-  // DirectionalLight sun;
-  // sun.transform.rotation = Vec3(1.0f);
-  // sun.color = Color(0.98f, 0.94f, 0.8f, 1.0f);
 
   unsigned int selected_entity = -1;
 
@@ -47,14 +27,12 @@ int main(int argc, char** argv) {
   char* font_path =
       (char*)"assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf";
 
+  AudioPlayer* background_music =
+      new AudioPlayer("assets/sounds/fanatica.wav", false, false);
+
   ImFont* font = window.io->Fonts->AddFontFromFileTTF(font_path, font_size);
   window.io->Fonts->Build();
   window.io->FontDefault = font;
-
-  std::cout << "all\n";
-  for (Object* obj : ObjectRegistry::get_objects()) {
-    std::cout << "Object: " << obj->get_id() << "\n";
-  }
 
   while (window.running()) {
     window.update();

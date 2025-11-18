@@ -25,8 +25,8 @@ typedef struct Vec3 {
   void rotate(float angle, Vec3 axis);
   float length() const;
   Vec3 normalized();
-  static float dot(Vec3 a, Vec3 b);
-  static Vec3 cross(Vec3 a, Vec3 b);
+  static float dot(const Vec3& a, const Vec3& b);
+  static Vec3 cross(const Vec3& a, const Vec3& b);
   std::string to_string() const;
   static Vec3 from_string(std::string string);
 

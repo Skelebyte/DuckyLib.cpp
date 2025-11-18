@@ -8,6 +8,7 @@
 #include "../third_party/imgui/imgui.h"
 #include "../third_party/imgui/imgui_impl_opengl3.h"
 #include "../third_party/imgui/imgui_impl_sdl3.h"
+#include "audio_manager.hpp"
 #include "graphics/renderer.hpp"
 #include "math/vec2i.hpp"
 #include "runtime_err.hpp"
@@ -16,7 +17,8 @@
 namespace ducky {
 class Window {
  public:
-  Window(const std::string& title, int w, int h, bool init_renderer = true);
+  Window(const std::string& title, int w, int h, bool init_renderer = true,
+         bool init_audio = true);
   void update();
   math::Vec2i get_dimensions();
   math::Vec2i get_viewport_size() const;

@@ -4,7 +4,8 @@ using namespace ducky;
 using namespace ducky::math;
 using namespace ducky::graphics;
 
-Window::Window(const std::string& title, int w, int h, bool init_renderer) {
+Window::Window(const std::string& title, int w, int h, bool init_renderer,
+               bool init_audio) {
   SDL_WindowFlags flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL;
 
   this->sdl_window_ =
@@ -34,6 +35,10 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer) {
 
   if (init_renderer) {
     Renderer::init();
+  }
+
+  if (init_audio) {
+    AudioManager::init();
   }
 
   ImGui::CreateContext();
@@ -86,6 +91,12 @@ void Window::update() {
   ImGui::NewFrame();
   ImGui::DockSpaceOverViewport(0, ImGui::GetMainViewport(),
                                ImGuiDockNodeFlags_PassthruCentralNode);
+
+  if (!running_) {
+    AudioManager::stop_all = true;
+  } else {
+    AudioManager::stop_all = false;
+  }
 }
 
 Vec2i Window::get_dimensions() {

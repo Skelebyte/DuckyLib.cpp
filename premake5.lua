@@ -26,7 +26,7 @@ project "DuckyLib"
 
     libdirs { "duckylib/third_party/libs/windows", "duckylib/third_party/libs/linux" }
 
-    buildoptions { "-lSDL3" }
+    buildoptions { "-lSDL3", " -lpthread", "-lm", "-ldl" }
 
     filter "system:windows"
         links { "SDL3", "assimp-vc143-mtd" }
