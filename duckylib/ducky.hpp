@@ -5,6 +5,7 @@
 #include "include/ecs/entities/editor_camera.hpp"
 #include "include/ecs/entities/light.hpp"
 #include "include/ecs/entities/mesh_renderer.hpp"
+#include "include/ecs/entities/ui/text.hpp"
 #include "include/ecs/entity.hpp"
 #include "include/ecs/entity_registry.hpp"
 #include "include/ecs/level.hpp"
@@ -35,6 +36,7 @@
 using namespace ducky;
 using namespace ducky::ecs;
 using namespace ducky::ecs::entities;
+using namespace ducky::ecs::entities::ui;
 using namespace ducky::graphics;
 using namespace ducky::math;
 using namespace ducky::input;

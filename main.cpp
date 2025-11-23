@@ -15,6 +15,8 @@ int main(int argc, char** argv) {
 
   Renderer::main_camera = new EditorCamera();
 
+  Text* text = new Text("Hello, Duckylib!");
+
   unsigned int selected_entity = -1;
 
   char name[128] = {};
@@ -58,24 +60,32 @@ int main(int argc, char** argv) {
                            new Texture(DEFAULT_TEXTURE), Color::white()));
           if (name != "") {
             new_entity->name = name;
+          } else {
+            new_entity->name = "mesh_renderer";
           }
         } else if (type_index == 1) {
           PointLight* new_entity = new PointLight();
           Renderer::add_light(new_entity);
           if (name != "") {
             new_entity->name = name;
+          } else {
+            new_entity->name = "point_light";
           }
         } else if (type_index == 2) {
           SpotLight* new_entity = new SpotLight();
           Renderer::add_light(new_entity);
           if (name != "") {
             new_entity->name = name;
+          } else {
+            new_entity->name = "spot_light";
           }
         } else if (type_index == 3) {
           DirectionalLight* new_entity = new DirectionalLight();
           Renderer::add_light(new_entity);
           if (name != "") {
             new_entity->name = name;
+          } else {
+            new_entity->name = "directional_light";
           }
         }
         std::cout << "closed\n";

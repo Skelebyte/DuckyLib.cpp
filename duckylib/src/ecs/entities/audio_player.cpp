@@ -34,6 +34,8 @@ AudioPlayer::~AudioPlayer() {
 }
 
 void AudioPlayer::update() {
+  transform.process();
+
   if (AudioManager::stop_all) {
     if (is_playing()) {
       stop();

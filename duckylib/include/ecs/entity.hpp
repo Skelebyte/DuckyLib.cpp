@@ -18,7 +18,9 @@ enum EntityType {
   EDITOR_CAMERA = 3,
   POINT_LIGHT = 4,
   SPOT_LIGHT = 5,
-  DIRECTIONAL_LIGHT = 6
+  DIRECTIONAL_LIGHT = 6,
+  AUDIO_PLAYER = 7,
+  UI_TEXT = 8
 };
 
 class Entity : public Object, public utils::Serializable {
