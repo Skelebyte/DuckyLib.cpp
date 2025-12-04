@@ -24,7 +24,10 @@ void Text::update() {
              Renderer::main_window->get_viewport_position().y +
              transform.position.y;
   ImGui::Begin("Text", nullptr, overlay_flags_);
+  ImGuiStyle& style = ImGui::GetStyle();
+  style.Colors[ImGuiCol_Text] = ImVec4(color.r, color.g, color.b, color.a);
   ImGui::Text(content.c_str());
+  style.Colors[ImGuiCol_Text] = ImVec4(1, 1, 1, 1);
   ImGui::SetWindowPos(ImVec2(center.x, center.y), ImGuiCond_Always);
   ImGui::End();
 }
@@ -32,10 +35,12 @@ void Text::update() {
 void Text::imgui_widget() {
   transform.imgui_widget();
   ImGui::Text("UI Text");
-  char buffer[256] = "";
-  if (ImGui::InputText("Content", buffer, sizeof(buffer))) {
-    content = std::string(buffer);
+
+  char* content_temp = (char*)content.c_str();
+  if (ImGui::InputText("Content", content_temp, 256)) {
+    content = std::string(content_temp);
   }
+  ImGui::ColorEdit4("Font Color", color.data);
 }
 
 void Text::save(std::string path) {

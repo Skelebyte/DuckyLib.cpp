@@ -5,18 +5,24 @@ using namespace ducky::math;
 using namespace ducky::graphics;
 using namespace ducky::tools;
 
-AudioPlayer::AudioPlayer(std::string path, bool play_on_start, bool loop,
-                         bool is_3d)
+AudioPlayer::AudioPlayer(std::string audio_file_path, bool play_on_start,
+                         bool loop, bool is_3d)
     : Entity("audio_player", "audio_player") {
-  this->path = path;
+  this->path = audio_file_path;
   this->loop = loop;
   this->is_3d = is_3d;
 
-  result_ = ma_sound_init_from_file(AudioManager::get_engine(), path.c_str(), 0,
-                                    NULL, NULL, &sound_);
+  if (audio_file_path == "") {
+    is_initialized_ = false;
+    return;
+  }
+
+  result_ =
+      ma_sound_init_from_file(AudioManager::get_engine(),
+                              audio_file_path.c_str(), 0, NULL, NULL, &sound_);
 
   if (result_ != MA_SUCCESS) {
-    std::cout << "failed to init sound: " << path << "\n";
+    std::cout << "failed to init sound: " << audio_file_path << "\n";
     is_initialized_ = false;
   } else {
     is_initialized_ = true;

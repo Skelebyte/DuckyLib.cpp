@@ -1,5 +1,6 @@
 #include <iostream>
 #include "../../../../third_party/imgui/imgui.h"
+#include "../../../graphics/color.hpp"
 #include "../../../graphics/renderer.hpp"
 #include "../../../math/vec2i.hpp"
 #include "../../../window.hpp"
@@ -15,9 +16,9 @@ class Text : public Entity {
   void save(std::string path) override;
   void load(std::string path) override;
   std::string content;
+  graphics::Color color = graphics::Color::white();
 
  private:
-  char buffer_[256] = "";
   ImGuiWindowFlags overlay_flags_ =
       ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoResize |
       ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_NoBackground;

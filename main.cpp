@@ -15,17 +15,15 @@ int main(int argc, char** argv) {
 
   Renderer::main_camera = new EditorCamera();
 
-  Text* text = new Text("Hello, Duckylib!");
-
   unsigned int selected_entity = -1;
 
   char name[128] = {};
-  const char* types[] = {"MeshRenderer", "PointLight", "SpotLight",
-                         "DirectionalLight"};
+  const char* types[] = {"MeshRenderer",     "PointLight",  "SpotLight",
+                         "DirectionalLight", "AudioPlayer", "UI Text"};
   int type_index = 0;
   bool spawn_zeroed = true;
 
-  float font_size = 14.0f;
+  float font_size = 16.0f;
   char* font_path =
       (char*)"assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf";
 
@@ -87,6 +85,20 @@ int main(int argc, char** argv) {
           } else {
             new_entity->name = "directional_light";
           }
+        } else if (type_index == 4) {
+          AudioPlayer* new_entity = new AudioPlayer();
+          if (name != "") {
+            new_entity->name = name;
+          } else {
+            new_entity->name = "audio_player";
+          }
+        } else if (type_index == 5) {
+          Text* new_entity = new Text();
+          if (name != "") {
+            new_entity->name = name;
+          } else {
+            new_entity->name = "ui_text";
+          }
         }
         std::cout << "closed\n";
         ImGui::CloseCurrentPopup();
@@ -118,7 +130,7 @@ int main(int argc, char** argv) {
       if (e) {
         ImGui::Checkbox("Enabled", &e->enabled);
         ImGui::Text(("Entity ID: " + std::to_string(e->get_id())).c_str());
-        if (ImGui::InputText("Name", name_temp, 128)) {
+        if (ImGui::InputText("Name", name_temp, 256)) {
           e->name = std::string(name_temp);
         }
 
@@ -153,24 +165,6 @@ int main(int argc, char** argv) {
     }
     if (ImGui::Button("Load Level")) {
       current_level.load(current_level.content_path);
-    }
-    if (ImGui::Button("Print Entities")) {
-      for (Entity* e : EntityRegistry::get_entities()) {
-        std::cout << "Entity: " << e->name << " (ID: " << e->get_id() << ")\n";
-      }
-    }
-    if (ImGui::Button("leak memory")) {
-      for (int i = 0; i < 100; i++) {
-        if (i % 2 == 0) {
-          current_level.name = "level_2";
-          current_level.update_paths();
-          current_level.load(current_level.content_path);
-        } else {
-          current_level.name = "level_1";
-          current_level.update_paths();
-          current_level.load(current_level.content_path);
-        }
-      }
     }
 
     ImGui::End();

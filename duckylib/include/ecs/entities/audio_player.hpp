@@ -11,7 +11,7 @@
 namespace ducky::ecs::entities {
 class AudioPlayer : public Entity {
  public:
-  AudioPlayer(std::string audio_file_path, bool play_on_start = false,
+  AudioPlayer(std::string audio_file_path = "", bool play_on_start = false,
               bool loop = false, bool is_3d = false);
   ~AudioPlayer();
   void update() override;
