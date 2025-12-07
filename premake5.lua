@@ -23,6 +23,7 @@ project "DuckyLib"
         "duckylib/src/*.cpp", 
         "duckylib/third_party/*/*.c", 
         "duckylib/third_party/*/*.cpp",
+        "duckylib/third_party/*/*/*.cpp",
     }
     
 
@@ -40,10 +41,10 @@ project "DuckyLib"
     buildoptions { "-lSDL3", " -lpthread", "-lm", "-ldl", "-Wattributes" }
 
     filter "system:windows"
-        links { "SDL3", "assimp-vc143-mtd" }
+        links { "SDL3" }
 
     filter "system:linux"
-        links { "SDL3", "assimp" }
+        links { "SDL3" }
         
     
     filter "configurations:Debug"

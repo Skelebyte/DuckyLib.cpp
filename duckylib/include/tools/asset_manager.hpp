@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include "../../third_party/json.hpp/json.hpp"
+#include "../../third_party/ufbx/ufbx.h"
 #include "../utils/file.hpp"
 
 namespace ducky::tools {

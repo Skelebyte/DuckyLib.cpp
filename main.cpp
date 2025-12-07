@@ -21,7 +21,6 @@ int main(int argc, char** argv) {
   const char* types[] = {"MeshRenderer",     "PointLight",  "SpotLight",
                          "DirectionalLight", "AudioPlayer", "UI Text"};
   int type_index = 0;
-  bool spawn_zeroed = true;
 
   float font_size = 16.0f;
   char* font_path =
@@ -48,7 +47,6 @@ int main(int argc, char** argv) {
     if (ImGui::BeginPopupModal("New Entity")) {
       ImGui::InputText("Name", name, sizeof(name));
       ImGui::Combo("Type", &type_index, types, IM_ARRAYSIZE(types));
-      ImGui::Checkbox("Spawn zeroed", &spawn_zeroed);
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
