@@ -33,6 +33,10 @@ int main(int argc, char** argv) {
   window.io->Fonts->Build();
   window.io->FontDefault = font;
 
+  Mesh mesh = Mesh(nullptr, nullptr);
+  mesh.load("assets/models/cube.fbx");
+  window.stop();
+
   while (window.running()) {
     window.update();
     ducky_engine_keybinds();
