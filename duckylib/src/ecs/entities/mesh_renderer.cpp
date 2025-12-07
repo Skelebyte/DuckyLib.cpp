@@ -8,19 +8,23 @@ using namespace ducky::math;
 using namespace ducky::utils;
 using namespace ducky::tools;
 
-MeshRenderer::MeshRenderer(GLfloat vertices[], size_t vertices_size,
-                           GLuint indices[], size_t indices_size,
+MeshRenderer::MeshRenderer(Mesh mesh,
                            Material* material)
     : Entity("mesh_renderer", "mesh_renderer") {
   type_ = EntityType::MESH_RENDERER;
+  int size = mesh.get_vertices().size();
+  // GLfloat vertices_arr[size];
+  
+  this->indices_size_ = sizeof(mesh.get_indices().data());
+  std::cout<<"indices size: "<<sizeof(mesh.get_indices())<<std::endl;
+  std::cout<<"arry size: "<<sizeof(cube_indices)<<std::endl;
 
-  this->indices_size_ = indices_size;
 
   this->vao_.init();
   this->vao_.bind();
 
-  this->vbo_.init(vertices, vertices_size);
-  this->ebo_.init(indices, indices_size);
+  this->vbo_.init(mesh.get_vertices().data(), sizeof(mesh.get_vertices().data()));
+  this->ebo_.init(mesh.get_indices().data(), sizeof(mesh.get_indices().data()));
 
   this->vao_.link_attribute(this->vbo_, 0, 3, GL_FLOAT, 8 * sizeof(float),
                             (void*)0);

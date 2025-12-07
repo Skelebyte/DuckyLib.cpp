@@ -4,6 +4,7 @@
 #include <vector>
 #include "../../third_party/json.hpp/json.hpp"
 #include "../graphics/built_in_shapes.hpp"
+#include "../graphics/mesh.hpp"
 #include "../utils/serializable.hpp"
 #include "entities/camera.hpp"
 #include "entities/editor_camera.hpp"

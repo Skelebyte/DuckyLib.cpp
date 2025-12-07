@@ -37,8 +37,7 @@ void EntityRegistry::create_entity_from_file(std::string path) {
 
   if (entity_type == EntityType::MESH_RENDERER) {
     MeshRenderer* mesh_renderer = new MeshRenderer(
-        cube_vertices, sizeof(cube_vertices), cube_indices,
-        sizeof(cube_indices), new Material(nullptr, nullptr, Color::white()));
+        Mesh("assets/models/cube.fbx"), new Material(nullptr, nullptr, Color::white()));
     mesh_renderer->load(path);
   }
 

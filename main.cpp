@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
 
   unsigned int selected_entity = -1;
 
-  char name[128] = {};
+  char name[128] = {"new_entity"};
   const char* types[] = {"MeshRenderer",     "PointLight",  "SpotLight",
                          "DirectionalLight", "AudioPlayer", "UI Text"};
   int type_index = 0;
@@ -33,9 +33,7 @@ int main(int argc, char** argv) {
   window.io->Fonts->Build();
   window.io->FontDefault = font;
 
-  Mesh mesh = Mesh(nullptr, nullptr);
-  mesh.load("assets/models/cube.fbx");
-  window.stop();
+  
 
   while (window.running()) {
     window.update();
@@ -49,13 +47,13 @@ int main(int argc, char** argv) {
     }
 
     if (ImGui::BeginPopupModal("New Entity")) {
+      
       ImGui::InputText("Name", name, sizeof(name));
       ImGui::Combo("Type", &type_index, types, IM_ARRAYSIZE(types));
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
-              cube_vertices, sizeof(cube_vertices), cube_indices,
-              sizeof(cube_indices),
+              Mesh("assets/models/cube.fbx"),
               new Material(new Texture(DEFAULT_TEXTURE),
                            new Texture(DEFAULT_TEXTURE), Color::white()));
           if (name != "") {

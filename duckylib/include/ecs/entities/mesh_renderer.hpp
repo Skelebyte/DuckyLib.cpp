@@ -3,6 +3,8 @@
 #include <iostream>
 #include "../../../third_party/glad/glad.h"
 #include "../../graphics/ebo.hpp"
+#include "../../graphics/mesh.hpp"
+#include "../../graphics/built_in_shapes.hpp"
 #include "../../graphics/material.hpp"
 #include "../../graphics/renderer.hpp"
 #include "../../graphics/shader.hpp"
@@ -26,8 +28,7 @@ namespace entities {
 
 class MeshRenderer : public Entity {
  public:
-  MeshRenderer(GLfloat vertices[], size_t vertices_size, GLuint indices[],
-               size_t indices_size,
+  MeshRenderer(graphics::Mesh mesh = graphics::Mesh("assets/models/cube.fbx"),
                graphics::Material* material = new graphics::Material());
   ~MeshRenderer();
   void update() override;

@@ -2,12 +2,10 @@
 
 using namespace ducky::graphics;
 
-Mesh::Mesh(GLfloat vertices[], GLuint indices[]) {
-  // vertices_ =
-  //     std::vector<GLfloat>(vertices, sizeof(vertices) / sizeof(vertices[0]));
-}
+Mesh::Mesh(std::string path) {
+  vertices_.clear();
+  indices_.clear();
 
-void Mesh::load(std::string path) {
   ufbx_load_opts options = {0};
   ufbx_error error;
   ufbx_scene* scene = ufbx_load_file(path.c_str(), &options, &error);
@@ -38,10 +36,26 @@ void Mesh::load(std::string path) {
     vertices_.push_back(normal_y);
     vertices_.push_back(normal_z);
 
-      std::cout<<vec_x<<", "<<vec_y<<", "<<vec_z<<", "<<uv_1<<", "<<uv_2<<", "<<normal_x<<", "<<normal_y<<", "<<normal_z<<std::endl;
+      
+
+      
+    }
+
+    for(int i = 0; i < node->mesh->num_indices; i++) {
+      indices_.push_back(node->mesh->vertex_indices[i]);
+    }
+
+    for(int i = 0; i < indices_.size(); i++) {
+      std::cout<<indices_[i]<<", ";
     }
 
   }
+}
 
+std::vector<GLfloat> Mesh::get_vertices() const {
+  return vertices_;
+}
 
+std::vector<GLuint> Mesh::get_indices() const {
+  return indices_;
 }

@@ -47,7 +47,7 @@ void Renderer::init(RendererSettings renderer_settings) {
     if (renderer_settings.culling_type == FaceCullingType::BACK) {
       glCullFace(GL_BACK);
     } else if (renderer_settings.culling_type ==
-               FaceCullingType::FRONT) {  // super dooper coolio
+               FaceCullingType::FRONT) { 
       glCullFace(GL_FRONT);
     }
     glFrontFace(GL_CCW);
