@@ -1,3 +1,4 @@
+
 #define UFBX_IMPLEMENTATION
 #define MINIAUDIO_IMPLEMENTATION
 #include "include/app.hpp"
@@ -48,20 +49,20 @@ using namespace ducky::utils;
 #ifdef DUCKY_ALLOW_ENGINE_KEYBINDS
 namespace ducky {
 input::Keybind ducky_toggle_wireframe = input::Keybind(input::Keycode::F1);
-input::Keybind ducky_toggle_console = input::Keybind(input::Keycode::TILDE_GRAVE);
+input::Keybind ducky_toggle_console =
+    input::Keybind(input::Keycode::TILDE_GRAVE);
 bool ducky_console_open = false;
 static void ducky_engine_keybinds() {
   if (Input::get_key_once(&ducky_toggle_wireframe)) {
     Renderer::toggle_wireframe();
   }
-  if(Input::get_key_once(&ducky_toggle_console)) {
+  if (Input::get_key_once(&ducky_toggle_console)) {
     ducky_console_open = !ducky_console_open;
   }
 
-  if(ducky_console_open) {
+  if (ducky_console_open) {
     // open console;
   }
-  
 }
 }  // namespace ducky
 #endif

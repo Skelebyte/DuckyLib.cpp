@@ -36,8 +36,9 @@ void EntityRegistry::create_entity_from_file(std::string path) {
       std::stoi(Serializable::static_get(path, "type_", "entity"));
 
   if (entity_type == EntityType::MESH_RENDERER) {
-    MeshRenderer* mesh_renderer = new MeshRenderer(
-        Mesh("assets/models/cube.fbx"), new Material(nullptr, nullptr, Color::white()));
+    MeshRenderer* mesh_renderer =
+        new MeshRenderer(Mesh("assets/models/cube.fbx"),
+                         new Material(nullptr, nullptr, Color::white()));
     mesh_renderer->load(path);
   }
 

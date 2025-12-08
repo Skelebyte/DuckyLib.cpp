@@ -53,7 +53,7 @@ void Material::unbind() {
 }
 
 void Material::imgui_widget() {
-  const char* blendmodes[] = {"Linear", "Nearest"};
+  const char* blendmodes[] = {"Nearest", "Linear"};
 
   if (!ImGui::CollapsingHeader("Material"))
     return;

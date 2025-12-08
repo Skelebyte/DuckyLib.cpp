@@ -47,13 +47,6 @@ Mesh::Mesh(std::string path) {
       indices_.push_back(indice);
     }
   }
-
-  for (int i = 0; i < vertices_.size(); i++) {
-    std::cout << vertices_[i] << ", ";
-    if (i == 7)
-      std::cout << std::endl;
-  }
-  std::cout << std::endl;
 }
 
 std::vector<GLfloat> Mesh::get_vertices() const { return vertices_; }
