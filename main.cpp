@@ -33,8 +33,6 @@ int main(int argc, char** argv) {
   window.io->Fonts->Build();
   window.io->FontDefault = font;
 
-  
-
   while (window.running()) {
     window.update();
     ducky_engine_keybinds();
@@ -47,15 +45,16 @@ int main(int argc, char** argv) {
     }
 
     if (ImGui::BeginPopupModal("New Entity")) {
-      
       ImGui::InputText("Name", name, sizeof(name));
       ImGui::Combo("Type", &type_index, types, IM_ARRAYSIZE(types));
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
-              Mesh("assets/models/cube.fbx"),
-              new Material(new Texture(DEFAULT_TEXTURE),
-                           new Texture(DEFAULT_TEXTURE), Color::white()));
+              Mesh("assets/models/test.dmdl"),
+              new Material(
+                  new Texture("assets/textures/frank.png", Blendmode::NEAREST),
+                  new Texture(DEFAULT_TEXTURE, Blendmode::NEAREST),
+                  Color::white()));
           if (name != "") {
             new_entity->name = name;
           } else {

@@ -44,7 +44,7 @@ typedef struct {
 class Renderer {
  public:
   static void init(RendererSettings renderer_settings = {
-                       8, 8, 1, true, true, false, FaceCullingType::BACK, true,
+                       8, 8, 1, true, true, true, FaceCullingType::BACK, true,
                        math::Vec2i(2048, 2048)});
   static void clear_frame(Color color = Color(0.1f, 0.1f, 0.1f, 1.0f));
   static int get_max_point_lights();

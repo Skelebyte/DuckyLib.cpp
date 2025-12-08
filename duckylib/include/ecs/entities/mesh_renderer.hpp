@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include "../../../third_party/glad/glad.h"
-#include "../../graphics/ebo.hpp"
-#include "../../graphics/mesh.hpp"
 #include "../../graphics/built_in_shapes.hpp"
+#include "../../graphics/ebo.hpp"
 #include "../../graphics/material.hpp"
+#include "../../graphics/mesh.hpp"
 #include "../../graphics/renderer.hpp"
 #include "../../graphics/shader.hpp"
 #include "../../graphics/vao.hpp"
@@ -28,7 +28,7 @@ namespace entities {
 
 class MeshRenderer : public Entity {
  public:
-  MeshRenderer(graphics::Mesh mesh = graphics::Mesh("assets/models/cube.fbx"),
+  MeshRenderer(graphics::Mesh mesh = graphics::Mesh("assets/models/cube.dmdl"),
                graphics::Material* material = new graphics::Material());
   ~MeshRenderer();
   void update() override;
