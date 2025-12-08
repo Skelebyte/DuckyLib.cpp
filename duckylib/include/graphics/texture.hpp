@@ -34,6 +34,7 @@ class Texture {
   bool is_valid() const;
   GLuint id;
   std::string path;
+  Blendmode blendmode;
 
  private:
   bool valid_;

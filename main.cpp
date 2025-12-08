@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
       if (ImGui::Button("Create")) {
         if (type_index == 0) {
           MeshRenderer* new_entity = new MeshRenderer(
-              Mesh("assets/models/test.dmdl"),
+              Mesh("assets/models/tent.dmdl"),
               new Material(
                   new Texture("assets/textures/frank.png", Blendmode::NEAREST),
                   new Texture(DEFAULT_TEXTURE, Blendmode::NEAREST),

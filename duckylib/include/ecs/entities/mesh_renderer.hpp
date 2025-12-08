@@ -35,7 +35,7 @@ class MeshRenderer : public Entity {
   void imgui_widget() override;
   void save(std::string path) override;
   void load(std::string path) override;
-
+  std::string model_path;
   graphics::Material* material;
 
  private:

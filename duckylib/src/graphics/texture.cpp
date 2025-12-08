@@ -98,6 +98,8 @@ Texture::Texture(std::string path, Blendmode blendmode) {
         "GL_NEAREST)");
   }
 
+  this->blendmode = blendmode;
+
   if (load_success) {
     GLenum format = channel_count == 4 ? GL_RGBA : GL_RGB;
 

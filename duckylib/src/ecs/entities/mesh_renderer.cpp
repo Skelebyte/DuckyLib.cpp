@@ -130,9 +130,14 @@ void MeshRenderer::update() {
 
 void MeshRenderer::imgui_widget() {
   transform.imgui_widget();
-  ImGui::Text("Mesh Renderer");
-  ImGui::Text(
-      ("Shader ID: " + std::to_string(Renderer::main_shader->id)).c_str());
+
+  if (ImGui::CollapsingHeader("Mesh Renderer")) {
+    ImGui::InputText("Model Path", (char*)model_path.c_str(), 256);
+    if (ImGui::Button("Apply")) {
+      // if(AssetManager::is_path_valid(model_path))
+    }
+  }
+
   material->imgui_widget();
 }
 

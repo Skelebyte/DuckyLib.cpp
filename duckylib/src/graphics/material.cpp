@@ -53,23 +53,42 @@ void Material::unbind() {
 }
 
 void Material::imgui_widget() {
-  ImGui::Text("Material");
+  const char* blendmodes[] = {"Linear", "Nearest"};
+
+  if (!ImGui::CollapsingHeader("Material"))
+    return;
+
   ImGui::Checkbox("Unlit", &unlit);
-  if (ImGui::InputText("Diffuse Path", (char*)diffuse->path.c_str(), 256)) {
-    delete diffuse;
-    diffuse = new Texture(std::string(diffuse->path));
+  if (ImGui::CollapsingHeader("Diffuse Texture")) {
+    ImGui::InputText("Diffuse Path", (char*)diffuse->path.c_str(), 256);
+    ImGui::Combo("Blendmode##Diffuse", (int*)&diffuse->blendmode, blendmodes,
+                 IM_ARRAYSIZE(blendmodes));
+    if (ImGui::Button("Apply##Diffuse")) {
+      std::string new_path = diffuse->path;
+      Blendmode new_blendmode = diffuse->blendmode;
+      delete diffuse;
+      diffuse = new Texture(new_path, new_blendmode);
+    }
+    if (diffuse->path != "" || diffuse->is_valid() == false) {
+      ImGui::Image(ImTextureRef(diffuse->id), ImVec2(64, 64));
+    }
   }
-  if (diffuse->path != "" || diffuse->is_valid() == false) {
-    ImGui::Image(ImTextureRef(diffuse->id), ImVec2(64, 64));
-  }
-  if (ImGui::InputText("Specular Path", (char*)specular->path.c_str(), 256)) {
-    delete specular;
-    specular = new Texture(std::string(specular->path));
-  }
-  if (specular->path != "" || specular->is_valid() == false) {
-    ImGui::Image(ImTextureRef(specular->id), ImVec2(64, 64));
+  if (ImGui::CollapsingHeader("Specular Texture")) {
+    ImGui::InputText("Specular Path", (char*)specular->path.c_str(), 256);
+    ImGui::Combo("Blendmode##Specular", (int*)&specular->blendmode, blendmodes,
+                 IM_ARRAYSIZE(blendmodes));
+    if (ImGui::Button("Apply##Specular")) {
+      std::string new_path = specular->path;
+      Blendmode new_blendmode = specular->blendmode;
+      delete specular;
+      specular = new Texture(new_path, new_blendmode);
+    }
+    if (specular->path != "" || specular->is_valid() == false) {
+      ImGui::Image(ImTextureRef(specular->id), ImVec2(64, 64));
+    }
+    ImGui::DragFloat("Specular Strength", &specular_strength, 0.01f, 0.0f,
+                     10.0f);
   }
 
-  ImGui::DragFloat("Specular Strength", &specular_strength, 0.01f, 0.0f, 10.0f);
   ImGui::ColorEdit4("Color", color.data);
 }

@@ -26,7 +26,7 @@ class EXPORT_OT_dmdl(Operator, ExportHelper):
       uv_layer = mesh.uv_layers.active.data if has_uv else None
       vertices = []
       indices = []
-      current_vertex_index = 0  # track vertex index across all loops
+      current_vertex_index = 0  
 
       for poly in mesh.polygons:
         idxs = []
@@ -35,43 +35,40 @@ class EXPORT_OT_dmdl(Operator, ExportHelper):
           loop = mesh.loops[loop_index]
           vert = mesh.vertices[loop.vertex_index]
 
-          # World-space position
           pos = obj.matrix_world @ vert.co
           vertices.extend([pos.x, pos.y, pos.z])
 
-          # UV
           if has_uv:
             uv = uv_layer[loop_index].uv
             vertices.extend([uv.x, uv.y])
           else:
             vertices.extend([0.0, 0.0])
 
-          # Normal
           normal = loop.normal
           vertices.extend([normal.x, normal.y, normal.z])
 
           idxs.append(current_vertex_index)
           current_vertex_index += 1
 
-        # triangulate polygon if needed
+        
         if len(idxs) == 4:  # quad
-          indices.extend([idxs[0], idxs[1], idxs[2]])
-          indices.extend([idxs[0], idxs[2], idxs[3]])
+          indices.extend([idxs[0], idxs[2], idxs[1]])
+          indices.extend([idxs[0], idxs[3], idxs[2]])
         elif len(idxs) == 3:  # triangle
           indices.extend([idxs[0], idxs[1], idxs[2]])
 
 
 
-      # Write file
+     
       with open(self.filepath, "w") as f:
           f.write(f"# DuckyLib Model (.dmdl)\n")
           f.write(f"vl {len(vertices)//8}\n"
                   f"il {len(indices)}\n")
           for i in range(0, len(vertices), 8):
               # order: x y z uv_x uv_y normal_x normal_y normal_z
-              f.write(f"vp {vertices[i]} {vertices[i+1]} {vertices[i+2]}\n"
+              f.write(f"vp {vertices[i]} {vertices[i+2]} {vertices[i+1]}\n"
                       f"uv {vertices[i+3]} {vertices[i+4]}\n"
-                      f"nrm {vertices[i+5]} {vertices[i+6]} {vertices[i+7]}\n")
+                      f"nrm {vertices[i+5] * -1} {vertices[i+6] * -1} {vertices[i+7] * -1}\n")
 
           for idx in indices:
               f.write(f"i {idx}\n")

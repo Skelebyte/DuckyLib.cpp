@@ -71,6 +71,8 @@ void Transform::process() {
 }
 
 void Transform::imgui_widget() {
+  if (!ImGui::CollapsingHeader("Transform"))
+    return;
   ImGui::DragFloat3("Position", this->position.data, 0.1f);
   ImGui::DragFloat3("Rotation", this->rotation.data, 0.1f);
   ImGui::DragFloat3("Scale", this->scale.data, 0.1f, -100.0f, 100.0f);
