@@ -24,9 +24,6 @@ int main(int argc, char** argv) {
   char* font_path =
       (char*)"assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf";
 
-  AudioPlayer* background_music =
-      new AudioPlayer("assets/sounds/fanatica.wav", false, false);
-
   ImFont* font = window.io->Fonts->AddFontFromFileTTF(font_path, font_size);
   window.io->Fonts->Build();
   window.io->FontDefault = font;

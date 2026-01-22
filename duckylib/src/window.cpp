@@ -52,6 +52,8 @@ Window::Window(const std::string& title, int w, int h, bool init_renderer,
   Renderer::main_window = this;
 }
 
+Window::~Window() { SDL_DestroyWindow(this->sdl_window_.get()); }
+
 void Window::update() {
   Time::begin_frame();
   SDL_Event event;
